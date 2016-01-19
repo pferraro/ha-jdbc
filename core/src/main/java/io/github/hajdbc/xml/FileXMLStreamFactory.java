@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.xml;
+package io.github.hajdbc.xml;
 
 import java.io.File;
 import java.net.URISyntaxException;
@@ -57,7 +57,7 @@ public class FileXMLStreamFactory implements XMLStreamFactory
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.xml.XMLStreamFactory#createSource()
+	 * @see io.github.hajdbc.xml.XMLStreamFactory#createSource()
 	 */
 	@Override
 	public Source createSource()
@@ -67,7 +67,7 @@ public class FileXMLStreamFactory implements XMLStreamFactory
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.xml.XMLStreamFactory#createResult()
+	 * @see io.github.hajdbc.xml.XMLStreamFactory#createResult()
 	 */
 	@Override
 	public Result createResult()

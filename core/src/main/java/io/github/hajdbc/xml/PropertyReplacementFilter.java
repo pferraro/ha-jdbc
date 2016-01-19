@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.xml;
+package io.github.hajdbc.xml;
 
 import java.util.Properties;
 import java.util.regex.Matcher;
@@ -25,8 +25,8 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.util.StreamReaderDelegate;
 
-import net.sf.hajdbc.util.Strings;
-import net.sf.hajdbc.util.SystemProperties;
+import io.github.hajdbc.util.Strings;
+import io.github.hajdbc.util.SystemProperties;
 
 public class PropertyReplacementFilter extends StreamReaderDelegate
 {

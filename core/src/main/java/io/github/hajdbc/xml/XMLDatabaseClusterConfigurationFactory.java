@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.xml;
+package io.github.hajdbc.xml;
 
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
@@ -28,8 +28,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.MessageFormat;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
 import javax.xml.stream.XMLInputFactory;
@@ -38,21 +36,21 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamWriter;
 
-import net.sf.hajdbc.Credentials;
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseBuilder;
-import net.sf.hajdbc.DatabaseClusterConfiguration;
-import net.sf.hajdbc.DatabaseClusterConfigurationBuilder;
-import net.sf.hajdbc.DatabaseClusterConfigurationFactory;
-import net.sf.hajdbc.Identifiable;
-import net.sf.hajdbc.SynchronizationStrategy;
-import net.sf.hajdbc.Version;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.util.SystemProperties;
+import io.github.hajdbc.Credentials;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseBuilder;
+import io.github.hajdbc.DatabaseClusterConfiguration;
+import io.github.hajdbc.DatabaseClusterConfigurationBuilder;
+import io.github.hajdbc.DatabaseClusterConfigurationFactory;
+import io.github.hajdbc.Identifiable;
+import io.github.hajdbc.SynchronizationStrategy;
+import io.github.hajdbc.Version;
+import io.github.hajdbc.logging.Level;
+import io.github.hajdbc.logging.Logger;
+import io.github.hajdbc.logging.LoggerFactory;
+import io.github.hajdbc.messages.Messages;
+import io.github.hajdbc.messages.MessagesFactory;
+import io.github.hajdbc.util.SystemProperties;
 
 /**
  * {@link DatabaseClusterConfigurationFactory} that parses an xml configuration file.
@@ -70,7 +68,6 @@ public class XMLDatabaseClusterConfigurationFactory<Z, D extends Database<Z>> im
 	private static final Messages messages = MessagesFactory.getMessages();
 	
 	private final XMLStreamFactory streamFactory;
-	private final Map<String, Namespace> namespaces = new HashMap<>();
 
 	private static String identifyResource(String id)
 	{
@@ -130,10 +127,6 @@ public class XMLDatabaseClusterConfigurationFactory<Z, D extends Database<Z>> im
 	public XMLDatabaseClusterConfigurationFactory(XMLStreamFactory streamFactory)
 	{
 		this.streamFactory = streamFactory;
-		for (Namespace namespace: Namespace.values())
-		{
-			this.namespaces.put(namespace.getURI(), namespace);
-		}
 	}
 	
 	@Override
@@ -144,17 +137,16 @@ public class XMLDatabaseClusterConfigurationFactory<Z, D extends Database<Z>> im
 		try
 		{
 			XMLStreamReader reader = new PropertyReplacementFilter(XMLInputFactory.newFactory().createXMLStreamReader(this.streamFactory.createSource()));
-			reader.nextTag();
-			String uri = reader.getNamespaceURI();
-			Namespace namespace = this.namespaces.get(uri);
-			
-			if (namespace == null)
+			try
 			{
-				throw new XMLStreamException(messages.unsupportedNamespace(reader));
+				reader.nextTag();
+				DatabaseClusterConfigurationReader<Z, D, B> configurationReader = new NamespaceDatabaseClusterConfigurationReader<>(Namespace.forReader(reader));
+				configurationReader.read(reader, builder);
 			}
-			
-			namespace.getReaderFactory().<Z, D, B>createReader().read(reader, builder);
-			reader.close();
+			finally
+			{
+				reader.close();
+			}
 			return builder.build();
 		}
 		catch (XMLStreamException e)
@@ -165,7 +157,7 @@ public class XMLDatabaseClusterConfigurationFactory<Z, D extends Database<Z>> im
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseClusterConfigurationListener#added(net.sf.hajdbc.Database, net.sf.hajdbc.DatabaseClusterConfiguration)
+	 * @see io.github.hajdbc.DatabaseClusterConfigurationListener#added(io.github.hajdbc.Database, io.github.hajdbc.DatabaseClusterConfiguration)
 	 */
 	@Override
 	public void added(D database, DatabaseClusterConfiguration<Z, D> configuration)
@@ -175,7 +167,7 @@ public class XMLDatabaseClusterConfigurationFactory<Z, D extends Database<Z>> im
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseClusterConfigurationListener#removed(net.sf.hajdbc.Database, net.sf.hajdbc.DatabaseClusterConfiguration)
+	 * @see io.github.hajdbc.DatabaseClusterConfigurationListener#removed(io.github.hajdbc.Database, io.github.hajdbc.DatabaseClusterConfiguration)
 	 */
 	@Override
 	public void removed(D database, DatabaseClusterConfiguration<Z, D> configuration)
