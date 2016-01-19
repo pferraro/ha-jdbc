@@ -1,0 +1,2 @@
+io.github.hajdbc.io.file.FileInputSinkProvider
+io.github.hajdbc.io.simple.SimpleInputSinkProvider

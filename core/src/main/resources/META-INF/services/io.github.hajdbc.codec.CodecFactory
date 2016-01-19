@@ -1,0 +1,4 @@
+io.github.hajdbc.codec.SimpleCodecFactory
+io.github.hajdbc.codec.base64.Base64CodecFactory
+io.github.hajdbc.codec.crypto.CipherCodecFactory
+io.github.hajdbc.codec.hex.HexCodecFactory

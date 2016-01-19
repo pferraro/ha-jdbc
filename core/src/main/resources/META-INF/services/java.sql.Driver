@@ -1,1 +1,1 @@
-net.sf.hajdbc.sql.Driver
+io.github.hajdbc.sql.Driver

@@ -1,0 +1,2 @@
+io.github.hajdbc.state.sql.SQLStateManagerFactory
+io.github.hajdbc.state.simple.SimpleStateManagerFactory
