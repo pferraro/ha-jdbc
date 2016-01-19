@@ -25,7 +25,7 @@
 		<version>19</version>
 	</parent>
 
-	<groupId>io.ha-jdbc</groupId>
+	<groupId>io.github.ha-jdbc</groupId>
 	<artifactId>ha-jdbc-parent</artifactId>
 	<version>4.0.0-alpha-1-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -37,7 +37,7 @@
 
 	<!-- Used for github maven plugins -->
 	<properties>
-		<github.site.repositoryName>ha-jdbc.github.com</github.site.repositoryName>
+		<github.site.repositoryName>ha-jdbc.github.io</github.site.repositoryName>
 		<github.site.repositoryOwner>ha-jdbc</github.site.repositoryOwner>
 	</properties>
 
@@ -210,7 +210,7 @@
 				<artifactId>site-maven-plugin</artifactId>
 				<configuration>
 					<message>Deploying ${project.name} ${project.version} site</message>
-					<!-- Organization site uses master branch of ha-jdbc.github.com repository -->
+					<!-- Organization site uses master branch of ha-jdbc.github.io repository -->
 					<branch>refs/heads/master</branch>
 				</configuration>
 				<executions>
@@ -353,19 +353,19 @@
 	</build>
 
 	<scm>
-		<connection>scm:git:git://github.com/ha-jdbc/ha-jdbc.git</connection>
-		<developerConnection>scm:git:git@github.com:ha-jdbc/ha-jdbc.git</developerConnection>
-		<url>https://github.com/ha-jdbc/ha-jdbc</url>
+		<connection>scm:git:git://github.io/ha-jdbc/ha-jdbc.git</connection>
+		<developerConnection>scm:git:git@github.io:ha-jdbc/ha-jdbc.git</developerConnection>
+		<url>https://github.io/ha-jdbc/ha-jdbc</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>http://github.com/ha-jdbc/ha-jdbc/issues</url>
+		<url>http://github.io/ha-jdbc/ha-jdbc/issues</url>
 	</issueManagement>
 	
 	<distributionManagement>
-		<downloadUrl>http://repository.jboss.org/nexus/content/groups/public/net/sf/ha-jdbc/ha-jdbc/</downloadUrl>
+		<downloadUrl>http://repository.jboss.org/nexus/content/groups/public/io/github/ha-jdbc/ha-jdbc/</downloadUrl>
 	</distributionManagement>
 
 	<licenses>
@@ -377,13 +377,13 @@
 	</licenses>
 	<organization>
 		<name>Paul Ferraro</name>
-		<url>http://github.com/ha-jdbc</url>
+		<url>http://github.io/ha-jdbc</url>
 	</organization>	
 	<developers>
 		<developer>
 			<id>pferraro</id>
 			<name>Paul Ferraro</name>
-			<email>ferraro@users.sourceforge.net</email>
+			<email>paul.ferraro@caa.columbia.edu</email>
 			<url>http://github.com/pferraro</url>
 		</developer>
 	</developers>
