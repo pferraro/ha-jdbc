@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.balancer;
+package io.github.hajdbc.balancer;
 
 import java.util.Collection;
 import java.util.NoSuchElementException;
@@ -25,9 +25,9 @@ import java.util.TreeSet;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.util.Collections;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.invocation.Invoker;
+import io.github.hajdbc.util.Collections;
 
 /**
  * Abstract set-based {@link Balancer} implementation.
@@ -69,7 +69,7 @@ public abstract class AbstractSetBalancer<Z, D extends Database<Z>> extends Abst
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.Balancer#invoke(net.sf.hajdbc.invocation.Invoker, net.sf.hajdbc.Database, java.lang.Object)
+	 * @see io.github.hajdbc.balancer.Balancer#invoke(io.github.hajdbc.invocation.Invoker, io.github.hajdbc.Database, java.lang.Object)
 	 */
 	@Override
 	public <T, R, E extends Exception> R invoke(Invoker<Z, D, T, R, E> invoker, D database, T object) throws E
@@ -79,7 +79,7 @@ public abstract class AbstractSetBalancer<Z, D extends Database<Z>> extends Abst
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.Balancer#primary()
+	 * @see io.github.hajdbc.balancer.Balancer#primary()
 	 */
 	@Override
 	public D primary()
@@ -96,7 +96,7 @@ public abstract class AbstractSetBalancer<Z, D extends Database<Z>> extends Abst
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.AbstractBalancer#getDatabases()
+	 * @see io.github.hajdbc.balancer.AbstractBalancer#getDatabases()
 	 */
 	@Override
 	protected Set<D> getDatabases()
