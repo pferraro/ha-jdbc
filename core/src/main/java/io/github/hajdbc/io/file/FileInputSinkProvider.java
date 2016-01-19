@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io.file;
+package io.github.hajdbc.io.file;
 
-import net.sf.hajdbc.io.InputSinkStrategy;
-import net.sf.hajdbc.io.InputSinkProvider;
+import io.github.hajdbc.io.InputSinkProvider;
+import io.github.hajdbc.io.InputSinkStrategy;
 
 /**
  * A file-based input sink provider

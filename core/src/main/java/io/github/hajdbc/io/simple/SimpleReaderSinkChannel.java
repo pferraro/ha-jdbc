@@ -15,39 +15,41 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io.file;
+package io.github.hajdbc.io.simple;
 
-import java.io.File;
-import java.io.InputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.Reader;
 
-import net.sf.hajdbc.io.InputSinkChannel;
-import net.sf.hajdbc.io.InputSinkStrategy;
-import net.sf.hajdbc.util.Files;
+import io.github.hajdbc.io.InputSinkChannel;
 
 /**
- * A file-based input sink strategy
+ * Reader channel for writing to, and reading from, an in-memory buffer sink.
  * @author Paul Ferraro
  */
-public class FileInputSinkStrategy implements InputSinkStrategy<File>
+public class SimpleReaderSinkChannel implements InputSinkChannel<Reader, byte[]>
 {
-	static final String TEMP_FILE_SUFFIX = ".lob";
-	
 	@Override
-	public InputSinkChannel<InputStream, File> createInputStreamChannel()
+	public byte[] write(Reader reader) throws IOException
 	{
-		return new FileInputStreamSinkChannel();
+		ByteArrayOutputStream output = new ByteArrayOutputStream();
+		OutputStreamWriter writer = new OutputStreamWriter(output);
+		int c = reader.read();
+		while (c >= 0)
+		{
+			writer.write(c);
+			c = reader.read();
+		}
+		writer.flush();
+		return output.toByteArray();
 	}
 
 	@Override
-	public InputSinkChannel<Reader, File> createReaderChannel()
+	public Reader read(byte[] sink)
 	{
-		return new FileReaderSinkChannel();
-	}
-
-	@Override
-	public void close(File file)
-	{
-		Files.delete(file);
+		return new InputStreamReader(new ByteArrayInputStream(sink));
 	}
 }

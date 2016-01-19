@@ -15,21 +15,21 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io;
+package io.github.hajdbc.io;
 
-import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
 
 /**
- * Channel for writing to, and reading from, an input sink.
+ * A strategy for creating input stream and reader channels.
  * @author Paul Ferraro
- * @param <I> input type
  * @param <S> sink type
  */
-public interface InputSinkChannel<I, S>
+public interface InputSinkStrategy<S>
 {
-	static final int BUFFER_SIZE = 8192;
-	
-	S write(I input) throws IOException;
-	
-	I read(S sink) throws IOException;
+	InputSinkChannel<InputStream, S> createInputStreamChannel();
+
+	InputSinkChannel<Reader, S> createReaderChannel();
+
+	void close(S sink);
 }

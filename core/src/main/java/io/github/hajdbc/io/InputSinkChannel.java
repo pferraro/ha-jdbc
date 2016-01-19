@@ -15,37 +15,21 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io.simple;
+package io.github.hajdbc.io;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-
-import net.sf.hajdbc.io.InputSinkChannel;
 
 /**
- * Input stream channel for writing to, and reading from, an in-memory buffer sink.
+ * Channel for writing to, and reading from, an input sink.
  * @author Paul Ferraro
+ * @param <I> input type
+ * @param <S> sink type
  */
-public class SimpleInputStreamSinkChannel implements InputSinkChannel<InputStream, byte[]>
+public interface InputSinkChannel<I, S>
 {
-	@Override
-	public byte[] write(InputStream input) throws IOException
-	{
-		ByteArrayOutputStream output = new ByteArrayOutputStream();
-		int b = input.read();
-		while (b >= 0)
-		{
-			output.write(b);
-			b = input.read();
-		}
-		return output.toByteArray();
-	}
-
-	@Override
-	public InputStream read(byte[] sink)
-	{
-		return new ByteArrayInputStream(sink);
-	}
+	static final int BUFFER_SIZE = 8192;
+	
+	S write(I input) throws IOException;
+	
+	I read(S sink) throws IOException;
 }

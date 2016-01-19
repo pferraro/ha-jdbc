@@ -15,26 +15,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io.simple;
+package io.github.hajdbc.io;
 
-import net.sf.hajdbc.io.InputSinkStrategy;
-import net.sf.hajdbc.io.InputSinkProvider;
+import io.github.hajdbc.Identifiable;
 
 /**
- * In-memory input sink provider
+ * The SPI for an input sink strategy.
  * @author Paul Ferraro
  */
-public class SimpleInputSinkProvider implements InputSinkProvider
+public interface InputSinkProvider extends Identifiable
 {
-	@Override
-	public String getId()
-	{
-		return "simple";
-	}
-
-	@Override
-	public InputSinkStrategy<? extends Object> createInputSinkStrategy()
-	{
-		return new SimpleInputSinkStrategy();
-	}
+	InputSinkStrategy<? extends Object> createInputSinkStrategy();
 }

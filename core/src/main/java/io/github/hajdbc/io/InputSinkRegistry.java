@@ -15,15 +15,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io;
+package io.github.hajdbc.io;
 
-import net.sf.hajdbc.Identifiable;
+import java.io.Closeable;
 
 /**
- * The SPI for an input sink strategy.
+ * A registry of input sinks.
  * @author Paul Ferraro
+ * @param <S> sink type
  */
-public interface InputSinkProvider extends Identifiable
+public interface InputSinkRegistry<S> extends Closeable
 {
-	InputSinkStrategy<? extends Object> createInputSinkStrategy();
+	<I> InputSinkChannel<I, S> get(Class<I> inputClass);
 }
