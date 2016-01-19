@@ -15,23 +15,21 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.management;
+package io.github.hajdbc.management;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import javax.management.JMException;
+
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
 
 /**
- * Placeholder for JSR 255 (JMX 2.0) annotations.
- * 
  * @author Paul Ferraro
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
-@Documented
-public @interface ManagedOperation
+public interface MBeanRegistrar<Z, D extends Database<Z>>
 {
-	Impact impact() default Impact.UNKNOWN;
+	void register(DatabaseCluster<Z, D> cluster) throws JMException;
+	void register(DatabaseCluster<Z, D> cluster, D database) throws JMException;
+	
+	void unregister(DatabaseCluster<Z, D> cluster);
+	void unregister(DatabaseCluster<Z, D> cluster, D database);
 }

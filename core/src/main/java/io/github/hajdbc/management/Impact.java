@@ -15,23 +15,39 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.management;
+package io.github.hajdbc.management;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import javax.management.MBeanOperationInfo;
 
 /**
- * Placeholder for JSR 255 (JMX 2.0) annotations.
- * 
  * @author Paul Ferraro
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
-@Documented
-public @interface MBean
+public enum Impact
 {
-
+	ACTION(MBeanOperationInfo.ACTION),
+	ACTION_INFO(MBeanOperationInfo.ACTION_INFO),
+	INFO(MBeanOperationInfo.INFO),
+	UNKNOWN(MBeanOperationInfo.UNKNOWN);
+	
+	private final int code;
+	
+	private Impact(int code)
+	{
+		this.code = code;
+	}
+	
+	public static Impact forCode(int code)
+	{
+		for (Impact impact: Impact.values())
+		{
+			if (impact.code == code) return impact;
+		}
+		
+		throw new IllegalArgumentException(String.valueOf(code));
+	}
+	
+	public int getCode()
+	{
+		return this.code;
+	}
 }
