@@ -15,31 +15,28 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache.simple;
+package io.github.hajdbc.cache;
 
-import java.sql.DatabaseMetaData;
+import java.sql.Connection;
+import java.sql.SQLException;
 
-import net.sf.hajdbc.cache.DatabaseMetaDataProvider;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseProperties;
+
 
 /**
+ * Interface for retrieving pre-processed, cached, database meta data.
+ * 
  * @author Paul Ferraro
- *
+ * @since 2.0
  */
-public class SimpleDatabaseMetaDataProvider implements DatabaseMetaDataProvider
+public interface DatabaseMetaDataCache<Z, D extends Database<Z>>
 {
-	private DatabaseMetaData metaData;
-	
-	public SimpleDatabaseMetaDataProvider(DatabaseMetaData metaData)
-	{
-		this.metaData = metaData;
-	}
-	
 	/**
-	 * @see net.sf.hajdbc.cache.DatabaseMetaDataProvider#getDatabaseMetaData()
+	 * Flushes this cache.
+	 * @throws SQLException if flush fails
 	 */
-	@Override
-	public DatabaseMetaData getDatabaseMetaData()
-	{
-		return this.metaData;
-	}
+	void flush() throws SQLException;
+	
+	DatabaseProperties getDatabaseProperties(D database, Connection connection) throws SQLException;
 }

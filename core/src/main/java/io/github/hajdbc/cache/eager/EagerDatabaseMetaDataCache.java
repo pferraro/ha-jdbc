@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache.eager;
+package io.github.hajdbc.cache.eager;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -23,11 +23,11 @@ import java.sql.SQLException;
 import java.util.Map;
 import java.util.TreeMap;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.DatabaseProperties;
-import net.sf.hajdbc.cache.DatabaseMetaDataCache;
-import net.sf.hajdbc.dialect.Dialect;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.DatabaseProperties;
+import io.github.hajdbc.cache.DatabaseMetaDataCache;
+import io.github.hajdbc.dialect.Dialect;
 
 /**
  * Per-database {@link DatabaseMetaDataCache} implementation that populates itself eagerly.
@@ -45,7 +45,7 @@ public class EagerDatabaseMetaDataCache<Z, D extends Database<Z>> implements Dat
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.cache.DatabaseMetaDataCache#flush()
+	 * @see io.github.hajdbc.cache.DatabaseMetaDataCache#flush()
 	 */
 	@Override
 	public void flush() throws SQLException
@@ -69,7 +69,7 @@ public class EagerDatabaseMetaDataCache<Z, D extends Database<Z>> implements Dat
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.cache.DatabaseMetaDataCache#getDatabaseProperties(net.sf.hajdbc.Database, java.sql.Connection)
+	 * @see io.github.hajdbc.cache.DatabaseMetaDataCache#getDatabaseProperties(io.github.hajdbc.Database, java.sql.Connection)
 	 */
 	@Override
 	public DatabaseProperties getDatabaseProperties(D database, Connection connection) throws SQLException

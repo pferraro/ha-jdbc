@@ -15,16 +15,38 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache;
+package io.github.hajdbc.cache.lazy;
 
+import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
+
+import io.github.hajdbc.cache.DatabaseMetaDataProvider;
 
 /**
  * @author Paul Ferraro
  *
  */
-public interface DatabaseMetaDataProvider
+public class LazyDatabaseMetaDataProvider implements DatabaseMetaDataProvider
 {
-	DatabaseMetaData getDatabaseMetaData() throws SQLException;
+	private final ThreadLocal<Connection> threadLocal = new ThreadLocal<>();
+	
+	public LazyDatabaseMetaDataProvider(DatabaseMetaData metaData) throws SQLException
+	{
+		this.setConnection(metaData.getConnection());
+	}
+	
+	public void setConnection(Connection connection)
+	{
+		this.threadLocal.set(connection);
+	}
+	
+	/**
+	 * @see io.github.hajdbc.cache.DatabaseMetaDataProvider#getDatabaseMetaData()
+	 */
+	@Override
+	public DatabaseMetaData getDatabaseMetaData() throws SQLException
+	{
+		return this.threadLocal.get().getMetaData();
+	}
 }
