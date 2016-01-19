@@ -15,38 +15,44 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.logging;
+package io.github.hajdbc.logging.jdk;
 
-import java.text.MessageFormat;
+import io.github.hajdbc.logging.Logger;
+import io.github.hajdbc.logging.LoggingProvider;
 
 /**
- * Abstract logger implementation.
+ * <a href="http://java.sun.com/javase/6/docs/technotes/guides/logging/overview.html">java.util.logging</a>-based service provider.
  * @author Paul Ferraro
  */
-public abstract class AbstractLogger implements Logger
+public class JDKLoggingProvider implements LoggingProvider
 {
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.Logger#log(net.sf.hajdbc.logging.Level, java.lang.String, java.lang.Object[])
+	 * @see io.github.hajdbc.logging.LoggingProvider#getLogger(java.lang.Class)
 	 */
 	@Override
-	public final void log(Level level, String pattern, Object... args)
+	public Logger getLogger(Class<?> targetClass)
 	{
-		this.log(level, null, pattern, args);
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.Logger#log(net.sf.hajdbc.logging.Level, java.lang.Throwable)
-	 */
-	@Override
-	public final void log(Level level, Throwable e)
-	{
-		this.log(level, e, e.getMessage());
+		return new JDKLogger(targetClass);
 	}
 
-	protected static String format(String pattern, Object... args)
+	/**
+	 * {@inheritDoc}
+	 * @see io.github.hajdbc.logging.LoggingProvider#getName()
+	 */
+	@Override
+	public String getName()
 	{
-		return (args.length == 0) ? pattern : MessageFormat.format(pattern, args);
+		return "JDK";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @see io.github.hajdbc.logging.LoggingProvider#isEnabled()
+	 */
+	@Override
+	public boolean isEnabled()
+	{
+		return true;
 	}
 }

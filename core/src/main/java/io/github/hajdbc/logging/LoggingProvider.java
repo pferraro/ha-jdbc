@@ -15,17 +15,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.logging;
+package io.github.hajdbc.logging;
+
+import io.github.hajdbc.Provider;
 
 /**
- * Logging wrapper that allows deferment of message formatting and argument evaluation.
+ * Logging provider abstraction of logging service provider interface.
  * @author Paul Ferraro
  */
-public interface Logger
+public interface LoggingProvider extends Provider
 {
-	void log(Level level, String pattern, Object... args);
-	
-	void log(Level level, Throwable e, String pattern, Object... args);
-	
-	void log(Level level, Throwable e);
+	Logger getLogger(Class<?> targetClass);
 }

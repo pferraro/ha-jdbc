@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.logging.jdk;
+package io.github.hajdbc.logging.jdk;
 
 import java.util.EnumMap;
 import java.util.Map;
 
-import net.sf.hajdbc.logging.AbstractLogger;
-import net.sf.hajdbc.logging.Level;
+import io.github.hajdbc.logging.AbstractLogger;
+import io.github.hajdbc.logging.Level;
 
 /**
- * java.util.logging-based {@link net.sf.hajdbc.logging.Logger} implementation.
+ * java.util.logging-based {@link io.github.hajdbc.logging.Logger} implementation.
  * @author Paul Ferraro
  */
 public class JDKLogger extends AbstractLogger
@@ -48,7 +48,7 @@ public class JDKLogger extends AbstractLogger
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.Logger#log(net.sf.hajdbc.logging.Level, java.lang.Throwable, java.lang.String, java.lang.Object[])
+	 * @see io.github.hajdbc.logging.Logger#log(io.github.hajdbc.logging.Level, java.lang.Throwable, java.lang.String, java.lang.Object[])
 	 */
 	@Override
 	public void log(Level level, Throwable e, String pattern, Object... args)

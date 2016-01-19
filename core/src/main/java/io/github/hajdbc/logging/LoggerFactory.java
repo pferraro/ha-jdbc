@@ -15,15 +15,27 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.logging;
+package io.github.hajdbc.logging;
 
-import net.sf.hajdbc.Provider;
+import io.github.hajdbc.ProviderFactory;
+import io.github.hajdbc.messages.MessagesFactory;
 
 /**
- * Logging provider abstraction of logging service provider interface.
+ * Factory for creating {@link Logger} implementation from various logging service provider implementations.
  * @author Paul Ferraro
  */
-public interface LoggingProvider extends Provider
+public final class LoggerFactory extends ProviderFactory<LoggingProvider>
 {
-	Logger getLogger(Class<?> targetClass);
+	private static final LoggerFactory factory = new LoggerFactory();
+	
+	public static Logger getLogger(Class<?> targetClass)
+	{
+		return factory.getProvider().getLogger(targetClass);
+	}
+	
+	private LoggerFactory()
+	{
+		super(LoggingProvider.class);
+		this.getProvider().getLogger(LoggerFactory.class).log(Level.DEBUG, MessagesFactory.getMessages().logging(this.getProvider()));
+	}
 }
