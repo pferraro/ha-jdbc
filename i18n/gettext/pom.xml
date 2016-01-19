@@ -20,7 +20,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>io.ha-jdbc</groupId>
+		<groupId>io.github.ha-jdbc</groupId>
 		<artifactId>ha-jdbc-i18n</artifactId>
 		<version>4.0.0-alpha-1-SNAPSHOT</version>
 	</parent>
@@ -64,7 +64,7 @@
 						<configuration>
 							<poDirectory>${project.basedir}/src/main/po</poDirectory>
 							<keysFile>ha-jdbc.pot</keysFile>
-							<targetBundle>net.sf.hajdbc.messages.i18n.I18nMessages</targetBundle>
+							<targetBundle>io.github.hajdbc.messages.i18n.I18nMessages</targetBundle>
 							<outputFormat>properties</outputFormat>
 						</configuration>
 					</plugin>
