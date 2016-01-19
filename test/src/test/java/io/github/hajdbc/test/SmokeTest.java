@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc;
+package io.github.hajdbc.test;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,19 +23,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import net.sf.hajdbc.sql.DataSource;
-import net.sf.hajdbc.sql.DataSourceDatabaseClusterConfigurationBuilder;
-import net.sf.hajdbc.state.StateManager;
-import net.sf.hajdbc.state.StateManagerFactory;
-import net.sf.hajdbc.state.bdb.BerkeleyDBStateManagerFactory;
-import net.sf.hajdbc.state.simple.SimpleStateManagerFactory;
-import net.sf.hajdbc.state.sql.SQLStateManagerFactory;
-import net.sf.hajdbc.state.sqlite.SQLiteStateManagerFactory;
-
 import org.h2.jdbcx.JdbcDataSource;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import io.github.hajdbc.sql.DataSource;
+import io.github.hajdbc.sql.DataSourceDatabaseClusterConfigurationBuilder;
+import io.github.hajdbc.state.StateManager;
+import io.github.hajdbc.state.StateManagerFactory;
+import io.github.hajdbc.state.bdb.BerkeleyDBStateManagerFactory;
+import io.github.hajdbc.state.simple.SimpleStateManagerFactory;
+import io.github.hajdbc.state.sql.SQLStateManagerFactory;
+import io.github.hajdbc.state.sqlite.SQLiteStateManagerFactory;
 
 public class SmokeTest
 {

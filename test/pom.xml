@@ -20,7 +20,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>io.ha-jdbc</groupId>
+		<groupId>io.github.ha-jdbc</groupId>
 		<artifactId>ha-jdbc-parent</artifactId>
 		<version>4.0.0-alpha-1-SNAPSHOT</version>
 	</parent>
@@ -56,12 +56,17 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>io.ha-jdbc</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>ha-jdbc-state-sqlite</artifactId>
 			<version>${project.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- Test dependencies -->
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
