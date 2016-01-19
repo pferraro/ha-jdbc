@@ -15,20 +15,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.invocation;
+package io.github.hajdbc.invocation;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.balancer.Balancer;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.balancer.Balancer;
 
 /**
- * @author paul
- *
+ * @author Paul Ferraro
  */
-public class PrimaryDatabaseSelector implements InvokeOnOneInvocationStrategy.DatabaseSelector
+public class NextDatabaseSelector implements InvokeOnOneInvocationStrategy.DatabaseSelector
 {
 	@Override
 	public <Z, D extends Database<Z>> D selectDatabase(Balancer<Z, D> balancer)
 	{
-		return balancer.primary();
+		return balancer.next();
 	}
 }

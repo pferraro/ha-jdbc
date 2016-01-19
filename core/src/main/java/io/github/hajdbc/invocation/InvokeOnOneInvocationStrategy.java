@@ -15,23 +15,23 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.invocation;
+package io.github.hajdbc.invocation;
 
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.ExceptionFactory;
-import net.sf.hajdbc.balancer.Balancer;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.sql.ProxyFactory;
-import net.sf.hajdbc.state.StateManager;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.ExceptionFactory;
+import io.github.hajdbc.balancer.Balancer;
+import io.github.hajdbc.dialect.Dialect;
+import io.github.hajdbc.logging.Level;
+import io.github.hajdbc.logging.Logger;
+import io.github.hajdbc.logging.LoggerFactory;
+import io.github.hajdbc.messages.Messages;
+import io.github.hajdbc.messages.MessagesFactory;
+import io.github.hajdbc.sql.ProxyFactory;
+import io.github.hajdbc.state.StateManager;
 
 /**
  * @author paul

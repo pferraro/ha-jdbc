@@ -15,19 +15,25 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.invocation;
+package io.github.hajdbc.invocation;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.balancer.Balancer;
+import io.github.hajdbc.Database;
 
 /**
+ * Represents a method invocation on a SQL object against a database.
  * @author Paul Ferraro
+ * @param <D> Type of the root object (e.g. driver, datasource)
+ * @param <T> Target object type of the invocation
+ * @param <R> Return type of this invocation
  */
-public class NextDatabaseSelector implements InvokeOnOneInvocationStrategy.DatabaseSelector
+public interface Invoker<Z, D extends Database<Z>, T, R, E extends Exception>
 {
-	@Override
-	public <Z, D extends Database<Z>> D selectDatabase(Balancer<Z, D> balancer)
-	{
-		return balancer.next();
-	}
+	/**
+	 * Invokes an action against the specified database on the specified SQL object
+	 * @param database a database
+	 * @param object an SQL object
+	 * @return the invocation result
+	 * @throws Exception
+	 */
+	R invoke(D database, T object) throws E;
 }

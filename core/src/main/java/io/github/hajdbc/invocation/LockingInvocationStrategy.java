@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.invocation;
+package io.github.hajdbc.invocation;
 
 import java.util.List;
 import java.util.SortedMap;
 import java.util.concurrent.locks.Lock;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.sql.ProxyFactory;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.sql.ProxyFactory;
 
 /**
  * An invocation strategy decorator that acquires a list of locks before invocation, and releases them afterward.

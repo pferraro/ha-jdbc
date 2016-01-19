@@ -15,16 +15,17 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.invocation;
+package io.github.hajdbc.invocation;
 
 import java.util.Map;
 import java.util.Map.Entry;
+
+import io.github.hajdbc.Database;
+import io.github.hajdbc.sql.ProxyFactory;
+
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.AbstractMap;
-
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.sql.ProxyFactory;
 
 /**
  * @author Paul Ferraro
