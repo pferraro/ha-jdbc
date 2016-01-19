@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.logging.commons;
+package io.github.hajdbc.logging.commons;
 
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggingProvider;
+import io.github.hajdbc.logging.Logger;
+import io.github.hajdbc.logging.LoggingProvider;
 
 /**
  * <a href="Apache Commons">http://commons.apache.org/logging</a> logging service provider.
@@ -29,7 +29,7 @@ public class CommonsLoggingProvider implements LoggingProvider
 {
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.LoggingProvider#getLogger(java.lang.Class)
+	 * @see io.github.hajdbc.logging.LoggingProvider#getLogger(java.lang.Class)
 	 */
 	@Override
 	public Logger getLogger(Class<?> targetClass)
@@ -39,7 +39,7 @@ public class CommonsLoggingProvider implements LoggingProvider
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.LoggingProvider#getName()
+	 * @see io.github.hajdbc.logging.LoggingProvider#getName()
 	 */
 	@Override
 	public String getName()
@@ -49,7 +49,7 @@ public class CommonsLoggingProvider implements LoggingProvider
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.LoggingProvider#isEnabled()
+	 * @see io.github.hajdbc.logging.LoggingProvider#isEnabled()
 	 */
 	@Override
 	public boolean isEnabled()

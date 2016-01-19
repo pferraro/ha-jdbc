@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.logging.commons;
+package io.github.hajdbc.logging.commons;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import net.sf.hajdbc.logging.AbstractLogger;
-import net.sf.hajdbc.logging.Level;
+import io.github.hajdbc.logging.AbstractLogger;
+import io.github.hajdbc.logging.Level;
 
 /**
- * Apache Commons logging {@link net.sf.hajdbc.logging.Logger}.
+ * Apache Commons logging {@link io.github.hajdbc.logging.Logger}.
  * @author Paul Ferraro
  */
 public class CommonsLogger extends AbstractLogger
@@ -38,7 +38,7 @@ public class CommonsLogger extends AbstractLogger
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.Logger#log(net.sf.hajdbc.logging.Level, java.lang.Throwable, java.lang.String, java.lang.Object[])
+	 * @see io.github.hajdbc.logging.Logger#log(io.github.hajdbc.logging.Level, java.lang.Throwable, java.lang.String, java.lang.Object[])
 	 */
 	@Override
 	public void log(Level level, Throwable e, String pattern, Object... args)
