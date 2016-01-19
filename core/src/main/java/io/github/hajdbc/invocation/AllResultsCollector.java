@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.invocation;
+package io.github.hajdbc.invocation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +29,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.ExceptionFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.sql.ProxyFactory;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.ExceptionFactory;
+import io.github.hajdbc.messages.Messages;
+import io.github.hajdbc.messages.MessagesFactory;
+import io.github.hajdbc.sql.ProxyFactory;
 
 /**
  * @author Paul Ferraro
