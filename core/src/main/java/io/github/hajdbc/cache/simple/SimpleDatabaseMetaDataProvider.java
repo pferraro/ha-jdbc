@@ -15,30 +15,31 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache.eager;
+package io.github.hajdbc.cache.simple;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.cache.DatabaseMetaDataCache;
-import net.sf.hajdbc.cache.DatabaseMetaDataCacheFactory;
+import java.sql.DatabaseMetaData;
+
+import io.github.hajdbc.cache.DatabaseMetaDataProvider;
 
 /**
- * Factory for creating an {@link EagerDatabaseMetaDataCache}.
  * @author Paul Ferraro
+ *
  */
-public class EagerDatabaseMetaDataCacheFactory implements DatabaseMetaDataCacheFactory
+public class SimpleDatabaseMetaDataProvider implements DatabaseMetaDataProvider
 {
-	private static final long serialVersionUID = -7767712061192003942L;
-
-	@Override
-	public String getId()
+	private DatabaseMetaData metaData;
+	
+	public SimpleDatabaseMetaDataProvider(DatabaseMetaData metaData)
 	{
-		return "eager";
+		this.metaData = metaData;
 	}
-
+	
+	/**
+	 * @see io.github.hajdbc.cache.DatabaseMetaDataProvider#getDatabaseMetaData()
+	 */
 	@Override
-	public <Z, D extends Database<Z>> DatabaseMetaDataCache<Z, D> createCache(DatabaseCluster<Z, D> cluster)
+	public DatabaseMetaData getDatabaseMetaData()
 	{
-		return new EagerDatabaseMetaDataCache<>(cluster);
+		return this.metaData;
 	}
 }

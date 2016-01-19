@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache.eager;
+package io.github.hajdbc.cache.eager;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.cache.DatabaseMetaDataCache;
-import net.sf.hajdbc.cache.DatabaseMetaDataCacheFactory;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.cache.DatabaseMetaDataCache;
+import io.github.hajdbc.cache.DatabaseMetaDataCacheFactory;
 
 /**
  * @author Paul Ferraro

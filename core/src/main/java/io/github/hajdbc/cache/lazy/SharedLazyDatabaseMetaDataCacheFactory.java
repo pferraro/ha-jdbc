@@ -15,30 +15,30 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache.lazy;
+package io.github.hajdbc.cache.lazy;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.cache.DatabaseMetaDataCache;
-import net.sf.hajdbc.cache.DatabaseMetaDataCacheFactory;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.cache.DatabaseMetaDataCache;
+import io.github.hajdbc.cache.DatabaseMetaDataCacheFactory;
 
 /**
- * Factory for creating a {@link LazyDatabaseMetaDataCache}.
  * @author Paul Ferraro
+ *
  */
-public class LazyDatabaseMetaDataCacheFactory implements DatabaseMetaDataCacheFactory
+public class SharedLazyDatabaseMetaDataCacheFactory implements DatabaseMetaDataCacheFactory
 {
-	private static final long serialVersionUID = -8343580190808280295L;
+	private static final long serialVersionUID = -5076802170474579133L;
 
 	@Override
 	public String getId()
 	{
-		return "lazy";
+		return "shared-lazy";
 	}
 
 	@Override
 	public <Z, D extends Database<Z>> DatabaseMetaDataCache<Z, D> createCache(DatabaseCluster<Z, D> cluster)
 	{
-		return new LazyDatabaseMetaDataCache<>(cluster);
+		return new SharedLazyDatabaseMetaDataCache<>(cluster);
 	}
 }
