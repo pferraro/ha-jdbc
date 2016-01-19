@@ -15,27 +15,38 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.logging;
+package io.github.hajdbc.logging;
 
-import net.sf.hajdbc.ProviderFactory;
-import net.sf.hajdbc.messages.MessagesFactory;
+import java.text.MessageFormat;
 
 /**
- * Factory for creating {@link Logger} implementation from various logging service provider implementations.
+ * Abstract logger implementation.
  * @author Paul Ferraro
  */
-public final class LoggerFactory extends ProviderFactory<LoggingProvider>
+public abstract class AbstractLogger implements Logger
 {
-	private static final LoggerFactory factory = new LoggerFactory();
-	
-	public static Logger getLogger(Class<?> targetClass)
+	/**
+	 * {@inheritDoc}
+	 * @see io.github.hajdbc.logging.Logger#log(io.github.hajdbc.logging.Level, java.lang.String, java.lang.Object[])
+	 */
+	@Override
+	public final void log(Level level, String pattern, Object... args)
 	{
-		return factory.getProvider().getLogger(targetClass);
+		this.log(level, null, pattern, args);
 	}
 	
-	private LoggerFactory()
+	/**
+	 * {@inheritDoc}
+	 * @see io.github.hajdbc.logging.Logger#log(io.github.hajdbc.logging.Level, java.lang.Throwable)
+	 */
+	@Override
+	public final void log(Level level, Throwable e)
 	{
-		super(LoggingProvider.class);
-		this.getProvider().getLogger(LoggerFactory.class).log(Level.DEBUG, MessagesFactory.getMessages().logging(this.getProvider()));
+		this.log(level, e, e.getMessage());
+	}
+
+	protected static String format(String pattern, Object... args)
+	{
+		return (args.length == 0) ? pattern : MessageFormat.format(pattern, args);
 	}
 }
