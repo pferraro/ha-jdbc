@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.distributed.jgroups;
-
-import net.sf.hajdbc.distributed.CommandDispatcher;
-import net.sf.hajdbc.distributed.CommandDispatcherFactory;
-import net.sf.hajdbc.distributed.MembershipListener;
-import net.sf.hajdbc.distributed.Stateful;
+package io.github.hajdbc.distributed.jgroups;
 
 import org.jgroups.Channel;
 import org.jgroups.JChannel;
+
+import io.github.hajdbc.distributed.CommandDispatcher;
+import io.github.hajdbc.distributed.CommandDispatcherFactory;
+import io.github.hajdbc.distributed.MembershipListener;
+import io.github.hajdbc.distributed.Stateful;
 
 /**
  * Factory for creating a JGroups instrumented command dispatcher.

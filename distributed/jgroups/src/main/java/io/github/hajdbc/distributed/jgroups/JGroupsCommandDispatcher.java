@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.distributed.jgroups;
+package io.github.hajdbc.distributed.jgroups;
 
 import java.io.InputStream;
 import java.io.ObjectOutput;
@@ -29,18 +29,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicReference;
 
-import net.sf.hajdbc.distributed.Command;
-import net.sf.hajdbc.distributed.CommandDispatcher;
-import net.sf.hajdbc.distributed.CommandResponse;
-import net.sf.hajdbc.distributed.Member;
-import net.sf.hajdbc.distributed.MembershipListener;
-import net.sf.hajdbc.distributed.Stateful;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.util.ObjectInputStream;
-import net.sf.hajdbc.util.Objects;
-
 import org.jgroups.Address;
 import org.jgroups.Channel;
 import org.jgroups.Message;
@@ -51,6 +39,18 @@ import org.jgroups.blocks.RequestHandler;
 import org.jgroups.blocks.RequestOptions;
 import org.jgroups.blocks.ResponseMode;
 import org.jgroups.util.Rsp;
+
+import io.github.hajdbc.distributed.Command;
+import io.github.hajdbc.distributed.CommandDispatcher;
+import io.github.hajdbc.distributed.CommandResponse;
+import io.github.hajdbc.distributed.Member;
+import io.github.hajdbc.distributed.MembershipListener;
+import io.github.hajdbc.distributed.Stateful;
+import io.github.hajdbc.logging.Level;
+import io.github.hajdbc.logging.Logger;
+import io.github.hajdbc.logging.LoggerFactory;
+import io.github.hajdbc.util.ObjectInputStream;
+import io.github.hajdbc.util.Objects;
 
 /**
  * A JGroups-based command dispatcher.
@@ -94,7 +94,7 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.Lifecycle#start()
+	 * @see io.github.hajdbc.Lifecycle#start()
 	 */
 	@Override
 	public void start() throws SQLException
@@ -116,7 +116,7 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.Lifecycle#stop()
+	 * @see io.github.hajdbc.Lifecycle#stop()
 	 */
 	@Override
 	public void stop()
@@ -202,7 +202,7 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.CommandDispatcher#getLocal()
+	 * @see io.github.hajdbc.distributed.CommandDispatcher#getLocal()
 	 */
 	@Override
 	public AddressMember getLocal()
@@ -217,7 +217,7 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.CommandDispatcher#getCoordinator()
+	 * @see io.github.hajdbc.distributed.CommandDispatcher#getCoordinator()
 	 */
 	@Override
 	public AddressMember getCoordinator()
