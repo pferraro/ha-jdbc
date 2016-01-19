@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.distributed;
+package io.github.hajdbc.state.distributed;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -23,25 +23,26 @@ import static org.mockito.Mockito.*;
 import java.util.Map;
 import java.util.UUID;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.distributed.CommandDispatcherFactory;
-import net.sf.hajdbc.distributed.jgroups.JGroupsCommandDispatcherFactory;
-import net.sf.hajdbc.durability.Durability;
-import net.sf.hajdbc.durability.Durability.Phase;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvocationEventImpl;
-import net.sf.hajdbc.durability.InvokerEvent;
-import net.sf.hajdbc.durability.InvokerEventImpl;
-import net.sf.hajdbc.durability.InvokerResult;
-import net.sf.hajdbc.durability.InvokerResultImpl;
-import net.sf.hajdbc.state.DatabaseEvent;
-import net.sf.hajdbc.state.StateManager;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.ExceptionType;
+import io.github.hajdbc.distributed.CommandDispatcherFactory;
+import io.github.hajdbc.distributed.jgroups.JGroupsCommandDispatcherFactory;
+import io.github.hajdbc.durability.Durability;
+import io.github.hajdbc.durability.InvocationEvent;
+import io.github.hajdbc.durability.InvocationEventImpl;
+import io.github.hajdbc.durability.InvokerEvent;
+import io.github.hajdbc.durability.InvokerEventImpl;
+import io.github.hajdbc.durability.InvokerResult;
+import io.github.hajdbc.durability.InvokerResultImpl;
+import io.github.hajdbc.durability.Durability.Phase;
+import io.github.hajdbc.state.DatabaseEvent;
+import io.github.hajdbc.state.StateManager;
+import io.github.hajdbc.state.distributed.DistributedStateManager;
 
 /**
  * Unit test for {@link DistributedStateManager}.

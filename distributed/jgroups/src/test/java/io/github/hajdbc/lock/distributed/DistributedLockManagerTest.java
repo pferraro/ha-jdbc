@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock.distributed;
+package io.github.hajdbc.lock.distributed;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -31,11 +31,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.distributed.CommandDispatcherFactory;
-import net.sf.hajdbc.distributed.jgroups.JGroupsCommandDispatcherFactory;
-import net.sf.hajdbc.lock.LockManager;
-import net.sf.hajdbc.lock.semaphore.SemaphoreLockManager;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.distributed.CommandDispatcherFactory;
+import io.github.hajdbc.distributed.jgroups.JGroupsCommandDispatcherFactory;
+import io.github.hajdbc.lock.LockManager;
+import io.github.hajdbc.lock.LockManagerFactory;
+import io.github.hajdbc.lock.distributed.DistributedLockManager;
+import io.github.hajdbc.lock.stamped.StampedLockManagerFactory;
 
 /**
  * @author Paul Ferraro
@@ -51,8 +53,9 @@ public class DistributedLockManagerTest
 		String id = "cluster";
 		DatabaseCluster<?, ?> cluster1 = mock(DatabaseCluster.class);
 		DatabaseCluster<?, ?> cluster2 = mock(DatabaseCluster.class);
-		LockManager lockManager1 = new SemaphoreLockManager(false);
-		LockManager lockManager2 = new SemaphoreLockManager(false);
+		LockManagerFactory factory = new StampedLockManagerFactory();
+		LockManager lockManager1 = factory.createLockManager();
+		LockManager lockManager2 = factory.createLockManager();
 		CommandDispatcherFactory dispatcherFactory1 = createCommandDispatcherFactory("node1");
 		CommandDispatcherFactory dispatcherFactory2 = createCommandDispatcherFactory("node2");
 

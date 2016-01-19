@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.distributed.jgroups;
-
-import net.sf.hajdbc.distributed.Member;
+package io.github.hajdbc.distributed.jgroups;
 
 import org.jgroups.Address;
+
+import io.github.hajdbc.distributed.Member;
 
 /**
  * Identifies a group member using the JGroups Address.
@@ -58,7 +58,7 @@ public class AddressMember implements Member
 
 		AddressMember member = (AddressMember) object;
 		
-		return this.address.equals(member.address);
+		return this.address == member.address || this.address.equals(member.address);
 	}
 
 	/**
