@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock.distributed;
+package io.github.hajdbc.lock.distributed;
 
 import java.io.IOException;
 import java.io.ObjectInput;
@@ -34,23 +34,23 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.distributed.Command;
-import net.sf.hajdbc.distributed.CommandDispatcher;
-import net.sf.hajdbc.distributed.CommandDispatcherFactory;
-import net.sf.hajdbc.distributed.CommandResponse;
-import net.sf.hajdbc.distributed.Member;
-import net.sf.hajdbc.distributed.MembershipListener;
-import net.sf.hajdbc.distributed.Remote;
-import net.sf.hajdbc.distributed.Stateful;
-import net.sf.hajdbc.lock.LockManager;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.util.Objects;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.distributed.Command;
+import io.github.hajdbc.distributed.CommandDispatcher;
+import io.github.hajdbc.distributed.CommandDispatcherFactory;
+import io.github.hajdbc.distributed.CommandResponse;
+import io.github.hajdbc.distributed.Member;
+import io.github.hajdbc.distributed.MembershipListener;
+import io.github.hajdbc.distributed.Remote;
+import io.github.hajdbc.distributed.Stateful;
+import io.github.hajdbc.lock.LockManager;
+import io.github.hajdbc.logging.Level;
+import io.github.hajdbc.logging.Logger;
+import io.github.hajdbc.logging.LoggerFactory;
+import io.github.hajdbc.messages.Messages;
+import io.github.hajdbc.messages.MessagesFactory;
+import io.github.hajdbc.util.Objects;
 
 /**
  * @author Paul Ferraro
@@ -74,7 +74,7 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.lock.LockManager#readLock(java.lang.String)
+	 * @see io.github.hajdbc.lock.LockManager#readLock(java.lang.String)
 	 */
 	@Override
 	public Lock readLock(String id)
@@ -84,7 +84,7 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.lock.LockManager#writeLock(java.lang.String)
+	 * @see io.github.hajdbc.lock.LockManager#writeLock(java.lang.String)
 	 */
 	@Override
 	public Lock writeLock(String id)
@@ -95,7 +95,7 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.lock.distributed.LockCommandContext#getLock(net.sf.hajdbc.lock.distributed.LockDescriptor)
+	 * @see io.github.hajdbc.lock.distributed.LockCommandContext#getLock(io.github.hajdbc.lock.distributed.LockDescriptor)
 	 */
 	@Override
 	public Lock getLock(LockDescriptor lock)
@@ -121,7 +121,7 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.Lifecycle#start()
+	 * @see io.github.hajdbc.Lifecycle#start()
 	 */
 	@Override
 	public void start() throws SQLException
@@ -132,7 +132,7 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.Lifecycle#stop()
+	 * @see io.github.hajdbc.Lifecycle#stop()
 	 */
 	@Override
 	public void stop()
@@ -143,7 +143,7 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.lock.distributed.LockCommandContext#getRemoteLocks(net.sf.hajdbc.distributed.Remote)
+	 * @see io.github.hajdbc.lock.distributed.LockCommandContext#getRemoteLocks(io.github.hajdbc.distributed.Remote)
 	 */
 	@Override
 	public Map<LockDescriptor, Lock> getRemoteLocks(Remote remote)
@@ -153,7 +153,7 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.Stateful#writeState(java.io.ObjectOutput)
+	 * @see io.github.hajdbc.distributed.Stateful#writeState(java.io.ObjectOutput)
 	 */
 	@Override
 	public void writeState(ObjectOutput output) throws IOException
@@ -182,7 +182,7 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.Stateful#readState(java.io.ObjectInput)
+	 * @see io.github.hajdbc.distributed.Stateful#readState(java.io.ObjectInput)
 	 */
 	@Override
 	public void readState(ObjectInput input) throws IOException
@@ -222,7 +222,7 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.MembershipListener#added(net.sf.hajdbc.distributed.Member)
+	 * @see io.github.hajdbc.distributed.MembershipListener#added(io.github.hajdbc.distributed.Member)
 	 */
 	@Override
 	public void added(Member member)
@@ -232,7 +232,7 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.MembershipListener#removed(net.sf.hajdbc.distributed.Member)
+	 * @see io.github.hajdbc.distributed.MembershipListener#removed(io.github.hajdbc.distributed.Member)
 	 */
 	@Override
 	public void removed(Member member)

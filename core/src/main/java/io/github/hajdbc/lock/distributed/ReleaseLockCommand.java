@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock.distributed;
+package io.github.hajdbc.lock.distributed;
 
 import java.util.Map;
 import java.util.concurrent.locks.Lock;
 
-import net.sf.hajdbc.distributed.Command;
+import io.github.hajdbc.distributed.Command;
 
 /**
  * Release lock command for execution on group member.
@@ -39,7 +39,7 @@ public class ReleaseLockCommand implements Command<Void, LockCommandContext>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.Command#execute(java.lang.Object)
+	 * @see io.github.hajdbc.distributed.Command#execute(java.lang.Object)
 	 */
 	@Override
 	public Void execute(LockCommandContext context)

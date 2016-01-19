@@ -15,13 +15,39 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock;
+package io.github.hajdbc.lock.semaphore;
 
-import java.io.Serializable;
+import java.util.concurrent.Semaphore;
 
-import net.sf.hajdbc.Identifiable;
+import io.github.hajdbc.lock.LockManager;
+import io.github.hajdbc.lock.LockManagerFactory;
+import io.github.hajdbc.lock.ReadWriteLockManager;
 
-public interface LockManagerFactory extends Identifiable, Serializable
+public class SemaphoreLockManagerFactory implements LockManagerFactory
 {
-	LockManager createLockManager();
+	private static final long serialVersionUID = -1330668107554832289L;
+
+	private boolean fair;
+	
+	public void setFair(boolean fair)
+	{
+		this.fair = fair;
+	}
+	
+	public boolean isFair()
+	{
+		return this.fair;
+	}
+
+	@Override
+	public String getId()
+	{
+		return "semaphore";
+	}
+	
+	@Override
+	public LockManager createLockManager()
+	{
+		return new ReadWriteLockManager(() -> new SemaphoreReadWriteLock(new Semaphore(Integer.MAX_VALUE, this.fair)));
+	}
 }
