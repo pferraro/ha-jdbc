@@ -15,12 +15,23 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.codec;
+package io.github.hajdbc.codec;
 
 /**
- * Interface for encoding and decoding strings.
+ * Abstract codec implementation that is its own factory
  * @author Paul Ferraro
  */
-public interface Codec extends Decoder, Encoder
+public abstract class AbstractCodec implements Codec, CodecFactory
 {
+	private static final long serialVersionUID = 848903379915175047L;
+
+	/**
+	 * {@inheritDoc}
+	 * @see io.github.hajdbc.codec.CodecFactory#createCodec(java.lang.String)
+	 */
+	@Override
+	public Codec createCodec(String clusterId)
+	{
+		return this;
+	}
 }

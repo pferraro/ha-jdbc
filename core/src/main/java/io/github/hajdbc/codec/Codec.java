@@ -15,11 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.codec;
+package io.github.hajdbc.codec;
 
-import java.sql.SQLException;
-
-public interface Decoder
+/**
+ * Interface for encoding and decoding strings.
+ * @author Paul Ferraro
+ */
+public interface Codec extends Decoder, Encoder
 {
-	String decode(String value) throws SQLException;
 }

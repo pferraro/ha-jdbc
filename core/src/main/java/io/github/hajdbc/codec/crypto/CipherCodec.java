@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.codec.crypto;
+package io.github.hajdbc.codec.crypto;
 
 import java.security.GeneralSecurityException;
 import java.security.Key;
@@ -24,7 +24,7 @@ import java.util.Base64;
 
 import javax.crypto.Cipher;
 
-import net.sf.hajdbc.codec.Codec;
+import io.github.hajdbc.codec.Codec;
 
 /**
  * Generic cryptographic codec.
@@ -46,7 +46,7 @@ public class CipherCodec implements Codec
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.codec.Codec#decode(java.lang.String)
+	 * @see io.github.hajdbc.codec.Codec#decode(java.lang.String)
 	 */
 	@Override
 	public String decode(String value) throws SQLException
@@ -67,7 +67,7 @@ public class CipherCodec implements Codec
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.codec.Codec#encode(java.lang.String)
+	 * @see io.github.hajdbc.codec.Codec#encode(java.lang.String)
 	 */
 	@Override
 	public String encode(String value) throws SQLException

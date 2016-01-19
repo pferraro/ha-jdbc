@@ -15,11 +15,40 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.codec;
+package io.github.hajdbc.codec;
 
-import java.sql.SQLException;
 
-public interface DecoderFactory
+/**
+ * Trivial codec that does nothing
+ * @author Paul Ferraro
+ */
+public class SimpleCodecFactory extends AbstractCodec
 {
-	Decoder createDecoder(String clusterId) throws SQLException;
+	private static final long serialVersionUID = -472755264720942251L;
+
+	@Override
+	public String getId()
+	{
+		return null;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @see io.github.hajdbc.codec.Codec#decode(java.lang.String)
+	 */
+	@Override
+	public String decode(String value)
+	{
+		return value;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @see io.github.hajdbc.codec.Codec#encode(java.lang.String)
+	 */
+	@Override
+	public String encode(String value)
+	{
+		return value;
+	}
 }

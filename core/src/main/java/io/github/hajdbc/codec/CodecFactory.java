@@ -15,11 +15,18 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.codec;
+package io.github.hajdbc.codec;
 
+import java.io.Serializable;
 import java.sql.SQLException;
 
-public interface Encoder
+import io.github.hajdbc.Identifiable;
+
+/**
+ * @author Paul Ferraro
+ *
+ */
+public interface CodecFactory extends Identifiable, Serializable
 {
-	String encode(String value) throws SQLException;
+	Codec createCodec(String clusterId) throws SQLException;
 }

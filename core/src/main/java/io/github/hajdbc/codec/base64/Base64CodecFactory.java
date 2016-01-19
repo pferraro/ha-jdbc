@@ -15,55 +15,54 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.codec.hex;
+package io.github.hajdbc.codec.base64;
 
 import java.sql.SQLException;
+import java.util.Base64;
 
-import javax.xml.bind.DatatypeConverter;
-
-import net.sf.hajdbc.codec.AbstractCodec;
-import net.sf.hajdbc.codec.Codec;
-import net.sf.hajdbc.util.Strings;
+import io.github.hajdbc.codec.AbstractCodec;
+import io.github.hajdbc.codec.Codec;
+import io.github.hajdbc.util.Strings;
 
 /**
- * Codec that uses hex encoding/decoding.
+ * Codec that uses base-64 encoding/decoding.
  * @author Paul Ferraro
  */
-public class HexCodecFactory extends AbstractCodec
+public class Base64CodecFactory extends AbstractCodec
 {
-	private static final long serialVersionUID = 5273729775503057299L;
+	private static final long serialVersionUID = -2286529406290006597L;
 
 	@Override
 	public String getId()
 	{
-		return "16";
+		return "64";
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.codec.Codec#decode(java.lang.String)
+	 * @see io.github.hajdbc.codec.Codec#decode(java.lang.String)
 	 */
 	@Override
 	public String decode(String value)
 	{
-		return new String(DatatypeConverter.parseHexBinary(value));
+		return new String(Base64.getDecoder().decode(value));
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.codec.Codec#encode(java.lang.String)
+	 * @see io.github.hajdbc.codec.Codec#encode(java.lang.String)
 	 */
 	@Override
 	public String encode(String value)
 	{
-		return DatatypeConverter.printHexBinary(value.getBytes());
+		return Base64.getEncoder().encodeToString(value.getBytes());
 	}
 	
 	public static void main(String... args)
 	{
 		if (args.length != 2)
 		{
-			System.err.println(String.format("Usage:%s\tjava %s <cluster-id> <password-to-encrypt>", Strings.NEW_LINE, HexCodecFactory.class.getName()));
+			System.err.println(String.format("Usage:%s\tjava %s <cluster-id> <password-to-encrypt>", Strings.NEW_LINE, Base64CodecFactory.class.getName()));
 			System.exit(1);
 			return;
 		}
@@ -73,7 +72,7 @@ public class HexCodecFactory extends AbstractCodec
 		
 		try
 		{
-			Codec codec = new HexCodecFactory().createCodec(clusterId);
+			Codec codec = new Base64CodecFactory().createCodec(clusterId);
 
 			System.out.println(codec.encode(value));
 		}
