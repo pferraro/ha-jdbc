@@ -15,35 +15,35 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.balancer.load;
+package io.github.hajdbc.balancer.simple;
 
 import java.util.Set;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.balancer.Balancer;
-import net.sf.hajdbc.balancer.BalancerFactory;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.balancer.Balancer;
+import io.github.hajdbc.balancer.BalancerFactory;
 
 /**
- * Factory for creating a {@link LoadBalancer}
+ * Factory for creating a {@link SimpleBalancer}.
  * @author Paul Ferraro
  */
-public class LoadBalancerFactory implements BalancerFactory
+public class SimpleBalancerFactory implements BalancerFactory
 {
-	private static final long serialVersionUID = -2785311844872496108L;
+	private static final long serialVersionUID = -5871958980592464011L;
 
 	@Override
 	public String getId()
 	{
-		return "load";
+		return "simple";
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.BalancerFactory#createBalancer(java.util.Set)
+	 * @see io.github.hajdbc.balancer.BalancerFactory#createBalancer(java.util.Set)
 	 */
 	@Override
 	public <Z, D extends Database<Z>> Balancer<Z, D> createBalancer(Set<D> databases)
 	{
-		return new LoadBalancer<>(databases);
+		return new SimpleBalancer<>(databases);
 	}
 }

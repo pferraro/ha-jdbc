@@ -15,26 +15,35 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.balancer;
+package io.github.hajdbc.balancer.random;
 
-import java.io.Serializable;
 import java.util.Set;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.Identifiable;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.balancer.Balancer;
+import io.github.hajdbc.balancer.BalancerFactory;
 
 /**
- * Factory for creating balancers.
+ * Factory for creating a {@link RandomBalancer}
  * @author Paul Ferraro
  */
-public interface BalancerFactory extends Identifiable, Serializable
+public class RandomBalancerFactory implements BalancerFactory
 {
+	private static final long serialVersionUID = -910276247314814572L;
+
+	@Override
+	public String getId()
+	{
+		return "random";
+	}
+
 	/**
-	 * Create a balancer.
-	 * @param <Z> database connection source
-	 * @param <D> database descriptor
-	 * @param databases set of initial databases
-	 * @return a new balancer.
+	 * {@inheritDoc}
+	 * @see io.github.hajdbc.balancer.BalancerFactory#createBalancer(java.util.Set)
 	 */
-	<Z, D extends Database<Z>> Balancer<Z, D> createBalancer(Set<D> databases);
+	@Override
+	public <Z, D extends Database<Z>> Balancer<Z, D> createBalancer(Set<D> databases)
+	{
+		return new RandomBalancer<>(databases);
+	}
 }

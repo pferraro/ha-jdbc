@@ -15,35 +15,35 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.balancer.simple;
+package io.github.hajdbc.balancer.roundrobin;
 
 import java.util.Set;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.balancer.Balancer;
-import net.sf.hajdbc.balancer.BalancerFactory;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.balancer.Balancer;
+import io.github.hajdbc.balancer.BalancerFactory;
 
 /**
- * Factory for creating a {@link SimpleBalancer}.
+ * Factory for creating a {@link RoundRobinBalancer}.
  * @author Paul Ferraro
  */
-public class SimpleBalancerFactory implements BalancerFactory
+public class RoundRobinBalancerFactory implements BalancerFactory
 {
-	private static final long serialVersionUID = -5871958980592464011L;
+	private static final long serialVersionUID = 9003494431296713142L;
 
 	@Override
 	public String getId()
 	{
-		return "simple";
+		return "round-robin";
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.BalancerFactory#createBalancer(java.util.Set)
+	 * @see io.github.hajdbc.balancer.BalancerFactory#createBalancer(java.util.Set)
 	 */
 	@Override
 	public <Z, D extends Database<Z>> Balancer<Z, D> createBalancer(Set<D> databases)
 	{
-		return new SimpleBalancer<>(databases);
+		return new RoundRobinBalancer<>(databases);
 	}
 }
