@@ -15,40 +15,68 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.xml;
+package io.github.hajdbc.xml;
 
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.xml.XMLConstants;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 
 import org.xml.sax.SAXException;
 
+import io.github.hajdbc.messages.Messages;
+import io.github.hajdbc.messages.MessagesFactory;
+
 public enum Namespace
 {
-	VERSION_3_0(3, 0, DatabaseClusterConfigurationReader_3_0.FACTORY),
-	VERSION_3_1(3, 1, DatabaseClusterConfigurationReader_3_1.FACTORY),
+	VERSION_3_0(3, 0),
+	VERSION_4_0(4, 0),
 	;
 
-	public static final Namespace CURRENT_VERSION = VERSION_3_1;
+	public static final Namespace CURRENT_VERSION = VERSION_4_0;
+
+	private static final Messages messages = MessagesFactory.getMessages();
+	private static final Map<String, Namespace> namespaces = new HashMap<>();
+	static
+	{
+		for (Namespace namespace: Namespace.values())
+		{
+			namespaces.put(namespace.getURI(), namespace);
+		}
+	}
+
+	public static Namespace forReader(XMLStreamReader reader) throws XMLStreamException
+	{
+		Namespace namespace = namespaces.get(reader.getNamespaceURI());
+		if (namespace == null)
+		{
+			throw new XMLStreamException(messages.unsupportedNamespace(reader));
+		}
+		return namespace;
+	}
 
 	private final int major;
 	private final int minor;
 	private final Schema schema;
-	private final DatabaseClusterConfigurationReaderFactory factory;
 
-	private Namespace(int major, int minor, DatabaseClusterConfigurationReaderFactory factory) {
+	private Namespace(int major, int minor)
+	{
 		this.major = major;
 		this.minor = minor;
-		this.factory = factory;
 		
 		String resource = String.format("ha-jdbc-%d.%d.xsd", major, minor);
 		URL url = this.getClass().getClassLoader().getResource(resource);
 
-		if (url == null) {
+		if (url == null)
+		{
 			throw new IllegalArgumentException(resource);
 		}
+
 		try {
 			this.schema = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI).newSchema(url);
 		} catch (SAXException e) {
@@ -56,14 +84,18 @@ public enum Namespace
 		}
 	}
 
-	public Schema getSchema() {
+	public Schema getSchema()
+	{
 		return this.schema;
 	}
-	public String getURI() {
+
+	public String getURI()
+	{
 		return String.format("urn:ha-jdbc:cluster:%d.%d", this.major, this.minor);
 	}
 
-	public DatabaseClusterConfigurationReaderFactory getReaderFactory() {
-		return this.factory;
+	public boolean since(Namespace namespace)
+	{
+		return (this.major == namespace.major) ? (this.minor > namespace.minor) : (this.major > namespace.major);
 	}
 }

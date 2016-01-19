@@ -15,56 +15,25 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.xml;
+package io.github.hajdbc.xml;
 
-import java.net.URL;
+import java.io.Serializable;
 
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
 
 /**
  * @author Paul Ferraro
  */
-public class URLXMLStreamFactory implements XMLStreamFactory
+public interface XMLStreamFactory extends Serializable
 {
-	private static final long serialVersionUID = -3911432025271185584L;
-	
-	private final String url;
-	
-	public URLXMLStreamFactory(URL url)
-	{
-		this.url = url.toString();
-	}
+	/**
+	 * @return an xml source
+	 */
+	Source createSource();
 	
 	/**
-	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.xml.XMLStreamFactory#createSource()
+	 * @return an xml result
 	 */
-	@Override
-	public Source createSource()
-	{
-		return new StreamSource(this.url);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.xml.XMLStreamFactory#createResult()
-	 */
-	@Override
-	public Result createResult()
-	{
-		return new StreamResult(this.url);
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString()
-	{
-		return this.url;
-	}
+	Result createResult();
 }

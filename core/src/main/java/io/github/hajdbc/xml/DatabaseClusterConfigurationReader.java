@@ -15,18 +15,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.xml;
+package io.github.hajdbc.xml;
 
 import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamWriter;
+import javax.xml.stream.XMLStreamReader;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseClusterConfiguration;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseBuilder;
+import io.github.hajdbc.DatabaseClusterConfigurationBuilder;
 
 /**
  * @author Paul Ferraro
  */
-public interface DatabaseClusterConfigurationWriter<Z, D extends Database<Z>>
+public interface DatabaseClusterConfigurationReader<Z, D extends Database<Z>, B extends DatabaseBuilder<Z, D>>
 {
-	void write(XMLStreamWriter writer, DatabaseClusterConfiguration<Z, D> config) throws XMLStreamException;
+	void read(XMLStreamReader reader, DatabaseClusterConfigurationBuilder<Z, D, B> builder) throws XMLStreamException;
 }

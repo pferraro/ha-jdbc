@@ -1,10 +1,10 @@
-package net.sf.hajdbc.xml;
+package io.github.hajdbc.xml;
 
 import javax.xml.namespace.NamespaceContext;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
-import net.sf.hajdbc.util.Strings;
+import io.github.hajdbc.util.Strings;
 
 public class FormattedXMLStreamWriter implements XMLStreamWriter
 {

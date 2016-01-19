@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.xml;
+package io.github.hajdbc.xml;
 
 import static javax.xml.stream.XMLStreamConstants.END_ELEMENT;
 
@@ -24,34 +24,31 @@ import java.util.Locale;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseClusterConfigurationBuilder;
-import net.sf.hajdbc.DatabaseBuilder;
-import net.sf.hajdbc.Identifiable;
-import net.sf.hajdbc.IdentifiableMatcher;
-import net.sf.hajdbc.Locality;
-import net.sf.hajdbc.configuration.ServiceBuilder;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.sql.TransactionModeEnum;
-import net.sf.hajdbc.util.ServiceLoaders;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseBuilder;
+import io.github.hajdbc.DatabaseClusterConfigurationBuilder;
+import io.github.hajdbc.Identifiable;
+import io.github.hajdbc.IdentifiableMatcher;
+import io.github.hajdbc.Locality;
+import io.github.hajdbc.configuration.ServiceBuilder;
+import io.github.hajdbc.messages.Messages;
+import io.github.hajdbc.messages.MessagesFactory;
+import io.github.hajdbc.sql.TransactionModeEnum;
+import io.github.hajdbc.util.ServiceLoaders;
 
 /**
  * @author Paul Ferraro
  */
 @SuppressWarnings("deprecation")
-public class DatabaseClusterConfigurationReader_3_0<Z, D extends Database<Z>, B extends DatabaseBuilder<Z, D>> implements DatabaseClusterConfigurationReader<Z, D, B>, Constants
+public class NamespaceDatabaseClusterConfigurationReader<Z, D extends Database<Z>, B extends DatabaseBuilder<Z, D>> implements DatabaseClusterConfigurationReader<Z, D, B>, Constants
 {
 	private static Messages messages = MessagesFactory.getMessages();
+	private final Namespace namespace;
 
-	public static final DatabaseClusterConfigurationReaderFactory FACTORY = new DatabaseClusterConfigurationReaderFactory()
+	public NamespaceDatabaseClusterConfigurationReader(Namespace namespace)
 	{
-		@Override
-		public <Z, D extends Database<Z>, B extends DatabaseBuilder<Z, D>> DatabaseClusterConfigurationReader<Z, D, B> createReader()
-		{
-			return new DatabaseClusterConfigurationReader_3_0<>();
-		}
-	};
+		this.namespace = namespace;
+	}
 
 	@Override
 	public void read(XMLStreamReader reader, DatabaseClusterConfigurationBuilder<Z, D, B> builder) throws XMLStreamException
@@ -247,8 +244,20 @@ public class DatabaseClusterConfigurationReader_3_0<Z, D extends Database<Z>, B 
 				}
 				case LOCAL:
 				{
+					if (this.namespace.since(Namespace.VERSION_4_0))
+					{
+						throw new XMLStreamException(messages.unexpectedAttribute(reader, i));
+					}
 					builder.locality(Boolean.parseBoolean(value) ? Locality.LOCAL : Locality.REMOTE);
 					break;
+				}
+				case LOCALITY:
+				{
+					if (this.namespace.since(Namespace.VERSION_4_0))
+					{
+						builder.locality(Locality.valueOf(value.toUpperCase(Locale.US)));
+						break;
+					}
 				}
 				default:
 				{
