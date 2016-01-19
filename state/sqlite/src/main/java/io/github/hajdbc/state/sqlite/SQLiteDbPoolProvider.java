@@ -15,17 +15,17 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.sqlite;
+package io.github.hajdbc.state.sqlite;
 
 import java.io.File;
 
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.pool.AbstractPoolProvider;
-
 import org.tmatesoft.sqljet.core.SqlJetException;
 import org.tmatesoft.sqljet.core.table.SqlJetDb;
+
+import io.github.hajdbc.logging.Level;
+import io.github.hajdbc.logging.Logger;
+import io.github.hajdbc.logging.LoggerFactory;
+import io.github.hajdbc.pool.AbstractPoolProvider;
 
 /**
  * <a href="http://sqljet.com/">SQLJet</a> is a java port of <a href="http://www.sqlite.org/">SQLite</a>.
@@ -46,7 +46,7 @@ public class SQLiteDbPoolProvider extends AbstractPoolProvider<SqlJetDb, SqlJetE
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.pool.PoolProvider#close(java.lang.Object)
+	 * @see io.github.hajdbc.pool.PoolProvider#close(java.lang.Object)
 	 */
 	@Override
 	public void close(SqlJetDb database)
@@ -63,7 +63,7 @@ public class SQLiteDbPoolProvider extends AbstractPoolProvider<SqlJetDb, SqlJetE
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.pool.PoolProvider#create()
+	 * @see io.github.hajdbc.pool.PoolProvider#create()
 	 */
 	@Override
 	public synchronized SqlJetDb create() throws SqlJetException
@@ -80,7 +80,7 @@ public class SQLiteDbPoolProvider extends AbstractPoolProvider<SqlJetDb, SqlJetE
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.pool.PoolProvider#isValid(java.lang.Object)
+	 * @see io.github.hajdbc.pool.PoolProvider#isValid(java.lang.Object)
 	 */
 	@Override
 	public boolean isValid(SqlJetDb database)

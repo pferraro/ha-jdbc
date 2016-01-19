@@ -15,25 +15,25 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.bdb;
+package io.github.hajdbc.state.bdb;
 
 import java.io.File;
 import java.text.MessageFormat;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.pool.generic.GenericObjectPoolConfiguration;
-import net.sf.hajdbc.pool.generic.GenericObjectPoolFactory;
-import net.sf.hajdbc.state.StateManager;
-import net.sf.hajdbc.state.StateManagerFactory;
-import net.sf.hajdbc.util.Strings;
-
 import com.sleepycat.je.EnvironmentConfig;
+
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.logging.Level;
+import io.github.hajdbc.logging.Logger;
+import io.github.hajdbc.logging.LoggerFactory;
+import io.github.hajdbc.messages.Messages;
+import io.github.hajdbc.messages.MessagesFactory;
+import io.github.hajdbc.pool.generic.GenericObjectPoolConfiguration;
+import io.github.hajdbc.pool.generic.GenericObjectPoolFactory;
+import io.github.hajdbc.state.StateManager;
+import io.github.hajdbc.state.StateManagerFactory;
+import io.github.hajdbc.util.Strings;
 
 public class BerkeleyDBStateManagerFactory extends GenericObjectPoolConfiguration implements StateManagerFactory
 {

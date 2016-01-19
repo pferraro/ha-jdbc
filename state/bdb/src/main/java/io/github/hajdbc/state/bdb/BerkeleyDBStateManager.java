@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.bdb;
+package io.github.hajdbc.state.bdb;
 
 import java.io.File;
 import java.io.Serializable;
@@ -25,21 +25,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.durability.DurabilityEvent;
-import net.sf.hajdbc.durability.DurabilityEventFactory;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvokerEvent;
-import net.sf.hajdbc.durability.InvokerResult;
-import net.sf.hajdbc.pool.CloseablePoolProvider;
-import net.sf.hajdbc.pool.Pool;
-import net.sf.hajdbc.pool.PoolFactory;
-import net.sf.hajdbc.state.DatabaseEvent;
-import net.sf.hajdbc.state.DurabilityListenerAdapter;
-import net.sf.hajdbc.state.SerializedDurabilityListener;
-import net.sf.hajdbc.state.StateManager;
-import net.sf.hajdbc.util.Objects;
 
 import com.sleepycat.bind.ByteArrayBinding;
 import com.sleepycat.bind.EntryBinding;
@@ -53,6 +38,21 @@ import com.sleepycat.je.DatabaseException;
 import com.sleepycat.je.Environment;
 import com.sleepycat.je.EnvironmentConfig;
 import com.sleepycat.je.Transaction;
+
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.durability.DurabilityEvent;
+import io.github.hajdbc.durability.DurabilityEventFactory;
+import io.github.hajdbc.durability.InvocationEvent;
+import io.github.hajdbc.durability.InvokerEvent;
+import io.github.hajdbc.durability.InvokerResult;
+import io.github.hajdbc.pool.CloseablePoolProvider;
+import io.github.hajdbc.pool.Pool;
+import io.github.hajdbc.pool.PoolFactory;
+import io.github.hajdbc.state.DatabaseEvent;
+import io.github.hajdbc.state.DurabilityListenerAdapter;
+import io.github.hajdbc.state.SerializedDurabilityListener;
+import io.github.hajdbc.state.StateManager;
+import io.github.hajdbc.util.Objects;
 
 /**
  * @author paul
@@ -378,7 +378,7 @@ public class BerkeleyDBStateManager extends CloseablePoolProvider<Environment, D
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.pool.PoolProvider#create()
+	 * @see io.github.hajdbc.pool.PoolProvider#create()
 	 */
 	@Override
 	public Environment create() throws DatabaseException
@@ -388,7 +388,7 @@ public class BerkeleyDBStateManager extends CloseablePoolProvider<Environment, D
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.pool.PoolProvider#isValid(java.lang.Object)
+	 * @see io.github.hajdbc.pool.PoolProvider#isValid(java.lang.Object)
 	 */
 	@Override
 	public boolean isValid(Environment environment)

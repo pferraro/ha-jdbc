@@ -1,4 +1,4 @@
-package net.sf.hajdbc.state.leveldb;
+package io.github.hajdbc.state.leveldb;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,20 +16,20 @@ import org.iq80.leveldb.DBIterator;
 import org.iq80.leveldb.Options;
 import org.iq80.leveldb.WriteBatch;
 
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.durability.DurabilityEvent;
-import net.sf.hajdbc.durability.DurabilityEventFactory;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvokerEvent;
-import net.sf.hajdbc.durability.InvokerResult;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.state.DatabaseEvent;
-import net.sf.hajdbc.state.DurabilityListenerAdapter;
-import net.sf.hajdbc.state.SerializedDurabilityListener;
-import net.sf.hajdbc.state.StateManager;
-import net.sf.hajdbc.util.Objects;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.durability.DurabilityEvent;
+import io.github.hajdbc.durability.DurabilityEventFactory;
+import io.github.hajdbc.durability.InvocationEvent;
+import io.github.hajdbc.durability.InvokerEvent;
+import io.github.hajdbc.durability.InvokerResult;
+import io.github.hajdbc.logging.Level;
+import io.github.hajdbc.logging.Logger;
+import io.github.hajdbc.logging.LoggerFactory;
+import io.github.hajdbc.state.DatabaseEvent;
+import io.github.hajdbc.state.DurabilityListenerAdapter;
+import io.github.hajdbc.state.SerializedDurabilityListener;
+import io.github.hajdbc.state.StateManager;
+import io.github.hajdbc.util.Objects;
 
 public class LevelDBStateManager implements StateManager, SerializedDurabilityListener
 {
