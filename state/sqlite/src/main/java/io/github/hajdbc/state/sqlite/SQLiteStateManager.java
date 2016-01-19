@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.sqlite;
+package io.github.hajdbc.state.sqlite;
 
 import java.io.File;
 import java.sql.SQLException;
@@ -30,30 +30,30 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.durability.DurabilityEvent;
-import net.sf.hajdbc.durability.DurabilityEventFactory;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvokerEvent;
-import net.sf.hajdbc.durability.InvokerResult;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.pool.Pool;
-import net.sf.hajdbc.pool.PoolFactory;
-import net.sf.hajdbc.state.DatabaseEvent;
-import net.sf.hajdbc.state.DurabilityListenerAdapter;
-import net.sf.hajdbc.state.SerializedDurabilityListener;
-import net.sf.hajdbc.state.StateManager;
-import net.sf.hajdbc.util.Objects;
-
 import org.tmatesoft.sqljet.core.SqlJetException;
 import org.tmatesoft.sqljet.core.SqlJetTransactionMode;
 import org.tmatesoft.sqljet.core.schema.ISqlJetSchema;
 import org.tmatesoft.sqljet.core.table.ISqlJetCursor;
 import org.tmatesoft.sqljet.core.table.ISqlJetTable;
 import org.tmatesoft.sqljet.core.table.SqlJetDb;
+
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.durability.DurabilityEvent;
+import io.github.hajdbc.durability.DurabilityEventFactory;
+import io.github.hajdbc.durability.InvocationEvent;
+import io.github.hajdbc.durability.InvokerEvent;
+import io.github.hajdbc.durability.InvokerResult;
+import io.github.hajdbc.logging.Level;
+import io.github.hajdbc.logging.Logger;
+import io.github.hajdbc.logging.LoggerFactory;
+import io.github.hajdbc.pool.Pool;
+import io.github.hajdbc.pool.PoolFactory;
+import io.github.hajdbc.state.DatabaseEvent;
+import io.github.hajdbc.state.DurabilityListenerAdapter;
+import io.github.hajdbc.state.SerializedDurabilityListener;
+import io.github.hajdbc.state.StateManager;
+import io.github.hajdbc.util.Objects;
 
 /**
  * @author Paul Ferraro
@@ -106,7 +106,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseClusterListener#activated(net.sf.hajdbc.state.DatabaseEvent)
+	 * @see io.github.hajdbc.DatabaseClusterListener#activated(io.github.hajdbc.state.DatabaseEvent)
 	 */
 	@Override
 	public void activated(final DatabaseEvent event)
@@ -131,7 +131,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseClusterListener#deactivated(net.sf.hajdbc.state.DatabaseEvent)
+	 * @see io.github.hajdbc.DatabaseClusterListener#deactivated(io.github.hajdbc.state.DatabaseEvent)
 	 */
 	@Override
 	public void deactivated(final DatabaseEvent event)
@@ -168,7 +168,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityListener#beforeInvocation(net.sf.hajdbc.durability.InvocationEvent)
+	 * @see io.github.hajdbc.durability.DurabilityListener#beforeInvocation(io.github.hajdbc.durability.InvocationEvent)
 	 */
 	@Override
 	public void beforeInvocation(InvocationEvent event)
@@ -178,7 +178,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityListener#afterInvocation(net.sf.hajdbc.durability.InvocationEvent)
+	 * @see io.github.hajdbc.durability.DurabilityListener#afterInvocation(io.github.hajdbc.durability.InvocationEvent)
 	 */
 	@Override
 	public void afterInvocation(InvocationEvent event)
@@ -188,7 +188,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityListener#beforeInvoker(net.sf.hajdbc.durability.InvokerEvent)
+	 * @see io.github.hajdbc.durability.DurabilityListener#beforeInvoker(io.github.hajdbc.durability.InvokerEvent)
 	 */
 	@Override
 	public void beforeInvoker(InvokerEvent event)
@@ -198,7 +198,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityListener#afterInvoker(net.sf.hajdbc.durability.InvokerEvent)
+	 * @see io.github.hajdbc.durability.DurabilityListener#afterInvoker(io.github.hajdbc.durability.InvokerEvent)
 	 */
 	@Override
 	public void afterInvoker(InvokerEvent event)
@@ -208,7 +208,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.Lifecycle#start()
+	 * @see io.github.hajdbc.Lifecycle#start()
 	 */
 	@Override
 	public void start() throws SQLException
@@ -266,7 +266,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.Lifecycle#stop()
+	 * @see io.github.hajdbc.Lifecycle#stop()
 	 */
 	@Override
 	public void stop()
@@ -280,7 +280,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.StateManager#getActiveDatabases()
+	 * @see io.github.hajdbc.state.StateManager#getActiveDatabases()
 	 */
 	@Override
 	public Set<String> getActiveDatabases()
@@ -325,7 +325,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.StateManager#setActiveDatabases(java.util.Set)
+	 * @see io.github.hajdbc.state.StateManager#setActiveDatabases(java.util.Set)
 	 */
 	@Override
 	public void setActiveDatabases(final Set<String> databases)
@@ -355,7 +355,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.StateManager#recover()
+	 * @see io.github.hajdbc.state.StateManager#recover()
 	 */
 	@Override
 	public Map<InvocationEvent, Map<String, InvokerEvent>> recover()
@@ -432,7 +432,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.SerializedDurabilityListener#beforeInvocation(byte[], byte, byte)
+	 * @see io.github.hajdbc.state.SerializedDurabilityListener#beforeInvocation(byte[], byte, byte)
 	 */
 	@Override
 	public void beforeInvocation(final byte[] transactionId, final byte phase, final byte exceptionType)
@@ -457,7 +457,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.SerializedDurabilityListener#afterInvocation(byte[], byte)
+	 * @see io.github.hajdbc.state.SerializedDurabilityListener#afterInvocation(byte[], byte)
 	 */
 	@Override
 	public void afterInvocation(final byte[] transactionId, final byte phase)
@@ -511,7 +511,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.SerializedDurabilityListener#beforeInvoker(byte[], byte, java.lang.String)
+	 * @see io.github.hajdbc.state.SerializedDurabilityListener#beforeInvoker(byte[], byte, java.lang.String)
 	 */
 	@Override
 	public void beforeInvoker(final byte[] transactionId, final byte phase, final String databaseId)
@@ -536,7 +536,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.SerializedDurabilityListener#afterInvoker(byte[], byte, java.lang.String, byte[])
+	 * @see io.github.hajdbc.state.SerializedDurabilityListener#afterInvoker(byte[], byte, java.lang.String, byte[])
 	 */
 	@Override
 	public void afterInvoker(final byte[] transactionId, final byte phase, final String databaseId, final byte[] result)
