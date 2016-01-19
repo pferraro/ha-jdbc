@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io.file;
+package io.github.hajdbc.io.file;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -28,8 +28,8 @@ import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
 
-import net.sf.hajdbc.io.InputSinkChannel;
-import net.sf.hajdbc.util.Files;
+import io.github.hajdbc.io.InputSinkChannel;
+import io.github.hajdbc.util.Files;
 
 /**
  * Input stream channel for writing to, and reading from, a file sink.

@@ -15,21 +15,37 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io;
+package io.github.hajdbc.io.simple;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
-import java.io.Reader;
+
+import io.github.hajdbc.io.InputSinkChannel;
 
 /**
- * A strategy for creating input stream and reader channels.
+ * Input stream channel for writing to, and reading from, an in-memory buffer sink.
  * @author Paul Ferraro
- * @param <S> sink type
  */
-public interface InputSinkStrategy<S>
+public class SimpleInputStreamSinkChannel implements InputSinkChannel<InputStream, byte[]>
 {
-	InputSinkChannel<InputStream, S> createInputStreamChannel();
+	@Override
+	public byte[] write(InputStream input) throws IOException
+	{
+		ByteArrayOutputStream output = new ByteArrayOutputStream();
+		int b = input.read();
+		while (b >= 0)
+		{
+			output.write(b);
+			b = input.read();
+		}
+		return output.toByteArray();
+	}
 
-	InputSinkChannel<Reader, S> createReaderChannel();
-
-	void close(S sink);
+	@Override
+	public InputStream read(byte[] sink)
+	{
+		return new ByteArrayInputStream(sink);
+	}
 }

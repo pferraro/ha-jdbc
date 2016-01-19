@@ -15,16 +15,26 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io;
+package io.github.hajdbc.io.simple;
 
-import java.io.Closeable;
+import io.github.hajdbc.io.InputSinkProvider;
+import io.github.hajdbc.io.InputSinkStrategy;
 
 /**
- * A registry of input sinks.
+ * In-memory input sink provider
  * @author Paul Ferraro
- * @param <S> sink type
  */
-public interface InputSinkRegistry<S> extends Closeable
+public class SimpleInputSinkProvider implements InputSinkProvider
 {
-	<I> InputSinkChannel<I, S> get(Class<I> inputClass);
+	@Override
+	public String getId()
+	{
+		return "simple";
+	}
+
+	@Override
+	public InputSinkStrategy<? extends Object> createInputSinkStrategy()
+	{
+		return new SimpleInputSinkStrategy();
+	}
 }

@@ -15,35 +15,39 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io.simple;
+package io.github.hajdbc.io.file;
 
+import java.io.File;
 import java.io.InputStream;
 import java.io.Reader;
 
-import net.sf.hajdbc.io.InputSinkChannel;
-import net.sf.hajdbc.io.InputSinkStrategy;
+import io.github.hajdbc.io.InputSinkChannel;
+import io.github.hajdbc.io.InputSinkStrategy;
+import io.github.hajdbc.util.Files;
 
 /**
- * In-memory input sink strategy.
+ * A file-based input sink strategy
  * @author Paul Ferraro
  */
-public class SimpleInputSinkStrategy implements InputSinkStrategy<byte[]>
+public class FileInputSinkStrategy implements InputSinkStrategy<File>
 {
+	static final String TEMP_FILE_SUFFIX = ".lob";
+	
 	@Override
-	public InputSinkChannel<InputStream, byte[]> createInputStreamChannel()
+	public InputSinkChannel<InputStream, File> createInputStreamChannel()
 	{
-		return new SimpleInputStreamSinkChannel();
+		return new FileInputStreamSinkChannel();
 	}
 
 	@Override
-	public InputSinkChannel<Reader, byte[]> createReaderChannel()
+	public InputSinkChannel<Reader, File> createReaderChannel()
 	{
-		return new SimpleReaderSinkChannel();
+		return new FileReaderSinkChannel();
 	}
 
 	@Override
-	public void close(byte[] sink)
+	public void close(File file)
 	{
-		// Do nothing
+		Files.delete(file);
 	}
 }
