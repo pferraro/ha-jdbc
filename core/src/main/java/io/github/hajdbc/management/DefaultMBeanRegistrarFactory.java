@@ -1,8 +1,8 @@
-package net.sf.hajdbc.management;
+package io.github.hajdbc.management;
 
 import java.lang.management.ManagementFactory;
 
-import net.sf.hajdbc.Database;
+import io.github.hajdbc.Database;
 
 public class DefaultMBeanRegistrarFactory implements MBeanRegistrarFactory
 {

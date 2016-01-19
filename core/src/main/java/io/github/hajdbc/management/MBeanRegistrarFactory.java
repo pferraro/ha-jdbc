@@ -1,6 +1,6 @@
-package net.sf.hajdbc.management;
+package io.github.hajdbc.management;
 
-import net.sf.hajdbc.Database;
+import io.github.hajdbc.Database;
 
 public interface MBeanRegistrarFactory
 {

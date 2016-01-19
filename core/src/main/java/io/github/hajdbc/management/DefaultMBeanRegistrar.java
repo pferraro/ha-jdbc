@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.management;
+package io.github.hajdbc.management;
 
 import java.util.Hashtable;
 
@@ -24,11 +24,11 @@ import javax.management.MBeanServer;
 import javax.management.MalformedObjectNameException;
 import javax.management.ObjectName;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.logging.Level;
+import io.github.hajdbc.logging.Logger;
+import io.github.hajdbc.logging.LoggerFactory;
 
 /**
  * @author Paul Ferraro
@@ -59,7 +59,7 @@ public class DefaultMBeanRegistrar<Z, D extends Database<Z>> implements MBeanReg
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.management.MBeanRegistrar#register(net.sf.hajdbc.DatabaseCluster)
+	 * @see io.github.hajdbc.management.MBeanRegistrar#register(io.github.hajdbc.DatabaseCluster)
 	 */
 	@Override
 	public void register(DatabaseCluster<Z, D> cluster) throws JMException
@@ -69,7 +69,7 @@ public class DefaultMBeanRegistrar<Z, D extends Database<Z>> implements MBeanReg
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.management.MBeanRegistrar#register(net.sf.hajdbc.DatabaseCluster, net.sf.hajdbc.Database)
+	 * @see io.github.hajdbc.management.MBeanRegistrar#register(io.github.hajdbc.DatabaseCluster, io.github.hajdbc.Database)
 	 */
 	@Override
 	public void register(DatabaseCluster<Z, D> cluster, D database) throws JMException
@@ -86,7 +86,7 @@ public class DefaultMBeanRegistrar<Z, D extends Database<Z>> implements MBeanReg
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.management.MBeanRegistrar#unregister(net.sf.hajdbc.DatabaseCluster)
+	 * @see io.github.hajdbc.management.MBeanRegistrar#unregister(io.github.hajdbc.DatabaseCluster)
 	 */
 	@Override
 	public void unregister(DatabaseCluster<Z, D> cluster)
@@ -96,7 +96,7 @@ public class DefaultMBeanRegistrar<Z, D extends Database<Z>> implements MBeanReg
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.management.MBeanRegistrar#unregister(net.sf.hajdbc.DatabaseCluster, net.sf.hajdbc.Database)
+	 * @see io.github.hajdbc.management.MBeanRegistrar#unregister(io.github.hajdbc.DatabaseCluster, io.github.hajdbc.Database)
 	 */
 	@Override
 	public void unregister(DatabaseCluster<Z, D> cluster, D database)

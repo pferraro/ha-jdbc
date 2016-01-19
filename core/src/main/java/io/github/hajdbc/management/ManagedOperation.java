@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.management;
+package io.github.hajdbc.management;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -29,9 +29,9 @@ import java.lang.annotation.Target;
  * @author Paul Ferraro
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.CONSTRUCTOR, ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.TYPE })
+@Target(ElementType.METHOD)
 @Documented
-public @interface Description
+public @interface ManagedOperation
 {
-	String value();
+	Impact impact() default Impact.UNKNOWN;
 }
