@@ -15,20 +15,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock.distributed;
+package io.github.hajdbc.lock.distributed;
 
-import java.util.Map;
-import java.util.concurrent.locks.Lock;
+import io.github.hajdbc.distributed.Remote;
 
-import net.sf.hajdbc.distributed.Remote;
-
-/**
- * Execution context for lock commands.
- * @author Paul Ferraro
- */
-public interface LockCommandContext
+public interface RemoteLockDescriptor extends LockDescriptor, Remote
 {
-	Lock getLock(LockDescriptor descriptor);
-	
-	Map<LockDescriptor, Lock> getRemoteLocks(Remote remote);
 }

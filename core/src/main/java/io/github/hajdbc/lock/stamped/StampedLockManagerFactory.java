@@ -1,6 +1,6 @@
 /*
  * HA-JDBC: High-Availability JDBC
- * Copyright (C) 2012  Paul Ferraro
+ * Copyright (C) 2016  Paul Ferraro
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -15,36 +15,31 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock.semaphore;
+package io.github.hajdbc.lock.stamped;
 
-import net.sf.hajdbc.lock.LockManager;
-import net.sf.hajdbc.lock.LockManagerFactory;
+import java.util.concurrent.locks.StampedLock;
 
-public class SemaphoreLockManagerFactory implements LockManagerFactory
+import io.github.hajdbc.lock.LockManager;
+import io.github.hajdbc.lock.LockManagerFactory;
+import io.github.hajdbc.lock.ReadWriteLockManager;
+
+/**
+ * @author Paul Ferraro
+ *
+ */
+public class StampedLockManagerFactory implements LockManagerFactory
 {
-	private static final long serialVersionUID = -1330668107554832289L;
-
-	private boolean fair;
-	
-	public void setFair(boolean fair)
-	{
-		this.fair = fair;
-	}
-	
-	public boolean isFair()
-	{
-		return this.fair;
-	}
+	private static final long serialVersionUID = -3425095641409382127L;
 
 	@Override
 	public String getId()
 	{
-		return "semaphore";
+		return "stamped";
 	}
-	
+
 	@Override
 	public LockManager createLockManager()
 	{
-		return new SemaphoreLockManager(this.fair);
+		return new ReadWriteLockManager(() -> new StampedLock().asReadWriteLock());
 	}
 }

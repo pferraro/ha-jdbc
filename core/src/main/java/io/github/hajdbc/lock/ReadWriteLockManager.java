@@ -1,6 +1,6 @@
 /*
  * HA-JDBC: High-Availability JDBC
- * Copyright (C) 2012  Paul Ferraro
+ * Copyright (C) 2016  Paul Ferraro
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -15,34 +15,33 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock.semaphore;
+package io.github.hajdbc.lock;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
-
-import net.sf.hajdbc.lock.LockManager;
+import java.util.function.Supplier;
 
 /**
  * @author Paul Ferraro
+ *
  */
-public class SemaphoreLockManager implements LockManager
+public class ReadWriteLockManager implements LockManager
 {
 	private final ConcurrentMap<String, ReadWriteLock> lockMap = new ConcurrentHashMap<>();
 
-	private final boolean fair;
+	private final Supplier<ReadWriteLock> factory;
 	
-	public SemaphoreLockManager(boolean fair)
+	public ReadWriteLockManager(Supplier<ReadWriteLock> factory)
 	{
-		this.fair = fair;
+		this.factory = factory;
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.lock.LockManager#readLock(java.lang.String)
+	 * @see io.github.hajdbc.lock.LockManager#readLock(java.lang.String)
 	 */
 	@Override
 	public Lock readLock(String object)
@@ -53,7 +52,7 @@ public class SemaphoreLockManager implements LockManager
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.lock.LockManager#writeLock(java.lang.String)
+	 * @see io.github.hajdbc.lock.LockManager#writeLock(java.lang.String)
 	 */
 	@Override
 	public Lock writeLock(String object)
@@ -63,26 +62,12 @@ public class SemaphoreLockManager implements LockManager
 		return (object == null) ? readWriteLock.writeLock() : new GlobalLock(readWriteLock.readLock(), this.getReadWriteLock(object).writeLock());
 	}
 	
-	private synchronized ReadWriteLock getReadWriteLock(String object)
+	private ReadWriteLock getReadWriteLock(String object)
 	{
 		// CHM cannot use a null key
 		String key = (object != null) ? object : "";
 		
-		ReadWriteLock lock = this.lockMap.get(key);
-		
-		if (lock == null)
-		{
-			lock = new SemaphoreReadWriteLock(new Semaphore(Integer.MAX_VALUE, this.fair));
-
-			ReadWriteLock existing = this.lockMap.putIfAbsent(key, lock);
-			
-			if (existing != null)
-			{
-				lock = existing;
-			}
-		}
-		
-		return lock;
+		return this.lockMap.computeIfAbsent(key, (String id) -> this.factory.get());
 	}
 	
 	private static class GlobalLock implements Lock
@@ -165,18 +150,12 @@ public class SemaphoreLockManager implements LockManager
 		}
 	}
 
-	/**
-	 * @see net.sf.hajdbc.Lifecycle#start()
-	 */
 	@Override
 	public void start()
 	{
 		// Do nothing
 	}
 
-	/**
-	 * @see net.sf.hajdbc.Lifecycle#stop()
-	 */
 	@Override
 	public void stop()
 	{

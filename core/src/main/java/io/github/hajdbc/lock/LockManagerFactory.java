@@ -15,31 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock;
+package io.github.hajdbc.lock;
 
-import java.util.concurrent.locks.Lock;
+import java.io.Serializable;
 
-import net.sf.hajdbc.Lifecycle;
+import io.github.hajdbc.Identifiable;
 
-/**
- * Manages a set of named read/write locks.  A global lock is represented by a null object.
- * Obtaining a named read or write lock should implicitly obtain a global read lock.
- * Consequently, all named locks are blocked if a global write lock is obtained.
- * @author Paul Ferraro
- */
-public interface LockManager extends Lifecycle
+public interface LockManagerFactory extends Identifiable, Serializable
 {
-	/**
-	 * Obtains a named read lock.
-	 * @param object an object to lock
-	 * @return a read lock
-	 */
-	Lock readLock(String object);
-
-	/**
-	 * Obtains a named write lock.
-	 * @param object an object to lock
-	 * @return a write lock
-	 */
-	Lock writeLock(String object);
+	LockManager createLockManager();
 }
