@@ -1,0 +1,13 @@
+io.github.hajdbc.dialect.StandardDialectFactory
+io.github.hajdbc.dialect.db2.DB2DialectFactory
+io.github.hajdbc.dialect.derby.DerbyDialectFactory
+io.github.hajdbc.dialect.firebird.FirebirdDialectFactory
+io.github.hajdbc.dialect.h2.H2DialectFactory
+io.github.hajdbc.dialect.hsqldb.HSQLDBDialectFactory
+io.github.hajdbc.dialect.ingres.IngresDialectFactory
+io.github.hajdbc.dialect.maxdb.MaxDBDialectFactory
+io.github.hajdbc.dialect.mckoi.MckoiDialectFactory
+io.github.hajdbc.dialect.mysql.MySQLDialectFactory
+io.github.hajdbc.dialect.oracle.OracleDialectFactory
+io.github.hajdbc.dialect.postgresql.PostgreSQLDialectFactory
+io.github.hajdbc.dialect.sybase.SybaseDialectFactory

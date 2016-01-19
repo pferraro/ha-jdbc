@@ -1,0 +1,2 @@
+io.github.hajdbc.lock.semaphore.SemaphoreLockManagerFactory
+io.github.hajdbc.lock.stamped.StampedLockManagerFactory
