@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.codec;
+package io.github.hajdbc.codec;
 
 import java.io.Serializable;
 import java.sql.SQLException;
 
-import net.sf.hajdbc.IdentifiableMatcher;
-import net.sf.hajdbc.util.ServiceLoaders;
+import io.github.hajdbc.IdentifiableMatcher;
+import io.github.hajdbc.util.ServiceLoaders;
 
 /**
  * Codec factory that whose decoding behavior is determined by a prefix.
