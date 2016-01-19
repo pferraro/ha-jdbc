@@ -15,28 +15,23 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.pool;
+package io.github.hajdbc.pool;
 
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.LoggerFactory;
+/**
+ * Object pooling service provider interface.
+ * @author Paul Ferraro
+ * @param <T>
+ * @param <E>
+ */
+public interface PoolProvider<T, E extends Exception>
+{	
+	T create() throws E;
+	
+	void close(T object);
 
-public abstract class CloseablePoolProvider<T extends AutoCloseable, E extends Exception> extends AbstractPoolProvider<T, E>
-{
-	protected CloseablePoolProvider(Class<T> providedClass, Class<E> exceptionClass)
-	{
-		super(providedClass, exceptionClass);
-	}
-
-	@Override
-	public void close(T object)
-	{
-		try
-		{
-			object.close();
-		}
-		catch (Exception e)
-		{
-			LoggerFactory.getLogger(this.getClass()).log(Level.WARN, e);
-		}
-	}
+	boolean isValid(T item);
+	
+	Class<T> getProvidedClass();
+	
+	Class<E> getExceptionClass();
 }

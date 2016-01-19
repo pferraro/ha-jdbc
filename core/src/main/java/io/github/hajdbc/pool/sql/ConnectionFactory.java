@@ -15,20 +15,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.pool;
+package io.github.hajdbc.pool.sql;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
- * Simple object pool service provider interface.
+ * Factory for creating {@link Connection} objects.
  * @author Paul Ferraro
- * @param <T>
- * @param <E>
  */
-public interface Pool<T, E extends Exception> extends AutoCloseable
+public interface ConnectionFactory
 {
-	T take() throws E;
-	
-	void release(T item);
-	
-	@Override
-	void close();
+	Connection getConnection() throws SQLException;
 }

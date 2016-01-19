@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.pool.sql;
+package io.github.hajdbc.pool.sql;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import net.sf.hajdbc.pool.CloseablePoolProvider;
+import io.github.hajdbc.pool.CloseablePoolProvider;
 
 /**
  * {@link Connection} object pool provider implementation.
@@ -39,7 +39,7 @@ public class ConnectionPoolProvider extends CloseablePoolProvider<Connection, SQ
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.pool.PoolProvider#create()
+	 * @see io.github.hajdbc.pool.PoolProvider#create()
 	 */
 	@Override
 	public Connection create() throws SQLException
@@ -49,7 +49,7 @@ public class ConnectionPoolProvider extends CloseablePoolProvider<Connection, SQ
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.pool.PoolProvider#isValid(java.lang.Object)
+	 * @see io.github.hajdbc.pool.PoolProvider#isValid(java.lang.Object)
 	 */
 	@Override
 	public boolean isValid(Connection connection)

@@ -1,6 +1,6 @@
 /*
  * HA-JDBC: High-Availability JDBC
- * Copyright (C) 2012  Paul Ferraro
+ * Copyright (C) 2014  Paul Ferraro
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -15,23 +15,28 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.pool;
+package io.github.hajdbc.messages.simple;
 
-/**
- * Object pooling service provider interface.
- * @author Paul Ferraro
- * @param <T>
- * @param <E>
- */
-public interface PoolProvider<T, E extends Exception>
-{	
-	T create() throws E;
-	
-	void close(T object);
+import io.github.hajdbc.messages.Messages;
+import io.github.hajdbc.messages.MessagesProvider;
 
-	boolean isValid(T item);
-	
-	Class<T> getProvidedClass();
-	
-	Class<E> getExceptionClass();
+public class SimpleMessagesProvider implements MessagesProvider
+{
+	@Override
+	public boolean isEnabled()
+	{
+		return true;
+	}
+
+	@Override
+	public Messages getMessages()
+	{
+		return new SimpleMessages();
+	}
+
+	@Override
+	public String getName()
+	{
+		return "simple";
+	}
 }

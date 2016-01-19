@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.messages.simple;
+package io.github.hajdbc.messages.simple;
 
 import java.beans.PropertyDescriptor;
 import java.lang.annotation.Annotation;
@@ -27,19 +27,19 @@ import java.util.Set;
 import javax.xml.stream.Location;
 import javax.xml.stream.XMLStreamReader;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SynchronizationStrategy;
-import net.sf.hajdbc.TableProperties;
-import net.sf.hajdbc.Version;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.distributed.Command;
-import net.sf.hajdbc.distributed.Member;
-import net.sf.hajdbc.logging.LoggingProvider;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.util.Matcher;
-import net.sf.hajdbc.xml.XMLStreamFactory;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.SequenceProperties;
+import io.github.hajdbc.SynchronizationStrategy;
+import io.github.hajdbc.TableProperties;
+import io.github.hajdbc.Version;
+import io.github.hajdbc.dialect.Dialect;
+import io.github.hajdbc.distributed.Command;
+import io.github.hajdbc.distributed.Member;
+import io.github.hajdbc.logging.LoggingProvider;
+import io.github.hajdbc.messages.Messages;
+import io.github.hajdbc.util.Matcher;
+import io.github.hajdbc.xml.XMLStreamFactory;
 
 public class SimpleMessages implements Messages
 {
