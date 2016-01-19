@@ -15,23 +15,23 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability.none;
+package io.github.hajdbc.durability.none;
 
 import java.util.Map;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.ExceptionFactory;
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.durability.Durability;
-import net.sf.hajdbc.durability.DurabilityEvent;
-import net.sf.hajdbc.durability.DurabilityEventImpl;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvokerEvent;
-import net.sf.hajdbc.invocation.InvocationStrategy;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.ExceptionFactory;
+import io.github.hajdbc.ExceptionType;
+import io.github.hajdbc.durability.Durability;
+import io.github.hajdbc.durability.DurabilityEvent;
+import io.github.hajdbc.durability.DurabilityEventImpl;
+import io.github.hajdbc.durability.InvocationEvent;
+import io.github.hajdbc.durability.InvokerEvent;
+import io.github.hajdbc.invocation.InvocationStrategy;
+import io.github.hajdbc.invocation.Invoker;
+import io.github.hajdbc.logging.Level;
+import io.github.hajdbc.logging.Logger;
+import io.github.hajdbc.logging.LoggerFactory;
 
 /**
  * {@link Durability} implementation that does not track anything.
@@ -44,7 +44,7 @@ public class NoDurability<Z, D extends Database<Z>> implements Durability<Z, D>
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.Durability#getInvocationStrategy(net.sf.hajdbc.invocation.InvocationStrategy, net.sf.hajdbc.durability.Durability.Phase, java.lang.Object)
+	 * @see io.github.hajdbc.durability.Durability#getInvocationStrategy(io.github.hajdbc.invocation.InvocationStrategy, io.github.hajdbc.durability.Durability.Phase, java.lang.Object)
 	 */
 	@Override
 	public InvocationStrategy getInvocationStrategy(InvocationStrategy strategy, Phase phase, Object transactionId)
@@ -54,7 +54,7 @@ public class NoDurability<Z, D extends Database<Z>> implements Durability<Z, D>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.Durability#getInvoker(net.sf.hajdbc.invocation.Invoker, net.sf.hajdbc.durability.Durability.Phase, java.lang.Object, net.sf.hajdbc.ExceptionFactory)
+	 * @see io.github.hajdbc.durability.Durability#getInvoker(io.github.hajdbc.invocation.Invoker, io.github.hajdbc.durability.Durability.Phase, java.lang.Object, io.github.hajdbc.ExceptionFactory)
 	 */
 	@Override
 	public <T, R, E extends Exception> Invoker<Z, D, T, R, E> getInvoker(Invoker<Z, D, T, R, E> invoker, Phase phase, Object transactionId, ExceptionFactory<E> exceptionFactory)
@@ -64,7 +64,7 @@ public class NoDurability<Z, D extends Database<Z>> implements Durability<Z, D>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.Durability#recover(java.util.Map)
+	 * @see io.github.hajdbc.durability.Durability#recover(java.util.Map)
 	 */
 	@Override
 	public void recover(Map<InvocationEvent, Map<String, InvokerEvent>> invokers)

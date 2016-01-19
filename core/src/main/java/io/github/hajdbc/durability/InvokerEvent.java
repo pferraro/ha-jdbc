@@ -15,33 +15,18 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package io.github.hajdbc.durability;
 
-import net.sf.hajdbc.ExceptionType;
 
 /**
  * @author Paul Ferraro
+ *
  */
-public class InvocationEventImpl extends DurabilityEventImpl implements InvocationEvent
-{	
-	private static final long serialVersionUID = 3577057545595076359L;
-	
-	private final ExceptionType exceptionType;
-	
-	public InvocationEventImpl(Object transactionId, Durability.Phase phase, ExceptionType exceptionType)
-	{
-		super(transactionId, phase);
-		
-		this.exceptionType = exceptionType;
-	}
+public interface InvokerEvent extends DurabilityEvent
+{
+	String getDatabaseId();
 
-	/**
-	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.InvocationEvent#getExceptionType()
-	 */
-	@Override
-	public ExceptionType getExceptionType()
-	{
-		return this.exceptionType;
-	}
+	InvokerResult getResult();
+	
+	void setResult(InvokerResult result);
 }

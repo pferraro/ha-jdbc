@@ -15,34 +15,29 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability.none;
+package io.github.hajdbc.durability;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.durability.Durability;
-import net.sf.hajdbc.durability.DurabilityFactory;
+import io.github.hajdbc.ExceptionType;
 
 /**
- * Factory for creating a {@link NoDurability}.
  * @author Paul Ferraro
  */
-public class NoDurabilityFactory implements DurabilityFactory
+public class InvocationEventAdapter extends DurabilityEventImpl implements InvocationEvent
 {
-	private static final long serialVersionUID = 926923658169838006L;
+	private static final long serialVersionUID = -2771937925436783287L;
 
-	@Override
-	public String getId()
+	public InvocationEventAdapter(DurabilityEvent event)
 	{
-		return "none";
+		super(event.getTransactionId(), event.getPhase());
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityFactory#createDurability(net.sf.hajdbc.DatabaseCluster)
+	 * @see io.github.hajdbc.durability.InvocationEvent#getExceptionType()
 	 */
 	@Override
-	public <Z, D extends Database<Z>> Durability<Z, D> createDurability(DatabaseCluster<Z, D> cluster)
+	public ExceptionType getExceptionType()
 	{
-		return new NoDurability<>();
+		return null;
 	}
 }

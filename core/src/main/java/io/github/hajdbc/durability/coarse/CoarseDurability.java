@@ -15,26 +15,26 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability.coarse;
+package io.github.hajdbc.durability.coarse;
 
 import java.util.Map;
 import java.util.SortedMap;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.durability.DurabilityListener;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvocationEventImpl;
-import net.sf.hajdbc.durability.InvokerEvent;
-import net.sf.hajdbc.durability.none.NoDurability;
-import net.sf.hajdbc.invocation.InvocationStrategy;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.sql.ProxyFactory;
-import net.sf.hajdbc.state.StateManager;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.ExceptionType;
+import io.github.hajdbc.durability.DurabilityListener;
+import io.github.hajdbc.durability.InvocationEvent;
+import io.github.hajdbc.durability.InvocationEventImpl;
+import io.github.hajdbc.durability.InvokerEvent;
+import io.github.hajdbc.durability.none.NoDurability;
+import io.github.hajdbc.invocation.InvocationStrategy;
+import io.github.hajdbc.invocation.Invoker;
+import io.github.hajdbc.sql.ProxyFactory;
+import io.github.hajdbc.state.StateManager;
 
 /**
- * {@link net.sf.hajdbc.durability.Durability} implementation that tracks invocations only, but not per-database invokers.
+ * {@link io.github.hajdbc.durability.Durability} implementation that tracks invocations only, but not per-database invokers.
  * This durability level can detect, but not recover from, mid-commit crashes.
  * @author Paul Ferraro
  */
@@ -60,7 +60,7 @@ public class CoarseDurability<Z, D extends Database<Z>> extends NoDurability<Z, 
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.none.NoDurability#getInvocationStrategy(net.sf.hajdbc.invocation.InvocationStrategy, net.sf.hajdbc.durability.Durability.Phase, java.lang.Object)
+	 * @see io.github.hajdbc.durability.none.NoDurability#getInvocationStrategy(io.github.hajdbc.invocation.InvocationStrategy, io.github.hajdbc.durability.Durability.Phase, java.lang.Object)
 	 */
 	@Override
 	public InvocationStrategy getInvocationStrategy(final InvocationStrategy strategy, final Phase phase, final Object transactionId)
@@ -94,7 +94,7 @@ public class CoarseDurability<Z, D extends Database<Z>> extends NoDurability<Z, 
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.none.NoDurability#recover(java.util.Map)
+	 * @see io.github.hajdbc.durability.none.NoDurability#recover(java.util.Map)
 	 */
 	@Override
 	public void recover(Map<InvocationEvent, Map<String, InvokerEvent>> invokers)

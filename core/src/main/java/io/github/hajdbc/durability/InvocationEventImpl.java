@@ -15,49 +15,33 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package io.github.hajdbc.durability;
 
-import java.io.Serializable;
+import io.github.hajdbc.ExceptionType;
 
 /**
  * @author Paul Ferraro
  */
-public class InvokerResultImpl implements InvokerResult, Serializable
-{
-	private static final long serialVersionUID = 1497455948088313742L;
+public class InvocationEventImpl extends DurabilityEventImpl implements InvocationEvent
+{	
+	private static final long serialVersionUID = 3577057545595076359L;
 	
-	private final Object value;
-	private final Exception exception;
+	private final ExceptionType exceptionType;
 	
-	public InvokerResultImpl(Object value)
+	public InvocationEventImpl(Object transactionId, Durability.Phase phase, ExceptionType exceptionType)
 	{
-		this.value = value;
-		this.exception = null;
+		super(transactionId, phase);
+		
+		this.exceptionType = exceptionType;
 	}
-	
-	public InvokerResultImpl(Exception exception)
-	{
-		this.value = null;
-		this.exception = exception;
-	}
-	
+
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.InvokerResult#getValue()
+	 * @see io.github.hajdbc.durability.InvocationEvent#getExceptionType()
 	 */
 	@Override
-	public Object getValue()
+	public ExceptionType getExceptionType()
 	{
-		return this.value;
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.InvokerResult#getException()
-	 */
-	@Override
-	public Exception getException()
-	{
-		return this.exception;
+		return this.exceptionType;
 	}
 }

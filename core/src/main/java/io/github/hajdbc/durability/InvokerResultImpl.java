@@ -15,34 +15,49 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability.fine;
+package io.github.hajdbc.durability;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.durability.Durability;
-import net.sf.hajdbc.durability.DurabilityFactory;
+import java.io.Serializable;
 
 /**
- * Factory for creating a {@link FineDurability}.
  * @author Paul Ferraro
  */
-public class FineDurabilityFactory implements DurabilityFactory
+public class InvokerResultImpl implements InvokerResult, Serializable
 {
-	private static final long serialVersionUID = 8493031235326848199L;
-
-	@Override
-	public String getId()
+	private static final long serialVersionUID = 1497455948088313742L;
+	
+	private final Object value;
+	private final Exception exception;
+	
+	public InvokerResultImpl(Object value)
 	{
-		return "fine";
+		this.value = value;
+		this.exception = null;
 	}
-
+	
+	public InvokerResultImpl(Exception exception)
+	{
+		this.value = null;
+		this.exception = exception;
+	}
+	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityFactory#createDurability(net.sf.hajdbc.DatabaseCluster)
+	 * @see io.github.hajdbc.durability.InvokerResult#getValue()
 	 */
 	@Override
-	public <Z, D extends Database<Z>> Durability<Z, D> createDurability(DatabaseCluster<Z, D> cluster)
+	public Object getValue()
 	{
-		return new FineDurability<>(cluster);
+		return this.value;
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 * @see io.github.hajdbc.durability.InvokerResult#getException()
+	 */
+	@Override
+	public Exception getException()
+	{
+		return this.exception;
 	}
 }

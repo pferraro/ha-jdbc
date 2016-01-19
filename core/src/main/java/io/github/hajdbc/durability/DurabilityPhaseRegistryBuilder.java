@@ -1,6 +1,6 @@
 /*
  * HA-JDBC: High-Availability JDBC
- * Copyright (C) 2012  Paul Ferraro
+ * Copyright (C) 2015  Paul Ferraro
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -15,34 +15,35 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability.coarse;
+package io.github.hajdbc.durability;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.durability.Durability;
-import net.sf.hajdbc.durability.DurabilityFactory;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
+
+import io.github.hajdbc.util.Builder;
+import io.github.hajdbc.util.SimpleStaticRegistry;
+import io.github.hajdbc.util.StaticRegistry;
 
 /**
- * Factory for creating a {@link CoarseDurability}.
  * @author Paul Ferraro
  */
-public class CoarseDurabilityFactory implements DurabilityFactory
+public class DurabilityPhaseRegistryBuilder implements Builder<StaticRegistry<Method, Durability.Phase>>
 {
-	private static final long serialVersionUID = -24045976334856435L;
+	private final Map<Method, Durability.Phase> phases = new HashMap<>();
 
-	@Override
-	public String getId()
+	public DurabilityPhaseRegistryBuilder phase(Durability.Phase phase, Method... methods)
 	{
-		return "coarse";
+		for (Method method : methods)
+		{
+			this.phases.put(method, phase);
+		}
+		return this;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityFactory#createDurability(net.sf.hajdbc.DatabaseCluster)
-	 */
 	@Override
-	public <Z, D extends Database<Z>> Durability<Z, D> createDurability(DatabaseCluster<Z, D> cluster)
+	public StaticRegistry<Method, Durability.Phase> build()
 	{
-		return new CoarseDurability<>(cluster);
+		return new SimpleStaticRegistry<>(this.phases);
 	}
 }

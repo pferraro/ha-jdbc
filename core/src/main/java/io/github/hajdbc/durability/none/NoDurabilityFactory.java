@@ -15,19 +15,34 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package io.github.hajdbc.durability.none;
 
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.durability.Durability;
+import io.github.hajdbc.durability.DurabilityFactory;
 
 /**
+ * Factory for creating a {@link NoDurability}.
  * @author Paul Ferraro
  */
-public interface DurabilityListener
+public class NoDurabilityFactory implements DurabilityFactory
 {
-	void beforeInvocation(InvocationEvent event);
-	
-	void afterInvocation(InvocationEvent event);
-	
-	void beforeInvoker(InvokerEvent event);
-	
-	void afterInvoker(InvokerEvent event);
+	private static final long serialVersionUID = 926923658169838006L;
+
+	@Override
+	public String getId()
+	{
+		return "none";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @see io.github.hajdbc.durability.DurabilityFactory#createDurability(io.github.hajdbc.DatabaseCluster)
+	 */
+	@Override
+	public <Z, D extends Database<Z>> Durability<Z, D> createDurability(DatabaseCluster<Z, D> cluster)
+	{
+		return new NoDurability<>();
+	}
 }

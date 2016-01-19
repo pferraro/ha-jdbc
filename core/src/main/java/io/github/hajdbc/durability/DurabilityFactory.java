@@ -15,15 +15,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package io.github.hajdbc.durability;
+
+import java.io.Serializable;
+
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.Identifiable;
 
 
 /**
  * @author Paul Ferraro
  */
-public interface InvokerResult
+public interface DurabilityFactory extends Identifiable, Serializable
 {
-	Object getValue();
-	
-	Exception getException();
+	<Z, D extends Database<Z>> Durability<Z, D> createDurability(DatabaseCluster<Z, D> cluster);
 }
