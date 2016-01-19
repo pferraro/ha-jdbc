@@ -15,14 +15,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package io.github.hajdbc.durability;
 
-import net.sf.hajdbc.ExceptionType;
 
 /**
  * @author Paul Ferraro
  */
-public interface InvocationEvent extends DurabilityEvent
+public interface InvokerResult
 {
-	ExceptionType getExceptionType();
+	Object getValue();
+	
+	Exception getException();
 }

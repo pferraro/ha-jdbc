@@ -15,27 +15,27 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability.fine;
+package io.github.hajdbc.durability.fine;
 
 import java.util.Map;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.ExceptionFactory;
-import net.sf.hajdbc.balancer.Balancer;
-import net.sf.hajdbc.durability.DurabilityListener;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvokerEvent;
-import net.sf.hajdbc.durability.InvokerEventImpl;
-import net.sf.hajdbc.durability.InvokerResult;
-import net.sf.hajdbc.durability.InvokerResultImpl;
-import net.sf.hajdbc.durability.coarse.CoarseDurability;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.state.StateManager;
-import net.sf.hajdbc.util.Objects;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.ExceptionFactory;
+import io.github.hajdbc.balancer.Balancer;
+import io.github.hajdbc.durability.DurabilityListener;
+import io.github.hajdbc.durability.InvocationEvent;
+import io.github.hajdbc.durability.InvokerEvent;
+import io.github.hajdbc.durability.InvokerEventImpl;
+import io.github.hajdbc.durability.InvokerResult;
+import io.github.hajdbc.durability.InvokerResultImpl;
+import io.github.hajdbc.durability.coarse.CoarseDurability;
+import io.github.hajdbc.invocation.Invoker;
+import io.github.hajdbc.state.StateManager;
+import io.github.hajdbc.util.Objects;
 
 /**
- * {@link net.sf.hajdbc.durability.Durability} implementation that tracks invocations as well as per-database invokers.
+ * {@link io.github.hajdbc.durability.Durability} implementation that tracks invocations as well as per-database invokers.
  * This durability level can both detect and recover from mid-commit crashes.
  * @author Paul Ferraro
  */
@@ -54,7 +54,7 @@ public class FineDurability<Z, D extends Database<Z>> extends CoarseDurability<Z
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.none.NoDurability#getInvoker(net.sf.hajdbc.invocation.Invoker, net.sf.hajdbc.durability.Durability.Phase, java.lang.Object, net.sf.hajdbc.ExceptionFactory)
+	 * @see io.github.hajdbc.durability.none.NoDurability#getInvoker(io.github.hajdbc.invocation.Invoker, io.github.hajdbc.durability.Durability.Phase, java.lang.Object, io.github.hajdbc.ExceptionFactory)
 	 */
 	@Override
 	public <T, R, E extends Exception> Invoker<Z, D, T, R, E> getInvoker(final Invoker<Z, D, T, R, E> invoker, final Phase phase, final Object transactionId, final ExceptionFactory<E> exceptionFactory)
@@ -94,7 +94,7 @@ public class FineDurability<Z, D extends Database<Z>> extends CoarseDurability<Z
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.coarse.CoarseDurability#recover(java.util.Map)
+	 * @see io.github.hajdbc.durability.coarse.CoarseDurability#recover(java.util.Map)
 	 */
 	@Override
 	public void recover(Map<InvocationEvent, Map<String, InvokerEvent>> map)

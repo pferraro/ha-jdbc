@@ -15,28 +15,34 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package io.github.hajdbc.durability.fine;
 
-import java.util.Map;
-
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.ExceptionFactory;
-import net.sf.hajdbc.invocation.InvocationStrategy;
-import net.sf.hajdbc.invocation.Invoker;
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.durability.Durability;
+import io.github.hajdbc.durability.DurabilityFactory;
 
 /**
+ * Factory for creating a {@link FineDurability}.
  * @author Paul Ferraro
  */
-public interface Durability<Z, D extends Database<Z>> extends DurabilityEventFactory
+public class FineDurabilityFactory implements DurabilityFactory
 {
-	enum Phase
+	private static final long serialVersionUID = 8493031235326848199L;
+
+	@Override
+	public String getId()
 	{
-		PREPARE, COMMIT, ROLLBACK, FORGET;
+		return "fine";
 	}
-	
-	InvocationStrategy getInvocationStrategy(InvocationStrategy strategy, Phase phase, Object transactionId);
-	
-	<T, R, E extends Exception> Invoker<Z, D, T, R, E> getInvoker(Invoker<Z, D, T, R, E> invoker, Phase phase, Object transactionId, ExceptionFactory<E> exceptionFactory);
-	
-	void recover(Map<InvocationEvent, Map<String, InvokerEvent>> invokers);
+
+	/**
+	 * {@inheritDoc}
+	 * @see io.github.hajdbc.durability.DurabilityFactory#createDurability(io.github.hajdbc.DatabaseCluster)
+	 */
+	@Override
+	public <Z, D extends Database<Z>> Durability<Z, D> createDurability(DatabaseCluster<Z, D> cluster)
+	{
+		return new FineDurability<>(cluster);
+	}
 }

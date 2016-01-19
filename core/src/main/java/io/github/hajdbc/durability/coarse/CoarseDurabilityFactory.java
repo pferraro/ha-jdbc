@@ -15,14 +15,34 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package io.github.hajdbc.durability.coarse;
+
+import io.github.hajdbc.Database;
+import io.github.hajdbc.DatabaseCluster;
+import io.github.hajdbc.durability.Durability;
+import io.github.hajdbc.durability.DurabilityFactory;
 
 /**
+ * Factory for creating a {@link CoarseDurability}.
  * @author Paul Ferraro
  */
-public interface DurabilityEvent
+public class CoarseDurabilityFactory implements DurabilityFactory
 {
-	Object getTransactionId();
-	
-	Durability.Phase getPhase();
+	private static final long serialVersionUID = -24045976334856435L;
+
+	@Override
+	public String getId()
+	{
+		return "coarse";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @see io.github.hajdbc.durability.DurabilityFactory#createDurability(io.github.hajdbc.DatabaseCluster)
+	 */
+	@Override
+	public <Z, D extends Database<Z>> Durability<Z, D> createDurability(DatabaseCluster<Z, D> cluster)
+	{
+		return new CoarseDurability<>(cluster);
+	}
 }

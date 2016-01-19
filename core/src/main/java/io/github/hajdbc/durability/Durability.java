@@ -15,18 +15,28 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package io.github.hajdbc.durability;
 
+import java.util.Map;
+
+import io.github.hajdbc.Database;
+import io.github.hajdbc.ExceptionFactory;
+import io.github.hajdbc.invocation.InvocationStrategy;
+import io.github.hajdbc.invocation.Invoker;
 
 /**
  * @author Paul Ferraro
- *
  */
-public interface InvokerEvent extends DurabilityEvent
+public interface Durability<Z, D extends Database<Z>> extends DurabilityEventFactory
 {
-	String getDatabaseId();
-
-	InvokerResult getResult();
+	enum Phase
+	{
+		PREPARE, COMMIT, ROLLBACK, FORGET;
+	}
 	
-	void setResult(InvokerResult result);
+	InvocationStrategy getInvocationStrategy(InvocationStrategy strategy, Phase phase, Object transactionId);
+	
+	<T, R, E extends Exception> Invoker<Z, D, T, R, E> getInvoker(Invoker<Z, D, T, R, E> invoker, Phase phase, Object transactionId, ExceptionFactory<E> exceptionFactory);
+	
+	void recover(Map<InvocationEvent, Map<String, InvokerEvent>> invokers);
 }
