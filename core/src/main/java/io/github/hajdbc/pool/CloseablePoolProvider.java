@@ -15,16 +15,28 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.pool.sql;
+package io.github.hajdbc.pool;
 
-import java.sql.Connection;
-import java.sql.SQLException;
+import io.github.hajdbc.logging.Level;
+import io.github.hajdbc.logging.LoggerFactory;
 
-/**
- * Factory for creating {@link Connection} objects.
- * @author Paul Ferraro
- */
-public interface ConnectionFactory
+public abstract class CloseablePoolProvider<T extends AutoCloseable, E extends Exception> extends AbstractPoolProvider<T, E>
 {
-	Connection getConnection() throws SQLException;
+	protected CloseablePoolProvider(Class<T> providedClass, Class<E> exceptionClass)
+	{
+		super(providedClass, exceptionClass);
+	}
+
+	@Override
+	public void close(T object)
+	{
+		try
+		{
+			object.close();
+		}
+		catch (Exception e)
+		{
+			LoggerFactory.getLogger(this.getClass()).log(Level.WARN, e);
+		}
+	}
 }
