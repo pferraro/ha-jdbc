@@ -18,6 +18,7 @@
 package io.github.hajdbc.sql;
 
 import java.sql.Connection;
+import java.sql.DriverAction;
 import java.sql.DriverManager;
 import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;
@@ -46,7 +47,7 @@ import io.github.hajdbc.xml.XMLDatabaseClusterConfigurationFactory;
 /**
  * @author  Paul Ferraro
  */
-public class Driver extends AbstractDriver
+public class Driver extends AbstractDriver implements DriverAction
 {
 	private static final Pattern URL_PATTERN = Pattern.compile("jdbc:ha-jdbc:(?://)?([^/]+)(?:/.+)?");
 	private static final String CONFIG = "config";
@@ -64,26 +65,8 @@ public class Driver extends AbstractDriver
 	{
 		try
 		{
-			Driver driver = new Driver()
-			{
-				@Override
-				protected void finalize()
-				{
-					// When the driver instance that was registered with the DriverManager is finalized, close any clusters
-					for (String id : proxies.keySet())
-					{
-						try
-						{
-							close(id);
-						}
-						catch (Throwable e)
-						{
-							e.printStackTrace(DriverManager.getLogWriter());
-						}
-					}
-				}
-			};
-			DriverManager.registerDriver(driver);
+			Driver driver = new Driver();
+			DriverManager.registerDriver(driver, driver);
 		}
 		catch (SQLException e)
 		{
@@ -91,11 +74,33 @@ public class Driver extends AbstractDriver
 		}
 	}
 	
+	public Driver()
+	{
+		super(URL_PATTERN);
+	}
+
+	@Override
+	public void deregister()
+	{
+		for (String id : proxies.keySet())
+		{
+			try
+			{
+				close(id);
+			}
+			catch (Throwable e)
+			{
+				e.printStackTrace(DriverManager.getLogWriter());
+			}
+		}
+	}
+
 	public static void close(String id)
 	{
 		Map.Entry<DriverProxyFactory, java.sql.Driver> entry = proxies.remove(id);
 		if (entry != null)
 		{
+			@SuppressWarnings("resource")
 			DriverProxyFactory factory = entry.getKey();
 			factory.close();
 			factory.getDatabaseCluster().stop();
@@ -110,16 +115,6 @@ public class Driver extends AbstractDriver
 	public static void setConfigurationFactory(String id, DatabaseClusterConfigurationFactory<java.sql.Driver, DriverDatabase> configurationFactory)
 	{
 		configurationFactories.put(id,  configurationFactory);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.sql.AbstractDriver#getUrlPattern()
-	 */
-	@Override
-	protected Pattern getUrlPattern()
-	{
-		return URL_PATTERN;
 	}
 
 	private static Map.Entry<DriverProxyFactory, java.sql.Driver> getProxyEntry(String id, Properties properties)
@@ -148,10 +143,6 @@ public class Driver extends AbstractDriver
 		return proxies.computeIfAbsent(id, function);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.sql.Driver#connect(java.lang.String, java.util.Properties)
-	 */
 	@Override
 	public Connection connect(String url, final Properties properties) throws SQLException
 	{
@@ -168,10 +159,6 @@ public class Driver extends AbstractDriver
 		return factory.createProxyFactory(entry.getValue(), entry.getKey(), invoker, InvocationStrategies.INVOKE_ON_ALL.invoke(entry.getKey(), invoker)).createProxy();
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see Driver#getPropertyInfo(java.lang.String, java.util.Properties)
-	 */
 	@Override
 	public DriverPropertyInfo[] getPropertyInfo(String url, final Properties properties) throws SQLException
 	{
@@ -186,9 +173,6 @@ public class Driver extends AbstractDriver
 		return results.get(results.firstKey());
 	}
 
-	/**
-	 * @see java.sql.Driver#getParentLogger()
-	 */
 	@Override
 	public java.util.logging.Logger getParentLogger()
 	{
