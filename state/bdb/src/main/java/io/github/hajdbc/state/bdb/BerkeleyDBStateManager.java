@@ -55,7 +55,7 @@ import io.github.hajdbc.state.StateManager;
 import io.github.hajdbc.util.Objects;
 
 /**
- * @author paul
+ * @author Paul Ferraro
  */
 public class BerkeleyDBStateManager extends CloseablePoolProvider<Environment, DatabaseException> implements StateManager, SerializedDurabilityListener
 {

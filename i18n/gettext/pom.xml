@@ -28,7 +28,7 @@
 	<artifactId>ha-jdbc-i18n-gettext</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>HA-JDBC i18n support: gettext provider</name>
+	<name>gettext provider</name>
 
 	<dependencies>
 		<dependency>
@@ -72,4 +72,11 @@
 			</build>
 		</profile>
 	</profiles>
+	
+	<distributionManagement>
+		<site>
+			<id>local</id>
+			<url>file://${user.dir}/i18n/gettext</url>
+		</site>
+	</distributionManagement>
 </project>

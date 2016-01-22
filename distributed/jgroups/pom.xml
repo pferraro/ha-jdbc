@@ -28,7 +28,7 @@
 	<artifactId>ha-jdbc-distributed-jgroups</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Distributed HA-JDBC support: JGroups provider</name>
+	<name>JGroups provider</name>
 
 	<dependencies>
 		<dependency>
@@ -51,4 +51,11 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<distributionManagement>
+		<site>
+			<id>local</id>
+			<url>file://${user.dir}/distributed/jgroups</url>
+		</site>
+	</distributionManagement>
 </project>
