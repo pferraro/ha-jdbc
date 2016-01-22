@@ -25,20 +25,12 @@ import java.text.MessageFormat;
  */
 public abstract class AbstractLogger implements Logger
 {
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.logging.Logger#log(io.github.hajdbc.logging.Level, java.lang.String, java.lang.Object[])
-	 */
 	@Override
 	public final void log(Level level, String pattern, Object... args)
 	{
 		this.log(level, null, pattern, args);
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.logging.Logger#log(io.github.hajdbc.logging.Level, java.lang.Throwable)
-	 */
 	@Override
 	public final void log(Level level, Throwable e)
 	{

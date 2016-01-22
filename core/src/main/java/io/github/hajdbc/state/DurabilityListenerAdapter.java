@@ -50,10 +50,6 @@ public class DurabilityListenerAdapter implements DurabilityListener, Serialized
 		this.eventFactory = eventFactory;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityListener#beforeInvocation(io.github.hajdbc.durability.InvocationEvent)
-	 */
 	@Override
 	public void beforeInvocation(InvocationEvent event)
 	{
@@ -64,30 +60,18 @@ public class DurabilityListenerAdapter implements DurabilityListener, Serialized
 		this.listener.beforeInvocation(txId, (byte) event.getPhase().ordinal(), (byte) event.getExceptionType().ordinal());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityListener#afterInvocation(io.github.hajdbc.durability.InvocationEvent)
-	 */
 	@Override
 	public void afterInvocation(InvocationEvent event)
 	{
 		this.listener.afterInvocation(this.transactionIdentifiers.remove(event.getTransactionId()), (byte) event.getPhase().ordinal());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityListener#beforeInvoker(io.github.hajdbc.durability.InvokerEvent)
-	 */
 	@Override
 	public void beforeInvoker(InvokerEvent event)
 	{
 		this.listener.beforeInvoker(this.transactionIdentifiers.get(event.getTransactionId()), (byte) event.getPhase().ordinal(), event.getDatabaseId());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityListener#afterInvoker(io.github.hajdbc.durability.InvokerEvent)
-	 */
 	@Override
 	public void afterInvoker(InvokerEvent event)
 	{

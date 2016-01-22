@@ -83,9 +83,6 @@ public class LazyTableProperties extends AbstractTableProperties
 		return columns;
 	}
 	
-	/**
-	 * @see io.github.hajdbc.TableProperties#getPrimaryKey()
-	 */
 	@Override
 	public UniqueConstraint getPrimaryKey() throws SQLException
 	{
@@ -104,9 +101,6 @@ public class LazyTableProperties extends AbstractTableProperties
 		return primaryKey;
 	}
 
-	/**
-	 * @see io.github.hajdbc.TableProperties#getForeignKeyConstraints()
-	 */
 	@Override
 	public Collection<ForeignKeyConstraint> getForeignKeyConstraints() throws SQLException
 	{
@@ -125,9 +119,6 @@ public class LazyTableProperties extends AbstractTableProperties
 		return foreignKeyConstraints;
 	}
 
-	/**
-	 * @see io.github.hajdbc.TableProperties#getUniqueConstraints()
-	 */
 	@Override
 	public Collection<UniqueConstraint> getUniqueConstraints() throws SQLException
 	{
@@ -146,9 +137,6 @@ public class LazyTableProperties extends AbstractTableProperties
 		return uniqueConstraints;
 	}
 
-	/**
-	 * @see io.github.hajdbc.TableProperties#getIdentityColumns()
-	 */
 	@Override
 	public Collection<String> getIdentityColumns() throws SQLException
 	{

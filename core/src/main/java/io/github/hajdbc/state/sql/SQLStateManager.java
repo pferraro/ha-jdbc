@@ -112,10 +112,6 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		this.listener = new DurabilityListenerAdapter(this, cluster.getTransactionIdentifierFactory(), this.eventFactory);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.StateManager#getActiveDatabases()
-	 */
 	@Override
 	public Set<String> getActiveDatabases()
 	{
@@ -152,10 +148,6 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.StateManager#setActiveDatabases(java.util.Set)
-	 */
 	@Override
 	public void setActiveDatabases(final Set<String> databases)
 	{
@@ -197,10 +189,6 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.DatabaseClusterListener#activated(io.github.hajdbc.state.DatabaseEvent)
-	 */
 	@Override
 	public void activated(final DatabaseEvent event)
 	{
@@ -223,10 +211,6 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.DatabaseClusterListener#deactivated(io.github.hajdbc.state.DatabaseEvent)
-	 */
 	@Override
 	public void deactivated(final DatabaseEvent event)
 	{
@@ -259,10 +243,6 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.SerializedDurabilityListener#beforeInvocation(byte[], byte, byte)
-	 */
 	@Override
 	public void beforeInvocation(final byte[] transactionId, final byte phase, final byte exceptionType)
 	{
@@ -292,10 +272,6 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.SerializedDurabilityListener#afterInvocation(byte[], byte)
-	 */
 	@Override
 	public void afterInvocation(final byte[] transactionId, final byte phase)
 	{
@@ -319,10 +295,6 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.SerializedDurabilityListener#beforeInvoker(byte[], byte, java.lang.String)
-	 */
 	@Override
 	public void beforeInvoker(final byte[] transactionId, final byte phase, final String databaseId)
 	{
@@ -352,10 +324,6 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.SerializedDurabilityListener#afterInvoker(byte[], byte, java.lang.String, byte[])
-	 */
 	@Override
 	public void afterInvoker(final byte[] transactionId, final byte phase, final String databaseId, final byte[] result)
 	{
@@ -386,20 +354,12 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityListener#beforeInvocation(io.github.hajdbc.durability.InvocationEvent)
-	 */
 	@Override
 	public void beforeInvocation(InvocationEvent event)
 	{
 		this.listener.beforeInvocation(event);
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityListener#afterInvocation(io.github.hajdbc.durability.InvocationEvent)
-	 */
 	@Override
 	public void afterInvocation(InvocationEvent event)
 	{
@@ -417,10 +377,6 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.StateManager#recover()
-	 */
 	@Override
 	public Map<InvocationEvent, Map<String, InvokerEvent>> recover()
 	{
@@ -488,20 +444,12 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		}
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityListener#beforeInvoker(io.github.hajdbc.durability.InvokerEvent)
-	 */
 	@Override
 	public void beforeInvoker(InvokerEvent event)
 	{
 		this.listener.beforeInvoker(event);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityListener#afterInvoker(io.github.hajdbc.durability.InvokerEvent)
-	 */
 	@Override
 	public void afterInvoker(InvokerEvent event)
 	{
@@ -514,10 +462,6 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		return true;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.Lifecycle#start()
-	 */
 	@Override
 	public void start() throws SQLException
 	{
@@ -573,10 +517,6 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		}
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.Lifecycle#stop()
-	 */
 	@Override
 	public void stop()
 	{
@@ -586,10 +526,6 @@ public class SQLStateManager<Z, D extends Database<Z>> implements StateManager, 
 		}
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.pool.sql.ConnectionFactory#getConnection()
-	 */
 	@Override
 	public Connection getConnection() throws SQLException
 	{

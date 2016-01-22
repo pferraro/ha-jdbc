@@ -38,20 +38,12 @@ public class Base64CodecFactory extends AbstractCodec
 		return "64";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.codec.Codec#decode(java.lang.String)
-	 */
 	@Override
 	public String decode(String value)
 	{
 		return new String(Base64.getDecoder().decode(value));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.codec.Codec#encode(java.lang.String)
-	 */
 	@Override
 	public String encode(String value)
 	{

@@ -57,10 +57,6 @@ public class HSQLDBDialectTest extends StandardDialectTest
 		super(new HSQLDBDialectFactory());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
-	 */
 	@Override
 	public void getSequenceSupport()
 	{
@@ -81,10 +77,6 @@ public class HSQLDBDialectTest extends StandardDialectTest
 		assertSame("PUBLIC", result.get(0));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getCreateForeignKeyConstraintSQL()
-	 */
 	@Override
 	public void getCreateForeignKeyConstraintSQL() throws SQLException
 	{
@@ -108,10 +100,6 @@ public class HSQLDBDialectTest extends StandardDialectTest
 		assertEquals("ALTER TABLE table ADD CONSTRAINT name FOREIGN KEY (column1, column2) REFERENCES foreign_table (foreign_column1, foreign_column2) ON DELETE CASCADE ON UPDATE RESTRICT", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getSequences()
-	 */
 	@Override
 	public void getSequences() throws SQLException
 	{
@@ -145,10 +133,6 @@ public class HSQLDBDialectTest extends StandardDialectTest
 		assertSame(sequence2, sequences.next());
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getNextSequenceValueSQL()
-	 */
 	@Override
 	public void getNextSequenceValueSQL() throws SQLException
 	{
@@ -163,10 +147,6 @@ public class HSQLDBDialectTest extends StandardDialectTest
 		assertEquals("CALL NEXT VALUE FOR sequence", result);
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentDate()
-	 */
 	@Override
 	public void evaluateCurrentDate()
 	{
@@ -183,10 +163,6 @@ public class HSQLDBDialectTest extends StandardDialectTest
 		assertEquals("SELECT 1 FROM test", this.dialect.evaluateCurrentDate("SELECT 1 FROM test", date));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentTime()
-	 */
 	@Override
 	public void evaluateCurrentTime()
 	{
@@ -207,10 +183,6 @@ public class HSQLDBDialectTest extends StandardDialectTest
 		assertEquals("SELECT 1 FROM test", this.dialect.evaluateCurrentTime("SELECT 1 FROM test", time));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentTimestamp()
-	 */
 	@Override
 	public void evaluateCurrentTimestamp()
 	{

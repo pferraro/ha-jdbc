@@ -26,30 +26,18 @@ import io.github.hajdbc.logging.LoggingProvider;
  */
 public class SLF4JLoggingProvider implements LoggingProvider
 {
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.logging.LoggingProvider#getLogger(java.lang.Class)
-	 */
 	@Override
 	public Logger getLogger(Class<?> targetClass)
 	{
 		return new SLF4JLogger(targetClass);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.logging.LoggingProvider#getName()
-	 */
 	@Override
 	public String getName()
 	{
 		return "SLF4J";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.logging.LoggingProvider#isEnabled()
-	 */
 	@Override
 	public boolean isEnabled()
 	{

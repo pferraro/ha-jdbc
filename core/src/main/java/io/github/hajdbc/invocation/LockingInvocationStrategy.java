@@ -43,9 +43,6 @@ public class LockingInvocationStrategy implements InvocationStrategy
 		this.lockList = lockList;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public <Z, D extends Database<Z>, T, R, E extends Exception> SortedMap<D, R> invoke(ProxyFactory<Z, D, T, E> proxy, Invoker<Z, D, T, R, E> invoker) throws E
 	{

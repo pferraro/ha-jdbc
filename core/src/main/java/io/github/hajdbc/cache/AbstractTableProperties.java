@@ -36,18 +36,12 @@ public abstract class AbstractTableProperties extends AbstractNamed<QualifiedNam
 		super(name);
 	}
 
-	/**
-	 * @see io.github.hajdbc.TableProperties#getColumns()
-	 */
 	@Override
 	public final Collection<String> getColumns() throws SQLException
 	{
 		return this.getColumnMap().keySet();
 	}
 
-	/**
-	 * @see io.github.hajdbc.TableProperties#getColumnProperties(java.lang.String)
-	 */
 	@Override
 	public final ColumnProperties getColumnProperties(String column) throws SQLException
 	{

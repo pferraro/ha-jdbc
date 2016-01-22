@@ -130,9 +130,6 @@ public class ConnectionInvocationHandler<Z, D extends Database<Z>, P> extends Ch
 		return super.getProxyFactoryFactory(connection, method, parameters);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(Connection connection, Method method, Object... parameters) throws SQLException
 	{
@@ -175,9 +172,6 @@ public class ConnectionInvocationHandler<Z, D extends Database<Z>, P> extends Ch
 		return super.getInvocationStrategy(connection, method, parameters);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	protected <R> Invoker<Z, D, Connection, R, SQLException> getInvoker(Connection connection, Method method, Object... parameters) throws SQLException
 	{

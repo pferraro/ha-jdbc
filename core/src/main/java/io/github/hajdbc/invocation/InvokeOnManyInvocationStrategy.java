@@ -55,9 +55,6 @@ public class InvokeOnManyInvocationStrategy implements InvocationStrategy
 		this.collector = collector;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public <Z, D extends Database<Z>, T, R, E extends Exception> SortedMap<D, R> invoke(ProxyFactory<Z, D, T, E> factory, Invoker<Z, D, T, R, E> invoker) throws E
 	{

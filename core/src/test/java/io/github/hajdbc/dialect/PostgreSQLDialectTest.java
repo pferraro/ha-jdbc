@@ -47,30 +47,18 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 		super(new PostgreSQLDialectFactory());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
-	 */
 	@Override
 	public void getSequenceSupport()
 	{
 		assertSame(this.dialect, this.dialect.getSequenceSupport());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getIdentityColumnSupport()
-	 */
 	@Override
 	public void getIdentityColumnSupport()
 	{
 		assertSame(this.dialect, this.dialect.getIdentityColumnSupport());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getColumnType()
-	 */
 	@Override
 	public void getColumnType() throws SQLException
 	{
@@ -90,10 +78,6 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 		assertEquals(Types.INTEGER, result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getTruncateTableSQL()
-	 */
 	@Override
 	public void getTruncateTableSQL() throws SQLException
 	{
@@ -108,10 +92,6 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 		assertEquals("TRUNCATE TABLE table", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getNextSequenceValueSQL()
-	 */
 	@Override
 	public void getNextSequenceValueSQL() throws SQLException
 	{
@@ -126,10 +106,6 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 		assertEquals("SELECT NEXTVAL('sequence')", result);
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#parseSequence()
-	 */
 	@Override
 	public void parseSequence() throws SQLException
 	{
@@ -142,10 +118,6 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 		assertNull(support.parseSequence("SELECT NEXT VALUE FOR sequence"));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getDefaultSchemas()
-	 */
 	@Override
 	public void getDefaultSchemas() throws SQLException
 	{
@@ -173,10 +145,6 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 		verify(statement).close();
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getAlterIdentityColumnSQL()
-	 */
 	@Override
 	public void getAlterIdentityColumnSQL() throws SQLException
 	{
@@ -193,10 +161,6 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 		assertEquals("ALTER SEQUENCE table_column_seq RESTART WITH 1000", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateRand()
-	 */
 	@Override
 	public void evaluateRand()
 	{

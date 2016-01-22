@@ -46,9 +46,6 @@ public class XADataSource extends CommonDataSource<javax.sql.XADataSource, XADat
 		return new XADataSourceProxyFactory(cluster);
 	}
 
-	/**
-	 * @see javax.sql.XADataSource#getXAConnection()
-	 */
 	@Override
 	public XAConnection getXAConnection() throws SQLException
 	{
@@ -56,45 +53,30 @@ public class XADataSource extends CommonDataSource<javax.sql.XADataSource, XADat
 		return (user != null) ? this.getProxy().getXAConnection(user, this.getPassword()) : this.getProxy().getXAConnection();
 	}
 
-	/**
-	 * @see javax.sql.XADataSource#getXAConnection(java.lang.String, java.lang.String)
-	 */
 	@Override
 	public XAConnection getXAConnection(String user, String password) throws SQLException
 	{
 		return this.getProxy().getXAConnection(user, password);
 	}
 
-	/**
-	 * @see javax.sql.CommonDataSource#getLoginTimeout()
-	 */
 	@Override
 	public int getLoginTimeout() throws SQLException
 	{
 		return this.getProxy().getLoginTimeout();
 	}
 
-	/**
-	 * @see javax.sql.CommonDataSource#getLogWriter()
-	 */
 	@Override
 	public PrintWriter getLogWriter() throws SQLException
 	{
 		return this.getProxy().getLogWriter();
 	}
 
-	/**
-	 * @see javax.sql.CommonDataSource#setLoginTimeout(int)
-	 */
 	@Override
 	public void setLoginTimeout(int timeout) throws SQLException
 	{
 		this.getProxy().setLoginTimeout(timeout);
 	}
 
-	/**
-	 * @see javax.sql.CommonDataSource#setLogWriter(java.io.PrintWriter)
-	 */
 	@Override
 	public void setLogWriter(PrintWriter writer) throws SQLException
 	{

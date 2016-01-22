@@ -66,9 +66,6 @@ public abstract class AbstractPreparedStatementInvocationHandler<Z, D extends Da
 		return super.getProxyFactoryFactory(object, method, parameters);
 	}
 
-	/**
-	 * @see io.github.hajdbc.sql.AbstractStatementInvocationHandler#getInvocationStrategy(java.sql.Statement, java.lang.reflect.Method, java.lang.Object[])
-	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(S statement, Method method, Object... parameters) throws SQLException
 	{

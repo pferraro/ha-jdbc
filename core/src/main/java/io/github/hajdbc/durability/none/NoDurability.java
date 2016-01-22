@@ -42,30 +42,18 @@ public class NoDurability<Z, D extends Database<Z>> implements Durability<Z, D>
 {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.Durability#getInvocationStrategy(io.github.hajdbc.invocation.InvocationStrategy, io.github.hajdbc.durability.Durability.Phase, java.lang.Object)
-	 */
 	@Override
 	public InvocationStrategy getInvocationStrategy(InvocationStrategy strategy, Phase phase, Object transactionId)
 	{
 		return strategy;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.Durability#getInvoker(io.github.hajdbc.invocation.Invoker, io.github.hajdbc.durability.Durability.Phase, java.lang.Object, io.github.hajdbc.ExceptionFactory)
-	 */
 	@Override
 	public <T, R, E extends Exception> Invoker<Z, D, T, R, E> getInvoker(Invoker<Z, D, T, R, E> invoker, Phase phase, Object transactionId, ExceptionFactory<E> exceptionFactory)
 	{
 		return invoker;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.Durability#recover(java.util.Map)
-	 */
 	@Override
 	public void recover(Map<InvocationEvent, Map<String, InvokerEvent>> invokers)
 	{

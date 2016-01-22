@@ -50,20 +50,12 @@ public class IngresDialectTest extends StandardDialectTest
 		super(new IngresDialectFactory());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
-	 */
 	@Override
 	public void getSequenceSupport()
 	{
 		assertSame(this.dialect, this.dialect.getSequenceSupport());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getSequences()
-	 */
 	@Override
 	public void getSequences() throws SQLException
 	{
@@ -95,10 +87,6 @@ public class IngresDialectTest extends StandardDialectTest
 		assertSame(sequence2, sequences.next());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#parseSequence()
-	 */
 	@Override
 	public void parseSequence() throws SQLException
 	{
@@ -122,10 +110,6 @@ public class IngresDialectTest extends StandardDialectTest
 		assertNull(support.parseSequence("SELECT * FROM table"));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentDate()
-	 */
 	@Override
 	public void evaluateCurrentDate()
 	{
@@ -140,10 +124,6 @@ public class IngresDialectTest extends StandardDialectTest
 		assertEquals("SELECT CURRENT_TIMESTAMP FROM test", this.dialect.evaluateCurrentDate("SELECT CURRENT_TIMESTAMP FROM test", date));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentTime()
-	 */
 	@Override
 	public void evaluateCurrentTime()
 	{
@@ -157,10 +137,6 @@ public class IngresDialectTest extends StandardDialectTest
 		assertEquals("SELECT CURRENT_TIMESTAMP FROM test", this.dialect.evaluateCurrentTime("SELECT CURRENT_TIMESTAMP FROM test", time));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentTimestamp()
-	 */
 	@Override
 	public void evaluateCurrentTimestamp()
 	{
@@ -176,10 +152,6 @@ public class IngresDialectTest extends StandardDialectTest
 		assertEquals("SELECT CURRENT_TIME FROM test", this.dialect.evaluateCurrentTimestamp("SELECT CURRENT_TIME FROM test", timestamp));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateRand()
-	 */
 	@Override
 	public void evaluateRand()
 	{

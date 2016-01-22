@@ -35,20 +35,12 @@ public class SimpleExecutorServiceProvider implements ExecutorServiceProvider
 		this.executor = executor;
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.ExecutorServiceProvider#getExecutor(java.util.concurrent.ThreadFactory)
-	 */
 	@Override
 	public ExecutorService getExecutor(ThreadFactory threadFactory)
 	{
 		return this.executor;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.ExecutorServiceProvider#release(java.util.concurrent.ExecutorService)
-	 */
 	@Override
 	public void release(ExecutorService service)
 	{

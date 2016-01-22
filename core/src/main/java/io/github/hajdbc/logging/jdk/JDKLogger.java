@@ -46,10 +46,6 @@ public class JDKLogger extends AbstractLogger
 		this.logger = java.util.logging.Logger.getLogger(targetClass.getName());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.logging.Logger#log(io.github.hajdbc.logging.Level, java.lang.Throwable, java.lang.String, java.lang.Object[])
-	 */
 	@Override
 	public void log(Level level, Throwable e, String pattern, Object... args)
 	{

@@ -34,9 +34,6 @@ public class SimpleDatabaseMetaDataProvider implements DatabaseMetaDataProvider
 		this.metaData = metaData;
 	}
 	
-	/**
-	 * @see io.github.hajdbc.cache.DatabaseMetaDataProvider#getDatabaseMetaData()
-	 */
 	@Override
 	public DatabaseMetaData getDatabaseMetaData()
 	{

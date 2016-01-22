@@ -39,20 +39,12 @@ public class HexCodecFactory extends AbstractCodec
 		return "16";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.codec.Codec#decode(java.lang.String)
-	 */
 	@Override
 	public String decode(String value)
 	{
 		return new String(DatatypeConverter.parseHexBinary(value));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.codec.Codec#encode(java.lang.String)
-	 */
 	@Override
 	public String encode(String value)
 	{

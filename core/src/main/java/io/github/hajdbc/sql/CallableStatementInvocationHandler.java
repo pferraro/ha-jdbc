@@ -47,9 +47,6 @@ public class CallableStatementInvocationHandler<Z, D extends Database<Z>> extend
 		super(CallableStatement.class, proxyFactory, setMethods);
 	}
 
-	/**
-	 * @see io.github.hajdbc.sql.AbstractStatementInvocationHandler#getInvocationStrategy(java.sql.Statement, java.lang.reflect.Method, java.lang.Object[])
-	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(CallableStatement statement, Method method, Object... parameters) throws SQLException
 	{
@@ -66,18 +63,12 @@ public class CallableStatementInvocationHandler<Z, D extends Database<Z>> extend
 		return super.getInvocationStrategy(statement, method, parameters);
 	}
 
-	/**
-	 * @see io.github.hajdbc.sql.AbstractPreparedStatementInvocationHandler#isBatchMethod(java.lang.reflect.Method)
-	 */
 	@Override
 	protected boolean isBatchMethod(Method method)
 	{
 		return registerOutParameterMethods.contains(method) || super.isBatchMethod(method);
 	}
 
-	/**
-	 * @see io.github.hajdbc.sql.AbstractPreparedStatementInvocationHandler#isIndexType(java.lang.Class)
-	 */
 	@Override
 	protected boolean isIndexType(Class<?> type)
 	{

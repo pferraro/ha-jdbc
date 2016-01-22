@@ -42,29 +42,18 @@ public class H2Dialect extends StandardDialect
 {
 	private static final Set<Integer> failureCodes = new HashSet<>(Arrays.asList(90013, 90030, 90046, 90067, 90108, 90117, 90121));
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#vendorPattern()
-	 */
 	@Override
 	protected String vendorPattern()
 	{
 		return "h2";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#executeFunctionFormat()
-	 */
 	@Override
 	protected String executeFunctionFormat()
 	{
 		return "CALL {0}";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#getSequenceSupport()
-	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
 	{
@@ -92,7 +81,6 @@ public class H2Dialect extends StandardDialect
 
 	/**
 	 * Deferrability clause is not supported.
-	 * @see io.github.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
 	 */
 	@Override
 	protected String createForeignKeyConstraintFormat()
@@ -100,46 +88,30 @@ public class H2Dialect extends StandardDialect
 		return "ALTER TABLE {1} ADD CONSTRAINT {0} FOREIGN KEY ({2}) REFERENCES {3} ({4}) ON DELETE {5,choice,0#CASCADE|1#RESTRICT|2#SET NULL|3#NO ACTION|4#SET DEFAULT} ON UPDATE {6,choice,0#CASCADE|1#RESTRICT|2#SET NULL|3#NO ACTION|4#SET DEFAULT}";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentDatePattern()
-	 */
 	@Override
 	protected String currentDatePattern()
 	{
 		return "(?<=\\W)CURRENT_DATE(?:\\s*\\(\\s*\\))?(?=\\W)|(?<=\\W)CURDATE\\s*\\(\\s*\\)|(?<=\\W)SYSDATE(?=\\W)|(?<=\\W)TODAY(?=\\W)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentTimePattern()
-	 */
 	@Override
 	protected String currentTimePattern()
 	{
 		return "(?<=\\W)CURRENT_TIME(?:\\s*\\(\\s*\\))?(?=\\W)|(?<=\\W)CURTIME\\s*\\(\\s*\\)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentTimestampPattern()
-	 */
 	@Override
 	protected String currentTimestampPattern()
 	{
 		return "(?<=\\W)CURRENT_TIMESTAMP(?:\\s*\\(\\s*\\d*\\s*\\))?(?=\\W)|(?<=\\W)NOW\\s*\\(\\s*\\d*\\s*\\)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#randomPattern()
-	 */
 	@Override
 	protected String randomPattern()
 	{
 		return "(?<=\\W)RAND\\s*\\(\\s*\\d*\\s*\\)";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#getDefaultSchemas(java.sql.DatabaseMetaData)
-	 */
 	@Override
 	public List<String> getDefaultSchemas(DatabaseMetaData metaData)
 	{

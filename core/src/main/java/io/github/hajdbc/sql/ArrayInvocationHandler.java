@@ -43,10 +43,6 @@ public class ArrayInvocationHandler<Z, D extends Database<Z>, P> extends Locator
 		super(Array.class, proxyFactory, READ_METHODS, WRITE_METHODS);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.sql.LocatorInvocationHandler#getInvocationStrategy(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])
-	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(Array array, Method method, Object... parameters) throws SQLException
 	{

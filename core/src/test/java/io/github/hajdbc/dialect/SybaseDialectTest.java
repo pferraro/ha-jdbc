@@ -41,20 +41,12 @@ public class SybaseDialectTest extends StandardDialectTest
 		super(new SybaseDialectFactory());
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getIdentityColumnSupport()
-	 */
 	@Override
 	public void getIdentityColumnSupport()
 	{
 		assertSame(this.dialect, this.dialect.getIdentityColumnSupport());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getTruncateTableSQL()
-	 */
 	@Override
 	public void getTruncateTableSQL() throws SQLException
 	{
@@ -69,10 +61,6 @@ public class SybaseDialectTest extends StandardDialectTest
 		assertEquals("TRUNCATE TABLE table", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getCreateForeignKeyConstraintSQL()
-	 */
 	@Override
 	public void getCreateForeignKeyConstraintSQL() throws SQLException
 	{
@@ -96,10 +84,6 @@ public class SybaseDialectTest extends StandardDialectTest
 		assertEquals("ALTER TABLE table ADD CONSTRAINT name FOREIGN KEY (column1, column2) REFERENCES foreign_table (foreign_column1, foreign_column2) ON DELETE CASCADE ON UPDATE RESTRICT", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentDate()
-	 */
 	@Override
 	public void evaluateCurrentDate()
 	{
@@ -115,10 +99,6 @@ public class SybaseDialectTest extends StandardDialectTest
 		assertEquals("SELECT CURRENT_TIMESTAMP FROM test", this.dialect.evaluateCurrentDate("SELECT CURRENT_TIMESTAMP FROM test", date));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentTime()
-	 */
 	@Override
 	public void evaluateCurrentTime()
 	{
@@ -132,10 +112,6 @@ public class SybaseDialectTest extends StandardDialectTest
 		assertEquals("SELECT LOCALTIMESTAMP FROM test", this.dialect.evaluateCurrentTime("SELECT LOCALTIMESTAMP FROM test", time));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentTimestamp()
-	 */
 	@Override
 	public void evaluateCurrentTimestamp()
 	{

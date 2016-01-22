@@ -72,9 +72,6 @@ public abstract class AbstractProxyFactory<Z, D extends Database<Z>, TE extends 
 		return this.map.remove(database);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public Set<Map.Entry<D, T>> entries()
 	{
@@ -154,9 +151,6 @@ public abstract class AbstractProxyFactory<Z, D extends Database<Z>, TE extends 
 		}
 	}
 	
-	/**
-	 * @throws E  
-	 */
 	@Override
 	public void replay(D database, T object) throws E
 	{
@@ -178,9 +172,6 @@ public abstract class AbstractProxyFactory<Z, D extends Database<Z>, TE extends 
 		}
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public final ExceptionFactory<E> getExceptionFactory()
 	{

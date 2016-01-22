@@ -34,10 +34,6 @@ public class Reversed<T> implements Iterable<T>
 		this.list = list;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Iterable#iterator()
-	 */
 	@Override
 	public Iterator<T> iterator()
 	{

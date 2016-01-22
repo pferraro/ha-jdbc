@@ -40,20 +40,12 @@ public class IngresDialect extends StandardDialect
 {
 	private final Pattern legacySequencePattern = Pattern.compile("'?(\\w+)'?\\.(?:(?:CURR)|(?:NEXT))VAL", Pattern.CASE_INSENSITIVE);
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#vendorPattern()
-	 */
 	@Override
 	protected String vendorPattern()
 	{
 		return "ingres";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#getSequenceSupport()
-	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
 	{
@@ -79,9 +71,6 @@ public class IngresDialect extends StandardDialect
 		}
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#parseSequence(java.lang.String)
-	 */
 	@Override
 	public String parseSequence(String sql)
 	{
@@ -90,45 +79,30 @@ public class IngresDialect extends StandardDialect
 		return (sequence != null) ? sequence : this.parse(this.legacySequencePattern, sql);
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#sequencePattern()
-	 */
 	@Override
 	protected String sequencePattern()
 	{
 		return "(?:NEXT|CURRENT)\\s+VALUE\\s+FOR\\s+'?([^',\\s\\(\\)]+)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentDatePattern()
-	 */
 	@Override
 	protected String currentDatePattern()
 	{
 		return "(?<=\\W)CURRENT_DATE(?=\\W)|(?<=\\W)DATE\\s*\\(\\s*'TODAY'\\s*\\)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentTimePattern()
-	 */
 	@Override
 	protected String currentTimePattern()
 	{
 		return "(?<=\\W)CURRENT_TIME(?=\\W)|(?<=\\W)LOCAL_TIME(?=\\W)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentTimestampPattern()
-	 */
 	@Override
 	protected String currentTimestampPattern()
 	{
 		return "(?<=\\W)CURRENT_TIMESTAMP(?=\\W)|(?<=\\W)LOCAL_TIMESTAMP(?=\\W)|(?<=\\W)DATE\\s*\\(\\s*'NOW'\\s*\\)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#randomPattern()
-	 */
 	@Override
 	protected String randomPattern()
 	{

@@ -53,28 +53,18 @@ public abstract class AbstractDriver implements Driver
 		return matcher.group(1);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.sql.Driver#jdbcCompliant()
-	 */
 	@Override
 	public boolean jdbcCompliant()
 	{
 		return false;
 	}
 
-	/**
-	 * @see java.sql.Driver#getMajorVersion()
-	 */
 	@Override
 	public int getMajorVersion()
 	{
 		return Version.CURRENT.getMajor();
 	}
 	
-	/**
-	 * @see java.sql.Driver#getMinorVersion()
-	 */
 	@Override
 	public int getMinorVersion()
 	{

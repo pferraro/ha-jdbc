@@ -35,10 +35,6 @@ public class FastDifferentialSynchronizationStrategy implements SynchronizationS
 		return "delta";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.SynchronizationStrategy#init(io.github.hajdbc.DatabaseCluster)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> void init(DatabaseCluster<Z, D> cluster)
 	{
@@ -51,10 +47,6 @@ public class FastDifferentialSynchronizationStrategy implements SynchronizationS
 	{
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.SynchronizationStrategy#destroy(io.github.hajdbc.DatabaseCluster)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> void destroy(DatabaseCluster<Z, D> cluster)
 	{

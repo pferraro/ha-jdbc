@@ -37,10 +37,6 @@ public class ReleaseLockCommand implements Command<Void, LockCommandContext>
 		this.descriptor = descriptor;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.distributed.Command#execute(java.lang.Object)
-	 */
 	@Override
 	public Void execute(LockCommandContext context)
 	{
@@ -64,10 +60,6 @@ public class ReleaseLockCommand implements Command<Void, LockCommandContext>
 		return null;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString()
 	{

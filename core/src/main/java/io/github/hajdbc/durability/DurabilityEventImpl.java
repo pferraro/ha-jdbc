@@ -35,20 +35,12 @@ public class DurabilityEventImpl extends Event<Object> implements DurabilityEven
 		this.phase = phase;
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityEvent#getTransactionId()
-	 */
 	@Override
 	public Object getTransactionId()
 	{
 		return this.source;
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityEvent#getPhase()
-	 */
 	@Override
 	public Durability.Phase getPhase()
 	{
@@ -61,10 +53,6 @@ public class DurabilityEventImpl extends Event<Object> implements DurabilityEven
 		return String.format("%s(%s)", this.getPhase(), this.source);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object object)
 	{

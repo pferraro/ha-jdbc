@@ -53,20 +53,12 @@ public class MaxDBDialectTest extends StandardDialectTest
 		super(new MaxDBDialectFactory());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
-	 */
 	@Override
 	public void getSequenceSupport()
 	{
 		assertSame(this.dialect, this.dialect.getSequenceSupport());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getCreateForeignKeyConstraintSQL()
-	 */
 	@Override
 	public void getCreateForeignKeyConstraintSQL() throws SQLException
 	{
@@ -90,10 +82,6 @@ public class MaxDBDialectTest extends StandardDialectTest
 		assertEquals("ALTER TABLE table ADD CONSTRAINT name FOREIGN KEY (column1, column2) REFERENCES foreign_table (foreign_column1, foreign_column2) ON DELETE CASCADE", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getSequences()
-	 */
 	@Override
 	public void getSequences() throws SQLException
 	{
@@ -126,10 +114,6 @@ public class MaxDBDialectTest extends StandardDialectTest
 		assertSame(sequence2, sequences.next());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getTruncateTableSQL()
-	 */
 	@Override
 	public void getTruncateTableSQL() throws SQLException
 	{
@@ -144,10 +128,6 @@ public class MaxDBDialectTest extends StandardDialectTest
 		assertEquals("TRUNCATE TABLE table", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#parseSequence()
-	 */
 	@Override
 	public void parseSequence() throws SQLException
 	{
@@ -164,10 +144,6 @@ public class MaxDBDialectTest extends StandardDialectTest
 		assertNull(support.parseSequence("SELECT NEXT VALUE FOR sequence"));
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getNextSequenceValueSQL()
-	 */
 	@Override
 	public void getNextSequenceValueSQL() throws SQLException
 	{

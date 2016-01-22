@@ -36,20 +36,12 @@ public class XAExceptionFactory extends AbstractExceptionFactory<XAException>
 		super(XAException.class);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.ExceptionFactory#createException(java.lang.String)
-	 */
 	@Override
 	public XAException createException(String message)
 	{
 		return new XAException(message);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.ExceptionFactory#equals(java.lang.Exception, java.lang.Exception)
-	 */
 	@Override
 	public boolean equals(XAException exception1, XAException exception2)
 	{
@@ -62,30 +54,18 @@ public class XAExceptionFactory extends AbstractExceptionFactory<XAException>
 		return super.equals(exception1, exception2);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.ExceptionFactory#indicatesFailure(java.lang.Exception, io.github.hajdbc.dialect.Dialect)
-	 */
 	@Override
 	public boolean indicatesFailure(XAException exception, Dialect dialect)
 	{
 		return dialect.indicatesFailure(exception);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.ExceptionFactory#getType()
-	 */
 	@Override
 	public ExceptionType getType()
 	{
 		return ExceptionType.XA;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.ExceptionFactory#correctHeuristic(java.lang.Exception, io.github.hajdbc.durability.Durability.Phase)
-	 */
 	@Override
 	public boolean correctHeuristic(XAException exception, Phase phase)
 	{

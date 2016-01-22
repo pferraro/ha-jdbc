@@ -39,39 +39,24 @@ import io.github.hajdbc.dialect.StandardDialect;
 @SuppressWarnings("nls")
 public class DB2Dialect extends StandardDialect
 {
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#vendorPattern()
-	 */
 	@Override
 	protected String vendorPattern()
 	{
 		return "db2";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#executeFunctionFormat()
-	 */
 	@Override
 	protected String executeFunctionFormat()
 	{
 		return "VALUES {0}";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#getSequenceSupport()
-	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
 	{
 		return this;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#getIdentityColumnSupport()
-	 */
 	@Override
 	public IdentityColumnSupport getIdentityColumnSupport()
 	{
@@ -97,45 +82,30 @@ public class DB2Dialect extends StandardDialect
 		}
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#sequencePattern()
-	 */
 	@Override
 	protected String sequencePattern()
 	{
 		return "(?:NEXT|PREV)VAL\\s+FOR\\s+'?([^',\\s\\(\\)]+)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#nextSequenceValueFormat()
-	 */
 	@Override
 	protected String nextSequenceValueFormat()
 	{
 		return "NEXTVAL FOR {0}";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#dateLiteralFormat()
-	 */
 	@Override
 	protected String dateLiteralFormat()
 	{
 		return this.timestampLiteralFormat();
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#timeLiteralFormat()
-	 */
 	@Override
 	protected String timeLiteralFormat()
 	{
 		return this.timestampLiteralFormat();
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#timestampLiteralFormat()
-	 */
 	@Override
 	protected String timestampLiteralFormat()
 	{

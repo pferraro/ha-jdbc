@@ -163,10 +163,6 @@ public abstract class CommonDataSource<Z extends javax.sql.CommonDataSource, D e
 		this.factory = clusterFactory;
 	}
 
-	/**
-	 * @throws SQLFeatureNotSupportedException 
-	 * @see javax.sql.CommonDataSource#getParentLogger()
-	 */
 	@Override
 	public Logger getParentLogger() throws SQLFeatureNotSupportedException
 	{
@@ -184,36 +180,24 @@ public abstract class CommonDataSource<Z extends javax.sql.CommonDataSource, D e
 		}
 	}
 
-	/**
-	 * @see javax.sql.CommonDataSource#getLoginTimeout()
-	 */
 	@Override
 	public int getLoginTimeout() throws SQLException
 	{
 		return this.getProxy().getLoginTimeout();
 	}
 
-	/**
-	 * @see javax.sql.CommonDataSource#getLogWriter()
-	 */
 	@Override
 	public PrintWriter getLogWriter() throws SQLException
 	{
 		return this.getProxy().getLogWriter();
 	}
 
-	/**
-	 * @see javax.sql.CommonDataSource#setLoginTimeout(int)
-	 */
 	@Override
 	public void setLoginTimeout(int timeout) throws SQLException
 	{
 		this.getProxy().setLoginTimeout(timeout);
 	}
 
-	/**
-	 * @see javax.sql.CommonDataSource#setLogWriter(java.io.PrintWriter)
-	 */
 	@Override
 	public void setLogWriter(PrintWriter writer) throws SQLException
 	{

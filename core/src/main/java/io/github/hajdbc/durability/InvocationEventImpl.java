@@ -35,10 +35,6 @@ public class InvocationEventImpl extends DurabilityEventImpl implements Invocati
 		this.exceptionType = exceptionType;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.InvocationEvent#getExceptionType()
-	 */
 	@Override
 	public ExceptionType getExceptionType()
 	{

@@ -26,30 +26,18 @@ import io.github.hajdbc.logging.LoggingProvider;
  */
 public class JDKLoggingProvider implements LoggingProvider
 {
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.logging.LoggingProvider#getLogger(java.lang.Class)
-	 */
 	@Override
 	public Logger getLogger(Class<?> targetClass)
 	{
 		return new JDKLogger(targetClass);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.logging.LoggingProvider#getName()
-	 */
 	@Override
 	public String getName()
 	{
 		return "JDK";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.logging.LoggingProvider#isEnabled()
-	 */
 	@Override
 	public boolean isEnabled()
 	{

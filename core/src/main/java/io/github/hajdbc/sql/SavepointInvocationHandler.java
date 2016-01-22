@@ -40,9 +40,6 @@ public class SavepointInvocationHandler<Z, D extends Database<Z>> extends ChildI
 		super(Savepoint.class, factory, null);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(Savepoint savepoint, Method method, Object... parameters)
 	{

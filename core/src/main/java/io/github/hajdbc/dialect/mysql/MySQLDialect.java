@@ -71,10 +71,6 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 	};
 	private static final File PASSWORD_FILE = new File(String.format("%s%s.my.cnf", Strings.USER_HOME, Strings.FILE_SEPARATOR));
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#vendorPattern()
-	 */
 	@Override
 	protected String vendorPattern()
 	{
@@ -87,9 +83,6 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 		return new HashSet<>(Arrays.asList(RESERVED_KEY_WORDS));
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#getDefaultSchemas(java.sql.DatabaseMetaData)
-	 */
 	@Override
 	public List<String> getDefaultSchemas(DatabaseMetaData metaData) throws SQLException
 	{
@@ -98,7 +91,6 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 
 	/**
 	 * Deferrability clause is not supported.
-	 * @see io.github.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
 	 */
 	@Override
 	protected String createForeignKeyConstraintFormat()
@@ -106,100 +98,66 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 		return "ALTER TABLE {1} ADD CONSTRAINT {0} FOREIGN KEY ({2}) REFERENCES {3} ({4}) ON DELETE {5,choice,0#CASCADE|1#RESTRICT|2#SET NULL|3#NO ACTION|4#SET DEFAULT} ON UPDATE {6,choice,0#CASCADE|1#RESTRICT|2#SET NULL|3#NO ACTION|4#SET DEFAULT}";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#createUniqueConstraintFormat()
-	 */
 	@Override
 	protected String createUniqueConstraintFormat()
 	{
 		return "ALTER TABLE {1} ADD UNIQUE {0} ({2})";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#dropForeignKeyConstraintFormat()
-	 */
 	@Override
 	protected String dropForeignKeyConstraintFormat()
 	{
 		return "ALTER TABLE {1} DROP FOREIGN KEY {0}";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#dropUniqueConstraintFormat()
-	 */
 	@Override
 	protected String dropUniqueConstraintFormat()
 	{
 		return "ALTER TABLE {1} DROP INDEX {0}";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#alterIdentityColumnFormat()
-	 */
 	@Override
 	protected String alterIdentityColumnFormat()
 	{
 		return "ALTER TABLE {0} AUTO_INCREMENT = {2}";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentDatePattern()
-	 */
 	@Override
 	protected String currentDatePattern()
 	{
 		return super.currentDatePattern() + "|(?<=\\W)CURDATE\\s*\\(\\s*\\)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentTimePattern()
-	 */
 	@Override
 	protected String currentTimePattern()
 	{
 		return super.currentTimePattern() + "|(?<=\\W)CURTIME\\s*\\(\\s*\\)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentTimestampPattern()
-	 */
 	@Override
 	protected String currentTimestampPattern()
 	{
 		return super.currentTimestampPattern() + "|(?<=\\W)NOW\\s*\\(\\s*\\)|(?<=\\W)SYSDATE\\s*\\(\\s*\\)";
 	}
 	
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#dateLiteralFormat()
-	 */
 	@Override
 	protected String dateLiteralFormat()
 	{
 		return this.timestampLiteralFormat();
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#timeLiteralFormat()
-	 */
 	@Override
 	protected String timeLiteralFormat()
 	{
 		return this.timestampLiteralFormat();
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#timestampLiteralFormat()
-	 */
 	@Override
 	protected String timestampLiteralFormat()
 	{
 		return "''{0}''";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#getDumpRestoreSupport()
-	 */
 	@Override
 	public DumpRestoreSupport getDumpRestoreSupport()
 	{
