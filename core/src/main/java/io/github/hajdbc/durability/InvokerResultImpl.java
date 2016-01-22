@@ -41,20 +41,12 @@ public class InvokerResultImpl implements InvokerResult, Serializable
 		this.exception = exception;
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.InvokerResult#getValue()
-	 */
 	@Override
 	public Object getValue()
 	{
 		return this.value;
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.InvokerResult#getException()
-	 */
 	@Override
 	public Exception getException()
 	{

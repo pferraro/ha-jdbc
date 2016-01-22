@@ -27,30 +27,18 @@ import java.util.UUID;
  */
 public class UUIDTransactionIdentifierFactory implements TransactionIdentifierFactory<UUID>
 {
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.tx.TransactionIdentifierFactory#createTransactionIdentifier()
-	 */
 	@Override
 	public UUID createTransactionIdentifier()
 	{
 		return UUID.randomUUID();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.tx.TransactionIdentifierFactory#serialize(java.lang.Object)
-	 */
 	@Override
 	public byte[] serialize(UUID transactionId)
 	{
 		return ByteBuffer.allocate(this.size()).putLong(transactionId.getMostSignificantBits()).putLong(transactionId.getLeastSignificantBits()).array();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.tx.TransactionIdentifierFactory#deserialize(byte[])
-	 */
 	@Override
 	public UUID deserialize(byte[] bytes)
 	{
@@ -58,10 +46,6 @@ public class UUIDTransactionIdentifierFactory implements TransactionIdentifierFa
 		return new UUID(buffer.getLong(), buffer.getLong());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.tx.TransactionIdentifierFactory#size()
-	 */
 	@Override
 	public int size()
 	{

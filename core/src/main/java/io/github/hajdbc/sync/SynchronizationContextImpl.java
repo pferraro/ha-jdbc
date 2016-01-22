@@ -77,9 +77,6 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 		this.sourceDatabaseProperties = cache.getDatabaseProperties(this.sourceDatabase, this.getConnection(this.sourceDatabase));
 	}
 	
-	/**
-	 * @see io.github.hajdbc.sync.SynchronizationContext#getConnection(io.github.hajdbc.Database)
-	 */
 	@Override
 	public Connection getConnection(D database) throws SQLException
 	{
@@ -96,92 +93,60 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 		return entry.getKey();
 	}
 	
-	/**
-	 * @see io.github.hajdbc.sync.SynchronizationContext#getSourceDatabase()
-	 */
 	@Override
 	public D getSourceDatabase()
 	{
 		return this.sourceDatabase;
 	}
 	
-	/**
-	 * @see io.github.hajdbc.sync.SynchronizationContext#getTargetDatabase()
-	 */
 	@Override
 	public D getTargetDatabase()
 	{
 		return this.targetDatabase;
 	}
 	
-	/**
-	 * @see io.github.hajdbc.sync.SynchronizationContext#getActiveDatabaseSet()
-	 */
 	@Override
 	public Set<D> getActiveDatabaseSet()
 	{
 		return this.activeDatabaseSet;
 	}
 	
-	/**
-	 * @see io.github.hajdbc.sync.SynchronizationContext#getSourceDatabaseProperties()
-	 */
 	@Override
 	public DatabaseProperties getSourceDatabaseProperties()
 	{
 		return this.sourceDatabaseProperties;
 	}
 
-	/**
-	 * @see io.github.hajdbc.sync.SynchronizationContext#getTargetDatabaseProperties()
-	 */
 	@Override
 	public DatabaseProperties getTargetDatabaseProperties()
 	{
 		return this.targetDatabaseProperties;
 	}
 
-	/**
-	 * @see io.github.hajdbc.sync.SynchronizationContext#getDialect()
-	 */
 	@Override
 	public Dialect getDialect()
 	{
 		return this.cluster.getDialect();
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.sync.SynchronizationContext#getDecoder()
-	 */
 	@Override
 	public Decoder getDecoder()
 	{
 		return this.cluster.getDecoder();
 	}
 
-	/**
-	 * @see io.github.hajdbc.sync.SynchronizationContext#getExecutor()
-	 */
 	@Override
 	public ExecutorService getExecutor()
 	{
 		return this.executor;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.sync.SynchronizationContext#getSynchronizationSupport()
-	 */
 	@Override
 	public SynchronizationSupport getSynchronizationSupport()
 	{
 		return new SynchronizationSupportImpl<>(this);
 	}
 
-	/**
-	 * @see io.github.hajdbc.sync.SynchronizationContext#close()
-	 */
 	@Override
 	public void close()
 	{

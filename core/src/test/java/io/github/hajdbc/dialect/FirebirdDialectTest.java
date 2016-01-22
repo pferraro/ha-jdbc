@@ -46,20 +46,12 @@ public class FirebirdDialectTest extends StandardDialectTest
 		super(new FirebirdDialectFactory());
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
-	 */
 	@Override
 	public void getSequenceSupport()
 	{
 		assertSame(this.dialect, this.dialect.getSequenceSupport());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getAlterSequenceSQL()
-	 */
 	@Override
 	public void getAlterSequenceSQL() throws SQLException
 	{
@@ -75,10 +67,6 @@ public class FirebirdDialectTest extends StandardDialectTest
 		assertEquals("SET GENERATOR sequence TO 1000", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getSequences()
-	 */
 	@Override
 	public void getSequences() throws SQLException
 	{
@@ -110,10 +98,6 @@ public class FirebirdDialectTest extends StandardDialectTest
 		assertSame(sequence2, sequences.next());
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getNextSequenceValueSQL()
-	 */
 	@Override
 	public void getNextSequenceValueSQL() throws SQLException
 	{
@@ -128,10 +112,6 @@ public class FirebirdDialectTest extends StandardDialectTest
 		assertEquals("SELECT GEN_ID(sequence, 1) FROM RDB$DATABASE", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#isSelectForUpdate()
-	 */
 	@Override
 	public void isSelectForUpdate() throws SQLException
 	{
@@ -139,10 +119,6 @@ public class FirebirdDialectTest extends StandardDialectTest
 		assertFalse(this.dialect.isSelectForUpdate("SELECT * FROM test"));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#parseSequence()
-	 */
 	@Override
 	public void parseSequence() throws SQLException
 	{

@@ -110,10 +110,6 @@ public class CipherCodecFactory implements CodecFactory
 		return "?";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.codec.CodecFactory#createCodec(java.lang.String)
-	 */
 	@Override
 	public Codec createCodec(String clusterId) throws SQLException
 	{

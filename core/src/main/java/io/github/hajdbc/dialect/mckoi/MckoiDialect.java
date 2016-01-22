@@ -28,38 +28,24 @@ import io.github.hajdbc.dialect.StandardDialect;
 @SuppressWarnings("nls")
 public class MckoiDialect extends StandardDialect
 {
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#vendorPattern()
-	 */
 	@Override
 	protected String vendorPattern()
 	{
 		return "mckoi";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#getSequenceSupport()
-	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
 	{
 		return this;
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#sequencePattern()
-	 */
 	@Override
 	protected String sequencePattern()
 	{
 		return "(?:CURR|NEXT)VAL\\s*\\(\\s*'([^']+)'\\s*\\)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentTimestampPattern()
-	 */
 	@Override
 	protected String currentTimestampPattern()
 	{

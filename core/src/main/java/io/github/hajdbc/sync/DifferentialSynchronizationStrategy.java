@@ -95,20 +95,12 @@ public class DifferentialSynchronizationStrategy implements SynchronizationStrat
 		this.strategy.synchronize(context);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.SynchronizationStrategy#init(io.github.hajdbc.DatabaseCluster)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> void init(DatabaseCluster<Z, D> cluster)
 	{
 		this.strategy.init(cluster);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.SynchronizationStrategy#destroy(io.github.hajdbc.DatabaseCluster)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> void destroy(DatabaseCluster<Z, D> cluster)
 	{

@@ -36,10 +36,6 @@ public class FineDurabilityFactory implements DurabilityFactory
 		return "fine";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityFactory#createDurability(io.github.hajdbc.DatabaseCluster)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> Durability<Z, D> createDurability(DatabaseCluster<Z, D> cluster)
 	{

@@ -40,9 +40,6 @@ public class ReadWriteLockManager implements LockManager
 		this.factory = factory;
 	}
 	
-	/**
-	 * @see io.github.hajdbc.lock.LockManager#readLock(java.lang.String)
-	 */
 	@Override
 	public Lock readLock(String object)
 	{
@@ -51,9 +48,6 @@ public class ReadWriteLockManager implements LockManager
 		return (object == null) ? lock : new GlobalLock(lock, this.getReadWriteLock(object).readLock());
 	}
 	
-	/**
-	 * @see io.github.hajdbc.lock.LockManager#writeLock(java.lang.String)
-	 */
 	@Override
 	public Lock writeLock(String object)
 	{

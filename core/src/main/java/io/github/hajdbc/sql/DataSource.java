@@ -43,9 +43,6 @@ public class DataSource extends CommonDataSource<javax.sql.DataSource, DataSourc
 		return new DataSourceProxyFactory(cluster);
 	}
 
-	/**
-	 * @see javax.sql.DataSource#getConnection()
-	 */
 	@Override
 	public Connection getConnection() throws SQLException
 	{
@@ -53,27 +50,18 @@ public class DataSource extends CommonDataSource<javax.sql.DataSource, DataSourc
 		return (user != null) ? this.getProxy().getConnection(user, this.getPassword()) : this.getProxy().getConnection();
 	}
 
-	/**
-	 * @see javax.sql.DataSource#getConnection(java.lang.String, java.lang.String)
-	 */
 	@Override
 	public Connection getConnection(String user, String password) throws SQLException
 	{
 		return this.getProxy().getConnection(user, password);
 	}
 
-	/**
-	 * @see java.sql.Wrapper#isWrapperFor(java.lang.Class)
-	 */
 	@Override
 	public boolean isWrapperFor(Class<?> targetClass) throws SQLException
 	{
 		return this.getProxy().isWrapperFor(targetClass);
 	}
 
-	/**
-	 * @see java.sql.Wrapper#unwrap(java.lang.Class)
-	 */
 	@Override
 	public <T> T unwrap(Class<T> targetClass) throws SQLException
 	{

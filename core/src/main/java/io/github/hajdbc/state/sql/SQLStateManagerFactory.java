@@ -102,11 +102,6 @@ public class SQLStateManagerFactory extends GenericObjectPoolConfiguration imple
 		return "sql";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @throws SQLException 
-	 * @see io.github.hajdbc.state.StateManagerFactory#createStateManager(io.github.hajdbc.DatabaseCluster)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> StateManager createStateManager(DatabaseCluster<Z, D> cluster) throws SQLException
 	{

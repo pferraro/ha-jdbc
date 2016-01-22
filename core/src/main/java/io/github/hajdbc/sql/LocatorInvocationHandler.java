@@ -49,9 +49,6 @@ public abstract class LocatorInvocationHandler<Z, D extends Database<Z>, P, T, F
 		this.writeMethods = writeMethods;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(T locator, Method method, Object... parameters) throws SQLException
 	{

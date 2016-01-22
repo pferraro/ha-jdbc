@@ -25,10 +25,6 @@ public abstract class AbstractCodec implements Codec, CodecFactory
 {
 	private static final long serialVersionUID = 848903379915175047L;
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.codec.CodecFactory#createCodec(java.lang.String)
-	 */
 	@Override
 	public Codec createCodec(String clusterId)
 	{

@@ -38,54 +38,36 @@ public class MockDriver implements Driver
 		this.connection = connection;
 	}
 	
-	/**
-	 * @see java.sql.Driver#connect(java.lang.String, java.util.Properties)
-	 */
 	@Override
 	public Connection connect(String url, Properties properties)
 	{
 		return this.connection;
 	}
 
-	/**
-	 * @see java.sql.Driver#acceptsURL(java.lang.String)
-	 */
 	@Override
 	public boolean acceptsURL(String url)
 	{
 		return url.startsWith("jdbc:mock:");
 	}
 
-	/**
-	 * @see java.sql.Driver#getPropertyInfo(java.lang.String, java.util.Properties)
-	 */
 	@Override
 	public DriverPropertyInfo[] getPropertyInfo(String url, Properties properties)
 	{
 		return new DriverPropertyInfo[0];
 	}
 
-	/**
-	 * @see java.sql.Driver#getMajorVersion()
-	 */
 	@Override
 	public int getMajorVersion()
 	{
 		return 0;
 	}
 
-	/**
-	 * @see java.sql.Driver#getMinorVersion()
-	 */
 	@Override
 	public int getMinorVersion()
 	{
 		return 0;
 	}
 
-	/**
-	 * @see java.sql.Driver#jdbcCompliant()
-	 */
 	@Override
 	public boolean jdbcCompliant()
 	{

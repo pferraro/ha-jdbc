@@ -47,10 +47,6 @@ public class MySQLDialectTest extends StandardDialectTest
 		super(new MySQLDialectFactory());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getCreateForeignKeyConstraintSQL()
-	 */
 	@Override
 	public void getCreateForeignKeyConstraintSQL() throws SQLException
 	{
@@ -74,10 +70,6 @@ public class MySQLDialectTest extends StandardDialectTest
 		assertEquals("ALTER TABLE table ADD CONSTRAINT name FOREIGN KEY (column1, column2) REFERENCES foreign_table (foreign_column1, foreign_column2) ON DELETE CASCADE ON UPDATE RESTRICT", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getDropForeignKeyConstraintSQL()
-	 */
 	@Override
 	public void getDropForeignKeyConstraintSQL() throws SQLException
 	{
@@ -101,10 +93,6 @@ public class MySQLDialectTest extends StandardDialectTest
 		assertEquals("ALTER TABLE table DROP FOREIGN KEY name", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getCreateUniqueConstraintSQL()
-	 */
 	@Override
 	public void getCreateUniqueConstraintSQL() throws SQLException
 	{
@@ -121,10 +109,6 @@ public class MySQLDialectTest extends StandardDialectTest
 		assertEquals("ALTER TABLE table ADD UNIQUE name (column1, column2)", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getDropUniqueConstraintSQL()
-	 */
 	@Override
 	public void getDropUniqueConstraintSQL() throws SQLException
 	{
@@ -141,10 +125,6 @@ public class MySQLDialectTest extends StandardDialectTest
 		assertEquals("ALTER TABLE table DROP INDEX name", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getDefaultSchemas()
-	 */
 	@Override
 	public void getDefaultSchemas() throws SQLException
 	{

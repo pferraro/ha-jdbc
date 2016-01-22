@@ -31,10 +31,6 @@ public class InvocationEventAdapter extends DurabilityEventImpl implements Invoc
 		super(event.getTransactionId(), event.getPhase());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.InvocationEvent#getExceptionType()
-	 */
 	@Override
 	public ExceptionType getExceptionType()
 	{

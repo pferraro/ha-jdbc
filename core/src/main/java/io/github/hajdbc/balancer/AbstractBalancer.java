@@ -39,10 +39,6 @@ public abstract class AbstractBalancer<Z, D extends Database<Z>> implements Bala
 {
 	protected abstract Set<D> getDatabases();
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.balancer.Balancer#backups()
-	 */
 	@Override
 	public Iterable<D> backups()
 	{
@@ -67,60 +63,36 @@ public abstract class AbstractBalancer<Z, D extends Database<Z>> implements Bala
 		return backups;
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#iterator()
-	 */
 	@Override
 	public Iterator<D> iterator()
 	{
 		return this.getDatabases().iterator();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#contains(java.lang.Object)
-	 */
 	@Override
 	public boolean contains(Object database)
 	{
 		return this.getDatabases().contains(database);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#containsAll(java.util.Collection)
-	 */
 	@Override
 	public boolean containsAll(Collection<?> databases)
 	{
 		return this.getDatabases().containsAll(databases);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#isEmpty()
-	 */
 	@Override
 	public boolean isEmpty()
 	{
 		return this.getDatabases().isEmpty();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#size()
-	 */
 	@Override
 	public int size()
 	{
 		return this.getDatabases().size();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#toArray()
-	 */
 	@Override
 	public Object[] toArray()
 	{
@@ -133,10 +105,6 @@ public abstract class AbstractBalancer<Z, D extends Database<Z>> implements Bala
 		return this.getDatabases().toArray(array);
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object object)
 	{
@@ -148,10 +116,6 @@ public abstract class AbstractBalancer<Z, D extends Database<Z>> implements Bala
 		return this.getDatabases().equals(set);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#hashCode()
-	 */
 	@Override
 	public int hashCode()
 	{

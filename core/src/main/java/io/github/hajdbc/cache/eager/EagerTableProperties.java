@@ -63,36 +63,24 @@ public class EagerTableProperties extends AbstractTableProperties
 		return this.columnMap;
 	}
 
-	/**
-	 * @see io.github.hajdbc.TableProperties#getPrimaryKey()
-	 */
 	@Override
 	public UniqueConstraint getPrimaryKey()
 	{
 		return this.primaryKey;
 	}
 
-	/**
-	 * @see io.github.hajdbc.TableProperties#getForeignKeyConstraints()
-	 */
 	@Override
 	public Collection<ForeignKeyConstraint> getForeignKeyConstraints()
 	{
 		return this.foreignKeyConstraints;
 	}
 
-	/**
-	 * @see io.github.hajdbc.TableProperties#getUniqueConstraints()
-	 */
 	@Override
 	public Collection<UniqueConstraint> getUniqueConstraints()
 	{
 		return this.uniqueConstraints;
 	}
 
-	/**
-	 * @see io.github.hajdbc.TableProperties#getIdentityColumns()
-	 */
 	@Override
 	public Collection<String> getIdentityColumns()
 	{

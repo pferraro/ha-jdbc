@@ -35,18 +35,12 @@ public abstract class AbstractConstraint<C extends Constraint<C>> extends Abstra
 		this.columns = columns;
 	}
 	
-	/**
-	 * @see io.github.hajdbc.UniqueConstraint#getColumnList()
-	 */
 	@Override
 	public List<String> getColumnList()
 	{
 		return this.columns;
 	}
 
-	/**
-	 * @see io.github.hajdbc.UniqueConstraint#getTable()
-	 */
 	@Override
 	public QualifiedName getTable()
 	{

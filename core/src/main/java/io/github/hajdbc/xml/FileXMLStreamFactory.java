@@ -55,30 +55,18 @@ public class FileXMLStreamFactory implements XMLStreamFactory
 		}
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.xml.XMLStreamFactory#createSource()
-	 */
 	@Override
 	public Source createSource()
 	{
 		return new StreamSource(this.file);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.xml.XMLStreamFactory#createResult()
-	 */
 	@Override
 	public Result createResult()
 	{
 		return new StreamResult(this.file);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString()
 	{

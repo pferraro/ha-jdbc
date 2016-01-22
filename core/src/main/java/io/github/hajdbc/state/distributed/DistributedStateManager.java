@@ -76,30 +76,18 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 		return this.dispatcher.getLocal();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.StateManager#getActiveDatabases()
-	 */
 	@Override
 	public Set<String> getActiveDatabases()
 	{
 		return this.stateManager.getActiveDatabases();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.StateManager#setActiveDatabases(java.util.Set)
-	 */
 	@Override
 	public void setActiveDatabases(Set<String> databases)
 	{
 		this.stateManager.setActiveDatabases(databases);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.DatabaseClusterListener#activated(io.github.hajdbc.state.DatabaseEvent)
-	 */
 	@Override
 	public void activated(DatabaseEvent event)
 	{
@@ -107,10 +95,6 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 		this.execute(new ActivationCommand<Z, D>(event));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.DatabaseClusterListener#deactivated(io.github.hajdbc.state.DatabaseEvent)
-	 */
 	@Override
 	public void deactivated(DatabaseEvent event)
 	{
@@ -118,10 +102,6 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 		this.execute(new DeactivationCommand<Z, D>(event));
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityListener#afterInvocation(io.github.hajdbc.durability.InvocationEvent)
-	 */
 	@Override
 	public void afterInvocation(InvocationEvent event)
 	{
@@ -129,10 +109,6 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 		this.execute(new PostInvocationCommand<Z, D>(this.getRemoteDescriptor(event)));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityListener#afterInvoker(io.github.hajdbc.durability.InvokerEvent)
-	 */
 	@Override
 	public void afterInvoker(InvokerEvent event)
 	{
@@ -140,10 +116,6 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 		this.execute(new InvokerCommand<Z, D>(this.getRemoteDescriptor(event)));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityListener#beforeInvocation(io.github.hajdbc.durability.InvocationEvent)
-	 */
 	@Override
 	public void beforeInvocation(InvocationEvent event)
 	{
@@ -151,10 +123,6 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 		this.execute(new PreInvocationCommand<Z, D>(this.getRemoteDescriptor(event)));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.DurabilityListener#beforeInvoker(io.github.hajdbc.durability.InvokerEvent)
-	 */
 	@Override
 	public void beforeInvoker(InvokerEvent event)
 	{
@@ -197,10 +165,6 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 		return new RemoteInvokerDescriptorImpl(event, this.dispatcher.getLocal());
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.Lifecycle#start()
-	 */
 	@Override
 	public void start() throws SQLException
 	{
@@ -208,10 +172,6 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 		this.dispatcher.start();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.Lifecycle#stop()
-	 */
 	@Override
 	public void stop()
 	{
@@ -225,40 +185,24 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 		return this.stateManager.isEnabled() && this.dispatcher.getLocal().equals(this.dispatcher.getCoordinator());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.distributed.StateCommandContext#getDatabaseCluster()
-	 */
 	@Override
 	public DatabaseCluster<Z, D> getDatabaseCluster()
 	{
 		return this.cluster;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.distributed.StateCommandContext#getLocalStateManager()
-	 */
 	@Override
 	public StateManager getLocalStateManager()
 	{
 		return this.stateManager;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.distributed.StateCommandContext#getRemoteInvokers(io.github.hajdbc.distributed.Remote)
-	 */
 	@Override
 	public Map<InvocationEvent, Map<String, InvokerEvent>> getRemoteInvokers(Remote remote)
 	{
 		return this.remoteInvokerMap.get(remote.getMember());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.distributed.Stateful#readState(java.io.ObjectInput)
-	 */
 	@Override
 	public void readState(ObjectInput input) throws IOException
 	{
@@ -279,10 +223,6 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.distributed.Stateful#writeState(java.io.ObjectOutput)
-	 */
 	@Override
 	public void writeState(ObjectOutput output) throws IOException
 	{
@@ -295,20 +235,12 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.distributed.MembershipListener#added(io.github.hajdbc.distributed.Member)
-	 */
 	@Override
 	public void added(Member member)
 	{
 		this.remoteInvokerMap.putIfAbsent(member, new HashMap<InvocationEvent, Map<String, InvokerEvent>>());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.distributed.MembershipListener#removed(io.github.hajdbc.distributed.Member)
-	 */
 	@Override
 	public void removed(Member member)
 	{
@@ -323,10 +255,6 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 		}
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.StateManager#recover()
-	 */
 	@Override
 	public Map<InvocationEvent, Map<String, InvokerEvent>> recover()
 	{
@@ -370,10 +298,6 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 			return this.event;
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * @see java.lang.Object#toString()
-		 */
 		@Override
 		public String toString()
 		{
@@ -400,10 +324,6 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 			return this.event;
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * @see java.lang.Object#toString()
-		 */
 		@Override
 		public String toString()
 		{

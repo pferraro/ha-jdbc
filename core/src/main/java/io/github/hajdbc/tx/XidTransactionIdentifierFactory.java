@@ -29,11 +29,6 @@ import javax.transaction.xa.Xid;
  */
 public class XidTransactionIdentifierFactory implements TransactionIdentifierFactory<Xid>
 {
-	/**
-	 * {@inheritDoc}
-	 * Only used for testing purposes.
-	 * @see io.github.hajdbc.tx.TransactionIdentifierFactory#createTransactionIdentifier()
-	 */
 	@Override
 	public Xid createTransactionIdentifier()
 	{
@@ -67,20 +62,12 @@ public class XidTransactionIdentifierFactory implements TransactionIdentifierFac
 		};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.tx.TransactionIdentifierFactory#serialize(java.lang.Object)
-	 */
 	@Override
 	public byte[] serialize(Xid xid)
 	{
 		return ByteBuffer.allocate(this.size()).putInt(xid.getFormatId()).put(xid.getGlobalTransactionId()).put(xid.getBranchQualifier()).array();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.tx.TransactionIdentifierFactory#deserialize(byte[])
-	 */
 	@Override
 	public Xid deserialize(byte[] bytes)
 	{
@@ -113,10 +100,6 @@ public class XidTransactionIdentifierFactory implements TransactionIdentifierFac
 		};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.tx.TransactionIdentifierFactory#size()
-	 */
 	@Override
 	public int size()
 	{

@@ -51,10 +51,6 @@ public class DB2DialectTest extends StandardDialectTest
 		assertSame(this.dialect, this.dialect.getSequenceSupport());
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getIdentityColumnSupport()
-	 */
 	@Override
 	public void getIdentityColumnSupport()
 	{
@@ -108,10 +104,6 @@ public class DB2DialectTest extends StandardDialectTest
 		assertEquals("VALUES NEXTVAL FOR sequence", result);
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#parseSequence()
-	 */
 	@Override
 	public void parseSequence() throws SQLException
 	{
@@ -124,10 +116,6 @@ public class DB2DialectTest extends StandardDialectTest
 		assertNull(support.parseSequence("SELECT * FROM test"));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentDate()
-	 */
 	@Override
 	public void evaluateCurrentDate()
 	{
@@ -141,10 +129,6 @@ public class DB2DialectTest extends StandardDialectTest
 		assertEquals("SELECT 1 FROM test", this.dialect.evaluateCurrentDate("SELECT 1 FROM test", date));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentTime()
-	 */
 	@Override
 	public void evaluateCurrentTime()
 	{
@@ -164,10 +148,6 @@ public class DB2DialectTest extends StandardDialectTest
 		assertEquals("SELECT 1 FROM test", this.dialect.evaluateCurrentTime("SELECT 1 FROM test", time));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentTimestamp()
-	 */
 	@Override
 	public void evaluateCurrentTimestamp()
 	{

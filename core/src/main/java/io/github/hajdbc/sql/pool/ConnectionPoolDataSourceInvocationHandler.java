@@ -43,10 +43,6 @@ public class ConnectionPoolDataSourceInvocationHandler extends CommonDataSourceI
 		super(ConnectionPoolDataSource.class, factory);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.sql.CommonDataSourceInvocationHandler#getInvocationStrategy(javax.sql.CommonDataSource, java.lang.reflect.Method, java.lang.Object[])
-	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(ConnectionPoolDataSource dataSource, Method method, Object... parameters) throws SQLException
 	{

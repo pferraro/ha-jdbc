@@ -44,10 +44,6 @@ public class CipherCodec implements Codec
 		return this.key;
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.codec.Codec#decode(java.lang.String)
-	 */
 	@Override
 	public String decode(String value) throws SQLException
 	{
@@ -65,10 +61,6 @@ public class CipherCodec implements Codec
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.codec.Codec#encode(java.lang.String)
-	 */
 	@Override
 	public String encode(String value) throws SQLException
 	{

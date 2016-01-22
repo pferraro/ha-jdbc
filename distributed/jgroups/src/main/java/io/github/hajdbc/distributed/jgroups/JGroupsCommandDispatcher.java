@@ -92,10 +92,6 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 		this.timeout = timeout;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.Lifecycle#start()
-	 */
 	@Override
 	public void start() throws SQLException
 	{
@@ -114,10 +110,6 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.Lifecycle#stop()
-	 */
 	@Override
 	public void stop()
 	{
@@ -200,10 +192,6 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 		return new RequestOptions(ResponseMode.GET_ALL, this.timeout, false, null, Message.Flag.DONT_BUNDLE, Message.Flag.OOB);
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.distributed.CommandDispatcher#getLocal()
-	 */
 	@Override
 	public AddressMember getLocal()
 	{
@@ -215,10 +203,6 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 		return this.dispatcher.getChannel().getAddress();
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.distributed.CommandDispatcher#getCoordinator()
-	 */
 	@Override
 	public AddressMember getCoordinator()
 	{
@@ -232,10 +216,6 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 		return members.isEmpty() ? null : members.get(0);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.jgroups.blocks.RequestHandler#handle(org.jgroups.Message)
-	 */
 	@Override
 	public Object handle(Message message)
 	{
@@ -246,10 +226,6 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 		return command.execute(this.context);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.jgroups.MembershipListener#viewAccepted(org.jgroups.View)
-	 */
 	@Override
 	public void viewAccepted(View view)
 	{
@@ -278,10 +254,6 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.jgroups.MessageListener#getState(java.io.OutputStream)
-	 */
 	@Override
 	public void getState(OutputStream output) throws Exception
 	{
@@ -290,47 +262,27 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 		out.flush();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.jgroups.MessageListener#setState(java.io.InputStream)
-	 */
 	@Override
 	public void setState(InputStream input) throws Exception
 	{
 		this.stateful.readState(new ObjectInputStream(input, Stateful.class.getClassLoader()));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.jgroups.MembershipListener#suspect(org.jgroups.Address)
-	 */
 	@Override
 	public void suspect(Address member)
 	{
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.jgroups.MembershipListener#block()
-	 */
 	@Override
 	public void block()
 	{
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.jgroups.MembershipListener#unblock()
-	 */
 	@Override
 	public void unblock()
 	{
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.jgroups.MessageListener#receive(org.jgroups.Message)
-	 */
 	@Override
 	public void receive(Message message)
 	{

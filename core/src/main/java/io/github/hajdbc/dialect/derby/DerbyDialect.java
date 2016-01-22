@@ -30,22 +30,12 @@ import io.github.hajdbc.dialect.StandardDialect;
 @SuppressWarnings("nls")
 public class DerbyDialect extends StandardDialect
 {
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see io.github.hajdbc.dialect.StandardDialect#getIdentityColumnSupport()
-	 */
 	@Override
 	public IdentityColumnSupport getIdentityColumnSupport()
 	{
 		return this;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see io.github.hajdbc.dialect.StandardDialect#getSequenceSupport()
-	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
 	{
@@ -53,20 +43,12 @@ public class DerbyDialect extends StandardDialect
 		return this.meetsRequirement(10, 6) ? this : null;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see io.github.hajdbc.dialect.StandardDialect#vendorPattern()
-	 */
 	@Override
 	protected String vendorPattern()
 	{
 		return "derby";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#executeFunctionFormat()
-	 */
 	@Override
 	protected String executeFunctionFormat()
 	{
@@ -75,8 +57,6 @@ public class DerbyDialect extends StandardDialect
 
 	/**
 	 * Deferrability clause is not supported.
-	 * 
-	 * @see io.github.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
 	 */
 	@Override
 	protected String createForeignKeyConstraintFormat()
@@ -84,54 +64,36 @@ public class DerbyDialect extends StandardDialect
 		return "ALTER TABLE {1} ADD CONSTRAINT {0} FOREIGN KEY ({2}) REFERENCES {3} ({4}) ON DELETE {5,choice,0#CASCADE|1#RESTRICT|2#SET NULL|3#NO ACTION|4#SET DEFAULT} ON UPDATE {6,choice,0#CASCADE|1#RESTRICT|2#SET NULL|3#NO ACTION|4#SET DEFAULT}";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentDatePattern()
-	 */
 	@Override
 	protected String currentDatePattern()
 	{
 		return super.currentDatePattern() + "|(?<=\\W)CURRENT\\s+DATE(?=\\W)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentTimePattern()
-	 */
 	@Override
 	protected String currentTimePattern()
 	{
 		return super.currentTimePattern() + "|(?<=\\W)CURRENT\\s+TIME(?=\\W)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentTimestampPattern()
-	 */
 	@Override
 	protected String currentTimestampPattern()
 	{
 		return super.currentTimestampPattern() + "|(?<=\\W)CURRENT\\s+TIMESTAMP(?=\\W)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#dateLiteralFormat()
-	 */
 	@Override
 	protected String dateLiteralFormat()
 	{
 		return "DATE(''{0}'')";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#timeLiteralFormat()
-	 */
 	@Override
 	protected String timeLiteralFormat()
 	{
 		return "TIME(''{0}'')";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#timestampLiteralFormat()
-	 */
 	@Override
 	protected String timestampLiteralFormat()
 	{

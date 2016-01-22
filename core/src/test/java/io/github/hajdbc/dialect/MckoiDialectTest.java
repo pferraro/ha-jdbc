@@ -35,20 +35,12 @@ public class MckoiDialectTest extends StandardDialectTest
 		super(new MckoiDialectFactory());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
-	 */
 	@Override
 	public void getSequenceSupport()
 	{
 		assertSame(this.dialect, this.dialect.getSequenceSupport());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#parseSequence()
-	 */
 	@Override
 	public void parseSequence() throws SQLException
 	{

@@ -60,19 +60,11 @@ public class DumpRestoreSynchronizationStrategy implements SynchronizationStrate
 		this.dataOnly = dataOnly;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.SynchronizationStrategy#init(io.github.hajdbc.DatabaseCluster)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> void init(DatabaseCluster<Z, D> cluster)
 	{
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.SynchronizationStrategy#destroy(io.github.hajdbc.DatabaseCluster)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> void destroy(DatabaseCluster<Z, D> cluster)
 	{

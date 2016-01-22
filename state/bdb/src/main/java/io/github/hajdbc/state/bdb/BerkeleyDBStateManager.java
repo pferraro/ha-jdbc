@@ -376,20 +376,12 @@ public class BerkeleyDBStateManager extends CloseablePoolProvider<Environment, D
 		return true;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.pool.PoolProvider#create()
-	 */
 	@Override
 	public Environment create() throws DatabaseException
 	{
 		return new Environment(this.file, this.config);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.pool.PoolProvider#isValid(java.lang.Object)
-	 */
 	@Override
 	public boolean isValid(Environment environment)
 	{

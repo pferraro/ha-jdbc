@@ -32,20 +32,12 @@ public class SimpleCodecFactory extends AbstractCodec
 		return null;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.codec.Codec#decode(java.lang.String)
-	 */
 	@Override
 	public String decode(String value)
 	{
 		return value;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.codec.Codec#encode(java.lang.String)
-	 */
 	@Override
 	public String encode(String value)
 	{

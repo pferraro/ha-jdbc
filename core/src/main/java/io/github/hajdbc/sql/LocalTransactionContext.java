@@ -52,10 +52,6 @@ public class LocalTransactionContext<Z, D extends Database<Z>> implements Transa
 		this.transactionIdFactory = cluster.getTransactionIdentifierFactory();
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.sql.TransactionContext#start(io.github.hajdbc.invocation.InvocationStrategy, java.sql.Connection)
-	 */
 	@Override
 	public InvocationStrategy start(final InvocationStrategy strategy, final Connection connection) throws SQLException
 	{
@@ -107,10 +103,6 @@ public class LocalTransactionContext<Z, D extends Database<Z>> implements Transa
 		};
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.sql.TransactionContext#start(io.github.hajdbc.invocation.Invoker, java.sql.Connection)
-	 */
 	@Override
 	public <T, R> Invoker<Z, D, T, R, SQLException> start(final Invoker<Z, D, T, R, SQLException> invoker, Connection connection) throws SQLException
 	{
@@ -126,10 +118,6 @@ public class LocalTransactionContext<Z, D extends Database<Z>> implements Transa
 		};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.sql.TransactionContext#end(io.github.hajdbc.invocation.InvocationStrategy, io.github.hajdbc.durability.Durability.Phase)
-	 */
 	@Override
 	public InvocationStrategy end(final InvocationStrategy strategy, final Durability.Phase phase)
 	{
@@ -154,10 +142,6 @@ public class LocalTransactionContext<Z, D extends Database<Z>> implements Transa
 		};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.sql.TransactionContext#end(io.github.hajdbc.invocation.Invoker, io.github.hajdbc.durability.Durability.Phase)
-	 */
 	@Override
 	public <T, R> Invoker<Z, D, T, R, SQLException> end(final Invoker<Z, D, T, R, SQLException> invoker, Durability.Phase phase)
 	{
@@ -166,9 +150,6 @@ public class LocalTransactionContext<Z, D extends Database<Z>> implements Transa
 		return this.durability.getInvoker(invoker, phase, this.transactionId, ExceptionType.SQL.<SQLException>getExceptionFactory());
 	}
 
-	/**
-	 * @see io.github.hajdbc.sql.TransactionContext#close()
-	 */
 	@Override
 	public void close()
 	{

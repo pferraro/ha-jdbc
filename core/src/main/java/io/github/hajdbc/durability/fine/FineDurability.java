@@ -52,10 +52,6 @@ public class FineDurability<Z, D extends Database<Z>> extends CoarseDurability<Z
 		return new InvokerEventImpl(transactionId, phase, databaseId);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.none.NoDurability#getInvoker(io.github.hajdbc.invocation.Invoker, io.github.hajdbc.durability.Durability.Phase, java.lang.Object, io.github.hajdbc.ExceptionFactory)
-	 */
 	@Override
 	public <T, R, E extends Exception> Invoker<Z, D, T, R, E> getInvoker(final Invoker<Z, D, T, R, E> invoker, final Phase phase, final Object transactionId, final ExceptionFactory<E> exceptionFactory)
 	{
@@ -92,10 +88,6 @@ public class FineDurability<Z, D extends Database<Z>> extends CoarseDurability<Z
 		};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.durability.coarse.CoarseDurability#recover(java.util.Map)
-	 */
 	@Override
 	public void recover(Map<InvocationEvent, Map<String, InvokerEvent>> map)
 	{

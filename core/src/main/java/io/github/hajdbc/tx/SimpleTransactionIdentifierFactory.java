@@ -29,40 +29,24 @@ public class SimpleTransactionIdentifierFactory implements TransactionIdentifier
 {
 	private final AtomicLong counter = new AtomicLong(0);
 	
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.tx.TransactionIdentifierFactory#createTransactionIdentifier()
-	 */
 	@Override
 	public Long createTransactionIdentifier()
 	{
 		return this.counter.incrementAndGet();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.tx.TransactionIdentifierFactory#serialize(java.lang.Object)
-	 */
 	@Override
 	public byte[] serialize(Long transactionId)
 	{
 		return ByteBuffer.allocate(this.size()).putLong(transactionId).array();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.tx.TransactionIdentifierFactory#deserialize(byte[])
-	 */
 	@Override
 	public Long deserialize(byte[] bytes)
 	{
 		return ByteBuffer.wrap(bytes).getLong();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.tx.TransactionIdentifierFactory#size()
-	 */
 	@Override
 	public int size()
 	{

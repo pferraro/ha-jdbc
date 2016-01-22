@@ -72,9 +72,6 @@ public class XAResourceInvocationHandler extends ChildInvocationHandler<XADataSo
 		super(XAResource.class, proxyFactory, null);
 	}
 
-	/**
-	 * @see io.github.hajdbc.sql.AbstractInvocationHandler#getInvocationStrategy(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])
-	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(XAResource resource, Method method, Object... parameters) throws XAException
 	{
@@ -166,10 +163,6 @@ public class XAResourceInvocationHandler extends ChildInvocationHandler<XADataSo
 		return super.getInvocationStrategy(resource, method, parameters);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.sql.AbstractInvocationHandler#getInvoker(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])
-	 */
 	@Override
 	protected <R> Invoker<XADataSource, XADataSourceDatabase, XAResource, R, XAException> getInvoker(XAResource object, Method method, Object... parameters) throws XAException
 	{

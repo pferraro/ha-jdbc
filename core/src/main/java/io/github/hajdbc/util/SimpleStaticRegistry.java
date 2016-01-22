@@ -38,10 +38,6 @@ public class SimpleStaticRegistry<K, V> implements StaticRegistry<K, V>
 		this.factory = factory;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.util.StaticRegistry#get(java.lang.Object)
-	 */
 	@Override
 	public V get(K key)
 	{

@@ -41,20 +41,12 @@ public class DerbyDialectTest extends StandardDialectTest
 		super(new DerbyDialectFactory());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
-	 */
 	@Override
 	public void getSequenceSupport()
 	{
 		assertSame(this.dialect, this.dialect.getSequenceSupport());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getNextSequenceValueSQL()
-	 */
 	@Override
 	public void getNextSequenceValueSQL() throws SQLException
 	{
@@ -69,20 +61,12 @@ public class DerbyDialectTest extends StandardDialectTest
 		assertEquals("VALUES NEXT VALUE FOR sequence", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getIdentityColumnSupport()
-	 */
 	@Override
 	public void getIdentityColumnSupport()
 	{
 		assertSame(this.dialect, this.dialect.getIdentityColumnSupport());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#getCreateForeignKeyConstraintSQL()
-	 */
 	@Override
 	public void getCreateForeignKeyConstraintSQL() throws SQLException
 	{
@@ -106,10 +90,6 @@ public class DerbyDialectTest extends StandardDialectTest
 		assertEquals("ALTER TABLE table ADD CONSTRAINT name FOREIGN KEY (column1, column2) REFERENCES foreign_table (foreign_column1, foreign_column2) ON DELETE CASCADE ON UPDATE RESTRICT", result);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentDate()
-	 */
 	@Override
 	public void evaluateCurrentDate()
 	{
@@ -124,10 +104,6 @@ public class DerbyDialectTest extends StandardDialectTest
 		assertEquals("SELECT 1 FROM test", this.dialect.evaluateCurrentDate("SELECT 1 FROM test", date));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialectTest#evaluateCurrentTime()
-	 */
 	@Override
 	public void evaluateCurrentTime()
 	{

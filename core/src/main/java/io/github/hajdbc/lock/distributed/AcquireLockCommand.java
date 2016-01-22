@@ -40,10 +40,6 @@ public class AcquireLockCommand implements Command<Boolean, LockCommandContext>
 		this.timeout = timeout;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.distributed.Command#execute(java.lang.Object)
-	 */
 	@Override
 	public Boolean execute(LockCommandContext context)
 	{
@@ -72,10 +68,6 @@ public class AcquireLockCommand implements Command<Boolean, LockCommandContext>
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString()
 	{

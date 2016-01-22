@@ -31,29 +31,18 @@ import io.github.hajdbc.dialect.StandardDialect;
 @SuppressWarnings("nls")
 public class SybaseDialect extends StandardDialect
 {
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#getIdentityColumnSupport()
-	 */
 	@Override
 	public IdentityColumnSupport getIdentityColumnSupport()
 	{
 		return this;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.dialect.StandardDialect#vendorPattern()
-	 */
 	@Override
 	protected String vendorPattern()
 	{
 		return "sybase";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#truncateTableFormat()
-	 */
 	@Override
 	protected String truncateTableFormat()
 	{
@@ -62,7 +51,6 @@ public class SybaseDialect extends StandardDialect
 	
 	/**
 	 * Deferrability clause is not supported.
-	 * @see io.github.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
 	 */
 	@Override
 	protected String createForeignKeyConstraintFormat()
@@ -70,63 +58,42 @@ public class SybaseDialect extends StandardDialect
 		return "ALTER TABLE {1} ADD CONSTRAINT {0} FOREIGN KEY ({2}) REFERENCES {3} ({4}) ON DELETE {5,choice,0#CASCADE|1#RESTRICT|2#SET NULL|3#NO ACTION|4#SET DEFAULT} ON UPDATE {6,choice,0#CASCADE|1#RESTRICT|2#SET NULL|3#NO ACTION|4#SET DEFAULT}";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentDatePattern()
-	 */
 	@Override
 	protected String currentDatePattern()
 	{
 		return "(?<=\\W)CURRENT\\s+DATE(?=\\W)|(?<=\\W)TODAY\\s*\\(\\s*\\*\\s*\\)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentTimePattern()
-	 */
 	@Override
 	protected String currentTimePattern()
 	{
 		return "(?<=\\W)CURRENT\\s+TIME(?=\\W)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#currentTimestampPattern()
-	 */
 	@Override
 	protected String currentTimestampPattern()
 	{
 		return "(?<=\\W)CURRENT\\s+TIMESTAMP(?=\\W)|(?<=\\W)GETDATE\\s*\\(\\s*\\)|(?<=\\W)NOW\\s*\\(\\s*\\*\\s*\\)";
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#dateLiteralFormat()
-	 */
 	@Override
 	protected String dateLiteralFormat()
 	{
 		return this.timestampLiteralFormat();
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#timeLiteralFormat()
-	 */
 	@Override
 	protected String timeLiteralFormat()
 	{
 		return this.timestampLiteralFormat();
 	}
 
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#timestampLiteralFormat()
-	 */
 	@Override
 	protected String timestampLiteralFormat()
 	{
 		return "''{0}''";
 	}
 	
-	/**
-	 * @see io.github.hajdbc.dialect.StandardDialect#randomPattern()
-	 */
 	@Override
 	protected String randomPattern()
 	{

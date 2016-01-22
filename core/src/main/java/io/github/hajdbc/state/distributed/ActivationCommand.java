@@ -31,10 +31,6 @@ public class ActivationCommand<Z, D extends Database<Z>> extends StateCommand<Z,
 		super(event);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see io.github.hajdbc.state.distributed.StateCommand#execute(io.github.hajdbc.DatabaseCluster, io.github.hajdbc.state.StateManager, io.github.hajdbc.Database)
-	 */
 	@Override
 	protected boolean execute(DatabaseCluster<Z, D> cluster, StateManager stateManager, D database)
 	{
