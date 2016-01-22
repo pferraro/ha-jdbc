@@ -77,7 +77,7 @@ public class NamespaceDatabaseClusterConfigurationReader<Z, D extends Database<Z
 				}
 				case LOCK:
 				{
-					String id = requireAttributeValue(reader, ID, "semaphore");
+					String id = requireAttributeValue(reader, ID, "stamped");
 					read(reader, builder.lock(id));
 					break;
 				}

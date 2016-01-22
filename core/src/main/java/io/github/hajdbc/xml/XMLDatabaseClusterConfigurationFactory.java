@@ -17,6 +17,8 @@
  */
 package io.github.hajdbc.xml;
 
+import static io.github.hajdbc.xml.Constants.*;
+
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
@@ -56,7 +58,7 @@ import io.github.hajdbc.util.SystemProperties;
  * {@link DatabaseClusterConfigurationFactory} that parses an xml configuration file.
  * @author Paul Ferraro
  */
-public class XMLDatabaseClusterConfigurationFactory<Z, D extends Database<Z>> implements DatabaseClusterConfigurationFactory<Z, D>, DatabaseClusterConfigurationWriter<Z, D>, Constants
+public class XMLDatabaseClusterConfigurationFactory<Z, D extends Database<Z>> implements DatabaseClusterConfigurationFactory<Z, D>, DatabaseClusterConfigurationWriter<Z, D>
 {
 	private static final long serialVersionUID = -8796872297122349961L;
 	

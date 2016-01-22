@@ -28,7 +28,7 @@
 	<artifactId>ha-jdbc-state-leveldb</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>HA-JDBC state management: LevelDB provider</name>
+	<name>LevelDB provider</name>
 
 	<dependencies>
 		<dependency>
@@ -40,5 +40,24 @@
 			<artifactId>ha-jdbc-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>ha-jdbc-core</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+			<classifier>tests</classifier>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
+	
+	<distributionManagement>
+		<site>
+			<id>local</id>
+			<url>file://${user.dir}/state/leveldb</url>
+		</site>
+	</distributionManagement>
 </project>

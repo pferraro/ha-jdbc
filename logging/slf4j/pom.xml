@@ -28,7 +28,7 @@
 	<artifactId>ha-jdbc-logging-slf4j</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>HA-JDBC logging support: SLF4J logging provider</name>
+	<name>SLF4J provider</name>
 
 	<dependencies>
 		<dependency>
@@ -41,4 +41,11 @@
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
+	
+	<distributionManagement>
+		<site>
+			<id>local</id>
+			<url>file://${user.dir}/logging/slf4j</url>
+		</site>
+	</distributionManagement>
 </project>

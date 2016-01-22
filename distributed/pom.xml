@@ -28,9 +28,16 @@
 	<artifactId>ha-jdbc-distributed</artifactId>
 	<packaging>pom</packaging>
 	
-	<name>Distributed HA-JDBC support</name>
+	<name>Distributed support</name>
 
 	<modules>
 		<module>jgroups</module>
 	</modules>
+	
+	<distributionManagement>
+		<site>
+			<id>local</id>
+			<url>file://${user.dir}/distributed</url>
+		</site>
+	</distributionManagement>
 </project>

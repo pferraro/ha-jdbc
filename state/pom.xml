@@ -28,11 +28,18 @@
 	<artifactId>ha-jdbc-state</artifactId>
 	<packaging>pom</packaging>
 	
-	<name>HA-JDBC state management</name>
+	<name>State management</name>
 
 	<modules>
 		<module>bdb</module>
 		<module>leveldb</module>
 		<module>sqlite</module>
 	</modules>
+	
+	<distributionManagement>
+		<site>
+			<id>local</id>
+			<url>file://${user.dir}/state</url>
+		</site>
+	</distributionManagement>
 </project>
