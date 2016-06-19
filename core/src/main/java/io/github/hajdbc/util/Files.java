@@ -57,4 +57,9 @@ public class Files
 
 		Security.run(action);
 	}
+
+	private Files()
+	{
+		// Hide
+	}
 }
