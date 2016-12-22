@@ -28,21 +28,22 @@ import org.hajdbc.Version;
  */
 public abstract class AbstractDriver implements Driver
 {
-	/**
-	 * {@inheritDoc}
-	 * @see java.sql.Driver#acceptsURL(java.lang.String)
-	 */
+	private final Pattern pattern;
+
+	protected AbstractDriver(Pattern pattern)
+	{
+		this.pattern = pattern;
+	}
+
 	@Override
 	public boolean acceptsURL(String url)
 	{
 		return (this.parse(url) != null);
 	}
 	
-	protected abstract Pattern getUrlPattern();
-	
 	protected String parse(String url)
 	{
-		Matcher matcher = this.getUrlPattern().matcher(url);
+		Matcher matcher = this.pattern.matcher(url);
 		
 		if (!matcher.matches())
 		{
@@ -52,28 +53,18 @@ public abstract class AbstractDriver implements Driver
 		return matcher.group(1);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.sql.Driver#jdbcCompliant()
-	 */
 	@Override
 	public boolean jdbcCompliant()
 	{
 		return false;
 	}
 
-	/**
-	 * @see java.sql.Driver#getMajorVersion()
-	 */
 	@Override
 	public int getMajorVersion()
 	{
 		return Version.CURRENT.getMajor();
 	}
 	
-	/**
-	 * @see java.sql.Driver#getMinorVersion()
-	 */
 	@Override
 	public int getMinorVersion()
 	{

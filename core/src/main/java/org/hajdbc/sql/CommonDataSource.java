@@ -60,8 +60,10 @@ public abstract class CommonDataSource<Z extends javax.sql.CommonDataSource, D e
 		Map.Entry<F, Z> entry = this.reference.getAndSet(null);
 		if (entry != null)
 		{
-			entry.getKey().close();
-			entry.getKey().getDatabaseCluster().stop();
+			try (F factory = entry.getKey())
+			{
+				factory.getDatabaseCluster().stop();
+			}
 		}
 	}
 
