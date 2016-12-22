@@ -134,11 +134,7 @@ public class AnnotatedMBean implements DynamicMBean
 			throw new IllegalArgumentException(e);
 		}
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see javax.management.DynamicMBean#getAttribute(java.lang.String)
-	 */
+
 	@Override
 	public Object getAttribute(String name) throws AttributeNotFoundException, MBeanException, ReflectionException
 	{
@@ -167,10 +163,6 @@ public class AnnotatedMBean implements DynamicMBean
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see javax.management.DynamicMBean#getAttributes(java.lang.String[])
-	 */
 	@Override
 	public AttributeList getAttributes(String[] names)
 	{
@@ -191,20 +183,12 @@ public class AnnotatedMBean implements DynamicMBean
 		return list;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see javax.management.DynamicMBean#getMBeanInfo()
-	 */
 	@Override
 	public MBeanInfo getMBeanInfo()
 	{
 		return this.info;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see javax.management.DynamicMBean#invoke(java.lang.String, java.lang.Object[], java.lang.String[])
-	 */
 	@Override
 	public Object invoke(String method, Object[] args, String[] types) throws MBeanException, ReflectionException
 	{
@@ -245,10 +229,6 @@ public class AnnotatedMBean implements DynamicMBean
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see javax.management.DynamicMBean#setAttribute(javax.management.Attribute)
-	 */
 	@Override
 	public void setAttribute(Attribute attribute) throws AttributeNotFoundException, InvalidAttributeValueException, MBeanException, ReflectionException
 	{
@@ -277,10 +257,6 @@ public class AnnotatedMBean implements DynamicMBean
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see javax.management.DynamicMBean#setAttributes(javax.management.AttributeList)
-	 */
 	@Override
 	public AttributeList setAttributes(AttributeList attributes)
 	{

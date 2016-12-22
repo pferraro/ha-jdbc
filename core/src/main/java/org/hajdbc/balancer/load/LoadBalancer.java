@@ -98,11 +98,7 @@ public class LoadBalancer<Z, D extends Database<Z>> extends AbstractBalancer<Z, 
 			this.databaseMap = map;
 		}
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.Balancer#primary()
-	 */
+
 	@Override
 	public D primary()
 	{
@@ -116,20 +112,13 @@ public class LoadBalancer<Z, D extends Database<Z>> extends AbstractBalancer<Z, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.AbstractBalancer#getDatabases()
-	 */
 	@Override
 	protected Set<D> getDatabases()
 	{
 		return this.databaseMap.keySet();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#addAll(java.util.Collection)
-	 */
+
 	@Override
 	public boolean addAll(Collection<? extends D> databases)
 	{
@@ -159,10 +148,6 @@ public class LoadBalancer<Z, D extends Database<Z>> extends AbstractBalancer<Z, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#removeAll(java.util.Collection)
-	 */
 	@Override
 	public boolean removeAll(Collection<?> databases)
 	{
@@ -187,10 +172,6 @@ public class LoadBalancer<Z, D extends Database<Z>> extends AbstractBalancer<Z, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#retainAll(java.util.Collection)
-	 */
 	@Override
 	public boolean retainAll(Collection<?> databases)
 	{
@@ -215,10 +196,6 @@ public class LoadBalancer<Z, D extends Database<Z>> extends AbstractBalancer<Z, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#clear()
-	 */
 	@Override
 	public void clear()
 	{
@@ -237,10 +214,6 @@ public class LoadBalancer<Z, D extends Database<Z>> extends AbstractBalancer<Z, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#remove(java.lang.Object)
-	 */
 	@Override
 	public boolean remove(Object database)
 	{
@@ -274,10 +247,6 @@ public class LoadBalancer<Z, D extends Database<Z>> extends AbstractBalancer<Z, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.Balancer#next()
-	 */
 	@Override
 	public D next()
 	{
@@ -286,10 +255,6 @@ public class LoadBalancer<Z, D extends Database<Z>> extends AbstractBalancer<Z, 
 		return !entrySet.isEmpty() ? java.util.Collections.min(entrySet, this.comparator).getKey() : null;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#add(java.lang.Object)
-	 */
 	@Override
 	public boolean add(D database)
 	{
@@ -324,11 +289,7 @@ public class LoadBalancer<Z, D extends Database<Z>> extends AbstractBalancer<Z, 
 			this.lock.unlock();
 		}
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.Balancer#invoke(org.hajdbc.invocation.Invoker, org.hajdbc.Database, java.lang.Object)
-	 */
+
 	@Override
 	public <T, R, E extends Exception> R invoke(Invoker<Z, D, T, R, E> invoker, D database, T object) throws E
 	{

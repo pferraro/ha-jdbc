@@ -33,21 +33,13 @@ public abstract class AbstractPoolProvider<T, E extends Exception> implements Po
 		this.providedClass = providedClass;
 		this.exceptionClass = exceptionClass;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.pool.PoolProvider#getExceptionClass()
-	 */
+
 	@Override
 	public Class<E> getExceptionClass()
 	{
 		return this.exceptionClass;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.pool.PoolProvider#getProvidedClass()
-	 */
 	@Override
 	public Class<T> getProvidedClass()
 	{

@@ -40,10 +40,7 @@ public class LazyDatabaseMetaDataProvider implements DatabaseMetaDataProvider
 	{
 		this.threadLocal.set(connection);
 	}
-	
-	/**
-	 * @see org.hajdbc.cache.DatabaseMetaDataProvider#getDatabaseMetaData()
-	 */
+
 	@Override
 	public DatabaseMetaData getDatabaseMetaData() throws SQLException
 	{

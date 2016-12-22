@@ -56,21 +56,13 @@ public class DefaultMBeanRegistrar<Z, D extends Database<Z>> implements MBeanReg
 	{
 		this.domain = domain;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.management.MBeanRegistrar#register(org.hajdbc.DatabaseCluster)
-	 */
+
 	@Override
 	public void register(DatabaseCluster<Z, D> cluster) throws JMException
 	{
 		this.register(cluster, this.createAttributes(cluster));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.management.MBeanRegistrar#register(org.hajdbc.DatabaseCluster, org.hajdbc.Database)
-	 */
 	@Override
 	public void register(DatabaseCluster<Z, D> cluster, D database) throws JMException
 	{
@@ -84,20 +76,12 @@ public class DefaultMBeanRegistrar<Z, D extends Database<Z>> implements MBeanReg
 		this.server.registerMBean(new AnnotatedMBean(object), name);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.management.MBeanRegistrar#unregister(org.hajdbc.DatabaseCluster)
-	 */
 	@Override
 	public void unregister(DatabaseCluster<Z, D> cluster)
 	{
 		this.unregister(this.createAttributes(cluster));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.management.MBeanRegistrar#unregister(org.hajdbc.DatabaseCluster, org.hajdbc.Database)
-	 */
 	@Override
 	public void unregister(DatabaseCluster<Z, D> cluster, D database)
 	{

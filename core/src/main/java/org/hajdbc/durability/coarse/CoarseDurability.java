@@ -58,10 +58,6 @@ public class CoarseDurability<Z, D extends Database<Z>> extends NoDurability<Z, 
 		return new InvocationEventImpl(transactionId, phase, exceptionType);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.durability.none.NoDurability#getInvocationStrategy(org.hajdbc.invocation.InvocationStrategy, org.hajdbc.durability.Durability.Phase, java.lang.Object)
-	 */
 	@Override
 	public InvocationStrategy getInvocationStrategy(final InvocationStrategy strategy, final Phase phase, final Object transactionId)
 	{
@@ -92,10 +88,6 @@ public class CoarseDurability<Z, D extends Database<Z>> extends NoDurability<Z, 
 		};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.durability.none.NoDurability#recover(java.util.Map)
-	 */
 	@Override
 	public void recover(Map<InvocationEvent, Map<String, InvokerEvent>> invokers)
 	{

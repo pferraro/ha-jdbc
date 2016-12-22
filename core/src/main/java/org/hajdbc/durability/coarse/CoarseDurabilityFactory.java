@@ -38,10 +38,6 @@ public class CoarseDurabilityFactory implements DurabilityFactory
 		return "coarse";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.durability.DurabilityFactory#createDurability(org.hajdbc.DatabaseCluster)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> Durability<Z, D> createDurability(DatabaseCluster<Z, D> cluster)
 	{

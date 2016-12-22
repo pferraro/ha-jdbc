@@ -37,10 +37,7 @@ public class SimpleInvocationHandler implements InvocationHandler
 	{
 		this.object = object;
 	}
-	
-	/**
-	 * @see java.lang.reflect.InvocationHandler#invoke(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])
-	 */
+
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] parameters) throws Throwable
 	{

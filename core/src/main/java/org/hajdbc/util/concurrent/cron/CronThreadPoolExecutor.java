@@ -70,10 +70,6 @@ public class CronThreadPoolExecutor extends ScheduledThreadPoolExecutor implemen
 		super(corePoolSize, threadFactory, handler);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.util.concurrent.cron.CronExecutorService#schedule(java.lang.Runnable, org.hajdbc.util.concurrent.cron.CronExpression)
-	 */
 	@Override
 	public void schedule(final Runnable task, final CronExpression expression)
 	{
@@ -83,9 +79,7 @@ public class CronThreadPoolExecutor extends ScheduledThreadPoolExecutor implemen
 		
 		Runnable scheduleTask = new Runnable()
 		{
-			/**
-			 * @see java.lang.Runnable#run()
-			 */
+
 			@Override
 			public void run()
 			{

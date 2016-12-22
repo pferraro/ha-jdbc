@@ -34,10 +34,6 @@ public class SimpleStateManagerFactory implements StateManagerFactory
 		return "simple";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.state.StateManagerFactory#createStateManager(org.hajdbc.DatabaseCluster)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> StateManager createStateManager(DatabaseCluster<Z, D> cluster)
 	{

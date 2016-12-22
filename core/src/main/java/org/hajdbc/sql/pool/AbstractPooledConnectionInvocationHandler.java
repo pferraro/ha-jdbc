@@ -70,10 +70,6 @@ public abstract class AbstractPooledConnectionInvocationHandler<Z, D extends Dat
 		return super.getProxyFactoryFactory(object, method, parameters);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.sql.AbstractInvocationHandler#getInvocationStrategy(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])
-	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(C connection, Method method, Object... parameters) throws SQLException
 	{

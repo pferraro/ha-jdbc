@@ -63,11 +63,7 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 	{
 		this.context = context;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.sync.SynchronizationSupport#dropForeignKeys()
-	 */
+
 	@Override
 	public void dropForeignKeys() throws SQLException
 	{
@@ -100,11 +96,7 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 			connection.setAutoCommit(autoCommit);
 		}
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.sync.SynchronizationSupport#restoreForeignKeys()
-	 */
+
 	@Override
 	public void restoreForeignKeys() throws SQLException
 	{
@@ -138,11 +130,7 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 			connection.setAutoCommit(autoCommit);
 		}
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.sync.SynchronizationSupport#synchronizeSequences()
-	 */
+
 	@Override
 	public void synchronizeSequences() throws SQLException
 	{
@@ -240,11 +228,7 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 			}
 		}
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.sync.SynchronizationSupport#synchronizeIdentityColumns()
-	 */
+
 	@Override
 	public void synchronizeIdentityColumns() throws SQLException
 	{
@@ -304,10 +288,6 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.sync.SynchronizationSupport#dropUniqueConstraints()
-	 */
 	@Override
 	public void dropUniqueConstraints() throws SQLException
 	{
@@ -341,11 +321,7 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 			connection.setAutoCommit(autoCommit);
 		}
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.sync.SynchronizationSupport#restoreUniqueConstraints()
-	 */
+
 	@Override
 	public void restoreUniqueConstraints() throws SQLException
 	{
@@ -381,10 +357,6 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.sync.SynchronizationSupport#rollback(java.sql.Connection)
-	 */
 	@Override
 	public void rollback(Connection connection)
 	{
@@ -398,10 +370,6 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.sync.SynchronizationSupport#getObject(java.sql.ResultSet, int, int)
-	 */
 	@Override
 	public Object getObject(ResultSet resultSet, int index, int type) throws SQLException
 	{

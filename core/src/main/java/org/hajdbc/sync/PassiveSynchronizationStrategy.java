@@ -45,19 +45,11 @@ public class PassiveSynchronizationStrategy implements SynchronizationStrategy
 		// Do nothing
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.SynchronizationStrategy#init(org.hajdbc.DatabaseCluster)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> void init(DatabaseCluster<Z, D> cluster)
 	{
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.SynchronizationStrategy#destroy(org.hajdbc.DatabaseCluster)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> void destroy(DatabaseCluster<Z, D> cluster)
 	{

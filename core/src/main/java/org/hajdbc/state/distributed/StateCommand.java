@@ -37,11 +37,7 @@ public abstract class StateCommand<Z, D extends Database<Z>> implements Command<
 	{
 		this.event = event;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.distributed.Command#execute(java.lang.Object)
-	 */
+
 	@Override
 	public Boolean execute(StateCommandContext<Z, D> context)
 	{
@@ -52,10 +48,6 @@ public abstract class StateCommand<Z, D extends Database<Z>> implements Command<
 
 	protected abstract boolean execute(DatabaseCluster<Z, D> cluster, StateManager stateManager, D database);
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString()
 	{

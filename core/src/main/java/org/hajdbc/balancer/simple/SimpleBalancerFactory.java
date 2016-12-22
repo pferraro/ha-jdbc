@@ -39,10 +39,6 @@ public class SimpleBalancerFactory implements BalancerFactory
 		return "simple";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.BalancerFactory#createBalancer(java.util.Set)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> Balancer<Z, D> createBalancer(Set<D> databases)
 	{

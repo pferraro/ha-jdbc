@@ -47,11 +47,7 @@ public class RoundRobinBalancer<P, D extends Database<P>> extends AbstractSetBal
 			this.added(database);
 		}
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.AbstractSetBalancer#added(org.hajdbc.Database)
-	 */
+
 	@Override
 	protected void added(D database)
 	{
@@ -63,10 +59,6 @@ public class RoundRobinBalancer<P, D extends Database<P>> extends AbstractSetBal
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.AbstractSetBalancer#removed(org.hajdbc.Database)
-	 */
 	@Override
 	protected void removed(D database)
 	{
@@ -77,11 +69,7 @@ public class RoundRobinBalancer<P, D extends Database<P>> extends AbstractSetBal
 			this.databaseQueue.remove(database);
 		}
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.Balancer#next()
-	 */
+
 	@Override
 	public D next()
 	{
@@ -111,10 +99,6 @@ public class RoundRobinBalancer<P, D extends Database<P>> extends AbstractSetBal
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.AbstractSetBalancer#cleared()
-	 */
 	@Override
 	protected void cleared()
 	{

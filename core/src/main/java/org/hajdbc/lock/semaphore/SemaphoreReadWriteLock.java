@@ -41,19 +41,13 @@ public class SemaphoreReadWriteLock implements ReadWriteLock
 		this.readLock = new SemaphoreLock(semaphore);
 		this.writeLock = new SemaphoreWriteLock(semaphore);
 	}
-	
-	/**
-	 * @see java.util.concurrent.locks.ReadWriteLock#readLock()
-	 */
+
 	@Override
 	public Lock readLock()
 	{
 		return this.readLock;
 	}
 
-	/**
-	 * @see java.util.concurrent.locks.ReadWriteLock#writeLock()
-	 */
 	@Override
 	public Lock writeLock()
 	{
@@ -79,10 +73,7 @@ public class SemaphoreReadWriteLock implements ReadWriteLock
 		{
 			return this.semaphore.isFair() ? 0 : this.semaphore.drainPermits();
 		}
-		
-		/**
-		 * @see java.util.concurrent.locks.Lock#lock()
-		 */
+
 		@Override
 		public void lock()
 		{
@@ -94,9 +85,6 @@ public class SemaphoreReadWriteLock implements ReadWriteLock
 			}
 		}
 
-		/**
-		 * @see java.util.concurrent.locks.Lock#lockInterruptibly()
-		 */
 		@Override
 		public void lockInterruptibly() throws InterruptedException
 		{
@@ -120,9 +108,6 @@ public class SemaphoreReadWriteLock implements ReadWriteLock
 			}
 		}
 
-		/**
-		 * @see java.util.concurrent.locks.Lock#tryLock()
-		 */
 		@Override
 		public boolean tryLock()
 		{
@@ -130,9 +115,6 @@ public class SemaphoreReadWriteLock implements ReadWriteLock
 			return this.semaphore.tryAcquire(this.permits);
 		}
 
-		/**
-		 * @see java.util.concurrent.locks.Lock#tryLock(long, java.util.concurrent.TimeUnit)
-		 */
 		@Override
 		public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException
 		{
@@ -157,18 +139,12 @@ public class SemaphoreReadWriteLock implements ReadWriteLock
 			return acquired;
 		}
 
-		/**
-		 * @see java.util.concurrent.locks.Lock#unlock()
-		 */
 		@Override
 		public void unlock()
 		{
 			this.semaphore.release(this.permits);
 		}
-		
-		/**
-		 * @see java.util.concurrent.locks.Lock#newCondition()
-		 */
+
 		@Override
 		public Condition newCondition()
 		{

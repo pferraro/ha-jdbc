@@ -48,10 +48,7 @@ public class SharedEagerDatabaseMetaDataCache<Z, D extends Database<Z>> implemen
 	{
 		this.cluster = cluster;
 	}
-	
-	/**
-	 * @see org.hajdbc.cache.DatabaseMetaDataCache#flush()
-	 */
+
 	@Override
 	public void flush() throws SQLException
 	{
@@ -65,10 +62,6 @@ public class SharedEagerDatabaseMetaDataCache<Z, D extends Database<Z>> implemen
 		this.setDatabaseProperties(database.connect(this.cluster.getDecoder()));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.cache.DatabaseMetaDataCache#getDatabaseProperties(org.hajdbc.Database, java.sql.Connection)
-	 */
 	@Override
 	public synchronized DatabaseProperties getDatabaseProperties(D database, Connection connection) throws SQLException
 	{

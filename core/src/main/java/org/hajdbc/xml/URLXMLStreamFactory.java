@@ -37,31 +37,19 @@ public class URLXMLStreamFactory implements XMLStreamFactory
 	{
 		this.url = url.toString();
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.xml.XMLStreamFactory#createSource()
-	 */
+
 	@Override
 	public Source createSource()
 	{
 		return new StreamSource(this.url);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.xml.XMLStreamFactory#createResult()
-	 */
 	@Override
 	public Result createResult()
 	{
 		return new StreamResult(this.url);
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#toString()
-	 */
+
 	@Override
 	public String toString()
 	{

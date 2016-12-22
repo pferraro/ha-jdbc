@@ -56,106 +56,68 @@ public class SynchronousExecutor extends AbstractExecutorService
 		this.executor = executor;
 		this.reverse = reverse;
 	}
-	
-	/**
-	 * @see java.util.concurrent.ExecutorService#awaitTermination(long, java.util.concurrent.TimeUnit)
-	 */
+
 	@Override
 	public boolean awaitTermination(long time, TimeUnit unit) throws InterruptedException
 	{
 		return this.executor.awaitTermination(time, unit);
 	}
 
-	/**
-	 * @see java.util.concurrent.ExecutorService#isShutdown()
-	 */
 	@Override
 	public boolean isShutdown()
 	{
 		return this.executor.isShutdown();
 	}
 
-	/**
-	 * @see java.util.concurrent.ExecutorService#isTerminated()
-	 */
 	@Override
 	public boolean isTerminated()
 	{
 		return this.executor.isTerminated();
 	}
 
-	/**
-	 * @see java.util.concurrent.ExecutorService#shutdown()
-	 */
 	@Override
 	public void shutdown()
 	{
 		this.executor.shutdown();
 	}
 
-	/**
-	 * @see java.util.concurrent.ExecutorService#shutdownNow()
-	 */
 	@Override
 	public List<Runnable> shutdownNow()
 	{
 		return this.executor.shutdownNow();
 	}
 
-	/**
-	 * @see java.util.concurrent.Executor#execute(java.lang.Runnable)
-	 */
 	@Override
 	public void execute(Runnable task)
 	{
 		task.run();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.concurrent.AbstractExecutorService#submit(java.lang.Runnable)
-	 */
 	@Override
 	public Future<?> submit(Runnable task)
 	{
 		return this.submit(Executors.callable(task));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.concurrent.AbstractExecutorService#submit(java.lang.Runnable, java.lang.Object)
-	 */
 	@Override
 	public <T> Future<T> submit(Runnable task, T result)
 	{
 		return this.submit(Executors.callable(task, result));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.concurrent.AbstractExecutorService#submit(java.util.concurrent.Callable)
-	 */
 	@Override
 	public <T> Future<T> submit(Callable<T> task)
 	{
 		return new EagerFuture<>(task);
 	}
 
-	/**
-	 * Executes the specified tasks serially, until the first successful result, then the remainder using the executor with which this executor was created.
-	 * {@inheritDoc}
-	 * @see java.util.concurrent.AbstractExecutorService#invokeAll(java.util.Collection)
-	 */
 	@Override
 	public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) throws InterruptedException
 	{
+		// Executes the specified tasks serially, until the first successful result, then the remainder using the executor with which this executor was created.
 		return this.invokeAll(tasks, Long.MAX_VALUE, TimeUnit.MILLISECONDS);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.concurrent.AbstractExecutorService#invokeAll(java.util.Collection, long, java.util.concurrent.TimeUnit)
-	 */
 	@Override
 	public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks, long timeout, TimeUnit unit) throws InterruptedException
 	{
@@ -259,21 +221,13 @@ public class SynchronousExecutor extends AbstractExecutorService
 		
 		return futures;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.concurrent.AbstractExecutorService#invokeAny(java.util.Collection)
-	 */
+
 	@Override
 	public <T> T invokeAny(Collection<? extends Callable<T>> tasks) throws InterruptedException, ExecutionException
 	{
 		return this.getAny(this.invokeAll(tasks));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.concurrent.AbstractExecutorService#invokeAny(java.util.Collection, long, java.util.concurrent.TimeUnit)
-	 */
 	@Override
 	public <T> T invokeAny(Collection<? extends Callable<T>> tasks, long timeout, TimeUnit unit) throws InterruptedException, ExecutionException
 	{
@@ -307,30 +261,18 @@ public class SynchronousExecutor extends AbstractExecutorService
 			this.task = task;
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * @see java.util.concurrent.Future#cancel(boolean)
-		 */
 		@Override
 		public boolean cancel(boolean interrupt)
 		{
 			return this.state.compareAndSet(State.NEW, State.CANCELLED);
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * @see java.util.concurrent.Future#get()
-		 */
 		@Override
 		public T get() throws ExecutionException, InterruptedException
 		{
 			return this.get(Long.MAX_VALUE, TimeUnit.MILLISECONDS);
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * @see java.util.concurrent.Future#get(long, java.util.concurrent.TimeUnit)
-		 */
 		@Override
 		public T get(long time, TimeUnit unit) throws ExecutionException, InterruptedException
 		{
@@ -369,20 +311,12 @@ public class SynchronousExecutor extends AbstractExecutorService
 			return this.result;
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * @see java.util.concurrent.Future#isCancelled()
-		 */
 		@Override
 		public boolean isCancelled()
 		{
 			return this.state.get() == State.CANCELLED;
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * @see java.util.concurrent.Future#isDone()
-		 */
 		@Override
 		public boolean isDone()
 		{

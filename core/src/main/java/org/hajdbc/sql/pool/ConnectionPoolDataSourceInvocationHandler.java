@@ -33,7 +33,6 @@ import org.hajdbc.util.reflect.Methods;
  * @author Paul Ferraro
  *
  */
-@SuppressWarnings("nls")
 public class ConnectionPoolDataSourceInvocationHandler extends CommonDataSourceInvocationHandler<ConnectionPoolDataSource, ConnectionPoolDataSourceDatabase, ConnectionPoolDataSourceProxyFactory>
 {
 	private static final Set<Method> getPooledConnectionMethodSet = Methods.findMethods(ConnectionPoolDataSource.class, "getPooledConnection");
@@ -43,10 +42,6 @@ public class ConnectionPoolDataSourceInvocationHandler extends CommonDataSourceI
 		super(ConnectionPoolDataSource.class, factory);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.sql.CommonDataSourceInvocationHandler#getInvocationStrategy(javax.sql.CommonDataSource, java.lang.reflect.Method, java.lang.Object[])
-	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(ConnectionPoolDataSource dataSource, Method method, Object... parameters) throws SQLException
 	{

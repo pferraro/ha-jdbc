@@ -44,29 +44,18 @@ public class HSQLDBDialect extends StandardDialect
 {
 	private static final Set<Integer> failureCodes = new HashSet<>(Arrays.asList(402, 407, 452, 460, 468));
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
-	 */
 	@Override
 	protected String vendorPattern()
 	{
 		return "hsqldb";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#executeFunctionFormat()
-	 */
 	@Override
 	protected String executeFunctionFormat()
 	{
 		return "CALL {0}";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#getSequenceSupport()
-	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
 	{
@@ -98,37 +87,25 @@ public class HSQLDBDialect extends StandardDialect
 		}
 	}
 
-	/**
-	 * Deferrability clause is not supported.
-	 * @see org.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
-	 */
 	@Override
 	protected String createForeignKeyConstraintFormat()
 	{
+		// Deferrability clause is not supported.
 		return "ALTER TABLE {1} ADD CONSTRAINT {0} FOREIGN KEY ({2}) REFERENCES {3} ({4}) ON DELETE {5,choice,0#CASCADE|1#RESTRICT|2#SET NULL|3#NO ACTION|4#SET DEFAULT} ON UPDATE {6,choice,0#CASCADE|1#RESTRICT|2#SET NULL|3#NO ACTION|4#SET DEFAULT}";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#currentDatePattern()
-	 */
 	@Override
 	protected String currentDatePattern()
 	{
 		return "(?<=\\W)CURRENT_DATE(?=\\W)|(?<=\\W)CURDATE\\s*\\(\\s*\\)";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#currentTimePattern()
-	 */
 	@Override
 	protected String currentTimePattern()
 	{
 		return "(?<=\\W)CURRENT_TIME(?=\\W)|(?<=\\W)CURTIME\\s*\\(\\s*\\)";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#currentTimestampPattern()
-	 */
 	@Override
 	protected String currentTimestampPattern()
 	{

@@ -76,10 +76,7 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 		this.targetDatabaseProperties = cache.getDatabaseProperties(this.targetDatabase, this.getConnection(this.targetDatabase));
 		this.sourceDatabaseProperties = cache.getDatabaseProperties(this.sourceDatabase, this.getConnection(this.sourceDatabase));
 	}
-	
-	/**
-	 * @see org.hajdbc.sync.SynchronizationContext#getConnection(org.hajdbc.Database)
-	 */
+
 	@Override
 	public Connection getConnection(D database) throws SQLException
 	{
@@ -95,93 +92,61 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 		
 		return entry.getKey();
 	}
-	
-	/**
-	 * @see org.hajdbc.sync.SynchronizationContext#getSourceDatabase()
-	 */
+
 	@Override
 	public D getSourceDatabase()
 	{
 		return this.sourceDatabase;
 	}
-	
-	/**
-	 * @see org.hajdbc.sync.SynchronizationContext#getTargetDatabase()
-	 */
+
 	@Override
 	public D getTargetDatabase()
 	{
 		return this.targetDatabase;
 	}
-	
-	/**
-	 * @see org.hajdbc.sync.SynchronizationContext#getActiveDatabaseSet()
-	 */
+
 	@Override
 	public Set<D> getActiveDatabaseSet()
 	{
 		return this.activeDatabaseSet;
 	}
-	
-	/**
-	 * @see org.hajdbc.sync.SynchronizationContext#getSourceDatabaseProperties()
-	 */
+
 	@Override
 	public DatabaseProperties getSourceDatabaseProperties()
 	{
 		return this.sourceDatabaseProperties;
 	}
 
-	/**
-	 * @see org.hajdbc.sync.SynchronizationContext#getTargetDatabaseProperties()
-	 */
 	@Override
 	public DatabaseProperties getTargetDatabaseProperties()
 	{
 		return this.targetDatabaseProperties;
 	}
 
-	/**
-	 * @see org.hajdbc.sync.SynchronizationContext#getDialect()
-	 */
 	@Override
 	public Dialect getDialect()
 	{
 		return this.cluster.getDialect();
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.sync.SynchronizationContext#getDecoder()
-	 */
+
 	@Override
 	public Decoder getDecoder()
 	{
 		return this.cluster.getDecoder();
 	}
 
-	/**
-	 * @see org.hajdbc.sync.SynchronizationContext#getExecutor()
-	 */
 	@Override
 	public ExecutorService getExecutor()
 	{
 		return this.executor;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.sync.SynchronizationContext#getSynchronizationSupport()
-	 */
 	@Override
 	public SynchronizationSupport getSynchronizationSupport()
 	{
 		return new SynchronizationSupportImpl<>(this);
 	}
 
-	/**
-	 * @see org.hajdbc.sync.SynchronizationContext#close()
-	 */
 	@Override
 	public void close()
 	{

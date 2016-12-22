@@ -66,21 +66,13 @@ public abstract class AbstractSetBalancer<Z, D extends Database<Z>> extends Abst
 	{
 		return this.lock;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.Balancer#invoke(org.hajdbc.invocation.Invoker, org.hajdbc.Database, java.lang.Object)
-	 */
+
 	@Override
 	public <T, R, E extends Exception> R invoke(Invoker<Z, D, T, R, E> invoker, D database, T object) throws E
 	{
 		return invoker.invoke(database, object);
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.Balancer#primary()
-	 */
+
 	@Override
 	public D primary()
 	{
@@ -94,20 +86,12 @@ public abstract class AbstractSetBalancer<Z, D extends Database<Z>> extends Abst
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.AbstractBalancer#getDatabases()
-	 */
 	@Override
 	protected Set<D> getDatabases()
 	{
 		return this.databaseSet;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#remove(java.lang.Object)
-	 */
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public boolean remove(Object database)
@@ -149,11 +133,7 @@ public abstract class AbstractSetBalancer<Z, D extends Database<Z>> extends Abst
 	 * @param database a database descriptor
 	 */
 	protected abstract void removed(D database);
-	
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#add(java.lang.Object)
-	 */
+
 	@Override
 	public boolean add(D database)
 	{
@@ -195,10 +175,6 @@ public abstract class AbstractSetBalancer<Z, D extends Database<Z>> extends Abst
 	 */
 	protected abstract void added(D database);
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#addAll(java.util.Collection)
-	 */
 	@Override
 	public boolean addAll(Collection<? extends D> databases)
 	{
@@ -232,10 +208,6 @@ public abstract class AbstractSetBalancer<Z, D extends Database<Z>> extends Abst
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#removeAll(java.util.Collection)
-	 */
 	@Override
 	public boolean removeAll(Collection<?> databases)
 	{
@@ -269,10 +241,6 @@ public abstract class AbstractSetBalancer<Z, D extends Database<Z>> extends Abst
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#retainAll(java.util.Collection)
-	 */
 	@Override
 	public boolean retainAll(Collection<?> databases)
 	{
@@ -306,10 +274,6 @@ public abstract class AbstractSetBalancer<Z, D extends Database<Z>> extends Abst
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.util.Set#clear()
-	 */
 	@Override
 	public void clear()
 	{

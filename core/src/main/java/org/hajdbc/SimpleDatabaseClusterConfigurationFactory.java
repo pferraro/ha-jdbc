@@ -32,19 +32,11 @@ public class SimpleDatabaseClusterConfigurationFactory<Z, D extends Database<Z>>
 		return builder.build();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseClusterConfigurationListener#added(org.hajdbc.Database, org.hajdbc.DatabaseClusterConfiguration)
-	 */
 	@Override
 	public void added(D database, DatabaseClusterConfiguration<Z, D> configuration)
 	{
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseClusterConfigurationListener#removed(org.hajdbc.Database, org.hajdbc.DatabaseClusterConfiguration)
-	 */
 	@Override
 	public void removed(D database, DatabaseClusterConfiguration<Z, D> configuration)
 	{

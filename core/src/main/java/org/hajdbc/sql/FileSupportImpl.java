@@ -55,10 +55,7 @@ public class FileSupportImpl<E extends Exception> implements FileSupport<E>
 	{
 		this.exceptionFactory = exceptionFactory;
 	}
-	
-	/**
-	 * @see org.hajdbc.sql.FileSupport#createFile(java.io.InputStream)
-	 */
+
 	@Override
 	public File createFile(InputStream inputStream) throws E
 	{
@@ -88,10 +85,7 @@ public class FileSupportImpl<E extends Exception> implements FileSupport<E>
 			throw this.exceptionFactory.createException(e);
 		}
 	}
-	
-	/**
-	 * @see org.hajdbc.sql.FileSupport#createFile(java.io.Reader)
-	 */
+
 	@Override
 	public File createFile(Reader reader) throws E
 	{
@@ -118,10 +112,7 @@ public class FileSupportImpl<E extends Exception> implements FileSupport<E>
 			throw this.exceptionFactory.createException(e);
 		}
 	}
-	
-	/**
-	 * @see org.hajdbc.sql.FileSupport#getReader(java.io.File)
-	 */
+
 	@Override
 	public Reader getReader(File file) throws E
 	{
@@ -134,10 +125,7 @@ public class FileSupportImpl<E extends Exception> implements FileSupport<E>
 			throw this.exceptionFactory.createException(e);
 		}
 	}
-	
-	/**
-	 * @see org.hajdbc.sql.FileSupport#getInputStream(java.io.File)
-	 */
+
 	@SuppressWarnings("resource")
 	@Override
 	public InputStream getInputStream(File file) throws E
@@ -165,10 +153,7 @@ public class FileSupportImpl<E extends Exception> implements FileSupport<E>
 		
 		return file;
 	}
-	
-	/**
-	 * @see org.hajdbc.sql.FileSupport#close()
-	 */
+
 	@Override
 	public void close()
 	{
@@ -181,10 +166,7 @@ public class FileSupportImpl<E extends Exception> implements FileSupport<E>
 		}
 		this.files.clear();
 	}
-	
-	/**
-	 * @see java.lang.Object#finalize()
-	 */
+
 	@Override
 	protected void finalize() throws Throwable
 	{

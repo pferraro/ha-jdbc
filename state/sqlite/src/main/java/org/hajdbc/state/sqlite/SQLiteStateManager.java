@@ -103,10 +103,7 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 		return true;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseClusterListener#activated(org.hajdbc.state.DatabaseEvent)
-	 */
+
 	@Override
 	public void activated(final DatabaseEvent event)
 	{
@@ -128,10 +125,6 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseClusterListener#deactivated(org.hajdbc.state.DatabaseEvent)
-	 */
 	@Override
 	public void deactivated(final DatabaseEvent event)
 	{
@@ -165,50 +158,30 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.durability.DurabilityListener#beforeInvocation(org.hajdbc.durability.InvocationEvent)
-	 */
 	@Override
 	public void beforeInvocation(InvocationEvent event)
 	{
 		this.listener.beforeInvocation(event);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.durability.DurabilityListener#afterInvocation(org.hajdbc.durability.InvocationEvent)
-	 */
 	@Override
 	public void afterInvocation(InvocationEvent event)
 	{
 		this.listener.afterInvocation(event);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.durability.DurabilityListener#beforeInvoker(org.hajdbc.durability.InvokerEvent)
-	 */
 	@Override
 	public void beforeInvoker(InvokerEvent event)
 	{
 		this.listener.beforeInvoker(event);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.durability.DurabilityListener#afterInvoker(org.hajdbc.durability.InvokerEvent)
-	 */
 	@Override
 	public void afterInvoker(InvokerEvent event)
 	{
 		this.listener.afterInvoker(event);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.Lifecycle#start()
-	 */
 	@Override
 	public void start() throws SQLException
 	{
@@ -263,10 +236,6 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.Lifecycle#stop()
-	 */
 	@Override
 	public void stop()
 	{
@@ -277,10 +246,6 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 		this.pools.clear();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.state.StateManager#getActiveDatabases()
-	 */
 	@Override
 	public Set<String> getActiveDatabases()
 	{
@@ -322,10 +287,6 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.state.StateManager#setActiveDatabases(java.util.Set)
-	 */
 	@Override
 	public void setActiveDatabases(final Set<String> databases)
 	{
@@ -352,10 +313,6 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.state.StateManager#recover()
-	 */
 	@Override
 	public Map<InvocationEvent, Map<String, InvokerEvent>> recover()
 	{
@@ -429,10 +386,6 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.state.SerializedDurabilityListener#beforeInvocation(byte[], byte, byte)
-	 */
 	@Override
 	public void beforeInvocation(final byte[] transactionId, final byte phase, final byte exceptionType)
 	{
@@ -454,10 +407,6 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.state.SerializedDurabilityListener#afterInvocation(byte[], byte)
-	 */
 	@Override
 	public void afterInvocation(final byte[] transactionId, final byte phase)
 	{
@@ -508,10 +457,6 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.state.SerializedDurabilityListener#beforeInvoker(byte[], byte, java.lang.String)
-	 */
 	@Override
 	public void beforeInvoker(final byte[] transactionId, final byte phase, final String databaseId)
 	{
@@ -533,10 +478,6 @@ public class SQLiteStateManager<Z, D extends Database<Z>> implements StateManage
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.state.SerializedDurabilityListener#afterInvoker(byte[], byte, java.lang.String, byte[])
-	 */
 	@Override
 	public void afterInvoker(final byte[] transactionId, final byte phase, final String databaseId, final byte[] result)
 	{

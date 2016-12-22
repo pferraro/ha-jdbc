@@ -39,31 +39,19 @@ public class InvokerEventImpl extends DurabilityEventImpl implements InvokerEven
 		
 		this.databaseId = databaseId;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.durability.InvokerEvent#getDatabaseId()
-	 */
+
 	@Override
 	public String getDatabaseId()
 	{
 		return this.databaseId;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.durability.InvokerEvent#setResult(org.hajdbc.durability.InvokerResult)
-	 */
+
 	@Override
 	public void setResult(InvokerResult result)
 	{
 		this.result = result;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.durability.InvokerEvent#getResult()
-	 */
+
 	@Override
 	public InvokerResult getResult()
 	{
@@ -76,10 +64,6 @@ public class InvokerEventImpl extends DurabilityEventImpl implements InvokerEven
 		return String.format("%s(%s):%s", this.getPhase(), this.source, this.databaseId);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.durability.DurabilityEventImpl#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object object)
 	{

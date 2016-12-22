@@ -43,20 +43,13 @@ public class SimpleDatabaseMetaDataCache<Z, D extends Database<Z>> implements Da
 	{
 		this.cluster = cluster;
 	}
-	
-	/**
-	 * @see org.hajdbc.cache.DatabaseMetaDataCache#flush()
-	 */
+
 	@Override
 	public void flush()
 	{
 		// Nothing to flush
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.cache.DatabaseMetaDataCache#getDatabaseProperties(org.hajdbc.Database, java.sql.Connection)
-	 */
 	@Override
 	public DatabaseProperties getDatabaseProperties(D database, Connection connection) throws SQLException
 	{

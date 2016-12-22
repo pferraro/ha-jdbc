@@ -50,20 +50,13 @@ public class SharedLazyDatabaseMetaDataCache<Z, D extends Database<Z>> implement
 	{
 		this.cluster = cluster;
 	}
-	
-	/**
-	 * @see org.hajdbc.cache.DatabaseMetaDataCache#flush()
-	 */
+
 	@Override
 	public synchronized void flush()
 	{
 		this.entryRef.clear();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.cache.DatabaseMetaDataCache#getDatabaseProperties(org.hajdbc.Database, java.sql.Connection)
-	 */
 	@Override
 	public DatabaseProperties getDatabaseProperties(D database, Connection connection) throws SQLException
 	{

@@ -37,39 +37,25 @@ import org.hajdbc.dialect.StandardDialect;
 @SuppressWarnings("nls")
 public class FirebirdDialect extends StandardDialect
 {
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
-	 */
 	@Override
 	protected String vendorPattern()
 	{
 		return "firebird";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#dummyTable()
-	 */
 	@Override
 	protected String dummyTable()
 	{
 		return "RDB$DATABASE";
 	}
 
-	/**
-	 * Firebird 2.0 will support standard syntax.  Until then...
-	 * @see org.hajdbc.dialect.StandardDialect#alterSequenceFormat()
-	 */
 	@Override
 	protected String alterSequenceFormat()
 	{
+		// Firebird 2.0 will support standard syntax.  Until then...
 		return "SET GENERATOR {0} TO {1}";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#getSequenceSupport()
-	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
 	{
@@ -95,31 +81,23 @@ public class FirebirdDialect extends StandardDialect
 		}
 	}
 
-	/**
-	 * Firebird 2.0 will support standard syntax.  Until then...
-	 * @see org.hajdbc.dialect.StandardDialect#sequencePattern()
-	 */
 	@Override
 	protected String sequencePattern()
 	{
+		// Firebird 2.0 will support standard syntax.  Until then...
 		return "GEN_ID\\s*\\(\\s*([^\\s,]+)\\s*,\\s*\\d+\\s*\\)";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#selectForUpdatePattern()
-	 */
 	@Override
 	protected String selectForUpdatePattern()
 	{
 		return "SELECT\\s+.+\\s+WITH\\s+LOCK";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#nextSequenceValueFormat()
-	 */
 	@Override
 	protected String nextSequenceValueFormat()
 	{
+		// Firebird 2.0 will support standard syntax.  Until then...
 		return "GEN_ID({0}, 1)";
 	}
 }

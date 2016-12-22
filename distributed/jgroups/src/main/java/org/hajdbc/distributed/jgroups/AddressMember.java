@@ -46,10 +46,6 @@ public class AddressMember implements Member
 		return this.address;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object object)
 	{
@@ -60,30 +56,18 @@ public class AddressMember implements Member
 		return this.address.equals(member.address);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#hashCode()
-	 */
 	@Override
 	public int hashCode()
 	{
 		return this.address.hashCode();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString()
 	{
 		return this.address.toString();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Comparable#compareTo(java.lang.Object)
-	 */
 	@Override
 	public int compareTo(Member member)
 	{

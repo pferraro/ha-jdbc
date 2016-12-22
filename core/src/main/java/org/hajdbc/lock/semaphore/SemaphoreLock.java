@@ -37,55 +37,37 @@ public class SemaphoreLock implements Lock
 	{
 		this.semaphore = semaphore;
 	}
-	
-	/**
-	 * @see java.util.concurrent.locks.Lock#lock()
-	 */
+
 	@Override
 	public void lock()
 	{
 		this.semaphore.acquireUninterruptibly();
 	}
 
-	/**
-	 * @see java.util.concurrent.locks.Lock#lockInterruptibly()
-	 */
 	@Override
 	public void lockInterruptibly() throws InterruptedException
 	{
 		this.semaphore.acquire();
 	}
 
-	/**
-	 * @see java.util.concurrent.locks.Lock#newCondition()
-	 */
 	@Override
 	public Condition newCondition()
 	{
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * @see java.util.concurrent.locks.Lock#tryLock()
-	 */
 	@Override
 	public boolean tryLock()
 	{
 		return this.semaphore.tryAcquire();
 	}
 
-	/**
-	 * @see java.util.concurrent.locks.Lock#tryLock(long, java.util.concurrent.TimeUnit)
-	 */
 	@Override
 	public boolean tryLock(long time, TimeUnit unit) throws InterruptedException
 	{
 		return this.semaphore.tryAcquire(time, unit);
 	}
 
-	/**
-	 * @see java.util.concurrent.locks.Lock#unlock()
-	 */
 	@Override
 	public void unlock()
 	{

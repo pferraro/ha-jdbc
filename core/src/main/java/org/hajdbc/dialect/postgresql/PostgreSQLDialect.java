@@ -75,25 +75,18 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 	};
 
 	private static final File PASSWORD_FILE = new File(String.format("%s%s.pgpass", Strings.USER_HOME, Strings.FILE_SEPARATOR));
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
-	 */
+
 	@Override
 	protected String vendorPattern()
 	{
 		return "postgresql";
 	}
 
-	/**
-	 * PostgreSQL uses a schema search path to locate unqualified table names.
-	 * The default search path is [$user,public], where $user is the current user.
-	 * @see org.hajdbc.dialect.StandardDialect#getDefaultSchemas(java.sql.DatabaseMetaData)
-	 */
 	@Override
 	public List<String> getDefaultSchemas(DatabaseMetaData metaData) throws SQLException
 	{
+		// PostgreSQL uses a schema search path to locate unqualified table names.
+		// The default search path is [$user,public], where $user is the current user.
 		try (Statement statement = metaData.getConnection().createStatement())
 		{
 			try (ResultSet resultSet = statement.executeQuery("SHOW search_path"))
@@ -114,15 +107,12 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 		}
 	}
 
-	/**
-	 * PostgreSQL uses the native type OID to identify BLOBs.
-	 * However the JDBC driver incomprehensibly maps OIDs to INTEGERs.
-	 * The PostgreSQL JDBC folks claim this intentional.
-	 * @see org.hajdbc.dialect.StandardDialect#getColumnType(org.hajdbc.ColumnProperties)
-	 */
 	@Override
 	public int getColumnType(ColumnProperties properties)
 	{
+		// PostgreSQL uses the native type OID to identify BLOBs.
+		// However the JDBC driver incomprehensibly maps OIDs to INTEGERs.
+		// The PostgreSQL JDBC folks claim this intentional.
 		return properties.getNativeType().equalsIgnoreCase("oid") ? Types.BLOB : properties.getType();
 	}
 
@@ -142,94 +132,61 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 		return new HashSet<>(Arrays.asList(RESERVED_KEY_WORDS));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#getSequenceSupport()
-	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
 	{
 		return this;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#getIdentityColumnSupport()
-	 */
 	@Override
 	public IdentityColumnSupport getIdentityColumnSupport()
 	{
 		return this;
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#truncateTableFormat()
-	 */
 	@Override
 	protected String truncateTableFormat()
 	{
 		return "TRUNCATE TABLE {0}";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#sequencePattern()
-	 */
 	@Override
 	protected String sequencePattern()
 	{
 		return "(?:CURR|NEXT)VAL\\s*\\(\\s*'([^']+)'\\s*\\)";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#nextSequenceValueFormat()
-	 */
 	@Override
 	protected String nextSequenceValueFormat()
 	{
 		return "NEXTVAL(''{0}'')";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#alterIdentityColumnFormat()
-	 */
 	@Override
 	protected String alterIdentityColumnFormat()
 	{
 		return "ALTER SEQUENCE {0}_{1}_seq RESTART WITH {2}";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#currentTimestampPattern()
-	 */
 	@Override
 	protected String currentTimestampPattern()
 	{
 		return super.currentTimestampPattern() + "|(?<=\\W)NOW\\s*\\(\\s*\\)|(?<=\\W)TRANSACTION_TIMESTAMP\\s*\\(\\s*\\)|(?<=\\W)STATEMENT_TIMESTAMP\\s*\\(\\s*\\)|(?<=\\W)CLOCK_TIMESTAMP\\s*\\(\\s*\\)";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#randomPattern()
-	 */
 	@Override
 	protected String randomPattern()
 	{
 		return "(?<=\\W)RANDOM\\s*\\(\\s*\\)";
 	}
 
-	/**
-	 * Recognizes FOR SHARE and FOR UPDATE.
-	 * @see org.hajdbc.dialect.StandardDialect#selectForUpdatePattern()
-	 */
 	@Override
 	protected String selectForUpdatePattern()
 	{
+		// Recognizes FOR SHARE and FOR UPDATE.
 		return "SELECT\\s+.+\\s+FOR\\s+(SHARE|UPDATE)";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#getDumpRestoreSupport()
-	 */
 	@Override
 	public DumpRestoreSupport getDumpRestoreSupport()
 	{
@@ -296,30 +253,18 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 		return builder;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#getTriggerSupport()
-	 */
 	@Override
 	public TriggerSupport getTriggerSupport()
 	{
 		return this;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
-	 */
 	@Override
 	protected String createTriggerFormat()
 	{
 		return "CREATE FUNCTION {0}_action() BEGIN {4} END; CREATE TRIGGER {0} {1} {2} ON {3} FOR EACH ROW EXECUTE PROCEDURE {0}_action()";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#dropTriggerFormat()
-	 */
 	@Override
 	protected String dropTriggerFormat()
 	{

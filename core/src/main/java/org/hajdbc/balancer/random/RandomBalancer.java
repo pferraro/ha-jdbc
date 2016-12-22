@@ -67,11 +67,7 @@ public class RandomBalancer<P, D extends Database<P>> extends AbstractSetBalance
 		
 		this.databaseList = list;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.Balancer#next()
-	 */
+
 	@Override
 	public D next()
 	{
@@ -79,11 +75,7 @@ public class RandomBalancer<P, D extends Database<P>> extends AbstractSetBalance
 		
 		return !list.isEmpty() ? list.get(this.random.nextInt(list.size())) : this.primary();
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.AbstractSetBalancer#added(org.hajdbc.Database)
-	 */
+
 	@Override
 	protected void added(D database)
 	{
@@ -104,10 +96,6 @@ public class RandomBalancer<P, D extends Database<P>> extends AbstractSetBalance
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.AbstractSetBalancer#removed(org.hajdbc.Database)
-	 */
 	@Override
 	protected void removed(D database)
 	{
@@ -126,10 +114,6 @@ public class RandomBalancer<P, D extends Database<P>> extends AbstractSetBalance
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.AbstractSetBalancer#cleared()
-	 */
 	@Override
 	protected void cleared()
 	{

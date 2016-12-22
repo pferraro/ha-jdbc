@@ -32,10 +32,6 @@ public class PostInvocationCommand<Z, D extends Database<Z>> extends InvocationC
 		super(descriptor);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.state.distributed.InvocationCommand#execute(java.util.Map, org.hajdbc.durability.InvocationEvent)
-	 */
 	@Override
 	protected void execute(Map<InvocationEvent, Map<String, InvokerEvent>> invokers, InvocationEvent event)
 	{

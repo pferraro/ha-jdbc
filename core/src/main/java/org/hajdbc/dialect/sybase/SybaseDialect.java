@@ -28,117 +28,79 @@ import org.hajdbc.dialect.StandardDialect;
  * Dialect for Sybase (commercial).
  * @author Paul Ferraro
  */
-@SuppressWarnings("nls")
 public class SybaseDialect extends StandardDialect
 {
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#getIdentityColumnSupport()
-	 */
 	@Override
 	public IdentityColumnSupport getIdentityColumnSupport()
 	{
 		return this;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
-	 */
 	@Override
 	protected String vendorPattern()
 	{
 		return "sybase";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#truncateTableFormat()
-	 */
 	@Override
 	protected String truncateTableFormat()
 	{
 		return "TRUNCATE TABLE {0}";
 	}
-	
-	/**
-	 * Deferrability clause is not supported.
-	 * @see org.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
-	 */
+
 	@Override
 	protected String createForeignKeyConstraintFormat()
 	{
+		// Deferrability clause is not supported.
 		return "ALTER TABLE {1} ADD CONSTRAINT {0} FOREIGN KEY ({2}) REFERENCES {3} ({4}) ON DELETE {5,choice,0#CASCADE|1#RESTRICT|2#SET NULL|3#NO ACTION|4#SET DEFAULT} ON UPDATE {6,choice,0#CASCADE|1#RESTRICT|2#SET NULL|3#NO ACTION|4#SET DEFAULT}";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#currentDatePattern()
-	 */
 	@Override
 	protected String currentDatePattern()
 	{
 		return "(?<=\\W)CURRENT\\s+DATE(?=\\W)|(?<=\\W)TODAY\\s*\\(\\s*\\*\\s*\\)";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#currentTimePattern()
-	 */
 	@Override
 	protected String currentTimePattern()
 	{
 		return "(?<=\\W)CURRENT\\s+TIME(?=\\W)";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#currentTimestampPattern()
-	 */
 	@Override
 	protected String currentTimestampPattern()
 	{
 		return "(?<=\\W)CURRENT\\s+TIMESTAMP(?=\\W)|(?<=\\W)GETDATE\\s*\\(\\s*\\)|(?<=\\W)NOW\\s*\\(\\s*\\*\\s*\\)";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#dateLiteralFormat()
-	 */
 	@Override
 	protected String dateLiteralFormat()
 	{
 		return this.timestampLiteralFormat();
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#timeLiteralFormat()
-	 */
 	@Override
 	protected String timeLiteralFormat()
 	{
 		return this.timestampLiteralFormat();
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#timestampLiteralFormat()
-	 */
 	@Override
 	protected String timestampLiteralFormat()
 	{
 		return "''{0}''";
 	}
-	
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#randomPattern()
-	 */
+
 	@Override
 	protected String randomPattern()
 	{
 		return "(?<=\\W)RAND\\s*\\(\\s*\\d*\\s*\\)";
 	}
 
-	/**
-	 * jTDS does not implement Connection.isValid(...)
-	 */
 	@Override
 	public boolean isValid(Connection connection) throws SQLException
 	{
+		// jTDS does not implement Connection.isValid(...)
 		try (Statement statement = connection.createStatement())
 		{
 			statement.executeQuery("SELECT GETDATE()");

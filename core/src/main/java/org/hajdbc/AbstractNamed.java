@@ -56,9 +56,6 @@ public abstract class AbstractNamed<N extends Comparable<N>, T extends Named<N, 
 		return this.name.toString();
 	}
 
-	/**
-	 * @see java.lang.Comparable#compareTo(java.lang.Object)
-	 */
 	@Override
 	public int compareTo(T named)
 	{

@@ -53,31 +53,19 @@ public class SimpleBalancer<Z, D extends Database<Z>> extends AbstractSetBalance
 		
 		this.reset();
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.Balancer#next()
-	 */
+
 	@Override
 	public D next()
 	{
 		return this.nextDatabase;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.AbstractSetBalancer#added(org.hajdbc.Database)
-	 */
 	@Override
 	protected void added(D database)
 	{
 		this.reset();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.AbstractSetBalancer#removed(org.hajdbc.Database)
-	 */
 	@Override
 	protected void removed(D database)
 	{
@@ -91,10 +79,6 @@ public class SimpleBalancer<Z, D extends Database<Z>> extends AbstractSetBalance
 		this.nextDatabase = databaseSet.isEmpty() ? null : Collections.max(databaseSet, this.comparator);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.balancer.AbstractSetBalancer#cleared()
-	 */
 	@Override
 	protected void cleared()
 	{

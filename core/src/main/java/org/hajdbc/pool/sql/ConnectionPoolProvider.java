@@ -37,20 +37,12 @@ public class ConnectionPoolProvider extends CloseablePoolProvider<Connection, SQ
 		this.factory = factory;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.pool.PoolProvider#create()
-	 */
 	@Override
 	public Connection create() throws SQLException
 	{
 		return this.factory.getConnection();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.pool.PoolProvider#isValid(java.lang.Object)
-	 */
 	@Override
 	public boolean isValid(Connection connection)
 	{

@@ -32,10 +32,7 @@ public class SoftReferenceFactory implements ReferenceFactory
 	{
 		return instance;
 	}
-	
-	/**
-	 * @see org.hajdbc.util.ref.ReferenceFactory#createReference(java.lang.Object)
-	 */
+
 	@Override
 	public <T> Reference<T> createReference(T object)
 	{

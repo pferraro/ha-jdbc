@@ -48,29 +48,19 @@ public abstract class AbstractDatabaseProperties implements DatabaseProperties
 		this.locatorsUpdateCopy = metaData.locatorsUpdateCopy();
 		this.nameFactory = dialect.createQualifiedNameFactory(metaData, dialect.createIdentifierNormalizer(metaData));
 	}
-	
-	/**
-	 * @see org.hajdbc.DatabaseProperties#supportsSelectForUpdate()
-	 */
+
 	@Override
 	public final boolean supportsSelectForUpdate()
 	{
 		return this.supportsSelectForUpdate;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseProperties#locatorsUpdateCopy()
-	 */
+
 	@Override
 	public boolean locatorsUpdateCopy()
 	{
 		return this.locatorsUpdateCopy;
 	}
 
-	/**
-	 * @see org.hajdbc.DatabaseProperties#getTables()
-	 */
 	@Override
 	public final Collection<TableProperties> getTables() throws SQLException
 	{
@@ -79,9 +69,6 @@ public abstract class AbstractDatabaseProperties implements DatabaseProperties
 
 	protected abstract Map<QualifiedName, TableProperties> tables() throws SQLException;
 
-	/**
-	 * @see org.hajdbc.DatabaseProperties#getSequences()
-	 */
 	@Override
 	public final Collection<SequenceProperties> getSequences() throws SQLException
 	{
@@ -90,18 +77,12 @@ public abstract class AbstractDatabaseProperties implements DatabaseProperties
 
 	protected abstract Map<QualifiedName, SequenceProperties> sequences() throws SQLException;
 	
-	/**
-	 * @see org.hajdbc.DatabaseProperties#findTable(java.lang.String)
-	 */
 	@Override
 	public final TableProperties findTable(String table) throws SQLException
 	{
 		return this.find(this.tables(), table, this.defaultSchemas());
 	}
 
-	/**
-	 * @see org.hajdbc.DatabaseProperties#findSequence(java.lang.String)
-	 */
 	@Override
 	public final SequenceProperties findSequence(String sequence) throws SQLException
 	{
@@ -128,10 +109,6 @@ public abstract class AbstractDatabaseProperties implements DatabaseProperties
 
 	protected abstract List<String> defaultSchemas() throws SQLException;
 	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseProperties#findType(int, int[])
-	 */
 	@Override
 	public String findType(int precision, int... types) throws SQLException
 	{

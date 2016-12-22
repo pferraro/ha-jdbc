@@ -33,11 +33,7 @@ public class SLF4JLogger extends AbstractLogger
 	{
 		this.logger = LoggerFactory.getLogger(targetClass);
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.logging.Logger#log(org.hajdbc.logging.Level, java.lang.Throwable, java.lang.String, java.lang.Object[])
-	 */
+
 	@Override
 	public void log(Level level, Throwable e, String pattern, Object... args)
 	{

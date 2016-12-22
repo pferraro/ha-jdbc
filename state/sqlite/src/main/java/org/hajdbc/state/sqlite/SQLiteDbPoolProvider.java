@@ -43,10 +43,6 @@ public class SQLiteDbPoolProvider extends AbstractPoolProvider<SqlJetDb, SqlJetE
 		this.file = file;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.pool.PoolProvider#close(java.lang.Object)
-	 */
 	@Override
 	public void close(SqlJetDb database)
 	{
@@ -60,10 +56,6 @@ public class SQLiteDbPoolProvider extends AbstractPoolProvider<SqlJetDb, SqlJetE
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.pool.PoolProvider#create()
-	 */
 	@Override
 	public synchronized SqlJetDb create() throws SqlJetException
 	{
@@ -77,10 +69,6 @@ public class SQLiteDbPoolProvider extends AbstractPoolProvider<SqlJetDb, SqlJetE
 		return db;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.pool.PoolProvider#isValid(java.lang.Object)
-	 */
 	@Override
 	public boolean isValid(SqlJetDb database)
 	{

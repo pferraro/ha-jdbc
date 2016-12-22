@@ -46,11 +46,7 @@ public class LazyDatabaseMetaDataCache<Z, D extends Database<Z>> implements Data
 	{
 		this.cluster = cluster;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.cache.DatabaseMetaDataCache#flush()
-	 */
+
 	@Override
 	public void flush()
 	{
@@ -60,10 +56,6 @@ public class LazyDatabaseMetaDataCache<Z, D extends Database<Z>> implements Data
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.cache.DatabaseMetaDataCache#getDatabaseProperties(org.hajdbc.Database, java.sql.Connection)
-	 */
 	@Override
 	public DatabaseProperties getDatabaseProperties(D database, Connection connection) throws SQLException
 	{

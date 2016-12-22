@@ -37,29 +37,18 @@ import org.hajdbc.dialect.StandardDialect;
  */
 public class MaxDBDialect extends StandardDialect
 {
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
-	 */
 	@Override
 	protected String vendorPattern()
 	{
 		return "maxdb";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#dummyTable()
-	 */
 	@Override
 	protected String dummyTable()
 	{
 		return "DUAL";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.dialect.StandardDialect#getSequenceSupport()
-	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
 	{
@@ -85,37 +74,25 @@ public class MaxDBDialect extends StandardDialect
 		}
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#truncateTableFormat()
-	 */
 	@Override
 	protected String truncateTableFormat()
 	{
 		return "TRUNCATE TABLE {0}";
 	}
-	
-	/**
-	 * ON UPDATE and deferrability clauses are not supported.
-	 * @see org.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
-	 */
+
 	@Override
 	protected String createForeignKeyConstraintFormat()
 	{
+		// ON UPDATE and deferrability clauses are not supported.
 		return "ALTER TABLE {1} ADD CONSTRAINT {0} FOREIGN KEY ({2}) REFERENCES {3} ({4}) ON DELETE {5,choice,0#CASCADE|1#RESTRICT|2#SET NULL|3#NO ACTION|4#SET DEFAULT}";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#sequencePattern()
-	 */
 	@Override
 	protected String sequencePattern()
 	{
 		return "'?(\\w+)'?\\.(?:CURR|NEXT)VAL";
 	}
 
-	/**
-	 * @see org.hajdbc.dialect.StandardDialect#nextSequenceValueFormat()
-	 */
 	@Override
 	protected String nextSequenceValueFormat()
 	{

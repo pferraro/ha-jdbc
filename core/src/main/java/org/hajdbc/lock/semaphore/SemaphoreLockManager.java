@@ -40,10 +40,7 @@ public class SemaphoreLockManager implements LockManager
 	{
 		this.fair = fair;
 	}
-	
-	/**
-	 * @see org.hajdbc.lock.LockManager#readLock(java.lang.String)
-	 */
+
 	@Override
 	public Lock readLock(String object)
 	{
@@ -51,10 +48,7 @@ public class SemaphoreLockManager implements LockManager
 		
 		return (object == null) ? lock : new GlobalLock(lock, this.getReadWriteLock(object).readLock());
 	}
-	
-	/**
-	 * @see org.hajdbc.lock.LockManager#writeLock(java.lang.String)
-	 */
+
 	@Override
 	public Lock writeLock(String object)
 	{
@@ -165,18 +159,12 @@ public class SemaphoreLockManager implements LockManager
 		}
 	}
 
-	/**
-	 * @see org.hajdbc.Lifecycle#start()
-	 */
 	@Override
 	public void start()
 	{
 		// Do nothing
 	}
 
-	/**
-	 * @see org.hajdbc.Lifecycle#stop()
-	 */
 	@Override
 	public void stop()
 	{

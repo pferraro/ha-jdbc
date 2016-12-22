@@ -33,10 +33,7 @@ public class SimpleDatabaseMetaDataProvider implements DatabaseMetaDataProvider
 	{
 		this.metaData = metaData;
 	}
-	
-	/**
-	 * @see org.hajdbc.cache.DatabaseMetaDataProvider#getDatabaseMetaData()
-	 */
+
 	@Override
 	public DatabaseMetaData getDatabaseMetaData()
 	{

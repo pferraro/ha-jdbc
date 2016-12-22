@@ -32,7 +32,6 @@ import org.hajdbc.util.reflect.Methods;
  * @author Paul Ferraro
  * @param <D> 
  */
-@SuppressWarnings("nls")
 public class CallableStatementInvocationHandler<Z, D extends Database<Z>> extends AbstractPreparedStatementInvocationHandler<Z, D, CallableStatement, CallableStatementProxyFactory<Z, D>>
 {
 	private static final Set<Method> registerOutParameterMethods = Methods.findMethods(CallableStatement.class, "registerOutParameter");
@@ -47,9 +46,6 @@ public class CallableStatementInvocationHandler<Z, D extends Database<Z>> extend
 		super(CallableStatement.class, proxyFactory, setMethods);
 	}
 
-	/**
-	 * @see org.hajdbc.sql.AbstractStatementInvocationHandler#getInvocationStrategy(java.sql.Statement, java.lang.reflect.Method, java.lang.Object[])
-	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(CallableStatement statement, Method method, Object... parameters) throws SQLException
 	{
@@ -66,18 +62,12 @@ public class CallableStatementInvocationHandler<Z, D extends Database<Z>> extend
 		return super.getInvocationStrategy(statement, method, parameters);
 	}
 
-	/**
-	 * @see org.hajdbc.sql.AbstractPreparedStatementInvocationHandler#isBatchMethod(java.lang.reflect.Method)
-	 */
 	@Override
 	protected boolean isBatchMethod(Method method)
 	{
 		return registerOutParameterMethods.contains(method) || super.isBatchMethod(method);
 	}
 
-	/**
-	 * @see org.hajdbc.sql.AbstractPreparedStatementInvocationHandler#isIndexType(java.lang.Class)
-	 */
 	@Override
 	protected boolean isIndexType(Class<?> type)
 	{

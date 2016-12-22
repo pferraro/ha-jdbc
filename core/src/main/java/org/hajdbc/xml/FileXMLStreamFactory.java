@@ -54,31 +54,19 @@ public class FileXMLStreamFactory implements XMLStreamFactory
 			throw new IllegalArgumentException(e);
 		}
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.xml.XMLStreamFactory#createSource()
-	 */
+
 	@Override
 	public Source createSource()
 	{
 		return new StreamSource(this.file);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.xml.XMLStreamFactory#createResult()
-	 */
 	@Override
 	public Result createResult()
 	{
 		return new StreamResult(this.file);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString()
 	{

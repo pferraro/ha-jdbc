@@ -28,30 +28,18 @@ import org.kohsuke.MetaInfServices;
 @MetaInfServices(LoggingProvider.class)
 public class JDKLoggingProvider implements LoggingProvider
 {
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.logging.LoggingProvider#getLogger(java.lang.Class)
-	 */
 	@Override
 	public Logger getLogger(Class<?> targetClass)
 	{
 		return new JDKLogger(targetClass);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.logging.LoggingProvider#getName()
-	 */
 	@Override
 	public String getName()
 	{
 		return "JDK";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.logging.LoggingProvider#isEnabled()
-	 */
 	@Override
 	public boolean isEnabled()
 	{

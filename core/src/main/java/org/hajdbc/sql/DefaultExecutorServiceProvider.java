@@ -32,20 +32,12 @@ public class DefaultExecutorServiceProvider implements ExecutorServiceProvider, 
 {
 	private static final long serialVersionUID = 5781743869682086889L;
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.ExecutorServiceProvider#getExecutor(java.util.concurrent.ThreadFactory)
-	 */
 	@Override
 	public ExecutorService getExecutor(ThreadFactory threadFactory)
 	{
 		return Executors.newCachedThreadPool(threadFactory);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.ExecutorServiceProvider#release(java.util.concurrent.ExecutorService)
-	 */
 	@Override
 	public void release(ExecutorService executor)
 	{

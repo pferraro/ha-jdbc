@@ -71,21 +71,13 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 		LockCommandContext context = this;
 		this.dispatcher = dispatcherFactory.createCommandDispatcher(cluster.getId() + ".lock", context, this, this);
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.lock.LockManager#readLock(java.lang.String)
-	 */
+
 	@Override
 	public Lock readLock(String id)
 	{
 		return this.lockManager.readLock(id);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.lock.LockManager#writeLock(java.lang.String)
-	 */
 	@Override
 	public Lock writeLock(String id)
 	{
@@ -93,10 +85,6 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 		return new DistributedLock(descriptor, this.getLock(descriptor), this.dispatcher);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.lock.distributed.LockCommandContext#getLock(org.hajdbc.lock.distributed.LockDescriptor)
-	 */
 	@Override
 	public Lock getLock(LockDescriptor lock)
 	{
@@ -119,10 +107,6 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.Lifecycle#start()
-	 */
 	@Override
 	public void start() throws SQLException
 	{
@@ -130,10 +114,6 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 		this.dispatcher.start();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.Lifecycle#stop()
-	 */
 	@Override
 	public void stop()
 	{
@@ -141,20 +121,12 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 		this.lockManager.stop();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.lock.distributed.LockCommandContext#getRemoteLocks(org.hajdbc.distributed.Remote)
-	 */
 	@Override
 	public Map<LockDescriptor, Lock> getRemoteLocks(Remote remote)
 	{
 		return this.remoteLockDescriptorMap.get(remote.getMember());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.distributed.Stateful#writeState(java.io.ObjectOutput)
-	 */
 	@Override
 	public void writeState(ObjectOutput output) throws IOException
 	{
@@ -180,10 +152,6 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.distributed.Stateful#readState(java.io.ObjectInput)
-	 */
 	@Override
 	public void readState(ObjectInput input) throws IOException
 	{
@@ -220,20 +188,12 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.distributed.MembershipListener#added(org.hajdbc.distributed.Member)
-	 */
 	@Override
 	public void added(Member member)
 	{
 		this.remoteLockDescriptorMap.putIfAbsent(member, new HashMap<LockDescriptor, Lock>());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.distributed.MembershipListener#removed(org.hajdbc.distributed.Member)
-	 */
 	@Override
 	public void removed(Member member)
 	{
@@ -648,11 +608,7 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 			
 			this.type = LockType.values()[in.readByte()];
 		}
-		
-		/**
-		 * {@inheritDoc}
-		 * @see java.lang.Object#equals(java.lang.Object)
-		 */
+
 		@Override
 		public boolean equals(Object object)
 		{
@@ -663,20 +619,12 @@ public class DistributedLockManager implements LockManager, LockCommandContext, 
 			return ((this.id != null) && (id != null)) ?  this.id.equals(id) : (this.id == id);
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * @see java.lang.Object#hashCode()
-		 */
 		@Override
 		public int hashCode()
 		{
 			return this.id != null ? this.id.hashCode() : 0;
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * @see java.lang.Object#toString()
-		 */
 		@Override
 		public String toString()
 		{

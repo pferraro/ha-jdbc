@@ -46,9 +46,6 @@ public class ConnectionPoolDataSource extends CommonDataSource<javax.sql.Connect
 		return new ConnectionPoolDataSourceProxyFactory(cluster);
 	}
 
-	/**
-	 * @see javax.sql.ConnectionPoolDataSource#getPooledConnection()
-	 */
 	@Override
 	public PooledConnection getPooledConnection() throws SQLException
 	{
@@ -56,9 +53,6 @@ public class ConnectionPoolDataSource extends CommonDataSource<javax.sql.Connect
 		return (user != null) ? this.getProxy().getPooledConnection(user, this.getPassword()) : this.getProxy().getPooledConnection();
 	}
 
-	/**
-	 * @see javax.sql.ConnectionPoolDataSource#getPooledConnection(java.lang.String, java.lang.String)
-	 */
 	@Override
 	public PooledConnection getPooledConnection(String user, String password) throws SQLException
 	{

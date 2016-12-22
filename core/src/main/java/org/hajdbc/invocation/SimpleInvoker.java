@@ -42,10 +42,7 @@ public class SimpleInvoker<Z, D extends Database<Z>, T, R, E extends Exception> 
 	{
 		return this.exceptionFactory;
 	}
-	
-	/**
-	 * @see org.hajdbc.invocation.Invoker#invoke(org.hajdbc.Database, java.lang.Object)
-	 */
+
 	@Override
 	public R invoke(D database, T object) throws E
 	{
@@ -71,10 +68,6 @@ public class SimpleInvoker<Z, D extends Database<Z>, T, R, E extends Exception> 
 		return false;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString()
 	{

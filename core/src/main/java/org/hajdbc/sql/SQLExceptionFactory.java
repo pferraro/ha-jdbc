@@ -40,21 +40,13 @@ public class SQLExceptionFactory extends AbstractExceptionFactory<SQLException>
 	{
 		super(SQLException.class);	
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.ExceptionFactory#createException(java.lang.String)
-	 */
+
 	@Override
 	public SQLException createException(String message)
 	{
 		return new SQLException(message);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.ExceptionFactory#equals(java.lang.Exception, java.lang.Exception)
-	 */
 	@Override
 	public boolean equals(SQLException exception1, SQLException exception2)
 	{
@@ -133,10 +125,6 @@ public class SQLExceptionFactory extends AbstractExceptionFactory<SQLException>
 		return ((reason1 == reason2) || ((reason1 != null) && (reason2 != null) && reason1.equals(reason2))) ? this.equals(nextException1, nextException2) : false;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.ExceptionFactory#indicatesFailure(java.lang.Exception, org.hajdbc.dialect.Dialect)
-	 */
 	@Override
 	public boolean indicatesFailure(SQLException exception, Dialect dialect)
 	{
@@ -145,10 +133,6 @@ public class SQLExceptionFactory extends AbstractExceptionFactory<SQLException>
 		return dialect.indicatesFailure(exception) || ((nextException != null) && this.indicatesFailure(nextException, dialect));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.ExceptionFactory#getType()
-	 */
 	@Override
 	public ExceptionType getType()
 	{

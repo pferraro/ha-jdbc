@@ -36,10 +36,6 @@ public class InvokerCommand<Z, D extends Database<Z>> implements Command<Void, S
 		this.descriptor = descriptor;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.distributed.Command#execute(java.lang.Object)
-	 */
 	@Override
 	public Void execute(StateCommandContext<Z, D> context)
 	{
@@ -61,10 +57,6 @@ public class InvokerCommand<Z, D extends Database<Z>> implements Command<Void, S
 		return null;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString()
 	{

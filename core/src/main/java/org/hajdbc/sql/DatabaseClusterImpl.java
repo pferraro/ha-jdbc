@@ -271,7 +271,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 			listener.added(database, this.configuration);
 		}
 	}
-*/	
+*/
 	/**
 	 * Removes the specified database from the cluster.
 	 * @param databaseId a database identifier
@@ -297,10 +297,6 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#getId()
-	 */
 	@ManagedAttribute
 	@Override
 	public String getId()
@@ -314,10 +310,6 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 		return this.id;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#isActive()
-	 */
 	@ManagedAttribute
 	@Override
 	public boolean isActive()
@@ -362,10 +354,6 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#addConfigurationListener(org.hajdbc.DatabaseClusterConfigurationListener)
-	 */
 	@ManagedOperation
 	@Override
 	public void addConfigurationListener(DatabaseClusterConfigurationListener<Z, D> listener)
@@ -373,10 +361,6 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 		this.configurationListeners.add(listener);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#addListener(org.hajdbc.DatabaseClusterListener)
-	 */
 	@ManagedOperation
 	@Override
 	public void addListener(DatabaseClusterListener listener)
@@ -384,10 +368,6 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 		this.clusterListeners.add(listener);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#addSynchronizationListener(org.hajdbc.SynchronizationListener)
-	 */
 	@ManagedOperation
 	@Override
 	public void addSynchronizationListener(SynchronizationListener listener)
@@ -395,10 +375,6 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 		this.synchronizationListeners.add(listener);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#removeConfigurationListener(org.hajdbc.DatabaseClusterConfigurationListener)
-	 */
 	@ManagedOperation
 	@Override
 	public void removeConfigurationListener(DatabaseClusterConfigurationListener<Z, D> listener)
@@ -406,10 +382,6 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 		this.configurationListeners.remove(listener);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#removeListener(org.hajdbc.DatabaseClusterListener)
-	 */
 	@ManagedOperation
 	@Override
 	public void removeListener(DatabaseClusterListener listener)
@@ -417,21 +389,13 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 		this.clusterListeners.remove(listener);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#removeSynchronizationListener(org.hajdbc.SynchronizationListener)
-	 */
 	@ManagedOperation
 	@Override
 	public void removeSynchronizationListener(SynchronizationListener listener)
 	{
 		this.synchronizationListeners.remove(listener);
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#activate(org.hajdbc.Database, org.hajdbc.state.StateManager)
-	 */
+
 	@Override
 	public boolean activate(D database, StateManager manager)
 	{
@@ -459,11 +423,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 		
 		return added;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#deactivate(org.hajdbc.Database, org.hajdbc.state.StateManager)
-	 */
+
 	@Override
 	public boolean deactivate(D database, StateManager manager)
 	{
@@ -486,20 +446,12 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 		return removed;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#getBalancer()
-	 */
 	@Override
 	public Balancer<Z, D> getBalancer()
 	{
 		return this.balancer;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#getDatabase(java.lang.String)
-	 */
 	@Override
 	public D getDatabase(String id)
 	{
@@ -513,70 +465,42 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 		return database;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#getDatabaseMetaDataCache()
-	 */
 	@Override
 	public DatabaseMetaDataCache<Z, D> getDatabaseMetaDataCache()
 	{
 		return this.databaseMetaDataCache;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#getDialect()
-	 */
 	@Override
 	public Dialect getDialect()
 	{
 		return this.dialect;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#getDurability()
-	 */
 	@Override
 	public Durability<Z, D> getDurability()
 	{
 		return this.durability;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#getLockManager()
-	 */
 	@Override
 	public LockManager getLockManager()
 	{
 		return this.lockManager;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#getExecutor()
-	 */
 	@Override
 	public ExecutorService getExecutor()
 	{
 		return this.executor;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#getTransactionMode()
-	 */
 	@Override
 	public TransactionMode getTransactionMode()
 	{
 		return this.configuration.getTransactionMode();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#getStateManager()
-	 */
 	@Override
 	public StateManager getStateManager()
 	{
@@ -601,80 +525,48 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 		return this.sinkSourceFactory;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#getTransactionIdentifierFactory()
-	 */
 	@Override
 	public TransactionIdentifierFactory<? extends Object> getTransactionIdentifierFactory()
 	{
 		return this.txIdentifierFactory;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#isCurrentDateEvaluationEnabled()
-	 */
 	@Override
 	public boolean isCurrentDateEvaluationEnabled()
 	{
 		return this.configuration.isCurrentDateEvaluationEnabled();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#isCurrentTimeEvaluationEnabled()
-	 */
 	@Override
 	public boolean isCurrentTimeEvaluationEnabled()
 	{
 		return this.configuration.isCurrentTimeEvaluationEnabled();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#isCurrentTimestampEvaluationEnabled()
-	 */
 	@Override
 	public boolean isCurrentTimestampEvaluationEnabled()
 	{
 		return this.configuration.isCurrentTimestampEvaluationEnabled();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#isIdentityColumnDetectionEnabled()
-	 */
 	@Override
 	public boolean isIdentityColumnDetectionEnabled()
 	{
 		return this.configuration.isIdentityColumnDetectionEnabled();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#isRandEvaluationEnabled()
-	 */
 	@Override
 	public boolean isRandEvaluationEnabled()
 	{
 		return this.configuration.isRandEvaluationEnabled();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.DatabaseCluster#isSequenceDetectionEnabled()
-	 */
 	@Override
 	public boolean isSequenceDetectionEnabled()
 	{
 		return this.configuration.isSequenceDetectionEnabled();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.Lifecycle#start()
-	 */
 	@Override
 	public synchronized void start() throws SQLException
 	{
@@ -797,11 +689,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 	{
 		return (expression != null) ? 1 : 0;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.Lifecycle#stop()
-	 */
+
 	@Override
 	public synchronized void stop()
 	{

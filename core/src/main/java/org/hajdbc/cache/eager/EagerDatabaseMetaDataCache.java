@@ -42,11 +42,7 @@ public class EagerDatabaseMetaDataCache<Z, D extends Database<Z>> implements Dat
 	{
 		this.cluster = cluster;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.cache.DatabaseMetaDataCache#flush()
-	 */
+
 	@Override
 	public void flush() throws SQLException
 	{
@@ -67,10 +63,6 @@ public class EagerDatabaseMetaDataCache<Z, D extends Database<Z>> implements Dat
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.hajdbc.cache.DatabaseMetaDataCache#getDatabaseProperties(org.hajdbc.Database, java.sql.Connection)
-	 */
 	@Override
 	public DatabaseProperties getDatabaseProperties(D database, Connection connection) throws SQLException
 	{

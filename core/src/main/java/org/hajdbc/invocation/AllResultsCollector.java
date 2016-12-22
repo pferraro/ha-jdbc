@@ -54,10 +54,7 @@ public class AllResultsCollector implements InvokeOnManyInvocationStrategy.Resul
 	{
 		this.provider = provider;
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
+
 	@Override
 	public <Z, D extends Database<Z>, T, R, E extends Exception> Map.Entry<SortedMap<D, R>, SortedMap<D, E>> collectResults(ProxyFactory<Z, D, T, E> factory, final Invoker<Z, D, T, R, E> invoker)
 	{
@@ -135,11 +132,7 @@ public class AllResultsCollector implements InvokeOnManyInvocationStrategy.Resul
 		{
 			return this.database;
 		}
-		
-		/**
-		 * {@inheritDoc}
-		 * @see java.util.concurrent.Callable#call()
-		 */
+
 		@Override
 		public R call() throws E
 		{
