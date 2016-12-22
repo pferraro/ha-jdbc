@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache.simple;
+package org.hajdbc.cache.simple;
 
 import java.sql.DatabaseMetaData;
 
-import net.sf.hajdbc.cache.DatabaseMetaDataProvider;
+import org.hajdbc.cache.DatabaseMetaDataProvider;
 
 /**
  * @author Paul Ferraro
@@ -35,7 +35,7 @@ public class SimpleDatabaseMetaDataProvider implements DatabaseMetaDataProvider
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.cache.DatabaseMetaDataProvider#getDatabaseMetaData()
+	 * @see org.hajdbc.cache.DatabaseMetaDataProvider#getDatabaseMetaData()
 	 */
 	@Override
 	public DatabaseMetaData getDatabaseMetaData()

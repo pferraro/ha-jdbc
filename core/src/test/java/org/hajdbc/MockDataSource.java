@@ -1,4 +1,4 @@
-package net.sf.hajdbc;
+package org.hajdbc;
 
 import java.io.PrintWriter;
 import java.sql.Connection;

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sync;
+package org.hajdbc.sync;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -32,21 +32,21 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.ForeignKeyConstraint;
-import net.sf.hajdbc.IdentityColumnSupport;
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.TableProperties;
-import net.sf.hajdbc.UniqueConstraint;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.util.Strings;
+import org.hajdbc.Database;
+import org.hajdbc.ExceptionType;
+import org.hajdbc.ForeignKeyConstraint;
+import org.hajdbc.IdentityColumnSupport;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.TableProperties;
+import org.hajdbc.UniqueConstraint;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
+import org.hajdbc.util.Strings;
 
 /**
  * Default {@link SynchronizationSupport} implementation.
@@ -66,7 +66,7 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sync.SynchronizationSupport#dropForeignKeys()
+	 * @see org.hajdbc.sync.SynchronizationSupport#dropForeignKeys()
 	 */
 	@Override
 	public void dropForeignKeys() throws SQLException
@@ -103,7 +103,7 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sync.SynchronizationSupport#restoreForeignKeys()
+	 * @see org.hajdbc.sync.SynchronizationSupport#restoreForeignKeys()
 	 */
 	@Override
 	public void restoreForeignKeys() throws SQLException
@@ -141,7 +141,7 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sync.SynchronizationSupport#synchronizeSequences()
+	 * @see org.hajdbc.sync.SynchronizationSupport#synchronizeSequences()
 	 */
 	@Override
 	public void synchronizeSequences() throws SQLException
@@ -243,7 +243,7 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sync.SynchronizationSupport#synchronizeIdentityColumns()
+	 * @see org.hajdbc.sync.SynchronizationSupport#synchronizeIdentityColumns()
 	 */
 	@Override
 	public void synchronizeIdentityColumns() throws SQLException
@@ -306,7 +306,7 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sync.SynchronizationSupport#dropUniqueConstraints()
+	 * @see org.hajdbc.sync.SynchronizationSupport#dropUniqueConstraints()
 	 */
 	@Override
 	public void dropUniqueConstraints() throws SQLException
@@ -344,7 +344,7 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sync.SynchronizationSupport#restoreUniqueConstraints()
+	 * @see org.hajdbc.sync.SynchronizationSupport#restoreUniqueConstraints()
 	 */
 	@Override
 	public void restoreUniqueConstraints() throws SQLException
@@ -383,7 +383,7 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sync.SynchronizationSupport#rollback(java.sql.Connection)
+	 * @see org.hajdbc.sync.SynchronizationSupport#rollback(java.sql.Connection)
 	 */
 	@Override
 	public void rollback(Connection connection)
@@ -400,7 +400,7 @@ public class SynchronizationSupportImpl<Z, D extends Database<Z>> implements Syn
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sync.SynchronizationSupport#getObject(java.sql.ResultSet, int, int)
+	 * @see org.hajdbc.sync.SynchronizationSupport#getObject(java.sql.ResultSet, int, int)
 	 */
 	@Override
 	public Object getObject(ResultSet resultSet, int index, int type) throws SQLException

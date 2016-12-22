@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package org.hajdbc.durability;
 
-import net.sf.hajdbc.ExceptionType;
+import org.hajdbc.ExceptionType;
 
 /**
  * @author Paul Ferraro
@@ -33,7 +33,7 @@ public class InvocationEventAdapter extends DurabilityEventImpl implements Invoc
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.InvocationEvent#getExceptionType()
+	 * @see org.hajdbc.durability.InvocationEvent#getExceptionType()
 	 */
 	@Override
 	public ExceptionType getExceptionType()

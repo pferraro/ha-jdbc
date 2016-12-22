@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock.semaphore;
+package org.hajdbc.lock.semaphore;
 
 import static org.junit.Assert.*;
 
@@ -23,6 +23,7 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 
+import org.hajdbc.lock.semaphore.SemaphoreReadWriteLock;
 import org.junit.Test;
 
 public class SemaphoreReadWriteLockTest

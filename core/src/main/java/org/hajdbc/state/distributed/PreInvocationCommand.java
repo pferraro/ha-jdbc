@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.distributed;
+package org.hajdbc.state.distributed;
 
 import java.util.Map;
 import java.util.TreeMap;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvokerEvent;
+import org.hajdbc.Database;
+import org.hajdbc.durability.InvocationEvent;
+import org.hajdbc.durability.InvokerEvent;
 
 public class PreInvocationCommand<Z, D extends Database<Z>> extends InvocationCommand<Z, D>
 {

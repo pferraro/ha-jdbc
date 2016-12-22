@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -23,16 +23,16 @@ import java.util.Map;
 import java.util.Set;
 import java.util.WeakHashMap;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.ExceptionFactory;
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.ExceptionFactory;
+import org.hajdbc.ExceptionType;
+import org.hajdbc.invocation.Invoker;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
 
 /**
  * 

@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.xa;
+package org.hajdbc.sql.xa;
 
 import javax.transaction.xa.XAException;
 
-import net.sf.hajdbc.AbstractExceptionFactory;
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.durability.Durability.Phase;
+import org.hajdbc.AbstractExceptionFactory;
+import org.hajdbc.ExceptionType;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.durability.Durability.Phase;
 
 /**
  * @author Paul Ferraro
@@ -38,7 +38,7 @@ public class XAExceptionFactory extends AbstractExceptionFactory<XAException>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.ExceptionFactory#createException(java.lang.String)
+	 * @see org.hajdbc.ExceptionFactory#createException(java.lang.String)
 	 */
 	@Override
 	public XAException createException(String message)
@@ -48,7 +48,7 @@ public class XAExceptionFactory extends AbstractExceptionFactory<XAException>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.ExceptionFactory#equals(java.lang.Exception, java.lang.Exception)
+	 * @see org.hajdbc.ExceptionFactory#equals(java.lang.Exception, java.lang.Exception)
 	 */
 	@Override
 	public boolean equals(XAException exception1, XAException exception2)
@@ -64,7 +64,7 @@ public class XAExceptionFactory extends AbstractExceptionFactory<XAException>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.ExceptionFactory#indicatesFailure(java.lang.Exception, net.sf.hajdbc.dialect.Dialect)
+	 * @see org.hajdbc.ExceptionFactory#indicatesFailure(java.lang.Exception, org.hajdbc.dialect.Dialect)
 	 */
 	@Override
 	public boolean indicatesFailure(XAException exception, Dialect dialect)
@@ -74,7 +74,7 @@ public class XAExceptionFactory extends AbstractExceptionFactory<XAException>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.ExceptionFactory#getType()
+	 * @see org.hajdbc.ExceptionFactory#getType()
 	 */
 	@Override
 	public ExceptionType getType()
@@ -84,7 +84,7 @@ public class XAExceptionFactory extends AbstractExceptionFactory<XAException>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.ExceptionFactory#correctHeuristic(java.lang.Exception, net.sf.hajdbc.durability.Durability.Phase)
+	 * @see org.hajdbc.ExceptionFactory#correctHeuristic(java.lang.Exception, org.hajdbc.durability.Durability.Phase)
 	 */
 	@Override
 	public boolean correctHeuristic(XAException exception, Phase phase)

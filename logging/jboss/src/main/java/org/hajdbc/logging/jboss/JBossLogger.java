@@ -15,15 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.logging.jboss;
+package org.hajdbc.logging.jboss;
 
 import java.util.EnumMap;
 import java.util.Map;
 
+import org.hajdbc.logging.AbstractLogger;
+import org.hajdbc.logging.Level;
 import org.jboss.logging.Logger;
-
-import net.sf.hajdbc.logging.AbstractLogger;
-import net.sf.hajdbc.logging.Level;
 
 /**
  * @author Paul Ferraro
@@ -49,7 +48,7 @@ public class JBossLogger extends AbstractLogger
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.Logger#log(net.sf.hajdbc.logging.Level, java.lang.Throwable, java.lang.String, java.lang.Object[])
+	 * @see org.hajdbc.logging.Logger#log(org.hajdbc.logging.Level, java.lang.Throwable, java.lang.String, java.lang.Object[])
 	 */
 	@Override
 	public void log(Level level, Throwable e, String pattern, Object... args)

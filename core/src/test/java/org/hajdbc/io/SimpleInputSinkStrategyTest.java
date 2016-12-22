@@ -1,6 +1,6 @@
-package net.sf.hajdbc.io;
+package org.hajdbc.io;
 
-import net.sf.hajdbc.io.simple.SimpleInputSinkStrategy;
+import org.hajdbc.io.simple.SimpleInputSinkStrategy;
 
 public class SimpleInputSinkStrategyTest extends InputSinkStrategyTest<byte[]>
 {

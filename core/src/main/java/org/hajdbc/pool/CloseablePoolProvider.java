@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.pool;
+package org.hajdbc.pool;
 
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.LoggerFactory;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.LoggerFactory;
 
 public abstract class CloseablePoolProvider<T extends AutoCloseable, E extends Exception> extends AbstractPoolProvider<T, E>
 {

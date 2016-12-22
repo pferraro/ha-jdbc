@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache.lazy;
+package org.hajdbc.cache.lazy;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
 
-import net.sf.hajdbc.cache.DatabaseMetaDataProvider;
+import org.hajdbc.cache.DatabaseMetaDataProvider;
 
 /**
  * @author Paul Ferraro
@@ -42,7 +42,7 @@ public class LazyDatabaseMetaDataProvider implements DatabaseMetaDataProvider
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.cache.DatabaseMetaDataProvider#getDatabaseMetaData()
+	 * @see org.hajdbc.cache.DatabaseMetaDataProvider#getDatabaseMetaData()
 	 */
 	@Override
 	public DatabaseMetaData getDatabaseMetaData() throws SQLException

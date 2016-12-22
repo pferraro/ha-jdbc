@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,15 +27,15 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.locks.Lock;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.DatabaseProperties;
-import net.sf.hajdbc.IdentityColumnSupport;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.TableProperties;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.lock.LockManager;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.DatabaseProperties;
+import org.hajdbc.IdentityColumnSupport;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.TableProperties;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.invocation.Invoker;
+import org.hajdbc.lock.LockManager;
 
 /**
  * 

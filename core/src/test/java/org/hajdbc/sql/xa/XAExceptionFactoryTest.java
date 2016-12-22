@@ -15,16 +15,17 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.xa;
+package org.hajdbc.sql.xa;
 
 import javax.transaction.xa.XAException;
 
-import net.sf.hajdbc.ExceptionFactory;
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.durability.Durability.Phase;
 import static org.junit.Assert.*;
 
+import org.hajdbc.ExceptionFactory;
+import org.hajdbc.ExceptionType;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.durability.Durability.Phase;
+import org.hajdbc.sql.xa.XAExceptionFactory;
 import org.junit.Test;
 
 import static org.mockito.Mockito.*;

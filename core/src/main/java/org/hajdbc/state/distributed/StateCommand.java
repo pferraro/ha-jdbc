@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.distributed;
+package org.hajdbc.state.distributed;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.distributed.Command;
-import net.sf.hajdbc.state.DatabaseEvent;
-import net.sf.hajdbc.state.StateManager;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.distributed.Command;
+import org.hajdbc.state.DatabaseEvent;
+import org.hajdbc.state.StateManager;
 
 /**
  * @author paul
@@ -40,7 +40,7 @@ public abstract class StateCommand<Z, D extends Database<Z>> implements Command<
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.Command#execute(java.lang.Object)
+	 * @see org.hajdbc.distributed.Command#execute(java.lang.Object)
 	 */
 	@Override
 	public Boolean execute(StateCommandContext<Z, D> context)

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.pool;
+package org.hajdbc.sql.pool;
 
 import java.lang.reflect.Method;
 import java.sql.SQLException;
@@ -23,11 +23,11 @@ import java.util.Set;
 
 import javax.sql.ConnectionPoolDataSource;
 
-import net.sf.hajdbc.invocation.InvocationStrategies;
-import net.sf.hajdbc.invocation.InvocationStrategy;
-import net.sf.hajdbc.sql.CommonDataSourceInvocationHandler;
-import net.sf.hajdbc.sql.ProxyFactoryFactory;
-import net.sf.hajdbc.util.reflect.Methods;
+import org.hajdbc.invocation.InvocationStrategies;
+import org.hajdbc.invocation.InvocationStrategy;
+import org.hajdbc.sql.CommonDataSourceInvocationHandler;
+import org.hajdbc.sql.ProxyFactoryFactory;
+import org.hajdbc.util.reflect.Methods;
 
 /**
  * @author Paul Ferraro
@@ -45,7 +45,7 @@ public class ConnectionPoolDataSourceInvocationHandler extends CommonDataSourceI
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sql.CommonDataSourceInvocationHandler#getInvocationStrategy(javax.sql.CommonDataSource, java.lang.reflect.Method, java.lang.Object[])
+	 * @see org.hajdbc.sql.CommonDataSourceInvocationHandler#getInvocationStrategy(javax.sql.CommonDataSource, java.lang.reflect.Method, java.lang.Object[])
 	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(ConnectionPoolDataSource dataSource, Method method, Object... parameters) throws SQLException

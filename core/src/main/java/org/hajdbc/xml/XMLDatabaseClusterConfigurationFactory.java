@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.xml;
+package org.hajdbc.xml;
 
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
@@ -38,21 +38,21 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamWriter;
 
-import net.sf.hajdbc.Credentials;
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseBuilder;
-import net.sf.hajdbc.DatabaseClusterConfiguration;
-import net.sf.hajdbc.DatabaseClusterConfigurationBuilder;
-import net.sf.hajdbc.DatabaseClusterConfigurationFactory;
-import net.sf.hajdbc.Identifiable;
-import net.sf.hajdbc.SynchronizationStrategy;
-import net.sf.hajdbc.Version;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.util.SystemProperties;
+import org.hajdbc.Credentials;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseBuilder;
+import org.hajdbc.DatabaseClusterConfiguration;
+import org.hajdbc.DatabaseClusterConfigurationBuilder;
+import org.hajdbc.DatabaseClusterConfigurationFactory;
+import org.hajdbc.Identifiable;
+import org.hajdbc.SynchronizationStrategy;
+import org.hajdbc.Version;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
+import org.hajdbc.util.SystemProperties;
 
 /**
  * {@link DatabaseClusterConfigurationFactory} that parses an xml configuration file.
@@ -165,7 +165,7 @@ public class XMLDatabaseClusterConfigurationFactory<Z, D extends Database<Z>> im
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseClusterConfigurationListener#added(net.sf.hajdbc.Database, net.sf.hajdbc.DatabaseClusterConfiguration)
+	 * @see org.hajdbc.DatabaseClusterConfigurationListener#added(org.hajdbc.Database, org.hajdbc.DatabaseClusterConfiguration)
 	 */
 	@Override
 	public void added(D database, DatabaseClusterConfiguration<Z, D> configuration)
@@ -175,7 +175,7 @@ public class XMLDatabaseClusterConfigurationFactory<Z, D extends Database<Z>> im
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseClusterConfigurationListener#removed(net.sf.hajdbc.Database, net.sf.hajdbc.DatabaseClusterConfiguration)
+	 * @see org.hajdbc.DatabaseClusterConfigurationListener#removed(org.hajdbc.Database, org.hajdbc.DatabaseClusterConfiguration)
 	 */
 	@Override
 	public void removed(D database, DatabaseClusterConfiguration<Z, D> configuration)

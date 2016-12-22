@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.util;
+package org.hajdbc.util;
 
 import static org.junit.Assert.assertEquals;
 
@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.hajdbc.util.Reversed;
 import org.junit.Test;
 
 /**

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.xml;
+package org.hajdbc.xml;
 
 import java.net.URL;
 
@@ -40,7 +40,7 @@ public class URLXMLStreamFactory implements XMLStreamFactory
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.xml.XMLStreamFactory#createSource()
+	 * @see org.hajdbc.xml.XMLStreamFactory#createSource()
 	 */
 	@Override
 	public Source createSource()
@@ -50,7 +50,7 @@ public class URLXMLStreamFactory implements XMLStreamFactory
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.xml.XMLStreamFactory#createResult()
+	 * @see org.hajdbc.xml.XMLStreamFactory#createResult()
 	 */
 	@Override
 	public Result createResult()

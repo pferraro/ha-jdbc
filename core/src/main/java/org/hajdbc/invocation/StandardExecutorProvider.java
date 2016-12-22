@@ -1,10 +1,10 @@
-package net.sf.hajdbc.invocation;
+package org.hajdbc.invocation;
 
 import java.util.concurrent.ExecutorService;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.invocation.AllResultsCollector.ExecutorProvider;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.invocation.AllResultsCollector.ExecutorProvider;
 
 public class StandardExecutorProvider implements ExecutorProvider
 {

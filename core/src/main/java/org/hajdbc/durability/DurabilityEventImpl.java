@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package org.hajdbc.durability;
 
-import net.sf.hajdbc.util.Event;
+import org.hajdbc.util.Event;
 
 /**
  * @author Paul Ferraro
@@ -37,7 +37,7 @@ public class DurabilityEventImpl extends Event<Object> implements DurabilityEven
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityEvent#getTransactionId()
+	 * @see org.hajdbc.durability.DurabilityEvent#getTransactionId()
 	 */
 	@Override
 	public Object getTransactionId()
@@ -47,7 +47,7 @@ public class DurabilityEventImpl extends Event<Object> implements DurabilityEven
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityEvent#getPhase()
+	 * @see org.hajdbc.durability.DurabilityEvent#getPhase()
 	 */
 	@Override
 	public Durability.Phase getPhase()

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -24,11 +24,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.ExceptionFactory;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.io.InputSinkChannel;
-import net.sf.hajdbc.util.reflect.Methods;
+import org.hajdbc.Database;
+import org.hajdbc.ExceptionFactory;
+import org.hajdbc.invocation.Invoker;
+import org.hajdbc.io.InputSinkChannel;
+import org.hajdbc.util.reflect.Methods;
 
 /**
  * 

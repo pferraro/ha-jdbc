@@ -1,4 +1,4 @@
-package net.sf.hajdbc.util;
+package org.hajdbc.util;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,11 +7,11 @@ import java.security.PrivilegedAction;
 import java.security.PrivilegedExceptionAction;
 import java.util.Map;
 
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
 
 public class Processes
 {

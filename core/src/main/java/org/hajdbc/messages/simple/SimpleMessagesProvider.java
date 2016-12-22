@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.messages.simple;
+package org.hajdbc.messages.simple;
 
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesProvider;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesProvider;
 
 public class SimpleMessagesProvider implements MessagesProvider
 {

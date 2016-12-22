@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -25,13 +25,13 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Logger;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseBuilder;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.DatabaseClusterConfigurationBuilderProvider;
-import net.sf.hajdbc.DatabaseClusterConfigurationFactory;
-import net.sf.hajdbc.DatabaseClusterFactory;
-import net.sf.hajdbc.xml.XMLDatabaseClusterConfigurationFactory;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseBuilder;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.DatabaseClusterConfigurationBuilderProvider;
+import org.hajdbc.DatabaseClusterConfigurationFactory;
+import org.hajdbc.DatabaseClusterFactory;
+import org.hajdbc.xml.XMLDatabaseClusterConfigurationFactory;
 
 /**
  * @author Paul Ferraro

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache.eager;
+package org.hajdbc.cache.eager;
 
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
@@ -26,12 +26,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.TableProperties;
-import net.sf.hajdbc.cache.AbstractDatabaseProperties;
-import net.sf.hajdbc.dialect.Dialect;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.TableProperties;
+import org.hajdbc.cache.AbstractDatabaseProperties;
+import org.hajdbc.dialect.Dialect;
 
 /**
  * @author Paul Ferraro

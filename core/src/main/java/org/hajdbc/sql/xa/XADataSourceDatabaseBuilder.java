@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.xa;
+package org.hajdbc.sql.xa;
 
 import java.sql.SQLException;
 
 import javax.sql.XADataSource;
 
-import net.sf.hajdbc.sql.CommonDataSourceDatabaseBuilder;
+import org.hajdbc.sql.CommonDataSourceDatabaseBuilder;
 
 public class XADataSourceDatabaseBuilder extends CommonDataSourceDatabaseBuilder<XADataSource, XADataSourceDatabase>
 {

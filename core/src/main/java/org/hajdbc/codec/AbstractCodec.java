@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.codec;
+package org.hajdbc.codec;
 
 /**
  * Abstract codec implementation that is its own factory
@@ -27,7 +27,7 @@ public abstract class AbstractCodec implements Codec, CodecFactory
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.codec.CodecFactory#createCodec(java.lang.String)
+	 * @see org.hajdbc.codec.CodecFactory#createCodec(java.lang.String)
 	 */
 	@Override
 	public Codec createCodec(String clusterId)

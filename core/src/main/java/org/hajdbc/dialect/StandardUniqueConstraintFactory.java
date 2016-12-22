@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import java.util.List;
 
-import net.sf.hajdbc.IdentifierNormalizer;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.UniqueConstraint;
-import net.sf.hajdbc.UniqueConstraintFactory;
+import org.hajdbc.IdentifierNormalizer;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.UniqueConstraint;
+import org.hajdbc.UniqueConstraintFactory;
 
 public class StandardUniqueConstraintFactory implements UniqueConstraintFactory
 {

@@ -1,4 +1,4 @@
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,6 +13,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.hajdbc.sql.ConnectionInvocationHandler;
+import org.hajdbc.sql.ConnectionProxyFactory;
+import org.hajdbc.sql.DataSource;
+import org.hajdbc.sql.DataSourceDatabase;
+import org.hajdbc.sql.DataSourceDatabaseClusterConfigurationBuilder;
 import org.hsqldb.jdbc.JDBCDataSource;
 import org.junit.Assert;
 import org.junit.Test;

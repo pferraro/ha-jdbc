@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.xa;
+package org.hajdbc.sql.xa;
 
 import java.lang.reflect.Method;
 import java.sql.SQLException;
@@ -33,17 +33,17 @@ import javax.transaction.xa.XAException;
 import javax.transaction.xa.XAResource;
 import javax.transaction.xa.Xid;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.durability.Durability;
-import net.sf.hajdbc.durability.DurabilityPhaseRegistryBuilder;
-import net.sf.hajdbc.invocation.InvocationStrategies;
-import net.sf.hajdbc.invocation.InvocationStrategy;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.sql.ChildInvocationHandler;
-import net.sf.hajdbc.sql.ProxyFactory;
-import net.sf.hajdbc.util.StaticRegistry;
-import net.sf.hajdbc.util.reflect.Methods;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.durability.Durability;
+import org.hajdbc.durability.DurabilityPhaseRegistryBuilder;
+import org.hajdbc.invocation.InvocationStrategies;
+import org.hajdbc.invocation.InvocationStrategy;
+import org.hajdbc.invocation.Invoker;
+import org.hajdbc.sql.ChildInvocationHandler;
+import org.hajdbc.sql.ProxyFactory;
+import org.hajdbc.util.StaticRegistry;
+import org.hajdbc.util.reflect.Methods;
 
 /**
  * @author Paul Ferraro
@@ -73,7 +73,7 @@ public class XAResourceInvocationHandler extends ChildInvocationHandler<XADataSo
 	}
 
 	/**
-	 * @see net.sf.hajdbc.sql.AbstractInvocationHandler#getInvocationStrategy(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])
+	 * @see org.hajdbc.sql.AbstractInvocationHandler#getInvocationStrategy(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])
 	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(XAResource resource, Method method, Object... parameters) throws XAException
@@ -168,7 +168,7 @@ public class XAResourceInvocationHandler extends ChildInvocationHandler<XADataSo
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sql.AbstractInvocationHandler#getInvoker(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])
+	 * @see org.hajdbc.sql.AbstractInvocationHandler#getInvoker(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])
 	 */
 	@Override
 	protected <R> Invoker<XADataSource, XADataSourceDatabase, XAResource, R, XAException> getInvoker(XAResource object, Method method, Object... parameters) throws XAException

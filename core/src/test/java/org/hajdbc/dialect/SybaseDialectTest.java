@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -23,10 +23,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
 
-import net.sf.hajdbc.ForeignKeyConstraint;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.TableProperties;
-import net.sf.hajdbc.dialect.sybase.SybaseDialectFactory;
+import org.hajdbc.ForeignKeyConstraint;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.TableProperties;
+import org.hajdbc.dialect.sybase.SybaseDialectFactory;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -43,7 +43,7 @@ public class SybaseDialectTest extends StandardDialectTest
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getIdentityColumnSupport()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getIdentityColumnSupport()
 	 */
 	@Override
 	public void getIdentityColumnSupport()
@@ -53,7 +53,7 @@ public class SybaseDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getTruncateTableSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getTruncateTableSQL()
 	 */
 	@Override
 	public void getTruncateTableSQL() throws SQLException
@@ -71,7 +71,7 @@ public class SybaseDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getCreateForeignKeyConstraintSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getCreateForeignKeyConstraintSQL()
 	 */
 	@Override
 	public void getCreateForeignKeyConstraintSQL() throws SQLException
@@ -98,7 +98,7 @@ public class SybaseDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateCurrentDate()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateCurrentDate()
 	 */
 	@Override
 	public void evaluateCurrentDate()
@@ -117,7 +117,7 @@ public class SybaseDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateCurrentTime()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateCurrentTime()
 	 */
 	@Override
 	public void evaluateCurrentTime()
@@ -134,7 +134,7 @@ public class SybaseDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateCurrentTimestamp()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateCurrentTimestamp()
 	 */
 	@Override
 	public void evaluateCurrentTimestamp()

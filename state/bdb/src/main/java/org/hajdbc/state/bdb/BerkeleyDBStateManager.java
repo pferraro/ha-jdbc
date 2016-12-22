@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.bdb;
+package org.hajdbc.state.bdb;
 
 import java.io.File;
 import java.io.Serializable;
@@ -26,20 +26,20 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.durability.DurabilityEvent;
-import net.sf.hajdbc.durability.DurabilityEventFactory;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvokerEvent;
-import net.sf.hajdbc.durability.InvokerResult;
-import net.sf.hajdbc.pool.CloseablePoolProvider;
-import net.sf.hajdbc.pool.Pool;
-import net.sf.hajdbc.pool.PoolFactory;
-import net.sf.hajdbc.state.DatabaseEvent;
-import net.sf.hajdbc.state.DurabilityListenerAdapter;
-import net.sf.hajdbc.state.SerializedDurabilityListener;
-import net.sf.hajdbc.state.StateManager;
-import net.sf.hajdbc.util.Objects;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.durability.DurabilityEvent;
+import org.hajdbc.durability.DurabilityEventFactory;
+import org.hajdbc.durability.InvocationEvent;
+import org.hajdbc.durability.InvokerEvent;
+import org.hajdbc.durability.InvokerResult;
+import org.hajdbc.pool.CloseablePoolProvider;
+import org.hajdbc.pool.Pool;
+import org.hajdbc.pool.PoolFactory;
+import org.hajdbc.state.DatabaseEvent;
+import org.hajdbc.state.DurabilityListenerAdapter;
+import org.hajdbc.state.SerializedDurabilityListener;
+import org.hajdbc.state.StateManager;
+import org.hajdbc.util.Objects;
 
 import com.sleepycat.bind.ByteArrayBinding;
 import com.sleepycat.bind.EntryBinding;
@@ -378,7 +378,7 @@ public class BerkeleyDBStateManager extends CloseablePoolProvider<Environment, D
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.pool.PoolProvider#create()
+	 * @see org.hajdbc.pool.PoolProvider#create()
 	 */
 	@Override
 	public Environment create() throws DatabaseException
@@ -388,7 +388,7 @@ public class BerkeleyDBStateManager extends CloseablePoolProvider<Environment, D
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.pool.PoolProvider#isValid(java.lang.Object)
+	 * @see org.hajdbc.pool.PoolProvider#isValid(java.lang.Object)
 	 */
 	@Override
 	public boolean isValid(Environment environment)

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -31,47 +31,47 @@ import java.util.concurrent.locks.Lock;
 
 import javax.management.JMException;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.DatabaseClusterConfiguration;
-import net.sf.hajdbc.DatabaseClusterConfigurationListener;
-import net.sf.hajdbc.DatabaseClusterListener;
-import net.sf.hajdbc.Locality;
-import net.sf.hajdbc.SynchronizationListener;
-import net.sf.hajdbc.SynchronizationStrategy;
-import net.sf.hajdbc.TransactionMode;
-import net.sf.hajdbc.Version;
-import net.sf.hajdbc.balancer.Balancer;
-import net.sf.hajdbc.cache.DatabaseMetaDataCache;
-import net.sf.hajdbc.codec.Decoder;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.distributed.CommandDispatcherFactory;
-import net.sf.hajdbc.durability.Durability;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvokerEvent;
-import net.sf.hajdbc.io.InputSinkStrategy;
-import net.sf.hajdbc.lock.LockManager;
-import net.sf.hajdbc.lock.distributed.DistributedLockManager;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.management.Description;
-import net.sf.hajdbc.management.MBean;
-import net.sf.hajdbc.management.MBeanRegistrar;
-import net.sf.hajdbc.management.ManagedAttribute;
-import net.sf.hajdbc.management.ManagedOperation;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.state.DatabaseEvent;
-import net.sf.hajdbc.state.StateManager;
-import net.sf.hajdbc.state.distributed.DistributedStateManager;
-import net.sf.hajdbc.sync.SynchronizationContext;
-import net.sf.hajdbc.sync.SynchronizationContextImpl;
-import net.sf.hajdbc.tx.SimpleTransactionIdentifierFactory;
-import net.sf.hajdbc.tx.TransactionIdentifierFactory;
-import net.sf.hajdbc.tx.UUIDTransactionIdentifierFactory;
-import net.sf.hajdbc.util.concurrent.cron.CronExpression;
-import net.sf.hajdbc.util.concurrent.cron.CronThreadPoolExecutor;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.DatabaseClusterConfiguration;
+import org.hajdbc.DatabaseClusterConfigurationListener;
+import org.hajdbc.DatabaseClusterListener;
+import org.hajdbc.Locality;
+import org.hajdbc.SynchronizationListener;
+import org.hajdbc.SynchronizationStrategy;
+import org.hajdbc.TransactionMode;
+import org.hajdbc.Version;
+import org.hajdbc.balancer.Balancer;
+import org.hajdbc.cache.DatabaseMetaDataCache;
+import org.hajdbc.codec.Decoder;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.distributed.CommandDispatcherFactory;
+import org.hajdbc.durability.Durability;
+import org.hajdbc.durability.InvocationEvent;
+import org.hajdbc.durability.InvokerEvent;
+import org.hajdbc.io.InputSinkStrategy;
+import org.hajdbc.lock.LockManager;
+import org.hajdbc.lock.distributed.DistributedLockManager;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
+import org.hajdbc.management.Description;
+import org.hajdbc.management.MBean;
+import org.hajdbc.management.MBeanRegistrar;
+import org.hajdbc.management.ManagedAttribute;
+import org.hajdbc.management.ManagedOperation;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
+import org.hajdbc.state.DatabaseEvent;
+import org.hajdbc.state.StateManager;
+import org.hajdbc.state.distributed.DistributedStateManager;
+import org.hajdbc.sync.SynchronizationContext;
+import org.hajdbc.sync.SynchronizationContextImpl;
+import org.hajdbc.tx.SimpleTransactionIdentifierFactory;
+import org.hajdbc.tx.TransactionIdentifierFactory;
+import org.hajdbc.tx.UUIDTransactionIdentifierFactory;
+import org.hajdbc.util.concurrent.cron.CronExpression;
+import org.hajdbc.util.concurrent.cron.CronThreadPoolExecutor;
 
 /**
  * @author Paul Ferraro
@@ -299,7 +299,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#getId()
+	 * @see org.hajdbc.DatabaseCluster#getId()
 	 */
 	@ManagedAttribute
 	@Override
@@ -316,7 +316,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#isActive()
+	 * @see org.hajdbc.DatabaseCluster#isActive()
 	 */
 	@ManagedAttribute
 	@Override
@@ -364,7 +364,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#addConfigurationListener(net.sf.hajdbc.DatabaseClusterConfigurationListener)
+	 * @see org.hajdbc.DatabaseCluster#addConfigurationListener(org.hajdbc.DatabaseClusterConfigurationListener)
 	 */
 	@ManagedOperation
 	@Override
@@ -375,7 +375,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#addListener(net.sf.hajdbc.DatabaseClusterListener)
+	 * @see org.hajdbc.DatabaseCluster#addListener(org.hajdbc.DatabaseClusterListener)
 	 */
 	@ManagedOperation
 	@Override
@@ -386,7 +386,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#addSynchronizationListener(net.sf.hajdbc.SynchronizationListener)
+	 * @see org.hajdbc.DatabaseCluster#addSynchronizationListener(org.hajdbc.SynchronizationListener)
 	 */
 	@ManagedOperation
 	@Override
@@ -397,7 +397,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#removeConfigurationListener(net.sf.hajdbc.DatabaseClusterConfigurationListener)
+	 * @see org.hajdbc.DatabaseCluster#removeConfigurationListener(org.hajdbc.DatabaseClusterConfigurationListener)
 	 */
 	@ManagedOperation
 	@Override
@@ -408,7 +408,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#removeListener(net.sf.hajdbc.DatabaseClusterListener)
+	 * @see org.hajdbc.DatabaseCluster#removeListener(org.hajdbc.DatabaseClusterListener)
 	 */
 	@ManagedOperation
 	@Override
@@ -419,7 +419,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#removeSynchronizationListener(net.sf.hajdbc.SynchronizationListener)
+	 * @see org.hajdbc.DatabaseCluster#removeSynchronizationListener(org.hajdbc.SynchronizationListener)
 	 */
 	@ManagedOperation
 	@Override
@@ -430,7 +430,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#activate(net.sf.hajdbc.Database, net.sf.hajdbc.state.StateManager)
+	 * @see org.hajdbc.DatabaseCluster#activate(org.hajdbc.Database, org.hajdbc.state.StateManager)
 	 */
 	@Override
 	public boolean activate(D database, StateManager manager)
@@ -462,7 +462,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#deactivate(net.sf.hajdbc.Database, net.sf.hajdbc.state.StateManager)
+	 * @see org.hajdbc.DatabaseCluster#deactivate(org.hajdbc.Database, org.hajdbc.state.StateManager)
 	 */
 	@Override
 	public boolean deactivate(D database, StateManager manager)
@@ -488,7 +488,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#getBalancer()
+	 * @see org.hajdbc.DatabaseCluster#getBalancer()
 	 */
 	@Override
 	public Balancer<Z, D> getBalancer()
@@ -498,7 +498,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#getDatabase(java.lang.String)
+	 * @see org.hajdbc.DatabaseCluster#getDatabase(java.lang.String)
 	 */
 	@Override
 	public D getDatabase(String id)
@@ -515,7 +515,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#getDatabaseMetaDataCache()
+	 * @see org.hajdbc.DatabaseCluster#getDatabaseMetaDataCache()
 	 */
 	@Override
 	public DatabaseMetaDataCache<Z, D> getDatabaseMetaDataCache()
@@ -525,7 +525,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#getDialect()
+	 * @see org.hajdbc.DatabaseCluster#getDialect()
 	 */
 	@Override
 	public Dialect getDialect()
@@ -535,7 +535,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#getDurability()
+	 * @see org.hajdbc.DatabaseCluster#getDurability()
 	 */
 	@Override
 	public Durability<Z, D> getDurability()
@@ -545,7 +545,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#getLockManager()
+	 * @see org.hajdbc.DatabaseCluster#getLockManager()
 	 */
 	@Override
 	public LockManager getLockManager()
@@ -555,7 +555,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#getExecutor()
+	 * @see org.hajdbc.DatabaseCluster#getExecutor()
 	 */
 	@Override
 	public ExecutorService getExecutor()
@@ -565,7 +565,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#getTransactionMode()
+	 * @see org.hajdbc.DatabaseCluster#getTransactionMode()
 	 */
 	@Override
 	public TransactionMode getTransactionMode()
@@ -575,7 +575,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#getStateManager()
+	 * @see org.hajdbc.DatabaseCluster#getStateManager()
 	 */
 	@Override
 	public StateManager getStateManager()
@@ -603,7 +603,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#getTransactionIdentifierFactory()
+	 * @see org.hajdbc.DatabaseCluster#getTransactionIdentifierFactory()
 	 */
 	@Override
 	public TransactionIdentifierFactory<? extends Object> getTransactionIdentifierFactory()
@@ -613,7 +613,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#isCurrentDateEvaluationEnabled()
+	 * @see org.hajdbc.DatabaseCluster#isCurrentDateEvaluationEnabled()
 	 */
 	@Override
 	public boolean isCurrentDateEvaluationEnabled()
@@ -623,7 +623,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#isCurrentTimeEvaluationEnabled()
+	 * @see org.hajdbc.DatabaseCluster#isCurrentTimeEvaluationEnabled()
 	 */
 	@Override
 	public boolean isCurrentTimeEvaluationEnabled()
@@ -633,7 +633,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#isCurrentTimestampEvaluationEnabled()
+	 * @see org.hajdbc.DatabaseCluster#isCurrentTimestampEvaluationEnabled()
 	 */
 	@Override
 	public boolean isCurrentTimestampEvaluationEnabled()
@@ -643,7 +643,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#isIdentityColumnDetectionEnabled()
+	 * @see org.hajdbc.DatabaseCluster#isIdentityColumnDetectionEnabled()
 	 */
 	@Override
 	public boolean isIdentityColumnDetectionEnabled()
@@ -653,7 +653,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#isRandEvaluationEnabled()
+	 * @see org.hajdbc.DatabaseCluster#isRandEvaluationEnabled()
 	 */
 	@Override
 	public boolean isRandEvaluationEnabled()
@@ -663,7 +663,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseCluster#isSequenceDetectionEnabled()
+	 * @see org.hajdbc.DatabaseCluster#isSequenceDetectionEnabled()
 	 */
 	@Override
 	public boolean isSequenceDetectionEnabled()
@@ -673,7 +673,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.Lifecycle#start()
+	 * @see org.hajdbc.Lifecycle#start()
 	 */
 	@Override
 	public synchronized void start() throws SQLException
@@ -800,7 +800,7 @@ public class DatabaseClusterImpl<Z, D extends Database<Z>> implements DatabaseCl
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.Lifecycle#stop()
+	 * @see org.hajdbc.Lifecycle#stop()
 	 */
 	@Override
 	public synchronized void stop()

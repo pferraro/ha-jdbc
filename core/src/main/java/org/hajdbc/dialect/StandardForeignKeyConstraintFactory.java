@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import java.util.List;
 
-import net.sf.hajdbc.ForeignKeyConstraint;
-import net.sf.hajdbc.ForeignKeyConstraintFactory;
-import net.sf.hajdbc.IdentifierNormalizer;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.QualifiedNameFactory;
+import org.hajdbc.ForeignKeyConstraint;
+import org.hajdbc.ForeignKeyConstraintFactory;
+import org.hajdbc.IdentifierNormalizer;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.QualifiedNameFactory;
 
 public class StandardForeignKeyConstraintFactory implements ForeignKeyConstraintFactory
 {

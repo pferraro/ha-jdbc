@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.io;
+package org.hajdbc.sql.io;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -24,10 +24,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.sql.AbstractChildProxyFactory;
-import net.sf.hajdbc.sql.ProxyFactory;
+import org.hajdbc.Database;
+import org.hajdbc.invocation.Invoker;
+import org.hajdbc.sql.AbstractChildProxyFactory;
+import org.hajdbc.sql.ProxyFactory;
 
 /**
  * Base proxy factory for IO proxies.

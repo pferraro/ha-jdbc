@@ -15,20 +15,20 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state;
+package org.hajdbc.state;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.durability.Durability;
-import net.sf.hajdbc.durability.DurabilityEvent;
-import net.sf.hajdbc.durability.DurabilityEventFactory;
-import net.sf.hajdbc.durability.DurabilityListener;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvokerEvent;
-import net.sf.hajdbc.tx.TransactionIdentifierFactory;
-import net.sf.hajdbc.util.Objects;
+import org.hajdbc.ExceptionType;
+import org.hajdbc.durability.Durability;
+import org.hajdbc.durability.DurabilityEvent;
+import org.hajdbc.durability.DurabilityEventFactory;
+import org.hajdbc.durability.DurabilityListener;
+import org.hajdbc.durability.InvocationEvent;
+import org.hajdbc.durability.InvokerEvent;
+import org.hajdbc.tx.TransactionIdentifierFactory;
+import org.hajdbc.util.Objects;
 
 /**
  * @author Paul Ferraro
@@ -52,7 +52,7 @@ public class DurabilityListenerAdapter implements DurabilityListener, Serialized
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityListener#beforeInvocation(net.sf.hajdbc.durability.InvocationEvent)
+	 * @see org.hajdbc.durability.DurabilityListener#beforeInvocation(org.hajdbc.durability.InvocationEvent)
 	 */
 	@Override
 	public void beforeInvocation(InvocationEvent event)
@@ -66,7 +66,7 @@ public class DurabilityListenerAdapter implements DurabilityListener, Serialized
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityListener#afterInvocation(net.sf.hajdbc.durability.InvocationEvent)
+	 * @see org.hajdbc.durability.DurabilityListener#afterInvocation(org.hajdbc.durability.InvocationEvent)
 	 */
 	@Override
 	public void afterInvocation(InvocationEvent event)
@@ -76,7 +76,7 @@ public class DurabilityListenerAdapter implements DurabilityListener, Serialized
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityListener#beforeInvoker(net.sf.hajdbc.durability.InvokerEvent)
+	 * @see org.hajdbc.durability.DurabilityListener#beforeInvoker(org.hajdbc.durability.InvokerEvent)
 	 */
 	@Override
 	public void beforeInvoker(InvokerEvent event)
@@ -86,7 +86,7 @@ public class DurabilityListenerAdapter implements DurabilityListener, Serialized
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityListener#afterInvoker(net.sf.hajdbc.durability.InvokerEvent)
+	 * @see org.hajdbc.durability.DurabilityListener#afterInvoker(org.hajdbc.durability.InvokerEvent)
 	 */
 	@Override
 	public void afterInvoker(InvokerEvent event)

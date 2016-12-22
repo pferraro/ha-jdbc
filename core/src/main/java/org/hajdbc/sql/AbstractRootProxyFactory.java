@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.sql.SQLException;
 import java.util.Map;
 import java.util.TreeMap;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.DatabaseClusterListener;
-import net.sf.hajdbc.state.DatabaseEvent;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.DatabaseClusterListener;
+import org.hajdbc.state.DatabaseEvent;
 
 /**
  * 

@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import java.util.List;
 
-import net.sf.hajdbc.AbstractNamed;
-import net.sf.hajdbc.Constraint;
-import net.sf.hajdbc.QualifiedName;
+import org.hajdbc.AbstractNamed;
+import org.hajdbc.Constraint;
+import org.hajdbc.QualifiedName;
 
 public abstract class AbstractConstraint<C extends Constraint<C>> extends AbstractNamed<String, C> implements Constraint<C>
 {
@@ -36,7 +36,7 @@ public abstract class AbstractConstraint<C extends Constraint<C>> extends Abstra
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.UniqueConstraint#getColumnList()
+	 * @see org.hajdbc.UniqueConstraint#getColumnList()
 	 */
 	@Override
 	public List<String> getColumnList()
@@ -45,7 +45,7 @@ public abstract class AbstractConstraint<C extends Constraint<C>> extends Abstra
 	}
 
 	/**
-	 * @see net.sf.hajdbc.UniqueConstraint#getTable()
+	 * @see org.hajdbc.UniqueConstraint#getTable()
 	 */
 	@Override
 	public QualifiedName getTable()

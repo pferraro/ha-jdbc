@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -30,10 +30,10 @@ import java.sql.Statement;
 import java.util.Arrays;
 import java.util.List;
 
-import net.sf.hajdbc.ForeignKeyConstraint;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.UniqueConstraint;
-import net.sf.hajdbc.dialect.mysql.MySQLDialectFactory;
+import org.hajdbc.ForeignKeyConstraint;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.UniqueConstraint;
+import org.hajdbc.dialect.mysql.MySQLDialectFactory;
 
 /**
  * @author Paul Ferraro
@@ -49,7 +49,7 @@ public class MySQLDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getCreateForeignKeyConstraintSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getCreateForeignKeyConstraintSQL()
 	 */
 	@Override
 	public void getCreateForeignKeyConstraintSQL() throws SQLException
@@ -76,7 +76,7 @@ public class MySQLDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getDropForeignKeyConstraintSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getDropForeignKeyConstraintSQL()
 	 */
 	@Override
 	public void getDropForeignKeyConstraintSQL() throws SQLException
@@ -103,7 +103,7 @@ public class MySQLDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getCreateUniqueConstraintSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getCreateUniqueConstraintSQL()
 	 */
 	@Override
 	public void getCreateUniqueConstraintSQL() throws SQLException
@@ -123,7 +123,7 @@ public class MySQLDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getDropUniqueConstraintSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getDropUniqueConstraintSQL()
 	 */
 	@Override
 	public void getDropUniqueConstraintSQL() throws SQLException
@@ -143,7 +143,7 @@ public class MySQLDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getDefaultSchemas()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getDefaultSchemas()
 	 */
 	@Override
 	public void getDefaultSchemas() throws SQLException

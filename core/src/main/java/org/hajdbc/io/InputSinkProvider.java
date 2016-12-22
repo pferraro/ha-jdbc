@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io;
+package org.hajdbc.io;
 
-import net.sf.hajdbc.Identifiable;
+import org.hajdbc.Identifiable;
 
 /**
  * The SPI for an input sink strategy.

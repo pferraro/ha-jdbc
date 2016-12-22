@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.distributed;
+package org.hajdbc.state.distributed;
 
 import java.io.IOException;
 import java.io.ObjectInput;
@@ -29,25 +29,25 @@ import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.distributed.Command;
-import net.sf.hajdbc.distributed.CommandDispatcher;
-import net.sf.hajdbc.distributed.CommandDispatcherFactory;
-import net.sf.hajdbc.distributed.CommandResponse;
-import net.sf.hajdbc.distributed.Member;
-import net.sf.hajdbc.distributed.MembershipListener;
-import net.sf.hajdbc.distributed.Remote;
-import net.sf.hajdbc.distributed.Stateful;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvokerEvent;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.state.DatabaseEvent;
-import net.sf.hajdbc.state.StateManager;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.distributed.Command;
+import org.hajdbc.distributed.CommandDispatcher;
+import org.hajdbc.distributed.CommandDispatcherFactory;
+import org.hajdbc.distributed.CommandResponse;
+import org.hajdbc.distributed.Member;
+import org.hajdbc.distributed.MembershipListener;
+import org.hajdbc.distributed.Remote;
+import org.hajdbc.distributed.Stateful;
+import org.hajdbc.durability.InvocationEvent;
+import org.hajdbc.durability.InvokerEvent;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
+import org.hajdbc.state.DatabaseEvent;
+import org.hajdbc.state.StateManager;
 
 /**
  * @author Paul Ferraro
@@ -78,7 +78,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.StateManager#getActiveDatabases()
+	 * @see org.hajdbc.state.StateManager#getActiveDatabases()
 	 */
 	@Override
 	public Set<String> getActiveDatabases()
@@ -88,7 +88,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.StateManager#setActiveDatabases(java.util.Set)
+	 * @see org.hajdbc.state.StateManager#setActiveDatabases(java.util.Set)
 	 */
 	@Override
 	public void setActiveDatabases(Set<String> databases)
@@ -98,7 +98,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseClusterListener#activated(net.sf.hajdbc.state.DatabaseEvent)
+	 * @see org.hajdbc.DatabaseClusterListener#activated(org.hajdbc.state.DatabaseEvent)
 	 */
 	@Override
 	public void activated(DatabaseEvent event)
@@ -109,7 +109,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseClusterListener#deactivated(net.sf.hajdbc.state.DatabaseEvent)
+	 * @see org.hajdbc.DatabaseClusterListener#deactivated(org.hajdbc.state.DatabaseEvent)
 	 */
 	@Override
 	public void deactivated(DatabaseEvent event)
@@ -120,7 +120,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityListener#afterInvocation(net.sf.hajdbc.durability.InvocationEvent)
+	 * @see org.hajdbc.durability.DurabilityListener#afterInvocation(org.hajdbc.durability.InvocationEvent)
 	 */
 	@Override
 	public void afterInvocation(InvocationEvent event)
@@ -131,7 +131,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityListener#afterInvoker(net.sf.hajdbc.durability.InvokerEvent)
+	 * @see org.hajdbc.durability.DurabilityListener#afterInvoker(org.hajdbc.durability.InvokerEvent)
 	 */
 	@Override
 	public void afterInvoker(InvokerEvent event)
@@ -142,7 +142,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityListener#beforeInvocation(net.sf.hajdbc.durability.InvocationEvent)
+	 * @see org.hajdbc.durability.DurabilityListener#beforeInvocation(org.hajdbc.durability.InvocationEvent)
 	 */
 	@Override
 	public void beforeInvocation(InvocationEvent event)
@@ -153,7 +153,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityListener#beforeInvoker(net.sf.hajdbc.durability.InvokerEvent)
+	 * @see org.hajdbc.durability.DurabilityListener#beforeInvoker(org.hajdbc.durability.InvokerEvent)
 	 */
 	@Override
 	public void beforeInvoker(InvokerEvent event)
@@ -199,7 +199,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.Lifecycle#start()
+	 * @see org.hajdbc.Lifecycle#start()
 	 */
 	@Override
 	public void start() throws SQLException
@@ -210,7 +210,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.Lifecycle#stop()
+	 * @see org.hajdbc.Lifecycle#stop()
 	 */
 	@Override
 	public void stop()
@@ -227,7 +227,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.distributed.StateCommandContext#getDatabaseCluster()
+	 * @see org.hajdbc.state.distributed.StateCommandContext#getDatabaseCluster()
 	 */
 	@Override
 	public DatabaseCluster<Z, D> getDatabaseCluster()
@@ -237,7 +237,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.distributed.StateCommandContext#getLocalStateManager()
+	 * @see org.hajdbc.state.distributed.StateCommandContext#getLocalStateManager()
 	 */
 	@Override
 	public StateManager getLocalStateManager()
@@ -247,7 +247,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.distributed.StateCommandContext#getRemoteInvokers(net.sf.hajdbc.distributed.Remote)
+	 * @see org.hajdbc.state.distributed.StateCommandContext#getRemoteInvokers(org.hajdbc.distributed.Remote)
 	 */
 	@Override
 	public Map<InvocationEvent, Map<String, InvokerEvent>> getRemoteInvokers(Remote remote)
@@ -257,7 +257,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.Stateful#readState(java.io.ObjectInput)
+	 * @see org.hajdbc.distributed.Stateful#readState(java.io.ObjectInput)
 	 */
 	@Override
 	public void readState(ObjectInput input) throws IOException
@@ -281,7 +281,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.Stateful#writeState(java.io.ObjectOutput)
+	 * @see org.hajdbc.distributed.Stateful#writeState(java.io.ObjectOutput)
 	 */
 	@Override
 	public void writeState(ObjectOutput output) throws IOException
@@ -297,7 +297,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.MembershipListener#added(net.sf.hajdbc.distributed.Member)
+	 * @see org.hajdbc.distributed.MembershipListener#added(org.hajdbc.distributed.Member)
 	 */
 	@Override
 	public void added(Member member)
@@ -307,7 +307,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.MembershipListener#removed(net.sf.hajdbc.distributed.Member)
+	 * @see org.hajdbc.distributed.MembershipListener#removed(org.hajdbc.distributed.Member)
 	 */
 	@Override
 	public void removed(Member member)
@@ -325,7 +325,7 @@ public class DistributedStateManager<Z, D extends Database<Z>> implements StateM
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.StateManager#recover()
+	 * @see org.hajdbc.state.StateManager#recover()
 	 */
 	@Override
 	public Map<InvocationEvent, Map<String, InvokerEvent>> recover()

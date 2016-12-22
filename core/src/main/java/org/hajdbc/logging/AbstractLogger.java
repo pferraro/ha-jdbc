@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.logging;
+package org.hajdbc.logging;
 
 import java.text.MessageFormat;
 
@@ -27,7 +27,7 @@ public abstract class AbstractLogger implements Logger
 {
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.Logger#log(net.sf.hajdbc.logging.Level, java.lang.String, java.lang.Object[])
+	 * @see org.hajdbc.logging.Logger#log(org.hajdbc.logging.Level, java.lang.String, java.lang.Object[])
 	 */
 	@Override
 	public final void log(Level level, String pattern, Object... args)
@@ -37,7 +37,7 @@ public abstract class AbstractLogger implements Logger
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.Logger#log(net.sf.hajdbc.logging.Level, java.lang.Throwable)
+	 * @see org.hajdbc.logging.Logger#log(org.hajdbc.logging.Level, java.lang.Throwable)
 	 */
 	@Override
 	public final void log(Level level, Throwable e)

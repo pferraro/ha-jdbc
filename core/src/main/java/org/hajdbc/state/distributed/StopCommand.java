@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.distributed;
+package org.hajdbc.state.distributed;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.distributed.Command;
+import org.hajdbc.Database;
+import org.hajdbc.distributed.Command;
 
 public class StopCommand<Z, D extends Database<Z>> implements Command<Void, StateCommandContext<Z, D>>
 {
@@ -26,7 +26,7 @@ public class StopCommand<Z, D extends Database<Z>> implements Command<Void, Stat
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.Command#execute(java.lang.Object)
+	 * @see org.hajdbc.distributed.Command#execute(java.lang.Object)
 	 */
 	@Override
 	public Void execute(StateCommandContext<Z, D> context)

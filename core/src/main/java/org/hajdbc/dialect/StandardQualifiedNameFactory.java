@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
 
-import net.sf.hajdbc.AbstractNamed;
-import net.sf.hajdbc.IdentifierNormalizer;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.QualifiedNameFactory;
-import net.sf.hajdbc.util.Strings;
+import org.hajdbc.AbstractNamed;
+import org.hajdbc.IdentifierNormalizer;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.QualifiedNameFactory;
+import org.hajdbc.util.Strings;
 
 public class StandardQualifiedNameFactory implements QualifiedNameFactory
 {

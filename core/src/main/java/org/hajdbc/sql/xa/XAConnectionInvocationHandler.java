@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.xa;
+package org.hajdbc.sql.xa;
 
 import java.lang.reflect.Method;
 import java.sql.SQLException;
@@ -23,9 +23,9 @@ import java.sql.SQLException;
 import javax.sql.XAConnection;
 import javax.sql.XADataSource;
 
-import net.sf.hajdbc.sql.ProxyFactoryFactory;
-import net.sf.hajdbc.sql.pool.AbstractPooledConnectionInvocationHandler;
-import net.sf.hajdbc.util.reflect.Methods;
+import org.hajdbc.sql.ProxyFactoryFactory;
+import org.hajdbc.sql.pool.AbstractPooledConnectionInvocationHandler;
+import org.hajdbc.util.reflect.Methods;
 
 /**
  * @author Paul Ferraro

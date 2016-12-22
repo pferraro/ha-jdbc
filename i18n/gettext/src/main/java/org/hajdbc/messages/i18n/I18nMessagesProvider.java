@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.messages.i18n;
+package org.hajdbc.messages.i18n;
 
 import java.util.ResourceBundle;
 
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesProvider;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesProvider;
 
 public class I18nMessagesProvider implements MessagesProvider
 {
@@ -32,7 +32,7 @@ public class I18nMessagesProvider implements MessagesProvider
 			// Make sure gettext-commons is on classpath
 			this.getClass().getClassLoader().loadClass("org.xnap.commons.i18n.I18nFactory");
 			// Ensure requisite resource bundle exists
-			ResourceBundle.getBundle(net.sf.hajdbc.messages.i18n.I18nMessages.class.getName());
+			ResourceBundle.getBundle(org.hajdbc.messages.i18n.I18nMessages.class.getName());
 			return true;
 		}
 		catch (Throwable e)
@@ -44,7 +44,7 @@ public class I18nMessagesProvider implements MessagesProvider
 	@Override
 	public Messages getMessages()
 	{
-		return new I18nMessages(net.sf.hajdbc.messages.i18n.I18nMessages.class.getName());
+		return new I18nMessages(org.hajdbc.messages.i18n.I18nMessages.class.getName());
 	}
 
 	@Override

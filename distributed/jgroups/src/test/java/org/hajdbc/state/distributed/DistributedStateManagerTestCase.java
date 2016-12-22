@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.distributed;
+package org.hajdbc.state.distributed;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -23,22 +23,22 @@ import static org.mockito.Mockito.*;
 import java.util.Map;
 import java.util.UUID;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.distributed.CommandDispatcherFactory;
-import net.sf.hajdbc.distributed.jgroups.JGroupsCommandDispatcherFactory;
-import net.sf.hajdbc.durability.Durability;
-import net.sf.hajdbc.durability.Durability.Phase;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvocationEventImpl;
-import net.sf.hajdbc.durability.InvokerEvent;
-import net.sf.hajdbc.durability.InvokerEventImpl;
-import net.sf.hajdbc.durability.InvokerResult;
-import net.sf.hajdbc.durability.InvokerResultImpl;
-import net.sf.hajdbc.state.DatabaseEvent;
-import net.sf.hajdbc.state.StateManager;
-
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.ExceptionType;
+import org.hajdbc.distributed.CommandDispatcherFactory;
+import org.hajdbc.distributed.jgroups.JGroupsCommandDispatcherFactory;
+import org.hajdbc.durability.Durability;
+import org.hajdbc.durability.InvocationEvent;
+import org.hajdbc.durability.InvocationEventImpl;
+import org.hajdbc.durability.InvokerEvent;
+import org.hajdbc.durability.InvokerEventImpl;
+import org.hajdbc.durability.InvokerResult;
+import org.hajdbc.durability.InvokerResultImpl;
+import org.hajdbc.durability.Durability.Phase;
+import org.hajdbc.state.DatabaseEvent;
+import org.hajdbc.state.StateManager;
+import org.hajdbc.state.distributed.DistributedStateManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -15,18 +15,18 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.xml;
+package org.hajdbc.xml;
 
 import java.util.Locale;
 
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseBuilder;
-import net.sf.hajdbc.Locality;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseBuilder;
+import org.hajdbc.Locality;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
 
 /**
  * @author Paul Ferraro

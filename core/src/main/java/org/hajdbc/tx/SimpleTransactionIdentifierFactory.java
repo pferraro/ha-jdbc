@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.tx;
+package org.hajdbc.tx;
 
 import java.nio.ByteBuffer;
 import java.util.concurrent.atomic.AtomicLong;
@@ -31,7 +31,7 @@ public class SimpleTransactionIdentifierFactory implements TransactionIdentifier
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.tx.TransactionIdentifierFactory#createTransactionIdentifier()
+	 * @see org.hajdbc.tx.TransactionIdentifierFactory#createTransactionIdentifier()
 	 */
 	@Override
 	public Long createTransactionIdentifier()
@@ -41,7 +41,7 @@ public class SimpleTransactionIdentifierFactory implements TransactionIdentifier
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.tx.TransactionIdentifierFactory#serialize(java.lang.Object)
+	 * @see org.hajdbc.tx.TransactionIdentifierFactory#serialize(java.lang.Object)
 	 */
 	@Override
 	public byte[] serialize(Long transactionId)
@@ -51,7 +51,7 @@ public class SimpleTransactionIdentifierFactory implements TransactionIdentifier
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.tx.TransactionIdentifierFactory#deserialize(byte[])
+	 * @see org.hajdbc.tx.TransactionIdentifierFactory#deserialize(byte[])
 	 */
 	@Override
 	public Long deserialize(byte[] bytes)
@@ -61,7 +61,7 @@ public class SimpleTransactionIdentifierFactory implements TransactionIdentifier
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.tx.TransactionIdentifierFactory#size()
+	 * @see org.hajdbc.tx.TransactionIdentifierFactory#size()
 	 */
 	@Override
 	public int size()

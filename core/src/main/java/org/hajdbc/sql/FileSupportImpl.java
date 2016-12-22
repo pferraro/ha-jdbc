@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -36,8 +36,8 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
-import net.sf.hajdbc.ExceptionFactory;
-import net.sf.hajdbc.util.Files;
+import org.hajdbc.ExceptionFactory;
+import org.hajdbc.util.Files;
 
 /**
  * @author  Paul Ferraro
@@ -57,7 +57,7 @@ public class FileSupportImpl<E extends Exception> implements FileSupport<E>
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.sql.FileSupport#createFile(java.io.InputStream)
+	 * @see org.hajdbc.sql.FileSupport#createFile(java.io.InputStream)
 	 */
 	@Override
 	public File createFile(InputStream inputStream) throws E
@@ -90,7 +90,7 @@ public class FileSupportImpl<E extends Exception> implements FileSupport<E>
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.sql.FileSupport#createFile(java.io.Reader)
+	 * @see org.hajdbc.sql.FileSupport#createFile(java.io.Reader)
 	 */
 	@Override
 	public File createFile(Reader reader) throws E
@@ -120,7 +120,7 @@ public class FileSupportImpl<E extends Exception> implements FileSupport<E>
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.sql.FileSupport#getReader(java.io.File)
+	 * @see org.hajdbc.sql.FileSupport#getReader(java.io.File)
 	 */
 	@Override
 	public Reader getReader(File file) throws E
@@ -136,7 +136,7 @@ public class FileSupportImpl<E extends Exception> implements FileSupport<E>
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.sql.FileSupport#getInputStream(java.io.File)
+	 * @see org.hajdbc.sql.FileSupport#getInputStream(java.io.File)
 	 */
 	@SuppressWarnings("resource")
 	@Override
@@ -167,7 +167,7 @@ public class FileSupportImpl<E extends Exception> implements FileSupport<E>
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.sql.FileSupport#close()
+	 * @see org.hajdbc.sql.FileSupport#close()
 	 */
 	@Override
 	public void close()

@@ -1,8 +1,8 @@
-package net.sf.hajdbc.io;
+package org.hajdbc.io;
 
 import java.io.File;
 
-import net.sf.hajdbc.io.file.FileInputSinkStrategy;
+import org.hajdbc.io.file.FileInputSinkStrategy;
 
 public class FileInputSinkStrategyTest extends InputSinkStrategyTest<File>
 {

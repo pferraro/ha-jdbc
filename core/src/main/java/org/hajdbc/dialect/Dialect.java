@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -26,22 +26,22 @@ import java.util.Map;
 
 import javax.transaction.xa.XAException;
 
-import net.sf.hajdbc.ColumnProperties;
-import net.sf.hajdbc.ColumnPropertiesFactory;
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DumpRestoreSupport;
-import net.sf.hajdbc.ForeignKeyConstraint;
-import net.sf.hajdbc.ForeignKeyConstraintFactory;
-import net.sf.hajdbc.IdentifierNormalizer;
-import net.sf.hajdbc.IdentityColumnSupport;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.QualifiedNameFactory;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.TableProperties;
-import net.sf.hajdbc.TriggerSupport;
-import net.sf.hajdbc.UniqueConstraint;
-import net.sf.hajdbc.UniqueConstraintFactory;
-import net.sf.hajdbc.codec.Decoder;
+import org.hajdbc.ColumnProperties;
+import org.hajdbc.ColumnPropertiesFactory;
+import org.hajdbc.Database;
+import org.hajdbc.DumpRestoreSupport;
+import org.hajdbc.ForeignKeyConstraint;
+import org.hajdbc.ForeignKeyConstraintFactory;
+import org.hajdbc.IdentifierNormalizer;
+import org.hajdbc.IdentityColumnSupport;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.QualifiedNameFactory;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.TableProperties;
+import org.hajdbc.TriggerSupport;
+import org.hajdbc.UniqueConstraint;
+import org.hajdbc.UniqueConstraintFactory;
+import org.hajdbc.codec.Decoder;
 
 
 /**

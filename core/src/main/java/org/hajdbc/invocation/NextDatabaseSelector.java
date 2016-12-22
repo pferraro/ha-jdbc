@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.invocation;
+package org.hajdbc.invocation;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.balancer.Balancer;
+import org.hajdbc.Database;
+import org.hajdbc.balancer.Balancer;
 
 /**
  * @author Paul Ferraro

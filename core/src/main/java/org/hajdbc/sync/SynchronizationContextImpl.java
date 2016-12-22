@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sync;
+package org.hajdbc.sync;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -26,16 +26,16 @@ import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.DatabaseProperties;
-import net.sf.hajdbc.balancer.Balancer;
-import net.sf.hajdbc.cache.DatabaseMetaDataCache;
-import net.sf.hajdbc.codec.Decoder;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.DatabaseProperties;
+import org.hajdbc.balancer.Balancer;
+import org.hajdbc.cache.DatabaseMetaDataCache;
+import org.hajdbc.codec.Decoder;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
 
 /**
  * @author Paul Ferraro
@@ -78,7 +78,7 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.sync.SynchronizationContext#getConnection(net.sf.hajdbc.Database)
+	 * @see org.hajdbc.sync.SynchronizationContext#getConnection(org.hajdbc.Database)
 	 */
 	@Override
 	public Connection getConnection(D database) throws SQLException
@@ -97,7 +97,7 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.sync.SynchronizationContext#getSourceDatabase()
+	 * @see org.hajdbc.sync.SynchronizationContext#getSourceDatabase()
 	 */
 	@Override
 	public D getSourceDatabase()
@@ -106,7 +106,7 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.sync.SynchronizationContext#getTargetDatabase()
+	 * @see org.hajdbc.sync.SynchronizationContext#getTargetDatabase()
 	 */
 	@Override
 	public D getTargetDatabase()
@@ -115,7 +115,7 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.sync.SynchronizationContext#getActiveDatabaseSet()
+	 * @see org.hajdbc.sync.SynchronizationContext#getActiveDatabaseSet()
 	 */
 	@Override
 	public Set<D> getActiveDatabaseSet()
@@ -124,7 +124,7 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.sync.SynchronizationContext#getSourceDatabaseProperties()
+	 * @see org.hajdbc.sync.SynchronizationContext#getSourceDatabaseProperties()
 	 */
 	@Override
 	public DatabaseProperties getSourceDatabaseProperties()
@@ -133,7 +133,7 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 	}
 
 	/**
-	 * @see net.sf.hajdbc.sync.SynchronizationContext#getTargetDatabaseProperties()
+	 * @see org.hajdbc.sync.SynchronizationContext#getTargetDatabaseProperties()
 	 */
 	@Override
 	public DatabaseProperties getTargetDatabaseProperties()
@@ -142,7 +142,7 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 	}
 
 	/**
-	 * @see net.sf.hajdbc.sync.SynchronizationContext#getDialect()
+	 * @see org.hajdbc.sync.SynchronizationContext#getDialect()
 	 */
 	@Override
 	public Dialect getDialect()
@@ -152,7 +152,7 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sync.SynchronizationContext#getDecoder()
+	 * @see org.hajdbc.sync.SynchronizationContext#getDecoder()
 	 */
 	@Override
 	public Decoder getDecoder()
@@ -161,7 +161,7 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 	}
 
 	/**
-	 * @see net.sf.hajdbc.sync.SynchronizationContext#getExecutor()
+	 * @see org.hajdbc.sync.SynchronizationContext#getExecutor()
 	 */
 	@Override
 	public ExecutorService getExecutor()
@@ -171,7 +171,7 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sync.SynchronizationContext#getSynchronizationSupport()
+	 * @see org.hajdbc.sync.SynchronizationContext#getSynchronizationSupport()
 	 */
 	@Override
 	public SynchronizationSupport getSynchronizationSupport()
@@ -180,7 +180,7 @@ public class SynchronizationContextImpl<Z, D extends Database<Z>> implements Syn
 	}
 
 	/**
-	 * @see net.sf.hajdbc.sync.SynchronizationContext#close()
+	 * @see org.hajdbc.sync.SynchronizationContext#close()
 	 */
 	@Override
 	public void close()

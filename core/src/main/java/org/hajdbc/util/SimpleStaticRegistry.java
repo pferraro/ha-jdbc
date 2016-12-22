@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.util;
+package org.hajdbc.util;
 
 import java.util.Map;
 
@@ -40,7 +40,7 @@ public class SimpleStaticRegistry<K, V> implements StaticRegistry<K, V>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.util.StaticRegistry#get(java.lang.Object)
+	 * @see org.hajdbc.util.StaticRegistry#get(java.lang.Object)
 	 */
 	@Override
 	public V get(K key)

@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock.semaphore;
+package org.hajdbc.lock.semaphore;
 
-import net.sf.hajdbc.lock.LockManager;
-import net.sf.hajdbc.lock.LockManagerFactory;
+import org.hajdbc.lock.LockManager;
+import org.hajdbc.lock.LockManagerFactory;
 
 public class SemaphoreLockManagerFactory implements LockManagerFactory
 {

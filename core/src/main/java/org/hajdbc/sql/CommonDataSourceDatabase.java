@@ -1,4 +1,4 @@
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
@@ -11,8 +11,8 @@ import java.util.Properties;
 
 import javax.sql.CommonDataSource;
 
-import net.sf.hajdbc.Credentials;
-import net.sf.hajdbc.Locality;
+import org.hajdbc.Credentials;
+import org.hajdbc.Locality;
 
 public abstract class CommonDataSourceDatabase<Z extends CommonDataSource> extends AbstractDatabase<Z>
 {

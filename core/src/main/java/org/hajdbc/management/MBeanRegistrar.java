@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.management;
+package org.hajdbc.management;
 
 import javax.management.JMException;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
 
 /**
  * @author Paul Ferraro

@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc;
+package org.hajdbc;
 
-import net.sf.hajdbc.sql.SQLExceptionFactory;
-import net.sf.hajdbc.sql.io.IOExceptionFactory;
-import net.sf.hajdbc.sql.xa.XAExceptionFactory;
-import net.sf.hajdbc.util.Matcher;
+import org.hajdbc.sql.SQLExceptionFactory;
+import org.hajdbc.sql.io.IOExceptionFactory;
+import org.hajdbc.sql.xa.XAExceptionFactory;
+import org.hajdbc.util.Matcher;
 
 /**
  * @author Paul Ferraro

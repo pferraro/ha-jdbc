@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect.derby;
+package org.hajdbc.dialect.derby;
 
-import net.sf.hajdbc.IdentityColumnSupport;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.dialect.StandardDialect;
+import org.hajdbc.IdentityColumnSupport;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.dialect.StandardDialect;
 
 /**
  * Dialect for <a href="http://db.apache.org/derby">Apache Derby</a>.
@@ -33,7 +33,7 @@ public class DerbyDialect extends StandardDialect
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getIdentityColumnSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getIdentityColumnSupport()
 	 */
 	@Override
 	public IdentityColumnSupport getIdentityColumnSupport()
@@ -44,7 +44,7 @@ public class DerbyDialect extends StandardDialect
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getSequenceSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getSequenceSupport()
 	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
@@ -56,7 +56,7 @@ public class DerbyDialect extends StandardDialect
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.sf.hajdbc.dialect.StandardDialect#vendorPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
 	 */
 	@Override
 	protected String vendorPattern()
@@ -65,7 +65,7 @@ public class DerbyDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#executeFunctionFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#executeFunctionFormat()
 	 */
 	@Override
 	protected String executeFunctionFormat()
@@ -76,7 +76,7 @@ public class DerbyDialect extends StandardDialect
 	/**
 	 * Deferrability clause is not supported.
 	 * 
-	 * @see net.sf.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
 	 */
 	@Override
 	protected String createForeignKeyConstraintFormat()
@@ -85,7 +85,7 @@ public class DerbyDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentDatePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentDatePattern()
 	 */
 	@Override
 	protected String currentDatePattern()
@@ -94,7 +94,7 @@ public class DerbyDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentTimePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentTimePattern()
 	 */
 	@Override
 	protected String currentTimePattern()
@@ -103,7 +103,7 @@ public class DerbyDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentTimestampPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentTimestampPattern()
 	 */
 	@Override
 	protected String currentTimestampPattern()
@@ -112,7 +112,7 @@ public class DerbyDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#dateLiteralFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#dateLiteralFormat()
 	 */
 	@Override
 	protected String dateLiteralFormat()
@@ -121,7 +121,7 @@ public class DerbyDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#timeLiteralFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#timeLiteralFormat()
 	 */
 	@Override
 	protected String timeLiteralFormat()
@@ -130,7 +130,7 @@ public class DerbyDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#timestampLiteralFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#timestampLiteralFormat()
 	 */
 	@Override
 	protected String timestampLiteralFormat()

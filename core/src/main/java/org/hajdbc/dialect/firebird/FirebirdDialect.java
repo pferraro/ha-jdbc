@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect.firebird;
+package org.hajdbc.dialect.firebird;
 
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
@@ -25,10 +25,10 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequencePropertiesFactory;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.dialect.StandardDialect;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequencePropertiesFactory;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.dialect.StandardDialect;
 
 /**
  * Dialect for <a href="firebird.sourceforge.net">Firebird</a>.
@@ -39,7 +39,7 @@ public class FirebirdDialect extends StandardDialect
 {
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#vendorPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
 	 */
 	@Override
 	protected String vendorPattern()
@@ -48,7 +48,7 @@ public class FirebirdDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#dummyTable()
+	 * @see org.hajdbc.dialect.StandardDialect#dummyTable()
 	 */
 	@Override
 	protected String dummyTable()
@@ -58,7 +58,7 @@ public class FirebirdDialect extends StandardDialect
 
 	/**
 	 * Firebird 2.0 will support standard syntax.  Until then...
-	 * @see net.sf.hajdbc.dialect.StandardDialect#alterSequenceFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#alterSequenceFormat()
 	 */
 	@Override
 	protected String alterSequenceFormat()
@@ -68,7 +68,7 @@ public class FirebirdDialect extends StandardDialect
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getSequenceSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getSequenceSupport()
 	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
@@ -97,7 +97,7 @@ public class FirebirdDialect extends StandardDialect
 
 	/**
 	 * Firebird 2.0 will support standard syntax.  Until then...
-	 * @see net.sf.hajdbc.dialect.StandardDialect#sequencePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#sequencePattern()
 	 */
 	@Override
 	protected String sequencePattern()
@@ -106,7 +106,7 @@ public class FirebirdDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#selectForUpdatePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#selectForUpdatePattern()
 	 */
 	@Override
 	protected String selectForUpdatePattern()
@@ -115,7 +115,7 @@ public class FirebirdDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#nextSequenceValueFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#nextSequenceValueFormat()
 	 */
 	@Override
 	protected String nextSequenceValueFormat()

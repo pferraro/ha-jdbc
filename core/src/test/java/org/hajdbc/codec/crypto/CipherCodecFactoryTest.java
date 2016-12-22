@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.codec.crypto;
+package org.hajdbc.codec.crypto;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -27,8 +27,9 @@ import java.util.Base64;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
-import net.sf.hajdbc.codec.Codec;
-
+import org.hajdbc.codec.Codec;
+import org.hajdbc.codec.crypto.CipherCodec;
+import org.hajdbc.codec.crypto.CipherCodecFactory;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect.db2;
+package org.hajdbc.dialect.db2;
 
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
@@ -25,11 +25,11 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import net.sf.hajdbc.IdentityColumnSupport;
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequencePropertiesFactory;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.dialect.StandardDialect;
+import org.hajdbc.IdentityColumnSupport;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequencePropertiesFactory;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.dialect.StandardDialect;
 
 /**
  * Dialect for DB2 (commercial).
@@ -41,7 +41,7 @@ public class DB2Dialect extends StandardDialect
 {
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#vendorPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
 	 */
 	@Override
 	protected String vendorPattern()
@@ -50,7 +50,7 @@ public class DB2Dialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#executeFunctionFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#executeFunctionFormat()
 	 */
 	@Override
 	protected String executeFunctionFormat()
@@ -60,7 +60,7 @@ public class DB2Dialect extends StandardDialect
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getSequenceSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getSequenceSupport()
 	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
@@ -70,7 +70,7 @@ public class DB2Dialect extends StandardDialect
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getIdentityColumnSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getIdentityColumnSupport()
 	 */
 	@Override
 	public IdentityColumnSupport getIdentityColumnSupport()
@@ -98,7 +98,7 @@ public class DB2Dialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#sequencePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#sequencePattern()
 	 */
 	@Override
 	protected String sequencePattern()
@@ -107,7 +107,7 @@ public class DB2Dialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#nextSequenceValueFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#nextSequenceValueFormat()
 	 */
 	@Override
 	protected String nextSequenceValueFormat()
@@ -116,7 +116,7 @@ public class DB2Dialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#dateLiteralFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#dateLiteralFormat()
 	 */
 	@Override
 	protected String dateLiteralFormat()
@@ -125,7 +125,7 @@ public class DB2Dialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#timeLiteralFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#timeLiteralFormat()
 	 */
 	@Override
 	protected String timeLiteralFormat()
@@ -134,7 +134,7 @@ public class DB2Dialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#timestampLiteralFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#timestampLiteralFormat()
 	 */
 	@Override
 	protected String timestampLiteralFormat()

@@ -15,14 +15,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc;
+package org.hajdbc;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import net.sf.hajdbc.codec.Decoder;
-import net.sf.hajdbc.sql.AbstractDatabase;
+import org.hajdbc.Locality;
+import org.hajdbc.codec.Decoder;
+import org.hajdbc.sql.AbstractDatabase;
 
 /**
  * @author Paul Ferraro

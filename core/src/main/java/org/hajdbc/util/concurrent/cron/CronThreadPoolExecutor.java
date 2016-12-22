@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.util.concurrent.cron;
+package org.hajdbc.util.concurrent.cron;
 
 import java.util.Date;
 import java.util.concurrent.CancellationException;
@@ -72,7 +72,7 @@ public class CronThreadPoolExecutor extends ScheduledThreadPoolExecutor implemen
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.util.concurrent.cron.CronExecutorService#schedule(java.lang.Runnable, net.sf.hajdbc.util.concurrent.cron.CronExpression)
+	 * @see org.hajdbc.util.concurrent.cron.CronExecutorService#schedule(java.lang.Runnable, org.hajdbc.util.concurrent.cron.CronExpression)
 	 */
 	@Override
 	public void schedule(final Runnable task, final CronExpression expression)

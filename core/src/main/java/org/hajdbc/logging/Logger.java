@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.logging;
+package org.hajdbc.logging;
 
 /**
  * Logging wrapper that allows deferment of message formatting and argument evaluation.

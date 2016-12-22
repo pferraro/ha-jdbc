@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.pool;
+package org.hajdbc.sql.pool;
 
 import java.sql.SQLException;
 
 import javax.sql.ConnectionPoolDataSource;
 
-import net.sf.hajdbc.sql.CommonDataSourceDatabaseBuilder;
+import org.hajdbc.sql.CommonDataSourceDatabaseBuilder;
 
 public class ConnectionPoolDataSourceDatabaseBuilder extends CommonDataSourceDatabaseBuilder<ConnectionPoolDataSource, ConnectionPoolDataSourceDatabase>
 {

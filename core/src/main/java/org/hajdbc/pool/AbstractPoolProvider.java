@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.pool;
+package org.hajdbc.pool;
 
 /**
  * Abstract pool provider implementation.
@@ -36,7 +36,7 @@ public abstract class AbstractPoolProvider<T, E extends Exception> implements Po
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.pool.PoolProvider#getExceptionClass()
+	 * @see org.hajdbc.pool.PoolProvider#getExceptionClass()
 	 */
 	@Override
 	public Class<E> getExceptionClass()
@@ -46,7 +46,7 @@ public abstract class AbstractPoolProvider<T, E extends Exception> implements Po
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.pool.PoolProvider#getProvidedClass()
+	 * @see org.hajdbc.pool.PoolProvider#getProvidedClass()
 	 */
 	@Override
 	public Class<T> getProvidedClass()

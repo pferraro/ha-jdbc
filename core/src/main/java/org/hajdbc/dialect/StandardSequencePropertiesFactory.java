@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
-import net.sf.hajdbc.AbstractNamed;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.QualifiedNameFactory;
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequencePropertiesFactory;
+import org.hajdbc.AbstractNamed;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.QualifiedNameFactory;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequencePropertiesFactory;
 
 public class StandardSequencePropertiesFactory implements SequencePropertiesFactory
 {

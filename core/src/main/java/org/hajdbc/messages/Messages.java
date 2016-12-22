@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.messages;
+package org.hajdbc.messages;
 
 import java.beans.PropertyDescriptor;
 import java.lang.annotation.Annotation;
@@ -25,18 +25,18 @@ import java.util.Set;
 
 import javax.xml.stream.XMLStreamReader;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SynchronizationStrategy;
-import net.sf.hajdbc.TableProperties;
-import net.sf.hajdbc.Version;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.distributed.Command;
-import net.sf.hajdbc.distributed.Member;
-import net.sf.hajdbc.logging.LoggingProvider;
-import net.sf.hajdbc.util.Matcher;
-import net.sf.hajdbc.xml.XMLStreamFactory;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SynchronizationStrategy;
+import org.hajdbc.TableProperties;
+import org.hajdbc.Version;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.distributed.Command;
+import org.hajdbc.distributed.Member;
+import org.hajdbc.logging.LoggingProvider;
+import org.hajdbc.util.Matcher;
+import org.hajdbc.xml.XMLStreamFactory;
 
 public interface Messages
 {

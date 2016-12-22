@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.lang.reflect.Proxy;
 import java.sql.Connection;
@@ -25,15 +25,19 @@ import java.util.Collections;
 import java.util.concurrent.Executors;
 import java.util.concurrent.locks.Lock;
 
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.DatabaseClusterConfigurationFactory;
-import net.sf.hajdbc.DatabaseClusterFactory;
-import net.sf.hajdbc.MockDriver;
-import net.sf.hajdbc.balancer.Balancer;
-import net.sf.hajdbc.durability.Durability;
-import net.sf.hajdbc.lock.LockManager;
-import net.sf.hajdbc.tx.TransactionIdentifierFactory;
-
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.DatabaseClusterConfigurationFactory;
+import org.hajdbc.DatabaseClusterFactory;
+import org.hajdbc.MockDriver;
+import org.hajdbc.balancer.Balancer;
+import org.hajdbc.durability.Durability;
+import org.hajdbc.lock.LockManager;
+import org.hajdbc.sql.ConnectionInvocationHandler;
+import org.hajdbc.sql.Driver;
+import org.hajdbc.sql.DriverDatabase;
+import org.hajdbc.sql.DriverDatabaseBuilder;
+import org.hajdbc.sql.DriverDatabaseClusterConfigurationBuilder;
+import org.hajdbc.tx.TransactionIdentifierFactory;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

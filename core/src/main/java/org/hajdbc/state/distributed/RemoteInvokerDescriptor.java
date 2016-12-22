@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.distributed;
+package org.hajdbc.state.distributed;
 
-import net.sf.hajdbc.distributed.Remote;
+import org.hajdbc.distributed.Remote;
 
 public interface RemoteInvokerDescriptor extends InvokerDescriptor, Remote
 {

@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.distributed;
+package org.hajdbc.state.distributed;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.state.DatabaseEvent;
-import net.sf.hajdbc.state.StateManager;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.state.DatabaseEvent;
+import org.hajdbc.state.StateManager;
 
 public class DeactivationCommand<Z, D extends Database<Z>> extends StateCommand<Z, D>
 {
@@ -33,7 +33,7 @@ public class DeactivationCommand<Z, D extends Database<Z>> extends StateCommand<
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.distributed.StateCommand#execute(net.sf.hajdbc.DatabaseCluster, net.sf.hajdbc.state.StateManager, net.sf.hajdbc.Database)
+	 * @see org.hajdbc.state.distributed.StateCommand#execute(org.hajdbc.DatabaseCluster, org.hajdbc.state.StateManager, org.hajdbc.Database)
 	 */
 	@Override
 	protected boolean execute(DatabaseCluster<Z, D> cluster, StateManager stateManager, D database)

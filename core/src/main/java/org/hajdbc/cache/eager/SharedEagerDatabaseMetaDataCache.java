@@ -15,19 +15,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache.eager;
+package org.hajdbc.cache.eager;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.DatabaseProperties;
-import net.sf.hajdbc.cache.DatabaseMetaDataCache;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.DatabaseProperties;
+import org.hajdbc.cache.DatabaseMetaDataCache;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
 
 /**
  * DatabaseMetaDataCache implementation that eagerly caches data when first flushed.
@@ -50,7 +50,7 @@ public class SharedEagerDatabaseMetaDataCache<Z, D extends Database<Z>> implemen
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.cache.DatabaseMetaDataCache#flush()
+	 * @see org.hajdbc.cache.DatabaseMetaDataCache#flush()
 	 */
 	@Override
 	public void flush() throws SQLException
@@ -67,7 +67,7 @@ public class SharedEagerDatabaseMetaDataCache<Z, D extends Database<Z>> implemen
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.cache.DatabaseMetaDataCache#getDatabaseProperties(net.sf.hajdbc.Database, java.sql.Connection)
+	 * @see org.hajdbc.cache.DatabaseMetaDataCache#getDatabaseProperties(org.hajdbc.Database, java.sql.Connection)
 	 */
 	@Override
 	public synchronized DatabaseProperties getDatabaseProperties(D database, Connection connection) throws SQLException

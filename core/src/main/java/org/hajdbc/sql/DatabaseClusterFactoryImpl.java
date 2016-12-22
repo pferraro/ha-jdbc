@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.sql.SQLException;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseBuilder;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.DatabaseClusterConfigurationBuilder;
-import net.sf.hajdbc.DatabaseClusterConfigurationFactory;
-import net.sf.hajdbc.DatabaseClusterFactory;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseBuilder;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.DatabaseClusterConfigurationBuilder;
+import org.hajdbc.DatabaseClusterConfigurationFactory;
+import org.hajdbc.DatabaseClusterFactory;
 
 /**
  * @author Paul Ferraro

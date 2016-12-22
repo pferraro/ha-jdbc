@@ -15,21 +15,21 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sync;
+package org.hajdbc.sync;
 
 import java.io.File;
 import java.sql.SQLException;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.DumpRestoreSupport;
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.SynchronizationStrategy;
-import net.sf.hajdbc.codec.Decoder;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.util.Files;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.DumpRestoreSupport;
+import org.hajdbc.ExceptionType;
+import org.hajdbc.SynchronizationStrategy;
+import org.hajdbc.codec.Decoder;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
+import org.hajdbc.util.Files;
 
 /**
  * A synchronization strategy that uses dump/restore procedures.
@@ -62,7 +62,7 @@ public class DumpRestoreSynchronizationStrategy implements SynchronizationStrate
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.SynchronizationStrategy#init(net.sf.hajdbc.DatabaseCluster)
+	 * @see org.hajdbc.SynchronizationStrategy#init(org.hajdbc.DatabaseCluster)
 	 */
 	@Override
 	public <Z, D extends Database<Z>> void init(DatabaseCluster<Z, D> cluster)
@@ -71,17 +71,13 @@ public class DumpRestoreSynchronizationStrategy implements SynchronizationStrate
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.SynchronizationStrategy#destroy(net.sf.hajdbc.DatabaseCluster)
+	 * @see org.hajdbc.SynchronizationStrategy#destroy(org.hajdbc.DatabaseCluster)
 	 */
 	@Override
 	public <Z, D extends Database<Z>> void destroy(DatabaseCluster<Z, D> cluster)
 	{
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.SynchronizationStrategy#synchronize(net.sf.hajdbc.sync.SynchronizationContext)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> void synchronize(SynchronizationContext<Z, D> context) throws SQLException
 	{

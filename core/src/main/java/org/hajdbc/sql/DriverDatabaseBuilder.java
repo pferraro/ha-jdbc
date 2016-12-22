@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import net.sf.hajdbc.Locality;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
+import org.hajdbc.Locality;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
 
 public class DriverDatabaseBuilder extends AbstractDatabaseBuilder<Driver, DriverDatabase>
 {

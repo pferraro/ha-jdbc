@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.balancer.simple;
+package org.hajdbc.balancer.simple;
 
 import java.util.Set;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.balancer.Balancer;
-import net.sf.hajdbc.balancer.BalancerFactory;
+import org.hajdbc.Database;
+import org.hajdbc.balancer.Balancer;
+import org.hajdbc.balancer.BalancerFactory;
 
 /**
  * Factory for creating a {@link SimpleBalancer}.
@@ -39,7 +39,7 @@ public class SimpleBalancerFactory implements BalancerFactory
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.BalancerFactory#createBalancer(java.util.Set)
+	 * @see org.hajdbc.balancer.BalancerFactory#createBalancer(java.util.Set)
 	 */
 	@Override
 	public <Z, D extends Database<Z>> Balancer<Z, D> createBalancer(Set<D> databases)

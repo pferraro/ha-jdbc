@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -34,10 +34,10 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.regex.Pattern;
 
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequencePropertiesFactory;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.dialect.ingres.IngresDialectFactory;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequencePropertiesFactory;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.dialect.ingres.IngresDialectFactory;
 
 /**
  * @author Paul Ferraro
@@ -52,7 +52,7 @@ public class IngresDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
 	 */
 	@Override
 	public void getSequenceSupport()
@@ -62,7 +62,7 @@ public class IngresDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getSequences()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getSequences()
 	 */
 	@Override
 	public void getSequences() throws SQLException
@@ -97,7 +97,7 @@ public class IngresDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#parseSequence()
+	 * @see org.hajdbc.dialect.StandardDialectTest#parseSequence()
 	 */
 	@Override
 	public void parseSequence() throws SQLException
@@ -124,7 +124,7 @@ public class IngresDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateCurrentDate()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateCurrentDate()
 	 */
 	@Override
 	public void evaluateCurrentDate()
@@ -142,7 +142,7 @@ public class IngresDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateCurrentTime()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateCurrentTime()
 	 */
 	@Override
 	public void evaluateCurrentTime()
@@ -159,7 +159,7 @@ public class IngresDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateCurrentTimestamp()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateCurrentTimestamp()
 	 */
 	@Override
 	public void evaluateCurrentTimestamp()
@@ -178,7 +178,7 @@ public class IngresDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateRand()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateRand()
 	 */
 	@Override
 	public void evaluateRand()

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.codec.crypto;
+package org.hajdbc.codec.crypto;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,15 +26,15 @@ import java.security.KeyStore;
 import java.sql.SQLException;
 import java.text.MessageFormat;
 
-import net.sf.hajdbc.codec.Codec;
-import net.sf.hajdbc.codec.CodecFactory;
-import net.sf.hajdbc.util.Strings;
-import net.sf.hajdbc.util.SystemProperties;
+import org.hajdbc.codec.Codec;
+import org.hajdbc.codec.CodecFactory;
+import org.hajdbc.util.Strings;
+import org.hajdbc.util.SystemProperties;
 
 /**
  * Used to decrypt configuration file passwords using a symmetric key stored in a keystore.
  * Use the following command to generate Base-64 encoded encrypted passwords for use in your config file:<br/>
- * <p><code>java -classpath ha-jdbc.jar net.sf.hajdbc.codec.crypto.CipherCodecFactory [password]</code></p>
+ * <p><code>java -classpath ha-jdbc.jar org.hajdbc.codec.crypto.CipherCodecFactory [password]</code></p>
  * The following system properties can be used to customize the properties of the key and/or keystore:
  * <table>
  * 	<tr>
@@ -112,7 +112,7 @@ public class CipherCodecFactory implements CodecFactory
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.codec.CodecFactory#createCodec(java.lang.String)
+	 * @see org.hajdbc.codec.CodecFactory#createCodec(java.lang.String)
 	 */
 	@Override
 	public Codec createCodec(String clusterId) throws SQLException

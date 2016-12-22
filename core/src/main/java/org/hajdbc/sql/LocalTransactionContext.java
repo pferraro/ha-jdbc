@@ -15,20 +15,20 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.SortedMap;
 import java.util.concurrent.locks.Lock;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.durability.Durability;
-import net.sf.hajdbc.invocation.InvocationStrategy;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.tx.TransactionIdentifierFactory;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.ExceptionType;
+import org.hajdbc.durability.Durability;
+import org.hajdbc.invocation.InvocationStrategy;
+import org.hajdbc.invocation.Invoker;
+import org.hajdbc.tx.TransactionIdentifierFactory;
 
 /**
  * @author Paul Ferraro
@@ -54,7 +54,7 @@ public class LocalTransactionContext<Z, D extends Database<Z>> implements Transa
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sql.TransactionContext#start(net.sf.hajdbc.invocation.InvocationStrategy, java.sql.Connection)
+	 * @see org.hajdbc.sql.TransactionContext#start(org.hajdbc.invocation.InvocationStrategy, java.sql.Connection)
 	 */
 	@Override
 	public InvocationStrategy start(final InvocationStrategy strategy, final Connection connection) throws SQLException
@@ -109,7 +109,7 @@ public class LocalTransactionContext<Z, D extends Database<Z>> implements Transa
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sql.TransactionContext#start(net.sf.hajdbc.invocation.Invoker, java.sql.Connection)
+	 * @see org.hajdbc.sql.TransactionContext#start(org.hajdbc.invocation.Invoker, java.sql.Connection)
 	 */
 	@Override
 	public <T, R> Invoker<Z, D, T, R, SQLException> start(final Invoker<Z, D, T, R, SQLException> invoker, Connection connection) throws SQLException
@@ -128,7 +128,7 @@ public class LocalTransactionContext<Z, D extends Database<Z>> implements Transa
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sql.TransactionContext#end(net.sf.hajdbc.invocation.InvocationStrategy, net.sf.hajdbc.durability.Durability.Phase)
+	 * @see org.hajdbc.sql.TransactionContext#end(org.hajdbc.invocation.InvocationStrategy, org.hajdbc.durability.Durability.Phase)
 	 */
 	@Override
 	public InvocationStrategy end(final InvocationStrategy strategy, final Durability.Phase phase)
@@ -156,7 +156,7 @@ public class LocalTransactionContext<Z, D extends Database<Z>> implements Transa
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sql.TransactionContext#end(net.sf.hajdbc.invocation.Invoker, net.sf.hajdbc.durability.Durability.Phase)
+	 * @see org.hajdbc.sql.TransactionContext#end(org.hajdbc.invocation.Invoker, org.hajdbc.durability.Durability.Phase)
 	 */
 	@Override
 	public <T, R> Invoker<Z, D, T, R, SQLException> end(final Invoker<Z, D, T, R, SQLException> invoker, Durability.Phase phase)
@@ -167,7 +167,7 @@ public class LocalTransactionContext<Z, D extends Database<Z>> implements Transa
 	}
 
 	/**
-	 * @see net.sf.hajdbc.sql.TransactionContext#close()
+	 * @see org.hajdbc.sql.TransactionContext#close()
 	 */
 	@Override
 	public void close()

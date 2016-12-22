@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.sql.Driver;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import net.sf.hajdbc.Version;
+import org.hajdbc.Version;
 
 /**
  * @author Paul Ferraro

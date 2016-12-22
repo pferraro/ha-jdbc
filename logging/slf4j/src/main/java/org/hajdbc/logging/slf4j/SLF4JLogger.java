@@ -15,15 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.logging.slf4j;
+package org.hajdbc.logging.slf4j;
 
+import org.hajdbc.logging.AbstractLogger;
+import org.hajdbc.logging.Level;
 import org.slf4j.LoggerFactory;
 
-import net.sf.hajdbc.logging.AbstractLogger;
-import net.sf.hajdbc.logging.Level;
-
 /**
- * SLF4J-based {@link net.sf.hajdbc.logging.Logger}.
+ * SLF4J-based {@link org.hajdbc.logging.Logger}.
  * @author Paul Ferraro
  */
 public class SLF4JLogger extends AbstractLogger
@@ -37,7 +36,7 @@ public class SLF4JLogger extends AbstractLogger
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.Logger#log(net.sf.hajdbc.logging.Level, java.lang.Throwable, java.lang.String, java.lang.Object[])
+	 * @see org.hajdbc.logging.Logger#log(org.hajdbc.logging.Level, java.lang.Throwable, java.lang.String, java.lang.Object[])
 	 */
 	@Override
 	public void log(Level level, Throwable e, String pattern, Object... args)

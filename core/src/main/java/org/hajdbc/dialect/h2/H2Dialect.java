@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect.h2;
+package org.hajdbc.dialect.h2;
 
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
@@ -29,10 +29,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequencePropertiesFactory;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.dialect.StandardDialect;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequencePropertiesFactory;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.dialect.StandardDialect;
 
 /**
  * Dialect for <a href="http://www.h2database.com">H2 Database Engine</a>.
@@ -44,7 +44,7 @@ public class H2Dialect extends StandardDialect
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#vendorPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
 	 */
 	@Override
 	protected String vendorPattern()
@@ -53,7 +53,7 @@ public class H2Dialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#executeFunctionFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#executeFunctionFormat()
 	 */
 	@Override
 	protected String executeFunctionFormat()
@@ -63,7 +63,7 @@ public class H2Dialect extends StandardDialect
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getSequenceSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getSequenceSupport()
 	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
@@ -92,7 +92,7 @@ public class H2Dialect extends StandardDialect
 
 	/**
 	 * Deferrability clause is not supported.
-	 * @see net.sf.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
 	 */
 	@Override
 	protected String createForeignKeyConstraintFormat()
@@ -101,7 +101,7 @@ public class H2Dialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentDatePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentDatePattern()
 	 */
 	@Override
 	protected String currentDatePattern()
@@ -110,7 +110,7 @@ public class H2Dialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentTimePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentTimePattern()
 	 */
 	@Override
 	protected String currentTimePattern()
@@ -119,7 +119,7 @@ public class H2Dialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentTimestampPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentTimestampPattern()
 	 */
 	@Override
 	protected String currentTimestampPattern()
@@ -128,7 +128,7 @@ public class H2Dialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#randomPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#randomPattern()
 	 */
 	@Override
 	protected String randomPattern()
@@ -138,7 +138,7 @@ public class H2Dialect extends StandardDialect
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getDefaultSchemas(java.sql.DatabaseMetaData)
+	 * @see org.hajdbc.dialect.StandardDialect#getDefaultSchemas(java.sql.DatabaseMetaData)
 	 */
 	@Override
 	public List<String> getDefaultSchemas(DatabaseMetaData metaData)

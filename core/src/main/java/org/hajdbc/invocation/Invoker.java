@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.invocation;
+package org.hajdbc.invocation;
 
-import net.sf.hajdbc.Database;
+import org.hajdbc.Database;
 
 /**
  * Represents a method invocation on a SQL object against a database.

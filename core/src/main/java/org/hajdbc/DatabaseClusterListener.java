@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc;
+package org.hajdbc;
 
 import java.util.EventListener;
 
-import net.sf.hajdbc.state.DatabaseEvent;
+import org.hajdbc.state.DatabaseEvent;
 
 /**
  * Event listener for cluster events.

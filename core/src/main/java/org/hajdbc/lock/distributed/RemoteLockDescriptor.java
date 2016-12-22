@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock.distributed;
+package org.hajdbc.lock.distributed;
 
-import net.sf.hajdbc.distributed.Remote;
+import org.hajdbc.distributed.Remote;
 
 public interface RemoteLockDescriptor extends LockDescriptor, Remote
 {

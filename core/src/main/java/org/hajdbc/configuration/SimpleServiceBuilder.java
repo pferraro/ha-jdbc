@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.configuration;
+package org.hajdbc.configuration;
 
-import net.sf.hajdbc.Identifiable;
-import net.sf.hajdbc.IdentifiableMatcher;
-import net.sf.hajdbc.util.ServiceLoaders;
+import org.hajdbc.Identifiable;
+import org.hajdbc.IdentifiableMatcher;
+import org.hajdbc.util.ServiceLoaders;
 
 public class SimpleServiceBuilder<T extends Identifiable> implements Builder<T>
 {

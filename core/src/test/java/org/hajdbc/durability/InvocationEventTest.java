@@ -15,16 +15,18 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package org.hajdbc.durability;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import java.util.UUID;
 
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.util.Objects;
-
+import org.hajdbc.ExceptionType;
+import org.hajdbc.durability.Durability;
+import org.hajdbc.durability.InvocationEvent;
+import org.hajdbc.durability.InvocationEventImpl;
+import org.hajdbc.util.Objects;
 import org.junit.Test;
 
 public class InvocationEventTest

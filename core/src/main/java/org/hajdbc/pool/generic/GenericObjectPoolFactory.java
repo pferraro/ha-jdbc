@@ -15,20 +15,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.pool.generic;
+package org.hajdbc.pool.generic;
 
 import java.util.NoSuchElementException;
-
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.pool.Pool;
-import net.sf.hajdbc.pool.PoolFactory;
-import net.sf.hajdbc.pool.PoolProvider;
 
 import org.apache.commons.pool.ObjectPool;
 import org.apache.commons.pool.PoolableObjectFactory;
 import org.apache.commons.pool.impl.GenericObjectPool;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
+import org.hajdbc.pool.Pool;
+import org.hajdbc.pool.PoolFactory;
+import org.hajdbc.pool.PoolProvider;
 
 /**
  * Adapter for a <a href="http://commons.apache.org/pool">commons-pool</a> GenericObjectPool.

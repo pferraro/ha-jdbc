@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io.simple;
+package org.hajdbc.io.simple;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -24,7 +24,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
 
-import net.sf.hajdbc.io.InputSinkChannel;
+import org.hajdbc.io.InputSinkChannel;
 
 /**
  * Reader channel for writing to, and reading from, an in-memory buffer sink.

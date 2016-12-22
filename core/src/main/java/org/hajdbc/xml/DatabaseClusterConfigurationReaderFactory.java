@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.xml;
+package org.hajdbc.xml;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseBuilder;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseBuilder;
 
 /**
  * @author Paul Ferraro

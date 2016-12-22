@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.distributed;
+package org.hajdbc.state.distributed;
 
 import java.io.Serializable;
 
-import net.sf.hajdbc.durability.InvokerEvent;
+import org.hajdbc.durability.InvokerEvent;
 
 public interface InvokerDescriptor extends Serializable
 {

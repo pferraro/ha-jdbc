@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.simple;
+package org.hajdbc.state.simple;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,11 +23,11 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvocationEventAdapter;
-import net.sf.hajdbc.durability.InvokerEvent;
-import net.sf.hajdbc.state.DatabaseEvent;
-import net.sf.hajdbc.state.StateManager;
+import org.hajdbc.durability.InvocationEvent;
+import org.hajdbc.durability.InvocationEventAdapter;
+import org.hajdbc.durability.InvokerEvent;
+import org.hajdbc.state.DatabaseEvent;
+import org.hajdbc.state.StateManager;
 
 public class SimpleStateManager implements StateManager
 {

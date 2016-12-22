@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock;
+package org.hajdbc.lock;
 
 import java.io.Serializable;
 
-import net.sf.hajdbc.Identifiable;
+import org.hajdbc.Identifiable;
 
 public interface LockManagerFactory extends Identifiable, Serializable
 {

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.pool;
+package org.hajdbc.sql.pool;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -23,12 +23,12 @@ import java.sql.SQLException;
 import javax.sql.ConnectionPoolDataSource;
 import javax.sql.PooledConnection;
 
-import net.sf.hajdbc.Credentials;
-import net.sf.hajdbc.Locality;
-import net.sf.hajdbc.codec.Decoder;
-import net.sf.hajdbc.management.Description;
-import net.sf.hajdbc.management.MBean;
-import net.sf.hajdbc.sql.CommonDataSourceDatabase;
+import org.hajdbc.Credentials;
+import org.hajdbc.Locality;
+import org.hajdbc.codec.Decoder;
+import org.hajdbc.management.Description;
+import org.hajdbc.management.MBean;
+import org.hajdbc.sql.CommonDataSourceDatabase;
 
 /**
  * A database described by a {@link ConnectionPoolDataSource}.

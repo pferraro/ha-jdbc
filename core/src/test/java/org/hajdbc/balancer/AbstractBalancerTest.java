@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.balancer;
+package org.hajdbc.balancer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,9 +31,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import net.sf.hajdbc.MockDatabase;
-import net.sf.hajdbc.invocation.Invoker;
-
+import org.hajdbc.MockDatabase;
+import org.hajdbc.balancer.Balancer;
+import org.hajdbc.balancer.BalancerFactory;
+import org.hajdbc.invocation.Invoker;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -184,7 +185,7 @@ public abstract class AbstractBalancerTest
 	}
 
 	/**
-	 * Test method for {@link net.sf.hajdbc.balancer.load.LoadBalancer#addAll(java.util.Collection)}.
+	 * Test method for {@link org.hajdbc.balancer.load.LoadBalancer#addAll(java.util.Collection)}.
 	 */
 	@Test
 	public void addAll()
@@ -221,7 +222,7 @@ public abstract class AbstractBalancerTest
 	}
 
 	/**
-	 * Test method for {@link net.sf.hajdbc.balancer.load.LoadBalancer#removeAll(java.util.Collection)}.
+	 * Test method for {@link org.hajdbc.balancer.load.LoadBalancer#removeAll(java.util.Collection)}.
 	 */
 	@Test
 	public void removeAll()
@@ -258,7 +259,7 @@ public abstract class AbstractBalancerTest
 	}
 
 	/**
-	 * Test method for {@link net.sf.hajdbc.balancer.load.LoadBalancer#retainAll(java.util.Collection)}.
+	 * Test method for {@link org.hajdbc.balancer.load.LoadBalancer#retainAll(java.util.Collection)}.
 	 */
 	@Test
 	public void retainAll()
@@ -295,7 +296,7 @@ public abstract class AbstractBalancerTest
 	}
 	
 	/**
-	 * Test method for {@link net.sf.hajdbc.balancer.load.LoadBalancer#clear()}.
+	 * Test method for {@link org.hajdbc.balancer.load.LoadBalancer#clear()}.
 	 */
 	@Test
 	public void clear()
@@ -322,7 +323,7 @@ public abstract class AbstractBalancerTest
 	}
 
 	/**
-	 * Test method for {@link net.sf.hajdbc.balancer.load.LoadBalancer#remove(java.lang.Object)}.
+	 * Test method for {@link org.hajdbc.balancer.load.LoadBalancer#remove(java.lang.Object)}.
 	 */
 	@Test
 	public void remove()
@@ -353,7 +354,7 @@ public abstract class AbstractBalancerTest
 	}
 
 	/**
-	 * Test method for {@link net.sf.hajdbc.balancer.load.LoadBalancer#add(net.sf.hajdbc.Database)}.
+	 * Test method for {@link org.hajdbc.balancer.load.LoadBalancer#add(org.hajdbc.Database)}.
 	 */
 	@Test
 	public void add()
@@ -384,7 +385,7 @@ public abstract class AbstractBalancerTest
 	}
 
 	/**
-	 * Test method for {@link net.sf.hajdbc.balancer.load.LoadBalancer#invoke(net.sf.hajdbc.invocation.Invoker, net.sf.hajdbc.Database, java.lang.Object)}.
+	 * Test method for {@link org.hajdbc.balancer.load.LoadBalancer#invoke(org.hajdbc.invocation.Invoker, org.hajdbc.Database, java.lang.Object)}.
 	 */
 	@Test
 	public void invoke() throws Exception
@@ -434,7 +435,7 @@ public abstract class AbstractBalancerTest
 	interface TestInvoker extends Invoker<Void, MockDatabase, Object, Object, Exception> {}
 	
 	/**
-	 * Test method for {@link net.sf.hajdbc.balancer.AbstractBalancer#iterator()}.
+	 * Test method for {@link org.hajdbc.balancer.AbstractBalancer#iterator()}.
 	 */
 	@Test
 	public void iterator()
@@ -473,7 +474,7 @@ public abstract class AbstractBalancerTest
 	}
 
 	/**
-	 * Test method for {@link net.sf.hajdbc.balancer.AbstractBalancer#contains(java.lang.Object)}.
+	 * Test method for {@link org.hajdbc.balancer.AbstractBalancer#contains(java.lang.Object)}.
 	 */
 	@Test
 	public void contains()
@@ -504,7 +505,7 @@ public abstract class AbstractBalancerTest
 	}
 
 	/**
-	 * Test method for {@link net.sf.hajdbc.balancer.AbstractBalancer#containsAll(java.util.Collection)}.
+	 * Test method for {@link org.hajdbc.balancer.AbstractBalancer#containsAll(java.util.Collection)}.
 	 */
 	@Test
 	public void containsAll()
@@ -539,7 +540,7 @@ public abstract class AbstractBalancerTest
 	}
 
 	/**
-	 * Test method for {@link net.sf.hajdbc.balancer.AbstractBalancer#isEmpty()}.
+	 * Test method for {@link org.hajdbc.balancer.AbstractBalancer#isEmpty()}.
 	 */
 	@Test
 	public void isEmpty()
@@ -562,7 +563,7 @@ public abstract class AbstractBalancerTest
 	}
 
 	/**
-	 * Test method for {@link net.sf.hajdbc.balancer.AbstractBalancer#size()}.
+	 * Test method for {@link org.hajdbc.balancer.AbstractBalancer#size()}.
 	 */
 	@Test
 	public void size()
@@ -585,7 +586,7 @@ public abstract class AbstractBalancerTest
 	}
 
 	/**
-	 * Test method for {@link net.sf.hajdbc.balancer.AbstractBalancer#toArray()}.
+	 * Test method for {@link org.hajdbc.balancer.AbstractBalancer#toArray()}.
 	 */
 	@Test
 	public void toArray()

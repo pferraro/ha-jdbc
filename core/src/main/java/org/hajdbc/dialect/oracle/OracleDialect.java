@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect.oracle;
+package org.hajdbc.dialect.oracle;
 
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
@@ -25,10 +25,10 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequencePropertiesFactory;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.dialect.StandardDialect;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequencePropertiesFactory;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.dialect.StandardDialect;
 
 /**
  * Dialect for Oracle (commercial).
@@ -39,7 +39,7 @@ public class OracleDialect extends StandardDialect
 {
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#vendorPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
 	 */
 	@Override
 	protected String vendorPattern()
@@ -48,7 +48,7 @@ public class OracleDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#dummyTable()
+	 * @see org.hajdbc.dialect.StandardDialect#dummyTable()
 	 */
 	@Override
 	protected String dummyTable()
@@ -58,7 +58,7 @@ public class OracleDialect extends StandardDialect
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getSequenceSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getSequenceSupport()
 	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
@@ -92,7 +92,7 @@ public class OracleDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#truncateTableFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#truncateTableFormat()
 	 */
 	@Override
 	protected String truncateTableFormat()
@@ -102,7 +102,7 @@ public class OracleDialect extends StandardDialect
 	
 	/**
 	 * ON UPDATE and deferrability clauses are not supported.
-	 * @see net.sf.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
 	 */
 	@Override
 	protected String createForeignKeyConstraintFormat()
@@ -111,7 +111,7 @@ public class OracleDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#sequencePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#sequencePattern()
 	 */
 	@Override
 	protected String sequencePattern()
@@ -120,7 +120,7 @@ public class OracleDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#nextSequenceValueFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#nextSequenceValueFormat()
 	 */
 	@Override
 	protected String nextSequenceValueFormat()
@@ -130,7 +130,7 @@ public class OracleDialect extends StandardDialect
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#alterSequenceFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#alterSequenceFormat()
 	 */
 	@Override
 	protected String alterSequenceFormat()

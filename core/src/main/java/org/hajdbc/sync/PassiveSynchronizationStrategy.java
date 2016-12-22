@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sync;
+package org.hajdbc.sync;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.SynchronizationStrategy;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.SynchronizationStrategy;
 
 /**
  * Trivial {@link SynchronizationStrategy} implementation that assumes that the inactive database is already in sync.
@@ -37,9 +37,6 @@ public class PassiveSynchronizationStrategy implements SynchronizationStrategy
 		return "passive";
 	}
 
-	/**
-	 * @see net.sf.hajdbc.SynchronizationStrategy#synchronize(net.sf.hajdbc.sync.SynchronizationContext)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> void synchronize(SynchronizationContext<Z, D> context)
 	{
@@ -48,7 +45,7 @@ public class PassiveSynchronizationStrategy implements SynchronizationStrategy
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.SynchronizationStrategy#init(net.sf.hajdbc.DatabaseCluster)
+	 * @see org.hajdbc.SynchronizationStrategy#init(org.hajdbc.DatabaseCluster)
 	 */
 	@Override
 	public <Z, D extends Database<Z>> void init(DatabaseCluster<Z, D> cluster)
@@ -57,7 +54,7 @@ public class PassiveSynchronizationStrategy implements SynchronizationStrategy
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.SynchronizationStrategy#destroy(net.sf.hajdbc.DatabaseCluster)
+	 * @see org.hajdbc.SynchronizationStrategy#destroy(org.hajdbc.DatabaseCluster)
 	 */
 	@Override
 	public <Z, D extends Database<Z>> void destroy(DatabaseCluster<Z, D> cluster)

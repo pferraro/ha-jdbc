@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadFactory;
 
-import net.sf.hajdbc.ExecutorServiceProvider;
+import org.hajdbc.ExecutorServiceProvider;
 
 /**
  * @author paul
@@ -37,7 +37,7 @@ public class SimpleExecutorServiceProvider implements ExecutorServiceProvider
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.ExecutorServiceProvider#getExecutor(java.util.concurrent.ThreadFactory)
+	 * @see org.hajdbc.ExecutorServiceProvider#getExecutor(java.util.concurrent.ThreadFactory)
 	 */
 	@Override
 	public ExecutorService getExecutor(ThreadFactory threadFactory)
@@ -47,7 +47,7 @@ public class SimpleExecutorServiceProvider implements ExecutorServiceProvider
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.ExecutorServiceProvider#release(java.util.concurrent.ExecutorService)
+	 * @see org.hajdbc.ExecutorServiceProvider#release(java.util.concurrent.ExecutorService)
 	 */
 	@Override
 	public void release(ExecutorService service)

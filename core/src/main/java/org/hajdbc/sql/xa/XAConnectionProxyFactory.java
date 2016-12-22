@@ -15,18 +15,18 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.xa;
+package org.hajdbc.sql.xa;
 
 import java.sql.SQLException;
 import java.util.Map;
 
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.sql.ProxyFactory;
-import net.sf.hajdbc.sql.pool.AbstractPooledConnectionProxyFactory;
-import net.sf.hajdbc.util.reflect.Proxies;
-
 import javax.sql.XAConnection;
 import javax.sql.XADataSource;
+
+import org.hajdbc.invocation.Invoker;
+import org.hajdbc.sql.ProxyFactory;
+import org.hajdbc.sql.pool.AbstractPooledConnectionProxyFactory;
+import org.hajdbc.util.reflect.Proxies;
 
 /**
  * 

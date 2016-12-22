@@ -15,17 +15,17 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.lang.reflect.Method;
 import java.sql.Clob;
 import java.sql.SQLException;
 import java.util.Set;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.sql.io.OutputStreamProxyFactoryFactory;
-import net.sf.hajdbc.sql.io.WriterProxyFactoryFactory;
-import net.sf.hajdbc.util.reflect.Methods;
+import org.hajdbc.Database;
+import org.hajdbc.sql.io.OutputStreamProxyFactoryFactory;
+import org.hajdbc.sql.io.WriterProxyFactoryFactory;
+import org.hajdbc.util.reflect.Methods;
 
 /**
  * @author paul

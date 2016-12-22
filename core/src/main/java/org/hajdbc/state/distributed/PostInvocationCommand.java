@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.distributed;
+package org.hajdbc.state.distributed;
 
 import java.util.Map;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvokerEvent;
+import org.hajdbc.Database;
+import org.hajdbc.durability.InvocationEvent;
+import org.hajdbc.durability.InvokerEvent;
 
 public class PostInvocationCommand<Z, D extends Database<Z>> extends InvocationCommand<Z, D>
 {
@@ -34,7 +34,7 @@ public class PostInvocationCommand<Z, D extends Database<Z>> extends InvocationC
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.distributed.InvocationCommand#execute(java.util.Map, net.sf.hajdbc.durability.InvocationEvent)
+	 * @see org.hajdbc.state.distributed.InvocationCommand#execute(java.util.Map, org.hajdbc.durability.InvocationEvent)
 	 */
 	@Override
 	protected void execute(Map<InvocationEvent, Map<String, InvokerEvent>> invokers, InvocationEvent event)

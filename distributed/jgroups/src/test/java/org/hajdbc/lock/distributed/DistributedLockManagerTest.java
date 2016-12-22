@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock.distributed;
+package org.hajdbc.lock.distributed;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -27,15 +27,15 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.distributed.CommandDispatcherFactory;
+import org.hajdbc.distributed.jgroups.JGroupsCommandDispatcherFactory;
+import org.hajdbc.lock.LockManager;
+import org.hajdbc.lock.distributed.DistributedLockManager;
+import org.hajdbc.lock.semaphore.SemaphoreLockManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.distributed.CommandDispatcherFactory;
-import net.sf.hajdbc.distributed.jgroups.JGroupsCommandDispatcherFactory;
-import net.sf.hajdbc.lock.LockManager;
-import net.sf.hajdbc.lock.semaphore.SemaphoreLockManager;
 
 /**
  * @author Paul Ferraro

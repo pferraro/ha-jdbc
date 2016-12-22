@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.codec;
+package org.hajdbc.codec;
 
 
 /**
@@ -34,7 +34,7 @@ public class SimpleCodecFactory extends AbstractCodec
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.codec.Codec#decode(java.lang.String)
+	 * @see org.hajdbc.codec.Codec#decode(java.lang.String)
 	 */
 	@Override
 	public String decode(String value)
@@ -44,7 +44,7 @@ public class SimpleCodecFactory extends AbstractCodec
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.codec.Codec#encode(java.lang.String)
+	 * @see org.hajdbc.codec.Codec#encode(java.lang.String)
 	 */
 	@Override
 	public String encode(String value)

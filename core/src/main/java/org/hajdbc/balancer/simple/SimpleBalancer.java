@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.balancer.simple;
+package org.hajdbc.balancer.simple;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Set;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.balancer.AbstractSetBalancer;
+import org.hajdbc.Database;
+import org.hajdbc.balancer.AbstractSetBalancer;
 
 /**
  * Trivial balancer implementation whose {@link #next} implementation always returns the database with the highest weight.
@@ -56,7 +56,7 @@ public class SimpleBalancer<Z, D extends Database<Z>> extends AbstractSetBalance
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.Balancer#next()
+	 * @see org.hajdbc.balancer.Balancer#next()
 	 */
 	@Override
 	public D next()
@@ -66,7 +66,7 @@ public class SimpleBalancer<Z, D extends Database<Z>> extends AbstractSetBalance
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.AbstractSetBalancer#added(net.sf.hajdbc.Database)
+	 * @see org.hajdbc.balancer.AbstractSetBalancer#added(org.hajdbc.Database)
 	 */
 	@Override
 	protected void added(D database)
@@ -76,7 +76,7 @@ public class SimpleBalancer<Z, D extends Database<Z>> extends AbstractSetBalance
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.AbstractSetBalancer#removed(net.sf.hajdbc.Database)
+	 * @see org.hajdbc.balancer.AbstractSetBalancer#removed(org.hajdbc.Database)
 	 */
 	@Override
 	protected void removed(D database)
@@ -93,7 +93,7 @@ public class SimpleBalancer<Z, D extends Database<Z>> extends AbstractSetBalance
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.AbstractSetBalancer#cleared()
+	 * @see org.hajdbc.balancer.AbstractSetBalancer#cleared()
 	 */
 	@Override
 	protected void cleared()

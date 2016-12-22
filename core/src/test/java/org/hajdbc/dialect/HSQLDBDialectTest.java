@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -35,12 +35,11 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-import net.sf.hajdbc.ForeignKeyConstraint;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequencePropertiesFactory;
-import net.sf.hajdbc.dialect.hsqldb.HSQLDBDialectFactory;
-
+import org.hajdbc.ForeignKeyConstraint;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequencePropertiesFactory;
+import org.hajdbc.dialect.hsqldb.HSQLDBDialectFactory;
 import org.hsqldb.error.ErrorCode;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -59,7 +58,7 @@ public class HSQLDBDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
 	 */
 	@Override
 	public void getSequenceSupport()
@@ -83,7 +82,7 @@ public class HSQLDBDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getCreateForeignKeyConstraintSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getCreateForeignKeyConstraintSQL()
 	 */
 	@Override
 	public void getCreateForeignKeyConstraintSQL() throws SQLException
@@ -110,7 +109,7 @@ public class HSQLDBDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getSequences()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getSequences()
 	 */
 	@Override
 	public void getSequences() throws SQLException
@@ -147,7 +146,7 @@ public class HSQLDBDialectTest extends StandardDialectTest
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getNextSequenceValueSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getNextSequenceValueSQL()
 	 */
 	@Override
 	public void getNextSequenceValueSQL() throws SQLException
@@ -165,7 +164,7 @@ public class HSQLDBDialectTest extends StandardDialectTest
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateCurrentDate()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateCurrentDate()
 	 */
 	@Override
 	public void evaluateCurrentDate()
@@ -185,7 +184,7 @@ public class HSQLDBDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateCurrentTime()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateCurrentTime()
 	 */
 	@Override
 	public void evaluateCurrentTime()
@@ -209,7 +208,7 @@ public class HSQLDBDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateCurrentTimestamp()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateCurrentTimestamp()
 	 */
 	@Override
 	public void evaluateCurrentTimestamp()

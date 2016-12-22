@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -25,11 +25,11 @@ import java.sql.Statement;
 import java.util.Collection;
 import java.util.Iterator;
 
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequencePropertiesFactory;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.dialect.firebird.FirebirdDialectFactory;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequencePropertiesFactory;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.dialect.firebird.FirebirdDialectFactory;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -48,7 +48,7 @@ public class FirebirdDialectTest extends StandardDialectTest
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
 	 */
 	@Override
 	public void getSequenceSupport()
@@ -58,7 +58,7 @@ public class FirebirdDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getAlterSequenceSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getAlterSequenceSQL()
 	 */
 	@Override
 	public void getAlterSequenceSQL() throws SQLException
@@ -77,7 +77,7 @@ public class FirebirdDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getSequences()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getSequences()
 	 */
 	@Override
 	public void getSequences() throws SQLException
@@ -112,7 +112,7 @@ public class FirebirdDialectTest extends StandardDialectTest
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getNextSequenceValueSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getNextSequenceValueSQL()
 	 */
 	@Override
 	public void getNextSequenceValueSQL() throws SQLException
@@ -130,7 +130,7 @@ public class FirebirdDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#isSelectForUpdate()
+	 * @see org.hajdbc.dialect.StandardDialectTest#isSelectForUpdate()
 	 */
 	@Override
 	public void isSelectForUpdate() throws SQLException
@@ -141,7 +141,7 @@ public class FirebirdDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#parseSequence()
+	 * @see org.hajdbc.dialect.StandardDialectTest#parseSequence()
 	 */
 	@Override
 	public void parseSequence() throws SQLException

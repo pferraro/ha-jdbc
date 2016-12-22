@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.distributed;
+package org.hajdbc.state.distributed;
 
 import java.util.Map;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.distributed.Command;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvokerEvent;
+import org.hajdbc.Database;
+import org.hajdbc.distributed.Command;
+import org.hajdbc.durability.InvocationEvent;
+import org.hajdbc.durability.InvokerEvent;
 
 /**
  * @author Paul Ferraro
@@ -40,7 +40,7 @@ public abstract class InvocationCommand<Z, D extends Database<Z>> implements Com
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.Command#execute(java.lang.Object)
+	 * @see org.hajdbc.distributed.Command#execute(java.lang.Object)
 	 */
 	@Override
 	public Void execute(StateCommandContext<Z, D> context)

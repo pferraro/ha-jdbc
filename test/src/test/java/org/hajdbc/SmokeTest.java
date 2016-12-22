@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc;
+package org.hajdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,16 +23,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import net.sf.hajdbc.sql.DataSource;
-import net.sf.hajdbc.sql.DataSourceDatabaseClusterConfigurationBuilder;
-import net.sf.hajdbc.state.StateManager;
-import net.sf.hajdbc.state.StateManagerFactory;
-import net.sf.hajdbc.state.bdb.BerkeleyDBStateManagerFactory;
-import net.sf.hajdbc.state.simple.SimpleStateManagerFactory;
-import net.sf.hajdbc.state.sql.SQLStateManagerFactory;
-import net.sf.hajdbc.state.sqlite.SQLiteStateManagerFactory;
-
 import org.h2.jdbcx.JdbcDataSource;
+import org.hajdbc.sql.DataSource;
+import org.hajdbc.sql.DataSourceDatabaseClusterConfigurationBuilder;
+import org.hajdbc.state.StateManager;
+import org.hajdbc.state.StateManagerFactory;
+import org.hajdbc.state.bdb.BerkeleyDBStateManagerFactory;
+import org.hajdbc.state.simple.SimpleStateManagerFactory;
+import org.hajdbc.state.sql.SQLStateManagerFactory;
+import org.hajdbc.state.sqlite.SQLiteStateManagerFactory;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

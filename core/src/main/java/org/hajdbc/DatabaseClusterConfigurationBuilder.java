@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc;
+package org.hajdbc;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -27,35 +27,35 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
-import net.sf.hajdbc.balancer.BalancerFactory;
-import net.sf.hajdbc.balancer.load.LoadBalancerFactory;
-import net.sf.hajdbc.cache.DatabaseMetaDataCacheFactory;
-import net.sf.hajdbc.cache.eager.EagerDatabaseMetaDataCacheFactory;
-import net.sf.hajdbc.codec.DecoderFactory;
-import net.sf.hajdbc.codec.MultiplexingDecoderFactory;
-import net.sf.hajdbc.configuration.Builder;
-import net.sf.hajdbc.configuration.ServiceBuilder;
-import net.sf.hajdbc.configuration.SimpleBuilder;
-import net.sf.hajdbc.configuration.SimpleServiceBuilder;
-import net.sf.hajdbc.dialect.DialectFactory;
-import net.sf.hajdbc.dialect.StandardDialectFactory;
-import net.sf.hajdbc.distributed.CommandDispatcherFactory;
-import net.sf.hajdbc.durability.DurabilityFactory;
-import net.sf.hajdbc.durability.coarse.CoarseDurabilityFactory;
-import net.sf.hajdbc.io.InputSinkProvider;
-import net.sf.hajdbc.io.file.FileInputSinkProvider;
-import net.sf.hajdbc.lock.LockManagerFactory;
-import net.sf.hajdbc.lock.semaphore.SemaphoreLockManagerFactory;
-import net.sf.hajdbc.management.DefaultMBeanRegistrarFactory;
-import net.sf.hajdbc.management.MBeanRegistrarFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.sql.DefaultExecutorServiceProvider;
-import net.sf.hajdbc.sql.TransactionModeEnum;
-import net.sf.hajdbc.state.StateManagerFactory;
-import net.sf.hajdbc.state.sql.SQLStateManagerFactory;
-import net.sf.hajdbc.util.concurrent.cron.CronExpression;
-import net.sf.hajdbc.util.concurrent.cron.CronExpressionBuilder;
+import org.hajdbc.balancer.BalancerFactory;
+import org.hajdbc.balancer.load.LoadBalancerFactory;
+import org.hajdbc.cache.DatabaseMetaDataCacheFactory;
+import org.hajdbc.cache.eager.EagerDatabaseMetaDataCacheFactory;
+import org.hajdbc.codec.DecoderFactory;
+import org.hajdbc.codec.MultiplexingDecoderFactory;
+import org.hajdbc.configuration.Builder;
+import org.hajdbc.configuration.ServiceBuilder;
+import org.hajdbc.configuration.SimpleBuilder;
+import org.hajdbc.configuration.SimpleServiceBuilder;
+import org.hajdbc.dialect.DialectFactory;
+import org.hajdbc.dialect.StandardDialectFactory;
+import org.hajdbc.distributed.CommandDispatcherFactory;
+import org.hajdbc.durability.DurabilityFactory;
+import org.hajdbc.durability.coarse.CoarseDurabilityFactory;
+import org.hajdbc.io.InputSinkProvider;
+import org.hajdbc.io.file.FileInputSinkProvider;
+import org.hajdbc.lock.LockManagerFactory;
+import org.hajdbc.lock.semaphore.SemaphoreLockManagerFactory;
+import org.hajdbc.management.DefaultMBeanRegistrarFactory;
+import org.hajdbc.management.MBeanRegistrarFactory;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
+import org.hajdbc.sql.DefaultExecutorServiceProvider;
+import org.hajdbc.sql.TransactionModeEnum;
+import org.hajdbc.state.StateManagerFactory;
+import org.hajdbc.state.sql.SQLStateManagerFactory;
+import org.hajdbc.util.concurrent.cron.CronExpression;
+import org.hajdbc.util.concurrent.cron.CronExpressionBuilder;
 
 public class DatabaseClusterConfigurationBuilder<Z, D extends Database<Z>, B extends DatabaseBuilder<Z, D>> implements Builder<DatabaseClusterConfiguration<Z, D>>
 {

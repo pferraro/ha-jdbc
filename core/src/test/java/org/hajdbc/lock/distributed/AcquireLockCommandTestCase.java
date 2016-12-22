@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock.distributed;
+package org.hajdbc.lock.distributed;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -24,6 +24,10 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 
+import org.hajdbc.lock.distributed.AcquireLockCommand;
+import org.hajdbc.lock.distributed.LockCommandContext;
+import org.hajdbc.lock.distributed.LockDescriptor;
+import org.hajdbc.lock.distributed.RemoteLockDescriptor;
 import org.junit.Test;
 
 /**

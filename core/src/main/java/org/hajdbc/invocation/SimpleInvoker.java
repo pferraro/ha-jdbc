@@ -1,13 +1,13 @@
-package net.sf.hajdbc.invocation;
+package org.hajdbc.invocation;
 
 import java.lang.reflect.Method;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.ExceptionFactory;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.util.reflect.Methods;
+import org.hajdbc.Database;
+import org.hajdbc.ExceptionFactory;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
+import org.hajdbc.util.reflect.Methods;
 
 public class SimpleInvoker<Z, D extends Database<Z>, T, R, E extends Exception> implements Invoker<Z, D, T, R, E>
 {
@@ -44,7 +44,7 @@ public class SimpleInvoker<Z, D extends Database<Z>, T, R, E extends Exception> 
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.invocation.Invoker#invoke(net.sf.hajdbc.Database, java.lang.Object)
+	 * @see org.hajdbc.invocation.Invoker#invoke(org.hajdbc.Database, java.lang.Object)
 	 */
 	@Override
 	public R invoke(D database, T object) throws E

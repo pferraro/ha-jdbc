@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state;
+package org.hajdbc.state;
 
 import java.util.Map;
 import java.util.Set;
 
-import net.sf.hajdbc.DatabaseClusterListener;
-import net.sf.hajdbc.Lifecycle;
-import net.sf.hajdbc.durability.DurabilityListener;
-import net.sf.hajdbc.durability.InvocationEvent;
-import net.sf.hajdbc.durability.InvokerEvent;
+import org.hajdbc.DatabaseClusterListener;
+import org.hajdbc.Lifecycle;
+import org.hajdbc.durability.DurabilityListener;
+import org.hajdbc.durability.InvocationEvent;
+import org.hajdbc.durability.InvokerEvent;
 
 
 /**

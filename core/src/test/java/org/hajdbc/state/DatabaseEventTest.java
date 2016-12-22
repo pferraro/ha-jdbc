@@ -15,13 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state;
+package org.hajdbc.state;
 
 import static org.junit.Assert.*;
-import org.junit.Test;
 
-import net.sf.hajdbc.MockDatabase;
-import net.sf.hajdbc.util.Objects;
+import org.hajdbc.MockDatabase;
+import org.hajdbc.state.DatabaseEvent;
+import org.hajdbc.util.Objects;
+import org.junit.Test;
 
 /**
  * @author Paul Ferraro

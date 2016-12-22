@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.sql.BatchUpdateException;
 import java.sql.ClientInfoStatus;
@@ -25,9 +25,9 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Map;
 
-import net.sf.hajdbc.AbstractExceptionFactory;
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.dialect.Dialect;
+import org.hajdbc.AbstractExceptionFactory;
+import org.hajdbc.ExceptionType;
+import org.hajdbc.dialect.Dialect;
 
 /**
  * @author Paul Ferraro
@@ -43,7 +43,7 @@ public class SQLExceptionFactory extends AbstractExceptionFactory<SQLException>
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.ExceptionFactory#createException(java.lang.String)
+	 * @see org.hajdbc.ExceptionFactory#createException(java.lang.String)
 	 */
 	@Override
 	public SQLException createException(String message)
@@ -53,7 +53,7 @@ public class SQLExceptionFactory extends AbstractExceptionFactory<SQLException>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.ExceptionFactory#equals(java.lang.Exception, java.lang.Exception)
+	 * @see org.hajdbc.ExceptionFactory#equals(java.lang.Exception, java.lang.Exception)
 	 */
 	@Override
 	public boolean equals(SQLException exception1, SQLException exception2)
@@ -135,7 +135,7 @@ public class SQLExceptionFactory extends AbstractExceptionFactory<SQLException>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.ExceptionFactory#indicatesFailure(java.lang.Exception, net.sf.hajdbc.dialect.Dialect)
+	 * @see org.hajdbc.ExceptionFactory#indicatesFailure(java.lang.Exception, org.hajdbc.dialect.Dialect)
 	 */
 	@Override
 	public boolean indicatesFailure(SQLException exception, Dialect dialect)
@@ -147,7 +147,7 @@ public class SQLExceptionFactory extends AbstractExceptionFactory<SQLException>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.ExceptionFactory#getType()
+	 * @see org.hajdbc.ExceptionFactory#getType()
 	 */
 	@Override
 	public ExceptionType getType()

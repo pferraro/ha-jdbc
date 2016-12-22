@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect.sybase;
+package org.hajdbc.dialect.sybase;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import net.sf.hajdbc.IdentityColumnSupport;
-import net.sf.hajdbc.dialect.StandardDialect;
+import org.hajdbc.IdentityColumnSupport;
+import org.hajdbc.dialect.StandardDialect;
 
 /**
  * Dialect for Sybase (commercial).
@@ -33,7 +33,7 @@ public class SybaseDialect extends StandardDialect
 {
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getIdentityColumnSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getIdentityColumnSupport()
 	 */
 	@Override
 	public IdentityColumnSupport getIdentityColumnSupport()
@@ -43,7 +43,7 @@ public class SybaseDialect extends StandardDialect
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#vendorPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
 	 */
 	@Override
 	protected String vendorPattern()
@@ -52,7 +52,7 @@ public class SybaseDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#truncateTableFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#truncateTableFormat()
 	 */
 	@Override
 	protected String truncateTableFormat()
@@ -62,7 +62,7 @@ public class SybaseDialect extends StandardDialect
 	
 	/**
 	 * Deferrability clause is not supported.
-	 * @see net.sf.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
 	 */
 	@Override
 	protected String createForeignKeyConstraintFormat()
@@ -71,7 +71,7 @@ public class SybaseDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentDatePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentDatePattern()
 	 */
 	@Override
 	protected String currentDatePattern()
@@ -80,7 +80,7 @@ public class SybaseDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentTimePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentTimePattern()
 	 */
 	@Override
 	protected String currentTimePattern()
@@ -89,7 +89,7 @@ public class SybaseDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentTimestampPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentTimestampPattern()
 	 */
 	@Override
 	protected String currentTimestampPattern()
@@ -98,7 +98,7 @@ public class SybaseDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#dateLiteralFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#dateLiteralFormat()
 	 */
 	@Override
 	protected String dateLiteralFormat()
@@ -107,7 +107,7 @@ public class SybaseDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#timeLiteralFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#timeLiteralFormat()
 	 */
 	@Override
 	protected String timeLiteralFormat()
@@ -116,7 +116,7 @@ public class SybaseDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#timestampLiteralFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#timestampLiteralFormat()
 	 */
 	@Override
 	protected String timestampLiteralFormat()
@@ -125,7 +125,7 @@ public class SybaseDialect extends StandardDialect
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#randomPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#randomPattern()
 	 */
 	@Override
 	protected String randomPattern()

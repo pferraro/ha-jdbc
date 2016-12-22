@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc;
+package org.hajdbc;
 
 import java.util.ServiceLoader;
 
-import net.sf.hajdbc.messages.simple.SimpleMessages;
+import org.hajdbc.messages.simple.SimpleMessages;
 
 public class ProviderFactory<P extends Provider>
 {

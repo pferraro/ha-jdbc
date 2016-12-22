@@ -1,4 +1,4 @@
-package net.sf.hajdbc.sql.io;
+package org.hajdbc.sql.io;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -9,11 +9,11 @@ import static org.mockito.Mockito.mock;
 
 import java.io.IOException;
 
-import net.sf.hajdbc.ExceptionFactory;
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.durability.Durability.Phase;
-
+import org.hajdbc.ExceptionFactory;
+import org.hajdbc.ExceptionType;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.durability.Durability.Phase;
+import org.hajdbc.sql.io.IOExceptionFactory;
 import org.junit.Test;
 import org.mockito.Mockito;
 

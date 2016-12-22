@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.xa;
+package org.hajdbc.sql.xa;
 
 import javax.sql.XADataSource;
 
-import net.sf.hajdbc.DatabaseBuilderFactory;
-import net.sf.hajdbc.DatabaseClusterConfigurationBuilder;
+import org.hajdbc.DatabaseBuilderFactory;
+import org.hajdbc.DatabaseClusterConfigurationBuilder;
 
 public class XADataSourceDatabaseClusterConfigurationBuilder extends DatabaseClusterConfigurationBuilder<XADataSource, XADataSourceDatabase, XADataSourceDatabaseBuilder>
 {

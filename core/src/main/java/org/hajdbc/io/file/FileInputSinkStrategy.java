@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io.file;
+package org.hajdbc.io.file;
 
 import java.io.File;
 import java.io.InputStream;
 import java.io.Reader;
 
-import net.sf.hajdbc.io.InputSinkChannel;
-import net.sf.hajdbc.io.InputSinkStrategy;
-import net.sf.hajdbc.util.Files;
+import org.hajdbc.io.InputSinkChannel;
+import org.hajdbc.io.InputSinkStrategy;
+import org.hajdbc.util.Files;
 
 /**
  * A file-based input sink strategy

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.distributed.jgroups;
+package org.hajdbc.distributed.jgroups;
 
 import java.io.InputStream;
 import java.io.ObjectOutput;
@@ -29,18 +29,17 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicReference;
 
-import net.sf.hajdbc.distributed.Command;
-import net.sf.hajdbc.distributed.CommandDispatcher;
-import net.sf.hajdbc.distributed.CommandResponse;
-import net.sf.hajdbc.distributed.Member;
-import net.sf.hajdbc.distributed.MembershipListener;
-import net.sf.hajdbc.distributed.Stateful;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.util.ObjectInputStream;
-import net.sf.hajdbc.util.Objects;
-
+import org.hajdbc.distributed.Command;
+import org.hajdbc.distributed.CommandDispatcher;
+import org.hajdbc.distributed.CommandResponse;
+import org.hajdbc.distributed.Member;
+import org.hajdbc.distributed.MembershipListener;
+import org.hajdbc.distributed.Stateful;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
+import org.hajdbc.util.ObjectInputStream;
+import org.hajdbc.util.Objects;
 import org.jgroups.Address;
 import org.jgroups.Channel;
 import org.jgroups.Message;
@@ -94,7 +93,7 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.Lifecycle#start()
+	 * @see org.hajdbc.Lifecycle#start()
 	 */
 	@Override
 	public void start() throws SQLException
@@ -116,7 +115,7 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.Lifecycle#stop()
+	 * @see org.hajdbc.Lifecycle#stop()
 	 */
 	@Override
 	public void stop()
@@ -202,7 +201,7 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.CommandDispatcher#getLocal()
+	 * @see org.hajdbc.distributed.CommandDispatcher#getLocal()
 	 */
 	@Override
 	public AddressMember getLocal()
@@ -217,7 +216,7 @@ public class JGroupsCommandDispatcher<C> implements RequestHandler, CommandDispa
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.distributed.CommandDispatcher#getCoordinator()
+	 * @see org.hajdbc.distributed.CommandDispatcher#getCoordinator()
 	 */
 	@Override
 	public AddressMember getCoordinator()

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package org.hajdbc.durability;
 
 /**
  * @author Paul Ferraro
@@ -42,7 +42,7 @@ public class InvokerEventImpl extends DurabilityEventImpl implements InvokerEven
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.InvokerEvent#getDatabaseId()
+	 * @see org.hajdbc.durability.InvokerEvent#getDatabaseId()
 	 */
 	@Override
 	public String getDatabaseId()
@@ -52,7 +52,7 @@ public class InvokerEventImpl extends DurabilityEventImpl implements InvokerEven
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.InvokerEvent#setResult(net.sf.hajdbc.durability.InvokerResult)
+	 * @see org.hajdbc.durability.InvokerEvent#setResult(org.hajdbc.durability.InvokerResult)
 	 */
 	@Override
 	public void setResult(InvokerResult result)
@@ -62,7 +62,7 @@ public class InvokerEventImpl extends DurabilityEventImpl implements InvokerEven
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.InvokerEvent#getResult()
+	 * @see org.hajdbc.durability.InvokerEvent#getResult()
 	 */
 	@Override
 	public InvokerResult getResult()
@@ -78,7 +78,7 @@ public class InvokerEventImpl extends DurabilityEventImpl implements InvokerEven
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityEventImpl#equals(java.lang.Object)
+	 * @see org.hajdbc.durability.DurabilityEventImpl#equals(java.lang.Object)
 	 */
 	@Override
 	public boolean equals(Object object)

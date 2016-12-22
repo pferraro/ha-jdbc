@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -25,11 +25,11 @@ import java.sql.Statement;
 import java.util.Collection;
 import java.util.Iterator;
 
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequencePropertiesFactory;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.dialect.db2.DB2DialectFactory;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequencePropertiesFactory;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.dialect.db2.DB2DialectFactory;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -53,7 +53,7 @@ public class DB2DialectTest extends StandardDialectTest
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getIdentityColumnSupport()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getIdentityColumnSupport()
 	 */
 	@Override
 	public void getIdentityColumnSupport()
@@ -110,7 +110,7 @@ public class DB2DialectTest extends StandardDialectTest
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#parseSequence()
+	 * @see org.hajdbc.dialect.StandardDialectTest#parseSequence()
 	 */
 	@Override
 	public void parseSequence() throws SQLException
@@ -126,7 +126,7 @@ public class DB2DialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateCurrentDate()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateCurrentDate()
 	 */
 	@Override
 	public void evaluateCurrentDate()
@@ -143,7 +143,7 @@ public class DB2DialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateCurrentTime()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateCurrentTime()
 	 */
 	@Override
 	public void evaluateCurrentTime()
@@ -166,7 +166,7 @@ public class DB2DialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateCurrentTimestamp()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateCurrentTimestamp()
 	 */
 	@Override
 	public void evaluateCurrentTimestamp()

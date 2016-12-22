@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.logging;
+package org.hajdbc.logging;
 
-import net.sf.hajdbc.Provider;
+import org.hajdbc.Provider;
 
 /**
  * Logging provider abstraction of logging service provider interface.

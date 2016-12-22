@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock;
+package org.hajdbc.lock;
 
 import java.util.concurrent.locks.Lock;
 
-import net.sf.hajdbc.Lifecycle;
+import org.hajdbc.Lifecycle;
 
 /**
  * Manages a set of named read/write locks.  A global lock is represented by a null object.

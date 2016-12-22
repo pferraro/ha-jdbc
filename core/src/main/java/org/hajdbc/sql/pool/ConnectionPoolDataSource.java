@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.pool;
+package org.hajdbc.sql.pool;
 
 import java.sql.SQLException;
 
 import javax.sql.PooledConnection;
 
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.SimpleDatabaseClusterConfigurationFactory;
-import net.sf.hajdbc.sql.CommonDataSource;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.SimpleDatabaseClusterConfigurationFactory;
+import org.hajdbc.sql.CommonDataSource;
 
 /**
  * @author Paul Ferraro

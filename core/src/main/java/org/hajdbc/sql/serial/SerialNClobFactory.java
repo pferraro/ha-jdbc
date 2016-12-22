@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.serial;
+package org.hajdbc.sql.serial;
 
 import java.sql.NClob;
 import java.sql.SQLException;
 
 import javax.sql.rowset.serial.SerialClob;
 
-import net.sf.hajdbc.util.reflect.Proxies;
-import net.sf.hajdbc.util.reflect.SimpleInvocationHandler;
+import org.hajdbc.util.reflect.Proxies;
+import org.hajdbc.util.reflect.SimpleInvocationHandler;
 
 /**
  * 

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.pool;
+package org.hajdbc.sql.pool;
 
 import java.lang.reflect.Method;
 import java.sql.SQLException;
@@ -27,14 +27,14 @@ import javax.sql.ConnectionEventListener;
 import javax.sql.PooledConnection;
 import javax.sql.StatementEventListener;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.invocation.InvocationStrategies;
-import net.sf.hajdbc.invocation.InvocationStrategy;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.sql.ChildInvocationHandler;
-import net.sf.hajdbc.sql.ConnectionProxyFactoryFactory;
-import net.sf.hajdbc.sql.ProxyFactoryFactory;
-import net.sf.hajdbc.util.reflect.Methods;
+import org.hajdbc.Database;
+import org.hajdbc.invocation.InvocationStrategies;
+import org.hajdbc.invocation.InvocationStrategy;
+import org.hajdbc.invocation.Invoker;
+import org.hajdbc.sql.ChildInvocationHandler;
+import org.hajdbc.sql.ConnectionProxyFactoryFactory;
+import org.hajdbc.sql.ProxyFactoryFactory;
+import org.hajdbc.util.reflect.Methods;
 
 /**
  * @author Paul Ferraro
@@ -72,7 +72,7 @@ public abstract class AbstractPooledConnectionInvocationHandler<Z, D extends Dat
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sql.AbstractInvocationHandler#getInvocationStrategy(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])
+	 * @see org.hajdbc.sql.AbstractInvocationHandler#getInvocationStrategy(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])
 	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(C connection, Method method, Object... parameters) throws SQLException

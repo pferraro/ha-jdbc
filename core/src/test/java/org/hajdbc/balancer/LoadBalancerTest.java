@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.balancer;
+package org.hajdbc.balancer;
 
 import java.util.Collections;
 import java.util.concurrent.CountDownLatch;
@@ -23,8 +23,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import net.sf.hajdbc.MockDatabase;
-import net.sf.hajdbc.balancer.load.LoadBalancerFactory;
+import org.hajdbc.MockDatabase;
+import org.hajdbc.balancer.Balancer;
+import org.hajdbc.balancer.load.LoadBalancerFactory;
 
 import static org.junit.Assert.*;
 

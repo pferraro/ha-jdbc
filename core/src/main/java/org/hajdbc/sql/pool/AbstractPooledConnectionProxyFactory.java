@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.pool;
+package org.hajdbc.sql.pool;
 
 import java.lang.reflect.Proxy;
 import java.sql.SQLException;
@@ -28,11 +28,11 @@ import javax.sql.PooledConnection;
 import javax.sql.StatementEvent;
 import javax.sql.StatementEventListener;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.sql.AbstractTransactionalProxyFactory;
-import net.sf.hajdbc.sql.LocalTransactionContext;
-import net.sf.hajdbc.sql.ProxyFactory;
+import org.hajdbc.Database;
+import org.hajdbc.invocation.Invoker;
+import org.hajdbc.sql.AbstractTransactionalProxyFactory;
+import org.hajdbc.sql.LocalTransactionContext;
+import org.hajdbc.sql.ProxyFactory;
 
 /**
  * 

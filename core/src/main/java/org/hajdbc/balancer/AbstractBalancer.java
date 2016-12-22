@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.balancer;
+package org.hajdbc.balancer;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -24,7 +24,7 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import net.sf.hajdbc.Database;
+import org.hajdbc.Database;
 
 /**
  * Thread-safe abstract balancer implementation that implements most of the Balancer interface, except {@link Balancer#next()}.
@@ -41,7 +41,7 @@ public abstract class AbstractBalancer<Z, D extends Database<Z>> implements Bala
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.Balancer#backups()
+	 * @see org.hajdbc.balancer.Balancer#backups()
 	 */
 	@Override
 	public Iterable<D> backups()

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.xml;
+package org.hajdbc.xml;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -40,27 +40,29 @@ import javax.sql.DataSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseBuilder;
-import net.sf.hajdbc.DatabaseClusterConfiguration;
-import net.sf.hajdbc.DatabaseClusterConfigurationBuilder;
-import net.sf.hajdbc.Locality;
-import net.sf.hajdbc.MockDataSource;
-import net.sf.hajdbc.MockDriver;
-import net.sf.hajdbc.SynchronizationStrategy;
-import net.sf.hajdbc.balancer.load.LoadBalancerFactory;
-import net.sf.hajdbc.cache.eager.EagerDatabaseMetaDataCacheFactory;
-import net.sf.hajdbc.dialect.StandardDialectFactory;
-import net.sf.hajdbc.durability.coarse.CoarseDurabilityFactory;
-import net.sf.hajdbc.sql.DataSourceDatabase;
-import net.sf.hajdbc.sql.DataSourceDatabaseClusterConfigurationBuilder;
-import net.sf.hajdbc.sql.DriverDatabase;
-import net.sf.hajdbc.sql.DriverDatabaseClusterConfigurationBuilder;
-import net.sf.hajdbc.sql.TransactionModeEnum;
-import net.sf.hajdbc.state.StateManagerFactory;
-import net.sf.hajdbc.state.sql.SQLStateManagerFactory;
-import net.sf.hajdbc.sync.DifferentialSynchronizationStrategy;
-
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseBuilder;
+import org.hajdbc.DatabaseClusterConfiguration;
+import org.hajdbc.DatabaseClusterConfigurationBuilder;
+import org.hajdbc.Locality;
+import org.hajdbc.MockDataSource;
+import org.hajdbc.MockDriver;
+import org.hajdbc.SynchronizationStrategy;
+import org.hajdbc.balancer.load.LoadBalancerFactory;
+import org.hajdbc.cache.eager.EagerDatabaseMetaDataCacheFactory;
+import org.hajdbc.dialect.StandardDialectFactory;
+import org.hajdbc.durability.coarse.CoarseDurabilityFactory;
+import org.hajdbc.sql.DataSourceDatabase;
+import org.hajdbc.sql.DataSourceDatabaseClusterConfigurationBuilder;
+import org.hajdbc.sql.DriverDatabase;
+import org.hajdbc.sql.DriverDatabaseClusterConfigurationBuilder;
+import org.hajdbc.sql.TransactionModeEnum;
+import org.hajdbc.state.StateManagerFactory;
+import org.hajdbc.state.sql.SQLStateManagerFactory;
+import org.hajdbc.sync.DifferentialSynchronizationStrategy;
+import org.hajdbc.xml.Namespace;
+import org.hajdbc.xml.XMLDatabaseClusterConfigurationFactory;
+import org.hajdbc.xml.XMLStreamFactory;
 import org.junit.Test;
 
 public class XMLDatabaseClusterConfigurationFactoryTest

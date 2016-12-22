@@ -1,13 +1,13 @@
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.sql.SQLException;
 import java.util.Properties;
 
-import net.sf.hajdbc.Credentials;
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseBuilder;
-import net.sf.hajdbc.Locality;
-import net.sf.hajdbc.codec.Decoder;
+import org.hajdbc.Credentials;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseBuilder;
+import org.hajdbc.Locality;
+import org.hajdbc.codec.Decoder;
 
 public abstract class AbstractDatabaseBuilder<Z, D extends Database<Z>> implements DatabaseBuilder<Z, D>
 {

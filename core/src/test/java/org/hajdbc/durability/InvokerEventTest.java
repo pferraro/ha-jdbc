@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package org.hajdbc.durability;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -24,8 +24,11 @@ import static org.junit.Assert.assertNotNull;
 import java.sql.SQLException;
 import java.util.UUID;
 
-import net.sf.hajdbc.util.Objects;
-
+import org.hajdbc.durability.Durability;
+import org.hajdbc.durability.InvokerEvent;
+import org.hajdbc.durability.InvokerEventImpl;
+import org.hajdbc.durability.InvokerResultImpl;
+import org.hajdbc.util.Objects;
 import org.junit.Test;
 
 /**

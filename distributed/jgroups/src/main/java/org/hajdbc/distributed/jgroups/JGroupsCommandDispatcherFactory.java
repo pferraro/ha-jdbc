@@ -15,13 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.distributed.jgroups;
+package org.hajdbc.distributed.jgroups;
 
-import net.sf.hajdbc.distributed.CommandDispatcher;
-import net.sf.hajdbc.distributed.CommandDispatcherFactory;
-import net.sf.hajdbc.distributed.MembershipListener;
-import net.sf.hajdbc.distributed.Stateful;
-
+import org.hajdbc.distributed.CommandDispatcher;
+import org.hajdbc.distributed.CommandDispatcherFactory;
+import org.hajdbc.distributed.MembershipListener;
+import org.hajdbc.distributed.Stateful;
 import org.jgroups.Channel;
 import org.jgroups.JChannel;
 

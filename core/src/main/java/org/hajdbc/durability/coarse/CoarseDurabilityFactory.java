@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability.coarse;
+package org.hajdbc.durability.coarse;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.durability.Durability;
-import net.sf.hajdbc.durability.DurabilityFactory;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.durability.Durability;
+import org.hajdbc.durability.DurabilityFactory;
 
 /**
  * Factory for creating a {@link CoarseDurability}.
@@ -38,7 +38,7 @@ public class CoarseDurabilityFactory implements DurabilityFactory
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.DurabilityFactory#createDurability(net.sf.hajdbc.DatabaseCluster)
+	 * @see org.hajdbc.durability.DurabilityFactory#createDurability(org.hajdbc.DatabaseCluster)
 	 */
 	@Override
 	public <Z, D extends Database<Z>> Durability<Z, D> createDurability(DatabaseCluster<Z, D> cluster)

@@ -15,20 +15,20 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc;
+package org.hajdbc;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadFactory;
 
-import net.sf.hajdbc.balancer.Balancer;
-import net.sf.hajdbc.cache.DatabaseMetaDataCache;
-import net.sf.hajdbc.codec.Decoder;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.durability.Durability;
-import net.sf.hajdbc.io.InputSinkStrategy;
-import net.sf.hajdbc.lock.LockManager;
-import net.sf.hajdbc.state.StateManager;
-import net.sf.hajdbc.tx.TransactionIdentifierFactory;
+import org.hajdbc.balancer.Balancer;
+import org.hajdbc.cache.DatabaseMetaDataCache;
+import org.hajdbc.codec.Decoder;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.durability.Durability;
+import org.hajdbc.io.InputSinkStrategy;
+import org.hajdbc.lock.LockManager;
+import org.hajdbc.state.StateManager;
+import org.hajdbc.tx.TransactionIdentifierFactory;
 
 /**
  * @author Paul Ferraro

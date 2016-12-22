@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.pool;
+package org.hajdbc.sql.pool;
 
 import javax.sql.ConnectionPoolDataSource;
 
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.sql.CommonDataSourceProxyFactory;
-import net.sf.hajdbc.util.reflect.Proxies;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.sql.CommonDataSourceProxyFactory;
+import org.hajdbc.util.reflect.Proxies;
 
 /**
  * 

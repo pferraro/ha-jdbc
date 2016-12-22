@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -29,22 +29,22 @@ import java.util.Map;
 import java.util.Set;
 import java.util.SortedMap;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.ExceptionFactory;
-import net.sf.hajdbc.invocation.AllResultsCollector;
-import net.sf.hajdbc.invocation.InvocationStrategies;
-import net.sf.hajdbc.invocation.InvocationStrategy;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.invocation.SimpleInvoker;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.sql.serial.SerialLocatorFactories;
-import net.sf.hajdbc.sql.serial.SerialLocatorFactory;
-import net.sf.hajdbc.util.reflect.Methods;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.ExceptionFactory;
+import org.hajdbc.invocation.AllResultsCollector;
+import org.hajdbc.invocation.InvocationStrategies;
+import org.hajdbc.invocation.InvocationStrategy;
+import org.hajdbc.invocation.Invoker;
+import org.hajdbc.invocation.SimpleInvoker;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
+import org.hajdbc.sql.serial.SerialLocatorFactories;
+import org.hajdbc.sql.serial.SerialLocatorFactory;
+import org.hajdbc.util.reflect.Methods;
 
 /**
  * 

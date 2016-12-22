@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state;
+package org.hajdbc.state;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.util.Event;
+import org.hajdbc.Database;
+import org.hajdbc.util.Event;
 
 /**
  * Identifies the target database of an event.

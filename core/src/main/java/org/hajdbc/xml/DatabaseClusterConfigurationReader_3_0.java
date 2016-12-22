@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.xml;
+package org.hajdbc.xml;
 
 import static javax.xml.stream.XMLStreamConstants.END_ELEMENT;
 
@@ -24,17 +24,17 @@ import java.util.Locale;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseClusterConfigurationBuilder;
-import net.sf.hajdbc.DatabaseBuilder;
-import net.sf.hajdbc.Identifiable;
-import net.sf.hajdbc.IdentifiableMatcher;
-import net.sf.hajdbc.Locality;
-import net.sf.hajdbc.configuration.ServiceBuilder;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.sql.TransactionModeEnum;
-import net.sf.hajdbc.util.ServiceLoaders;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseBuilder;
+import org.hajdbc.DatabaseClusterConfigurationBuilder;
+import org.hajdbc.Identifiable;
+import org.hajdbc.IdentifiableMatcher;
+import org.hajdbc.Locality;
+import org.hajdbc.configuration.ServiceBuilder;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
+import org.hajdbc.sql.TransactionModeEnum;
+import org.hajdbc.util.ServiceLoaders;
 
 /**
  * @author Paul Ferraro

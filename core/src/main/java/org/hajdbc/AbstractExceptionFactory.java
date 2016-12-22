@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc;
+package org.hajdbc;
 
-import net.sf.hajdbc.durability.Durability.Phase;
+import org.hajdbc.durability.Durability.Phase;
 
 
 /**
@@ -49,7 +49,7 @@ public abstract class AbstractExceptionFactory<E extends Exception> implements E
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.ExceptionFactory#createException(java.lang.Throwable)
+	 * @see org.hajdbc.ExceptionFactory#createException(java.lang.Throwable)
 	 */
 	@Override
 	public E createException(Throwable e)

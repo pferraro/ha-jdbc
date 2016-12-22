@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.sql.Driver;
 
-import net.sf.hajdbc.DatabaseClusterConfigurationBuilder;
-import net.sf.hajdbc.DatabaseBuilderFactory;
+import org.hajdbc.DatabaseBuilderFactory;
+import org.hajdbc.DatabaseClusterConfigurationBuilder;
 
 public class DriverDatabaseClusterConfigurationBuilder extends DatabaseClusterConfigurationBuilder<Driver, DriverDatabase, DriverDatabaseBuilder>
 {

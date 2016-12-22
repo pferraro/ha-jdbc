@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache.lazy;
+package org.hajdbc.cache.lazy;
 
 import java.lang.ref.Reference;
 import java.lang.ref.SoftReference;
@@ -25,11 +25,11 @@ import java.sql.SQLException;
 import java.util.AbstractMap;
 import java.util.Map;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.DatabaseProperties;
-import net.sf.hajdbc.cache.DatabaseMetaDataCache;
-import net.sf.hajdbc.dialect.Dialect;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.DatabaseProperties;
+import org.hajdbc.cache.DatabaseMetaDataCache;
+import org.hajdbc.dialect.Dialect;
 
 
 /**
@@ -52,7 +52,7 @@ public class SharedLazyDatabaseMetaDataCache<Z, D extends Database<Z>> implement
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.cache.DatabaseMetaDataCache#flush()
+	 * @see org.hajdbc.cache.DatabaseMetaDataCache#flush()
 	 */
 	@Override
 	public synchronized void flush()
@@ -62,7 +62,7 @@ public class SharedLazyDatabaseMetaDataCache<Z, D extends Database<Z>> implement
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.cache.DatabaseMetaDataCache#getDatabaseProperties(net.sf.hajdbc.Database, java.sql.Connection)
+	 * @see org.hajdbc.cache.DatabaseMetaDataCache#getDatabaseProperties(org.hajdbc.Database, java.sql.Connection)
 	 */
 	@Override
 	public DatabaseProperties getDatabaseProperties(D database, Connection connection) throws SQLException

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import static org.junit.Assert.*;
 import static org.mockito.AdditionalMatchers.aryEq;
@@ -57,19 +57,22 @@ import javax.sql.rowset.spi.SyncFactoryException;
 import javax.sql.rowset.spi.SyncProviderException;
 import javax.transaction.xa.XAException;
 
-import net.sf.hajdbc.ColumnProperties;
-import net.sf.hajdbc.Credentials;
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.ForeignKeyConstraint;
-import net.sf.hajdbc.IdentityColumnSupport;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequencePropertiesFactory;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.TableProperties;
-import net.sf.hajdbc.UniqueConstraint;
-import net.sf.hajdbc.codec.Decoder;
-
+import org.hajdbc.ColumnProperties;
+import org.hajdbc.Credentials;
+import org.hajdbc.Database;
+import org.hajdbc.ForeignKeyConstraint;
+import org.hajdbc.IdentityColumnSupport;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequencePropertiesFactory;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.TableProperties;
+import org.hajdbc.UniqueConstraint;
+import org.hajdbc.codec.Decoder;
+import org.hajdbc.dialect.ConnectionProperties;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.dialect.DialectFactory;
+import org.hajdbc.dialect.StandardDialectFactory;
 import org.junit.Test;
 
 /**

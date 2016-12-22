@@ -1,9 +1,9 @@
-package net.sf.hajdbc.invocation;
+package org.hajdbc.invocation;
 
 import java.util.SortedMap;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.sql.ProxyFactory;
+import org.hajdbc.Database;
+import org.hajdbc.sql.ProxyFactory;
 
 public interface InvocationStrategy
 {

@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.io;
+package org.hajdbc.sql.io;
 
 import java.io.IOException;
 import java.io.OutputStream;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.invocation.InvocationStrategies;
-import net.sf.hajdbc.invocation.Invoker;
+import org.hajdbc.Database;
+import org.hajdbc.invocation.InvocationStrategies;
+import org.hajdbc.invocation.Invoker;
 
 /**
  * Static proxy for OutputStreams

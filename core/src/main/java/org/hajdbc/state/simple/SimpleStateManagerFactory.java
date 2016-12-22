@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.simple;
+package org.hajdbc.state.simple;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.state.StateManager;
-import net.sf.hajdbc.state.StateManagerFactory;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.state.StateManager;
+import org.hajdbc.state.StateManagerFactory;
 
 public class SimpleStateManagerFactory implements StateManagerFactory
 {
@@ -34,7 +34,7 @@ public class SimpleStateManagerFactory implements StateManagerFactory
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.state.StateManagerFactory#createStateManager(net.sf.hajdbc.DatabaseCluster)
+	 * @see org.hajdbc.state.StateManagerFactory#createStateManager(org.hajdbc.DatabaseCluster)
 	 */
 	@Override
 	public <Z, D extends Database<Z>> StateManager createStateManager(DatabaseCluster<Z, D> cluster)

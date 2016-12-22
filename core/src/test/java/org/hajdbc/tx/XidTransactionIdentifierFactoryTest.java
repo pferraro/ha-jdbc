@@ -15,12 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.tx;
+package org.hajdbc.tx;
 
 import java.util.Arrays;
 
 import javax.transaction.xa.Xid;
 
+import org.hajdbc.tx.TransactionIdentifierFactory;
+import org.hajdbc.tx.XidTransactionIdentifierFactory;
 import org.junit.Assert;
 import org.junit.Test;
 

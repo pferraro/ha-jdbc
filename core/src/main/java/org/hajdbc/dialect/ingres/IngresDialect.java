@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect.ingres;
+package org.hajdbc.dialect.ingres;
 
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
@@ -26,10 +26,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequencePropertiesFactory;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.dialect.StandardDialect;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequencePropertiesFactory;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.dialect.StandardDialect;
 
 /**
  * Dialect for <a href="http://opensource.ingres.com/projects/ingres/">Ingres</a>.
@@ -42,7 +42,7 @@ public class IngresDialect extends StandardDialect
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#vendorPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
 	 */
 	@Override
 	protected String vendorPattern()
@@ -52,7 +52,7 @@ public class IngresDialect extends StandardDialect
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getSequenceSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getSequenceSupport()
 	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
@@ -80,7 +80,7 @@ public class IngresDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#parseSequence(java.lang.String)
+	 * @see org.hajdbc.dialect.StandardDialect#parseSequence(java.lang.String)
 	 */
 	@Override
 	public String parseSequence(String sql)
@@ -91,7 +91,7 @@ public class IngresDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#sequencePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#sequencePattern()
 	 */
 	@Override
 	protected String sequencePattern()
@@ -100,7 +100,7 @@ public class IngresDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentDatePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentDatePattern()
 	 */
 	@Override
 	protected String currentDatePattern()
@@ -109,7 +109,7 @@ public class IngresDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentTimePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentTimePattern()
 	 */
 	@Override
 	protected String currentTimePattern()
@@ -118,7 +118,7 @@ public class IngresDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentTimestampPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentTimestampPattern()
 	 */
 	@Override
 	protected String currentTimestampPattern()
@@ -127,7 +127,7 @@ public class IngresDialect extends StandardDialect
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#randomPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#randomPattern()
 	 */
 	@Override
 	protected String randomPattern()

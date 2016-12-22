@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.io.simple;
+package org.hajdbc.io.simple;
 
 import java.io.InputStream;
 import java.io.Reader;
 
-import net.sf.hajdbc.io.InputSinkChannel;
-import net.sf.hajdbc.io.InputSinkStrategy;
+import org.hajdbc.io.InputSinkChannel;
+import org.hajdbc.io.InputSinkStrategy;
 
 /**
  * In-memory input sink strategy.

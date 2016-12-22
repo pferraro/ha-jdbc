@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -33,13 +33,13 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 
-import net.sf.hajdbc.ForeignKeyConstraint;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequencePropertiesFactory;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.TableProperties;
-import net.sf.hajdbc.dialect.maxdb.MaxDBDialectFactory;
+import org.hajdbc.ForeignKeyConstraint;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequencePropertiesFactory;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.TableProperties;
+import org.hajdbc.dialect.maxdb.MaxDBDialectFactory;
 
 /**
  * @author Paul Ferraro
@@ -55,7 +55,7 @@ public class MaxDBDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
 	 */
 	@Override
 	public void getSequenceSupport()
@@ -65,7 +65,7 @@ public class MaxDBDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getCreateForeignKeyConstraintSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getCreateForeignKeyConstraintSQL()
 	 */
 	@Override
 	public void getCreateForeignKeyConstraintSQL() throws SQLException
@@ -92,7 +92,7 @@ public class MaxDBDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getSequences()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getSequences()
 	 */
 	@Override
 	public void getSequences() throws SQLException
@@ -128,7 +128,7 @@ public class MaxDBDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getTruncateTableSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getTruncateTableSQL()
 	 */
 	@Override
 	public void getTruncateTableSQL() throws SQLException
@@ -146,7 +146,7 @@ public class MaxDBDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#parseSequence()
+	 * @see org.hajdbc.dialect.StandardDialectTest#parseSequence()
 	 */
 	@Override
 	public void parseSequence() throws SQLException
@@ -166,7 +166,7 @@ public class MaxDBDialectTest extends StandardDialectTest
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getNextSequenceValueSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getNextSequenceValueSQL()
 	 */
 	@Override
 	public void getNextSequenceValueSQL() throws SQLException

@@ -20,13 +20,17 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
-package net.sf.hajdbc.lock.distributed;
+package org.hajdbc.lock.distributed;
 
 import static org.mockito.Mockito.*;
 
 import java.util.Map;
 import java.util.concurrent.locks.Lock;
 
+import org.hajdbc.lock.distributed.LockCommandContext;
+import org.hajdbc.lock.distributed.LockDescriptor;
+import org.hajdbc.lock.distributed.ReleaseLockCommand;
+import org.hajdbc.lock.distributed.RemoteLockDescriptor;
 import org.junit.Test;
 
 /**

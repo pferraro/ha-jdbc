@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.balancer.roundrobin;
+package org.hajdbc.balancer.roundrobin;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.balancer.AbstractSetBalancer;
+import org.hajdbc.Database;
+import org.hajdbc.balancer.AbstractSetBalancer;
 
 /**
  * Balancer implementation whose {@link #next()} implementation uses a circular FIFO queue.
@@ -50,7 +50,7 @@ public class RoundRobinBalancer<P, D extends Database<P>> extends AbstractSetBal
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.AbstractSetBalancer#added(net.sf.hajdbc.Database)
+	 * @see org.hajdbc.balancer.AbstractSetBalancer#added(org.hajdbc.Database)
 	 */
 	@Override
 	protected void added(D database)
@@ -65,7 +65,7 @@ public class RoundRobinBalancer<P, D extends Database<P>> extends AbstractSetBal
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.AbstractSetBalancer#removed(net.sf.hajdbc.Database)
+	 * @see org.hajdbc.balancer.AbstractSetBalancer#removed(org.hajdbc.Database)
 	 */
 	@Override
 	protected void removed(D database)
@@ -80,7 +80,7 @@ public class RoundRobinBalancer<P, D extends Database<P>> extends AbstractSetBal
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.Balancer#next()
+	 * @see org.hajdbc.balancer.Balancer#next()
 	 */
 	@Override
 	public D next()
@@ -113,7 +113,7 @@ public class RoundRobinBalancer<P, D extends Database<P>> extends AbstractSetBal
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.AbstractSetBalancer#cleared()
+	 * @see org.hajdbc.balancer.AbstractSetBalancer#cleared()
 	 */
 	@Override
 	protected void cleared()

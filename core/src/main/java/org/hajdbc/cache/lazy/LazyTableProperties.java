@@ -15,25 +15,25 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache.lazy;
+package org.hajdbc.cache.lazy;
 
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
-import net.sf.hajdbc.ColumnProperties;
-import net.sf.hajdbc.ColumnPropertiesFactory;
-import net.sf.hajdbc.ForeignKeyConstraint;
-import net.sf.hajdbc.ForeignKeyConstraintFactory;
-import net.sf.hajdbc.IdentifierNormalizer;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.QualifiedNameFactory;
-import net.sf.hajdbc.UniqueConstraint;
-import net.sf.hajdbc.UniqueConstraintFactory;
-import net.sf.hajdbc.cache.AbstractTableProperties;
-import net.sf.hajdbc.cache.DatabaseMetaDataProvider;
-import net.sf.hajdbc.dialect.Dialect;
+import org.hajdbc.ColumnProperties;
+import org.hajdbc.ColumnPropertiesFactory;
+import org.hajdbc.ForeignKeyConstraint;
+import org.hajdbc.ForeignKeyConstraintFactory;
+import org.hajdbc.IdentifierNormalizer;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.QualifiedNameFactory;
+import org.hajdbc.UniqueConstraint;
+import org.hajdbc.UniqueConstraintFactory;
+import org.hajdbc.cache.AbstractTableProperties;
+import org.hajdbc.cache.DatabaseMetaDataProvider;
+import org.hajdbc.dialect.Dialect;
 
 /**
  * @author Paul Ferraro
@@ -84,7 +84,7 @@ public class LazyTableProperties extends AbstractTableProperties
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.TableProperties#getPrimaryKey()
+	 * @see org.hajdbc.TableProperties#getPrimaryKey()
 	 */
 	@Override
 	public UniqueConstraint getPrimaryKey() throws SQLException
@@ -105,7 +105,7 @@ public class LazyTableProperties extends AbstractTableProperties
 	}
 
 	/**
-	 * @see net.sf.hajdbc.TableProperties#getForeignKeyConstraints()
+	 * @see org.hajdbc.TableProperties#getForeignKeyConstraints()
 	 */
 	@Override
 	public Collection<ForeignKeyConstraint> getForeignKeyConstraints() throws SQLException
@@ -126,7 +126,7 @@ public class LazyTableProperties extends AbstractTableProperties
 	}
 
 	/**
-	 * @see net.sf.hajdbc.TableProperties#getUniqueConstraints()
+	 * @see org.hajdbc.TableProperties#getUniqueConstraints()
 	 */
 	@Override
 	public Collection<UniqueConstraint> getUniqueConstraints() throws SQLException
@@ -147,7 +147,7 @@ public class LazyTableProperties extends AbstractTableProperties
 	}
 
 	/**
-	 * @see net.sf.hajdbc.TableProperties#getIdentityColumns()
+	 * @see org.hajdbc.TableProperties#getIdentityColumns()
 	 */
 	@Override
 	public Collection<String> getIdentityColumns() throws SQLException

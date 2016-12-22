@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache.lazy;
+package org.hajdbc.cache.lazy;
 
 import java.lang.ref.Reference;
 import java.sql.Connection;
@@ -25,13 +25,13 @@ import java.util.AbstractMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.DatabaseProperties;
-import net.sf.hajdbc.cache.DatabaseMetaDataCache;
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.util.ref.ReferenceMap;
-import net.sf.hajdbc.util.ref.SoftReferenceFactory;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.DatabaseProperties;
+import org.hajdbc.cache.DatabaseMetaDataCache;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.util.ref.ReferenceMap;
+import org.hajdbc.util.ref.SoftReferenceFactory;
 
 /**
  * Per-database {@link DatabaseMetaDataCache} implementation that populates itself lazily.
@@ -49,7 +49,7 @@ public class LazyDatabaseMetaDataCache<Z, D extends Database<Z>> implements Data
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.cache.DatabaseMetaDataCache#flush()
+	 * @see org.hajdbc.cache.DatabaseMetaDataCache#flush()
 	 */
 	@Override
 	public void flush()
@@ -62,7 +62,7 @@ public class LazyDatabaseMetaDataCache<Z, D extends Database<Z>> implements Data
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.cache.DatabaseMetaDataCache#getDatabaseProperties(net.sf.hajdbc.Database, java.sql.Connection)
+	 * @see org.hajdbc.cache.DatabaseMetaDataCache#getDatabaseProperties(org.hajdbc.Database, java.sql.Connection)
 	 */
 	@Override
 	public DatabaseProperties getDatabaseProperties(D database, Connection connection) throws SQLException

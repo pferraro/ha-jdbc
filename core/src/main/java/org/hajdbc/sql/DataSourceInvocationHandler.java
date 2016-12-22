@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.lang.reflect.Method;
 import java.sql.SQLException;
@@ -23,9 +23,9 @@ import java.util.Set;
 
 import javax.sql.DataSource;
 
-import net.sf.hajdbc.invocation.InvocationStrategies;
-import net.sf.hajdbc.invocation.InvocationStrategy;
-import net.sf.hajdbc.util.reflect.Methods;
+import org.hajdbc.invocation.InvocationStrategies;
+import org.hajdbc.invocation.InvocationStrategy;
+import org.hajdbc.util.reflect.Methods;
 
 /**
  * @author Paul Ferraro
@@ -42,7 +42,7 @@ public class DataSourceInvocationHandler extends CommonDataSourceInvocationHandl
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.sql.CommonDataSourceInvocationHandler#getInvocationStrategy(javax.sql.CommonDataSource, java.lang.reflect.Method, java.lang.Object[])
+	 * @see org.hajdbc.sql.CommonDataSourceInvocationHandler#getInvocationStrategy(javax.sql.CommonDataSource, java.lang.reflect.Method, java.lang.Object[])
 	 */
 	@Override
 	protected InvocationStrategy getInvocationStrategy(DataSource dataSource, Method method, Object... parameters) throws SQLException

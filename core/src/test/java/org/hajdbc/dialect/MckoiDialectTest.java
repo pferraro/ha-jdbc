@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import java.sql.SQLException;
 
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.dialect.mckoi.MckoiDialectFactory;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.dialect.mckoi.MckoiDialectFactory;
 
 import static org.junit.Assert.*;
 
@@ -37,7 +37,7 @@ public class MckoiDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
 	 */
 	@Override
 	public void getSequenceSupport()
@@ -47,7 +47,7 @@ public class MckoiDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#parseSequence()
+	 * @see org.hajdbc.dialect.StandardDialectTest#parseSequence()
 	 */
 	@Override
 	public void parseSequence() throws SQLException

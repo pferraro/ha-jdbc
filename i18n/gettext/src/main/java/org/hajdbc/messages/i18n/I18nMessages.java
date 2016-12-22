@@ -15,10 +15,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.messages.i18n;
+package org.hajdbc.messages.i18n;
 
-import net.sf.hajdbc.messages.simple.SimpleMessages;
-
+import org.hajdbc.messages.simple.SimpleMessages;
 import org.xnap.commons.i18n.I18n;
 import org.xnap.commons.i18n.I18nFactory;
 

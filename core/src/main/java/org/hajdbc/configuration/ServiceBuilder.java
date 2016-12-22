@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.configuration;
+package org.hajdbc.configuration;
 
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
@@ -24,12 +24,13 @@ import java.beans.PropertyEditor;
 import java.beans.PropertyEditorManager;
 import java.lang.reflect.InvocationTargetException;
 import java.util.AbstractMap.SimpleImmutableEntry;
+
+import org.hajdbc.Identifiable;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import net.sf.hajdbc.Identifiable;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
 
 public class ServiceBuilder<T extends Identifiable> extends SimpleServiceBuilder<T> implements PropertiesBuilder<T>
 {

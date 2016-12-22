@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.balancer.load;
+package org.hajdbc.balancer.load;
 
 import java.util.Collection;
 import java.util.Comparator;
@@ -28,10 +28,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.balancer.AbstractBalancer;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.util.Collections;
+import org.hajdbc.Database;
+import org.hajdbc.balancer.AbstractBalancer;
+import org.hajdbc.invocation.Invoker;
+import org.hajdbc.util.Collections;
 
 /**
  * Balancer implementation whose {@link #next()} implementation returns the database with the least load.
@@ -101,7 +101,7 @@ public class LoadBalancer<Z, D extends Database<Z>> extends AbstractBalancer<Z, 
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.Balancer#primary()
+	 * @see org.hajdbc.balancer.Balancer#primary()
 	 */
 	@Override
 	public D primary()
@@ -118,7 +118,7 @@ public class LoadBalancer<Z, D extends Database<Z>> extends AbstractBalancer<Z, 
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.AbstractBalancer#getDatabases()
+	 * @see org.hajdbc.balancer.AbstractBalancer#getDatabases()
 	 */
 	@Override
 	protected Set<D> getDatabases()
@@ -276,7 +276,7 @@ public class LoadBalancer<Z, D extends Database<Z>> extends AbstractBalancer<Z, 
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.Balancer#next()
+	 * @see org.hajdbc.balancer.Balancer#next()
 	 */
 	@Override
 	public D next()
@@ -327,7 +327,7 @@ public class LoadBalancer<Z, D extends Database<Z>> extends AbstractBalancer<Z, 
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.balancer.Balancer#invoke(net.sf.hajdbc.invocation.Invoker, net.sf.hajdbc.Database, java.lang.Object)
+	 * @see org.hajdbc.balancer.Balancer#invoke(org.hajdbc.invocation.Invoker, org.hajdbc.Database, java.lang.Object)
 	 */
 	@Override
 	public <T, R, E extends Exception> R invoke(Invoker<Z, D, T, R, E> invoker, D database, T object) throws E

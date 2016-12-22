@@ -1,7 +1,7 @@
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
 
 public interface ProxyContext<Z, D extends Database<Z>>
 {

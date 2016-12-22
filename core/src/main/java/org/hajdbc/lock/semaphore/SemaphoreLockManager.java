@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.lock.semaphore;
+package org.hajdbc.lock.semaphore;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -25,7 +25,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 
-import net.sf.hajdbc.lock.LockManager;
+import org.hajdbc.lock.LockManager;
 
 /**
  * @author Paul Ferraro
@@ -42,7 +42,7 @@ public class SemaphoreLockManager implements LockManager
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.lock.LockManager#readLock(java.lang.String)
+	 * @see org.hajdbc.lock.LockManager#readLock(java.lang.String)
 	 */
 	@Override
 	public Lock readLock(String object)
@@ -53,7 +53,7 @@ public class SemaphoreLockManager implements LockManager
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.lock.LockManager#writeLock(java.lang.String)
+	 * @see org.hajdbc.lock.LockManager#writeLock(java.lang.String)
 	 */
 	@Override
 	public Lock writeLock(String object)
@@ -166,7 +166,7 @@ public class SemaphoreLockManager implements LockManager
 	}
 
 	/**
-	 * @see net.sf.hajdbc.Lifecycle#start()
+	 * @see org.hajdbc.Lifecycle#start()
 	 */
 	@Override
 	public void start()
@@ -175,7 +175,7 @@ public class SemaphoreLockManager implements LockManager
 	}
 
 	/**
-	 * @see net.sf.hajdbc.Lifecycle#stop()
+	 * @see org.hajdbc.Lifecycle#stop()
 	 */
 	@Override
 	public void stop()

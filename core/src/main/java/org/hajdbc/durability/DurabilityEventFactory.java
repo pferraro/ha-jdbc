@@ -1,6 +1,6 @@
-package net.sf.hajdbc.durability;
+package org.hajdbc.durability;
 
-import net.sf.hajdbc.ExceptionType;
+import org.hajdbc.ExceptionType;
 
 public interface DurabilityEventFactory
 {

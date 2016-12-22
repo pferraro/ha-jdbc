@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.codec.base64;
+package org.hajdbc.codec.base64;
 
 import java.sql.SQLException;
 import java.util.Base64;
 
-import net.sf.hajdbc.codec.AbstractCodec;
-import net.sf.hajdbc.codec.Codec;
-import net.sf.hajdbc.util.Strings;
+import org.hajdbc.codec.AbstractCodec;
+import org.hajdbc.codec.Codec;
+import org.hajdbc.util.Strings;
 
 /**
  * Codec that uses base-64 encoding/decoding.
@@ -40,7 +40,7 @@ public class Base64CodecFactory extends AbstractCodec
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.codec.Codec#decode(java.lang.String)
+	 * @see org.hajdbc.codec.Codec#decode(java.lang.String)
 	 */
 	@Override
 	public String decode(String value)
@@ -50,7 +50,7 @@ public class Base64CodecFactory extends AbstractCodec
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.codec.Codec#encode(java.lang.String)
+	 * @see org.hajdbc.codec.Codec#encode(java.lang.String)
 	 */
 	@Override
 	public String encode(String value)

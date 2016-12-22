@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect.mysql;
+package org.hajdbc.dialect.mysql;
 
 import java.io.File;
 import java.sql.DatabaseMetaData;
@@ -26,13 +26,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DumpRestoreSupport;
-import net.sf.hajdbc.codec.Decoder;
-import net.sf.hajdbc.dialect.ConnectionProperties;
-import net.sf.hajdbc.dialect.StandardDialect;
-import net.sf.hajdbc.util.Processes;
-import net.sf.hajdbc.util.Strings;
+import org.hajdbc.Database;
+import org.hajdbc.DumpRestoreSupport;
+import org.hajdbc.codec.Decoder;
+import org.hajdbc.dialect.ConnectionProperties;
+import org.hajdbc.dialect.StandardDialect;
+import org.hajdbc.util.Processes;
+import org.hajdbc.util.Strings;
 
 /**
  * Dialect for <a href="http://www.mysql.com/products/database/mysql/">MySQL</a>
@@ -73,7 +73,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#vendorPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
 	 */
 	@Override
 	protected String vendorPattern()
@@ -88,7 +88,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getDefaultSchemas(java.sql.DatabaseMetaData)
+	 * @see org.hajdbc.dialect.StandardDialect#getDefaultSchemas(java.sql.DatabaseMetaData)
 	 */
 	@Override
 	public List<String> getDefaultSchemas(DatabaseMetaData metaData) throws SQLException
@@ -98,7 +98,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 
 	/**
 	 * Deferrability clause is not supported.
-	 * @see net.sf.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
 	 */
 	@Override
 	protected String createForeignKeyConstraintFormat()
@@ -107,7 +107,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#createUniqueConstraintFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#createUniqueConstraintFormat()
 	 */
 	@Override
 	protected String createUniqueConstraintFormat()
@@ -116,7 +116,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#dropForeignKeyConstraintFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#dropForeignKeyConstraintFormat()
 	 */
 	@Override
 	protected String dropForeignKeyConstraintFormat()
@@ -125,7 +125,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#dropUniqueConstraintFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#dropUniqueConstraintFormat()
 	 */
 	@Override
 	protected String dropUniqueConstraintFormat()
@@ -134,7 +134,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#alterIdentityColumnFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#alterIdentityColumnFormat()
 	 */
 	@Override
 	protected String alterIdentityColumnFormat()
@@ -143,7 +143,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentDatePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentDatePattern()
 	 */
 	@Override
 	protected String currentDatePattern()
@@ -152,7 +152,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentTimePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentTimePattern()
 	 */
 	@Override
 	protected String currentTimePattern()
@@ -161,7 +161,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentTimestampPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentTimestampPattern()
 	 */
 	@Override
 	protected String currentTimestampPattern()
@@ -170,7 +170,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#dateLiteralFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#dateLiteralFormat()
 	 */
 	@Override
 	protected String dateLiteralFormat()
@@ -179,7 +179,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#timeLiteralFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#timeLiteralFormat()
 	 */
 	@Override
 	protected String timeLiteralFormat()
@@ -188,7 +188,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#timestampLiteralFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#timestampLiteralFormat()
 	 */
 	@Override
 	protected String timestampLiteralFormat()
@@ -198,7 +198,7 @@ public class MySQLDialect extends StandardDialect implements DumpRestoreSupport
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getDumpRestoreSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getDumpRestoreSupport()
 	 */
 	@Override
 	public DumpRestoreSupport getDumpRestoreSupport()

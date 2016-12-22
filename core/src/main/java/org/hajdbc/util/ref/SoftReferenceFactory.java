@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.util.ref;
+package org.hajdbc.util.ref;
 
 import java.lang.ref.Reference;
 import java.lang.ref.SoftReference;
@@ -34,7 +34,7 @@ public class SoftReferenceFactory implements ReferenceFactory
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.util.ref.ReferenceFactory#createReference(java.lang.Object)
+	 * @see org.hajdbc.util.ref.ReferenceFactory#createReference(java.lang.Object)
 	 */
 	@Override
 	public <T> Reference<T> createReference(T object)

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.util;
+package org.hajdbc.util;
 
 import java.security.AccessController;
 import java.security.PrivilegedAction;

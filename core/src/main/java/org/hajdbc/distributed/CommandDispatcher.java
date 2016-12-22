@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.distributed;
+package org.hajdbc.distributed;
 
 import java.util.Map;
 
-import net.sf.hajdbc.Lifecycle;
+import org.hajdbc.Lifecycle;
 
 /**
  * RPC dispatcher that uses the command pattern.

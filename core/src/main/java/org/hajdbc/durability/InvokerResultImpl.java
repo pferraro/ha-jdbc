@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package org.hajdbc.durability;
 
 import java.io.Serializable;
 
@@ -43,7 +43,7 @@ public class InvokerResultImpl implements InvokerResult, Serializable
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.InvokerResult#getValue()
+	 * @see org.hajdbc.durability.InvokerResult#getValue()
 	 */
 	@Override
 	public Object getValue()
@@ -53,7 +53,7 @@ public class InvokerResultImpl implements InvokerResult, Serializable
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.durability.InvokerResult#getException()
+	 * @see org.hajdbc.durability.InvokerResult#getException()
 	 */
 	@Override
 	public Exception getException()

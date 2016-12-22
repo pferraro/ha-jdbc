@@ -15,17 +15,17 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql.io;
+package org.hajdbc.sql.io;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.sql.SQLException;
 import java.util.Map;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.invocation.Invoker;
-import net.sf.hajdbc.sql.ProxyFactory;
-import net.sf.hajdbc.sql.ProxyFactoryFactory;
+import org.hajdbc.Database;
+import org.hajdbc.invocation.Invoker;
+import org.hajdbc.sql.ProxyFactory;
+import org.hajdbc.sql.ProxyFactoryFactory;
 
 /**
  * 

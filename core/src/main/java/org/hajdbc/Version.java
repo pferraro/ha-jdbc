@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc;
+package org.hajdbc;
 
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
-import net.sf.hajdbc.util.Strings;
+import org.hajdbc.util.Strings;
 
 /**
  * @author Paul Ferraro

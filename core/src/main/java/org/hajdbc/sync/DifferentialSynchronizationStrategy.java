@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sync;
+package org.hajdbc.sync;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,19 +31,19 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.regex.Pattern;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.ExceptionType;
-import net.sf.hajdbc.SynchronizationStrategy;
-import net.sf.hajdbc.TableProperties;
-import net.sf.hajdbc.UniqueConstraint;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.util.Objects;
-import net.sf.hajdbc.util.Strings;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.ExceptionType;
+import org.hajdbc.SynchronizationStrategy;
+import org.hajdbc.TableProperties;
+import org.hajdbc.UniqueConstraint;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
+import org.hajdbc.util.Objects;
+import org.hajdbc.util.Strings;
 
 /**
  * Database-independent synchronization strategy that only updates differences between two databases.
@@ -97,7 +97,7 @@ public class DifferentialSynchronizationStrategy implements SynchronizationStrat
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.SynchronizationStrategy#init(net.sf.hajdbc.DatabaseCluster)
+	 * @see org.hajdbc.SynchronizationStrategy#init(org.hajdbc.DatabaseCluster)
 	 */
 	@Override
 	public <Z, D extends Database<Z>> void init(DatabaseCluster<Z, D> cluster)
@@ -107,7 +107,7 @@ public class DifferentialSynchronizationStrategy implements SynchronizationStrat
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.SynchronizationStrategy#destroy(net.sf.hajdbc.DatabaseCluster)
+	 * @see org.hajdbc.SynchronizationStrategy#destroy(org.hajdbc.DatabaseCluster)
 	 */
 	@Override
 	public <Z, D extends Database<Z>> void destroy(DatabaseCluster<Z, D> cluster)
@@ -131,10 +131,6 @@ public class DifferentialSynchronizationStrategy implements SynchronizationStrat
 		support.restoreForeignKeys();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.SynchronizationStrategy#synchronize(net.sf.hajdbc.sync.SynchronizationContext)
-	 */
 	@Override
 	public <Z, D extends Database<Z>> void synchronize(SynchronizationContext<Z, D> context, TableProperties table) throws SQLException
 	{

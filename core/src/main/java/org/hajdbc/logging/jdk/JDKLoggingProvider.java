@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.logging.jdk;
+package org.hajdbc.logging.jdk;
 
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggingProvider;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggingProvider;
 
 /**
  * <a href="http://java.sun.com/javase/6/docs/technotes/guides/logging/overview.html">java.util.logging</a>-based service provider.
@@ -28,7 +28,7 @@ public class JDKLoggingProvider implements LoggingProvider
 {
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.LoggingProvider#getLogger(java.lang.Class)
+	 * @see org.hajdbc.logging.LoggingProvider#getLogger(java.lang.Class)
 	 */
 	@Override
 	public Logger getLogger(Class<?> targetClass)
@@ -38,7 +38,7 @@ public class JDKLoggingProvider implements LoggingProvider
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.LoggingProvider#getName()
+	 * @see org.hajdbc.logging.LoggingProvider#getName()
 	 */
 	@Override
 	public String getName()
@@ -48,7 +48,7 @@ public class JDKLoggingProvider implements LoggingProvider
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.logging.LoggingProvider#isEnabled()
+	 * @see org.hajdbc.logging.LoggingProvider#isEnabled()
 	 */
 	@Override
 	public boolean isEnabled()

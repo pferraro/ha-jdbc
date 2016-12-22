@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect.postgresql;
+package org.hajdbc.dialect.postgresql;
 
 import java.io.File;
 import java.sql.DatabaseMetaData;
@@ -30,17 +30,17 @@ import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import net.sf.hajdbc.ColumnProperties;
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DumpRestoreSupport;
-import net.sf.hajdbc.IdentityColumnSupport;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.TriggerSupport;
-import net.sf.hajdbc.codec.Decoder;
-import net.sf.hajdbc.dialect.ConnectionProperties;
-import net.sf.hajdbc.dialect.StandardDialect;
-import net.sf.hajdbc.util.Processes;
-import net.sf.hajdbc.util.Strings;
+import org.hajdbc.ColumnProperties;
+import org.hajdbc.Database;
+import org.hajdbc.DumpRestoreSupport;
+import org.hajdbc.IdentityColumnSupport;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.TriggerSupport;
+import org.hajdbc.codec.Decoder;
+import org.hajdbc.dialect.ConnectionProperties;
+import org.hajdbc.dialect.StandardDialect;
+import org.hajdbc.util.Processes;
+import org.hajdbc.util.Strings;
 
 /**
  * Dialect for <a href="http://postgresql.org">PostgreSQL</a>.
@@ -78,7 +78,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#vendorPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#vendorPattern()
 	 */
 	@Override
 	protected String vendorPattern()
@@ -89,7 +89,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 	/**
 	 * PostgreSQL uses a schema search path to locate unqualified table names.
 	 * The default search path is [$user,public], where $user is the current user.
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getDefaultSchemas(java.sql.DatabaseMetaData)
+	 * @see org.hajdbc.dialect.StandardDialect#getDefaultSchemas(java.sql.DatabaseMetaData)
 	 */
 	@Override
 	public List<String> getDefaultSchemas(DatabaseMetaData metaData) throws SQLException
@@ -118,7 +118,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 	 * PostgreSQL uses the native type OID to identify BLOBs.
 	 * However the JDBC driver incomprehensibly maps OIDs to INTEGERs.
 	 * The PostgreSQL JDBC folks claim this intentional.
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getColumnType(net.sf.hajdbc.ColumnProperties)
+	 * @see org.hajdbc.dialect.StandardDialect#getColumnType(org.hajdbc.ColumnProperties)
 	 */
 	@Override
 	public int getColumnType(ColumnProperties properties)
@@ -144,7 +144,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getSequenceSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getSequenceSupport()
 	 */
 	@Override
 	public SequenceSupport getSequenceSupport()
@@ -154,7 +154,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getIdentityColumnSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getIdentityColumnSupport()
 	 */
 	@Override
 	public IdentityColumnSupport getIdentityColumnSupport()
@@ -163,7 +163,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#truncateTableFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#truncateTableFormat()
 	 */
 	@Override
 	protected String truncateTableFormat()
@@ -172,7 +172,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#sequencePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#sequencePattern()
 	 */
 	@Override
 	protected String sequencePattern()
@@ -181,7 +181,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#nextSequenceValueFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#nextSequenceValueFormat()
 	 */
 	@Override
 	protected String nextSequenceValueFormat()
@@ -190,7 +190,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#alterIdentityColumnFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#alterIdentityColumnFormat()
 	 */
 	@Override
 	protected String alterIdentityColumnFormat()
@@ -199,7 +199,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#currentTimestampPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#currentTimestampPattern()
 	 */
 	@Override
 	protected String currentTimestampPattern()
@@ -208,7 +208,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 	}
 
 	/**
-	 * @see net.sf.hajdbc.dialect.StandardDialect#randomPattern()
+	 * @see org.hajdbc.dialect.StandardDialect#randomPattern()
 	 */
 	@Override
 	protected String randomPattern()
@@ -218,7 +218,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 
 	/**
 	 * Recognizes FOR SHARE and FOR UPDATE.
-	 * @see net.sf.hajdbc.dialect.StandardDialect#selectForUpdatePattern()
+	 * @see org.hajdbc.dialect.StandardDialect#selectForUpdatePattern()
 	 */
 	@Override
 	protected String selectForUpdatePattern()
@@ -228,7 +228,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getDumpRestoreSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getDumpRestoreSupport()
 	 */
 	@Override
 	public DumpRestoreSupport getDumpRestoreSupport()
@@ -298,7 +298,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#getTriggerSupport()
+	 * @see org.hajdbc.dialect.StandardDialect#getTriggerSupport()
 	 */
 	@Override
 	public TriggerSupport getTriggerSupport()
@@ -308,7 +308,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#createForeignKeyConstraintFormat()
 	 */
 	@Override
 	protected String createTriggerFormat()
@@ -318,7 +318,7 @@ public class PostgreSQLDialect extends StandardDialect implements DumpRestoreSup
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialect#dropTriggerFormat()
+	 * @see org.hajdbc.dialect.StandardDialect#dropTriggerFormat()
 	 */
 	@Override
 	protected String dropTriggerFormat()

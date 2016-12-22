@@ -1,12 +1,12 @@
-package net.sf.hajdbc.invocation;
+package org.hajdbc.invocation;
 
 import java.util.SortedMap;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.sql.ProxyFactory;
+import org.hajdbc.Database;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
+import org.hajdbc.sql.ProxyFactory;
 
 public enum InvocationStrategies implements InvocationStrategy
 {

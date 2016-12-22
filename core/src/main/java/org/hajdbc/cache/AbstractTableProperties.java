@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache;
+package org.hajdbc.cache;
 
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.Map;
 
-import net.sf.hajdbc.AbstractNamed;
-import net.sf.hajdbc.ColumnProperties;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.TableProperties;
+import org.hajdbc.AbstractNamed;
+import org.hajdbc.ColumnProperties;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.TableProperties;
 
 
 /**
@@ -37,7 +37,7 @@ public abstract class AbstractTableProperties extends AbstractNamed<QualifiedNam
 	}
 
 	/**
-	 * @see net.sf.hajdbc.TableProperties#getColumns()
+	 * @see org.hajdbc.TableProperties#getColumns()
 	 */
 	@Override
 	public final Collection<String> getColumns() throws SQLException
@@ -46,7 +46,7 @@ public abstract class AbstractTableProperties extends AbstractNamed<QualifiedNam
 	}
 
 	/**
-	 * @see net.sf.hajdbc.TableProperties#getColumnProperties(java.lang.String)
+	 * @see org.hajdbc.TableProperties#getColumnProperties(java.lang.String)
 	 */
 	@Override
 	public final ColumnProperties getColumnProperties(String column) throws SQLException

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc;
+package org.hajdbc;
 
 import java.sql.SQLException;
 
@@ -34,7 +34,7 @@ public class SimpleDatabaseClusterConfigurationFactory<Z, D extends Database<Z>>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseClusterConfigurationListener#added(net.sf.hajdbc.Database, net.sf.hajdbc.DatabaseClusterConfiguration)
+	 * @see org.hajdbc.DatabaseClusterConfigurationListener#added(org.hajdbc.Database, org.hajdbc.DatabaseClusterConfiguration)
 	 */
 	@Override
 	public void added(D database, DatabaseClusterConfiguration<Z, D> configuration)
@@ -43,7 +43,7 @@ public class SimpleDatabaseClusterConfigurationFactory<Z, D extends Database<Z>>
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseClusterConfigurationListener#removed(net.sf.hajdbc.Database, net.sf.hajdbc.DatabaseClusterConfiguration)
+	 * @see org.hajdbc.DatabaseClusterConfigurationListener#removed(org.hajdbc.Database, org.hajdbc.DatabaseClusterConfiguration)
 	 */
 	@Override
 	public void removed(D database, DatabaseClusterConfiguration<Z, D> configuration)

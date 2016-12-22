@@ -1,4 +1,4 @@
-package net.sf.hajdbc.io;
+package org.hajdbc.io;
 
 import java.io.ByteArrayInputStream;
 import java.io.CharArrayReader;
@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.io.Reader;
 import java.util.Random;
 
+import org.hajdbc.io.InputSinkChannel;
+import org.hajdbc.io.InputSinkStrategy;
 import org.junit.Assert;
 import org.junit.Test;
 

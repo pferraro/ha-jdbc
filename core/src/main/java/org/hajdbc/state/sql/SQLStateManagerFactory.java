@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.state.sql;
+package org.hajdbc.state.sql;
 
 import java.sql.Driver;
 import java.sql.DriverManager;
@@ -23,20 +23,20 @@ import java.sql.SQLException;
 import java.text.MessageFormat;
 import java.util.Collections;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.DatabaseCluster;
-import net.sf.hajdbc.logging.Level;
-import net.sf.hajdbc.logging.Logger;
-import net.sf.hajdbc.logging.LoggerFactory;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
-import net.sf.hajdbc.pool.generic.GenericObjectPoolConfiguration;
-import net.sf.hajdbc.pool.generic.GenericObjectPoolFactory;
-import net.sf.hajdbc.sql.DriverDatabase;
-import net.sf.hajdbc.sql.DriverDatabaseBuilder;
-import net.sf.hajdbc.state.StateManager;
-import net.sf.hajdbc.state.StateManagerFactory;
-import net.sf.hajdbc.util.Strings;
+import org.hajdbc.Database;
+import org.hajdbc.DatabaseCluster;
+import org.hajdbc.logging.Level;
+import org.hajdbc.logging.Logger;
+import org.hajdbc.logging.LoggerFactory;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
+import org.hajdbc.pool.generic.GenericObjectPoolConfiguration;
+import org.hajdbc.pool.generic.GenericObjectPoolFactory;
+import org.hajdbc.sql.DriverDatabase;
+import org.hajdbc.sql.DriverDatabaseBuilder;
+import org.hajdbc.state.StateManager;
+import org.hajdbc.state.StateManagerFactory;
+import org.hajdbc.util.Strings;
 
 /**
  * @author Paul Ferraro
@@ -105,7 +105,7 @@ public class SQLStateManagerFactory extends GenericObjectPoolConfiguration imple
 	/**
 	 * {@inheritDoc}
 	 * @throws SQLException 
-	 * @see net.sf.hajdbc.state.StateManagerFactory#createStateManager(net.sf.hajdbc.DatabaseCluster)
+	 * @see org.hajdbc.state.StateManagerFactory#createStateManager(org.hajdbc.DatabaseCluster)
 	 */
 	@Override
 	public <Z, D extends Database<Z>> StateManager createStateManager(DatabaseCluster<Z, D> cluster) throws SQLException

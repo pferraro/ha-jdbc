@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.balancer;
+package org.hajdbc.balancer;
 
 import java.io.Serializable;
 import java.util.Set;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.Identifiable;
+import org.hajdbc.Database;
+import org.hajdbc.Identifiable;
 
 /**
  * Factory for creating balancers.

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
@@ -28,10 +28,10 @@ import java.util.Properties;
 
 import javax.sql.CommonDataSource;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.Locality;
-import net.sf.hajdbc.messages.Messages;
-import net.sf.hajdbc.messages.MessagesFactory;
+import org.hajdbc.Database;
+import org.hajdbc.Locality;
+import org.hajdbc.messages.Messages;
+import org.hajdbc.messages.MessagesFactory;
 
 public abstract class CommonDataSourceDatabaseBuilder<Z extends CommonDataSource, D extends Database<Z>> extends AbstractDatabaseBuilder<Z, D>
 {

@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.balancer;
+package org.hajdbc.balancer;
 
 import java.util.Set;
 
-import net.sf.hajdbc.Database;
-import net.sf.hajdbc.invocation.Invoker;
+import org.hajdbc.Database;
+import org.hajdbc.invocation.Invoker;
 
 /**
  * The set of active databases and a strategy for determining the next balancing target.

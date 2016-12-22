@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.cache;
+package org.hajdbc.cache;
 
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
@@ -25,12 +25,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import net.sf.hajdbc.DatabaseProperties;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.QualifiedNameFactory;
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.TableProperties;
-import net.sf.hajdbc.dialect.Dialect;
+import org.hajdbc.DatabaseProperties;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.QualifiedNameFactory;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.TableProperties;
+import org.hajdbc.dialect.Dialect;
 
 /**
  * @author Paul Ferraro
@@ -50,7 +50,7 @@ public abstract class AbstractDatabaseProperties implements DatabaseProperties
 	}
 	
 	/**
-	 * @see net.sf.hajdbc.DatabaseProperties#supportsSelectForUpdate()
+	 * @see org.hajdbc.DatabaseProperties#supportsSelectForUpdate()
 	 */
 	@Override
 	public final boolean supportsSelectForUpdate()
@@ -60,7 +60,7 @@ public abstract class AbstractDatabaseProperties implements DatabaseProperties
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseProperties#locatorsUpdateCopy()
+	 * @see org.hajdbc.DatabaseProperties#locatorsUpdateCopy()
 	 */
 	@Override
 	public boolean locatorsUpdateCopy()
@@ -69,7 +69,7 @@ public abstract class AbstractDatabaseProperties implements DatabaseProperties
 	}
 
 	/**
-	 * @see net.sf.hajdbc.DatabaseProperties#getTables()
+	 * @see org.hajdbc.DatabaseProperties#getTables()
 	 */
 	@Override
 	public final Collection<TableProperties> getTables() throws SQLException
@@ -80,7 +80,7 @@ public abstract class AbstractDatabaseProperties implements DatabaseProperties
 	protected abstract Map<QualifiedName, TableProperties> tables() throws SQLException;
 
 	/**
-	 * @see net.sf.hajdbc.DatabaseProperties#getSequences()
+	 * @see org.hajdbc.DatabaseProperties#getSequences()
 	 */
 	@Override
 	public final Collection<SequenceProperties> getSequences() throws SQLException
@@ -91,7 +91,7 @@ public abstract class AbstractDatabaseProperties implements DatabaseProperties
 	protected abstract Map<QualifiedName, SequenceProperties> sequences() throws SQLException;
 	
 	/**
-	 * @see net.sf.hajdbc.DatabaseProperties#findTable(java.lang.String)
+	 * @see org.hajdbc.DatabaseProperties#findTable(java.lang.String)
 	 */
 	@Override
 	public final TableProperties findTable(String table) throws SQLException
@@ -100,7 +100,7 @@ public abstract class AbstractDatabaseProperties implements DatabaseProperties
 	}
 
 	/**
-	 * @see net.sf.hajdbc.DatabaseProperties#findSequence(java.lang.String)
+	 * @see org.hajdbc.DatabaseProperties#findSequence(java.lang.String)
 	 */
 	@Override
 	public final SequenceProperties findSequence(String sequence) throws SQLException
@@ -130,7 +130,7 @@ public abstract class AbstractDatabaseProperties implements DatabaseProperties
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.DatabaseProperties#findType(int, int[])
+	 * @see org.hajdbc.DatabaseProperties#findType(int, int[])
 	 */
 	@Override
 	public String findType(int precision, int... types) throws SQLException

@@ -15,23 +15,23 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc;
+package org.hajdbc;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ThreadFactory;
 
-import net.sf.hajdbc.balancer.BalancerFactory;
-import net.sf.hajdbc.cache.DatabaseMetaDataCacheFactory;
-import net.sf.hajdbc.codec.DecoderFactory;
-import net.sf.hajdbc.dialect.DialectFactory;
-import net.sf.hajdbc.distributed.CommandDispatcherFactory;
-import net.sf.hajdbc.durability.DurabilityFactory;
-import net.sf.hajdbc.io.InputSinkProvider;
-import net.sf.hajdbc.lock.LockManagerFactory;
-import net.sf.hajdbc.management.MBeanRegistrarFactory;
-import net.sf.hajdbc.state.StateManagerFactory;
-import net.sf.hajdbc.util.concurrent.cron.CronExpression;
+import org.hajdbc.balancer.BalancerFactory;
+import org.hajdbc.cache.DatabaseMetaDataCacheFactory;
+import org.hajdbc.codec.DecoderFactory;
+import org.hajdbc.dialect.DialectFactory;
+import org.hajdbc.distributed.CommandDispatcherFactory;
+import org.hajdbc.durability.DurabilityFactory;
+import org.hajdbc.io.InputSinkProvider;
+import org.hajdbc.lock.LockManagerFactory;
+import org.hajdbc.management.MBeanRegistrarFactory;
+import org.hajdbc.state.StateManagerFactory;
+import org.hajdbc.util.concurrent.cron.CronExpression;
 
 /**
  * @author Paul Ferraro

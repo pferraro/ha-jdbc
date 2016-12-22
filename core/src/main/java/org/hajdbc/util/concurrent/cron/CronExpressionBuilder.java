@@ -1,8 +1,8 @@
-package net.sf.hajdbc.util.concurrent.cron;
+package org.hajdbc.util.concurrent.cron;
 
 import java.text.ParseException;
 
-import net.sf.hajdbc.configuration.Builder;
+import org.hajdbc.configuration.Builder;
 
 public class CronExpressionBuilder implements Builder<CronExpression>
 {

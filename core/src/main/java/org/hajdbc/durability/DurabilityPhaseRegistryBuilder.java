@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.durability;
+package org.hajdbc.durability;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.sf.hajdbc.util.Builder;
-import net.sf.hajdbc.util.SimpleStaticRegistry;
-import net.sf.hajdbc.util.StaticRegistry;
+import org.hajdbc.util.Builder;
+import org.hajdbc.util.SimpleStaticRegistry;
+import org.hajdbc.util.StaticRegistry;
 
 /**
  * @author Paul Ferraro

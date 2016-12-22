@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.tx;
+package org.hajdbc.tx;
 
 import java.nio.ByteBuffer;
 import java.util.Random;
@@ -32,7 +32,7 @@ public class XidTransactionIdentifierFactory implements TransactionIdentifierFac
 	/**
 	 * {@inheritDoc}
 	 * Only used for testing purposes.
-	 * @see net.sf.hajdbc.tx.TransactionIdentifierFactory#createTransactionIdentifier()
+	 * @see org.hajdbc.tx.TransactionIdentifierFactory#createTransactionIdentifier()
 	 */
 	@Override
 	public Xid createTransactionIdentifier()
@@ -69,7 +69,7 @@ public class XidTransactionIdentifierFactory implements TransactionIdentifierFac
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.tx.TransactionIdentifierFactory#serialize(java.lang.Object)
+	 * @see org.hajdbc.tx.TransactionIdentifierFactory#serialize(java.lang.Object)
 	 */
 	@Override
 	public byte[] serialize(Xid xid)
@@ -79,7 +79,7 @@ public class XidTransactionIdentifierFactory implements TransactionIdentifierFac
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.tx.TransactionIdentifierFactory#deserialize(byte[])
+	 * @see org.hajdbc.tx.TransactionIdentifierFactory#deserialize(byte[])
 	 */
 	@Override
 	public Xid deserialize(byte[] bytes)
@@ -115,7 +115,7 @@ public class XidTransactionIdentifierFactory implements TransactionIdentifierFac
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.tx.TransactionIdentifierFactory#size()
+	 * @see org.hajdbc.tx.TransactionIdentifierFactory#size()
 	 */
 	@Override
 	public int size()

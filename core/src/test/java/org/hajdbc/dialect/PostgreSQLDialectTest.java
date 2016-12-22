@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect;
+package org.hajdbc.dialect;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -26,12 +26,12 @@ import java.sql.Types;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import net.sf.hajdbc.ColumnProperties;
-import net.sf.hajdbc.QualifiedName;
-import net.sf.hajdbc.SequenceProperties;
-import net.sf.hajdbc.SequenceSupport;
-import net.sf.hajdbc.TableProperties;
-import net.sf.hajdbc.dialect.postgresql.PostgreSQLDialectFactory;
+import org.hajdbc.ColumnProperties;
+import org.hajdbc.QualifiedName;
+import org.hajdbc.SequenceProperties;
+import org.hajdbc.SequenceSupport;
+import org.hajdbc.TableProperties;
+import org.hajdbc.dialect.postgresql.PostgreSQLDialectFactory;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -49,7 +49,7 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getSequenceSupport()
 	 */
 	@Override
 	public void getSequenceSupport()
@@ -59,7 +59,7 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getIdentityColumnSupport()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getIdentityColumnSupport()
 	 */
 	@Override
 	public void getIdentityColumnSupport()
@@ -69,7 +69,7 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getColumnType()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getColumnType()
 	 */
 	@Override
 	public void getColumnType() throws SQLException
@@ -92,7 +92,7 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getTruncateTableSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getTruncateTableSQL()
 	 */
 	@Override
 	public void getTruncateTableSQL() throws SQLException
@@ -110,7 +110,7 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getNextSequenceValueSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getNextSequenceValueSQL()
 	 */
 	@Override
 	public void getNextSequenceValueSQL() throws SQLException
@@ -128,7 +128,7 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#parseSequence()
+	 * @see org.hajdbc.dialect.StandardDialectTest#parseSequence()
 	 */
 	@Override
 	public void parseSequence() throws SQLException
@@ -144,7 +144,7 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getDefaultSchemas()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getDefaultSchemas()
 	 */
 	@Override
 	public void getDefaultSchemas() throws SQLException
@@ -175,7 +175,7 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 	
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#getAlterIdentityColumnSQL()
+	 * @see org.hajdbc.dialect.StandardDialectTest#getAlterIdentityColumnSQL()
 	 */
 	@Override
 	public void getAlterIdentityColumnSQL() throws SQLException
@@ -195,7 +195,7 @@ public class PostgreSQLDialectTest extends StandardDialectTest
 
 	/**
 	 * {@inheritDoc}
-	 * @see net.sf.hajdbc.dialect.StandardDialectTest#evaluateRand()
+	 * @see org.hajdbc.dialect.StandardDialectTest#evaluateRand()
 	 */
 	@Override
 	public void evaluateRand()

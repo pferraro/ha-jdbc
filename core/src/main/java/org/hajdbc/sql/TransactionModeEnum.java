@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.sql;
+package org.hajdbc.sql;
 
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 
-import net.sf.hajdbc.TransactionMode;
-import net.sf.hajdbc.util.concurrent.SynchronousExecutor;
+import org.hajdbc.TransactionMode;
+import org.hajdbc.util.concurrent.SynchronousExecutor;
 
 /**
  * @author Paul Ferraro

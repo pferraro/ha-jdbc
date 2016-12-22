@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.util.concurrent;
+package org.hajdbc.util.concurrent;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -34,7 +34,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
 
-import net.sf.hajdbc.util.Reversed;
+import org.hajdbc.util.Reversed;
 
 /**
  * Executor service that executes tasks in the caller thread.

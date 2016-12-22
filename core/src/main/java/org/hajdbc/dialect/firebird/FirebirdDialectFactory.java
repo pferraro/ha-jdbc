@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.dialect.firebird;
+package org.hajdbc.dialect.firebird;
 
-import net.sf.hajdbc.dialect.Dialect;
-import net.sf.hajdbc.dialect.DialectFactory;
+import org.hajdbc.dialect.Dialect;
+import org.hajdbc.dialect.DialectFactory;
 
 public class FirebirdDialectFactory implements DialectFactory
 {

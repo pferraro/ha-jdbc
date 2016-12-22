@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.hajdbc.util;
+package org.hajdbc.util;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -24,6 +24,7 @@ import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import org.hajdbc.util.Collections;
 import org.junit.Assert;
 import org.junit.Test;
 

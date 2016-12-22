@@ -14,7 +14,7 @@
  * under the License.
  * 
  */
-package net.sf.hajdbc.util.concurrent.cron;
+package org.hajdbc.util.concurrent.cron;
 
 import java.io.Serializable;
 import java.text.ParseException;
