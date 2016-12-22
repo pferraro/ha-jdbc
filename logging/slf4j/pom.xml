@@ -20,7 +20,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>io.ha-jdbc</groupId>
+		<groupId>org.ha-jdbc</groupId>
 		<artifactId>ha-jdbc-logging</artifactId>
 		<version>4.0.0-alpha-1-SNAPSHOT</version>
 	</parent>
