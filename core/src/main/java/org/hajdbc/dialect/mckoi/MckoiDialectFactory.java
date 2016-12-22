@@ -19,7 +19,9 @@ package org.hajdbc.dialect.mckoi;
 
 import org.hajdbc.dialect.Dialect;
 import org.hajdbc.dialect.DialectFactory;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(DialectFactory.class)
 public class MckoiDialectFactory implements DialectFactory
 {
 	private static final long serialVersionUID = -3028730694756617177L;

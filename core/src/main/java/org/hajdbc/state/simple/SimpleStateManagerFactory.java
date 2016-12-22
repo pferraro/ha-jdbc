@@ -21,7 +21,9 @@ import org.hajdbc.Database;
 import org.hajdbc.DatabaseCluster;
 import org.hajdbc.state.StateManager;
 import org.hajdbc.state.StateManagerFactory;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(StateManagerFactory.class)
 public class SimpleStateManagerFactory implements StateManagerFactory
 {
 	private static final long serialVersionUID = 4387061472532427110L;

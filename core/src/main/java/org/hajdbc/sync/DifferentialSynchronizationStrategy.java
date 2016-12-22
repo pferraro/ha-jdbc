@@ -44,6 +44,7 @@ import org.hajdbc.messages.Messages;
 import org.hajdbc.messages.MessagesFactory;
 import org.hajdbc.util.Objects;
 import org.hajdbc.util.Strings;
+import org.kohsuke.MetaInfServices;
 
 /**
  * Database-independent synchronization strategy that only updates differences between two databases.
@@ -71,6 +72,7 @@ import org.hajdbc.util.Strings;
  * </ol>
  * @author  Paul Ferraro
  */
+@MetaInfServices(SynchronizationStrategy.class)
 public class DifferentialSynchronizationStrategy implements SynchronizationStrategy, TableSynchronizationStrategy
 {
 	private static final long serialVersionUID = -2785092229503649831L;

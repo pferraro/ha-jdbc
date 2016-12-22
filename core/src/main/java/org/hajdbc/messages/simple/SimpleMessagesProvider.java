@@ -19,7 +19,9 @@ package org.hajdbc.messages.simple;
 
 import org.hajdbc.messages.Messages;
 import org.hajdbc.messages.MessagesProvider;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(MessagesProvider.class)
 public class SimpleMessagesProvider implements MessagesProvider
 {
 	@Override

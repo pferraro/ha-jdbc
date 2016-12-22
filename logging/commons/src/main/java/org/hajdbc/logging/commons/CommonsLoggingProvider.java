@@ -19,12 +19,14 @@ package org.hajdbc.logging.commons;
 
 import org.hajdbc.logging.Logger;
 import org.hajdbc.logging.LoggingProvider;
+import org.kohsuke.MetaInfServices;
 
 /**
  * <a href="Apache Commons">http://commons.apache.org/logging</a> logging service provider.
  * 
  * @author Paul Ferraro
  */
+@MetaInfServices(LoggingProvider.class)
 public class CommonsLoggingProvider implements LoggingProvider
 {
 	/**

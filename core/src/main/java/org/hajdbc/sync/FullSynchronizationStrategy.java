@@ -39,6 +39,7 @@ import org.hajdbc.logging.LoggerFactory;
 import org.hajdbc.messages.Messages;
 import org.hajdbc.messages.MessagesFactory;
 import org.hajdbc.util.Strings;
+import org.kohsuke.MetaInfServices;
 
 /**
  * Database-independent synchronization strategy that does full record transfer between two databases.
@@ -62,6 +63,7 @@ import org.hajdbc.util.Strings;
  * </ol>
  * @author  Paul Ferraro
  */
+@MetaInfServices(SynchronizationStrategy.class)
 public class FullSynchronizationStrategy implements SynchronizationStrategy, TableSynchronizationStrategy
 {
 	private static final long serialVersionUID = 9190347092842178162L;

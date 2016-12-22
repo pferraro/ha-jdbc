@@ -22,12 +22,15 @@ import java.util.Base64;
 
 import org.hajdbc.codec.AbstractCodec;
 import org.hajdbc.codec.Codec;
+import org.hajdbc.codec.CodecFactory;
 import org.hajdbc.util.Strings;
+import org.kohsuke.MetaInfServices;
 
 /**
  * Codec that uses base-64 encoding/decoding.
  * @author Paul Ferraro
  */
+@MetaInfServices(CodecFactory.class)
 public class Base64CodecFactory extends AbstractCodec
 {
 	private static final long serialVersionUID = -2286529406290006597L;

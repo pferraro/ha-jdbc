@@ -42,10 +42,12 @@ import org.hajdbc.logging.LoggerFactory;
 import org.hajdbc.messages.Messages;
 import org.hajdbc.messages.MessagesFactory;
 import org.hajdbc.xml.XMLDatabaseClusterConfigurationFactory;
+import org.kohsuke.MetaInfServices;
 
 /**
  * @author  Paul Ferraro
  */
+@MetaInfServices(java.sql.Driver.class)
 public class Driver extends AbstractDriver
 {
 	private static final Pattern URL_PATTERN = Pattern.compile("jdbc:ha-jdbc:(?://)?([^/]+)(?:/.+)?");

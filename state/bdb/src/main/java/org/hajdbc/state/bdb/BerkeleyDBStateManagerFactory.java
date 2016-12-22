@@ -32,9 +32,11 @@ import org.hajdbc.pool.generic.GenericObjectPoolFactory;
 import org.hajdbc.state.StateManager;
 import org.hajdbc.state.StateManagerFactory;
 import org.hajdbc.util.Strings;
+import org.kohsuke.MetaInfServices;
 
 import com.sleepycat.je.EnvironmentConfig;
 
+@MetaInfServices(StateManagerFactory.class)
 public class BerkeleyDBStateManagerFactory extends GenericObjectPoolConfiguration implements StateManagerFactory
 {
 	private static final long serialVersionUID = 7138340006866127561L;

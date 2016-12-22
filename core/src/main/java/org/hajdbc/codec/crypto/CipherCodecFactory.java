@@ -30,6 +30,7 @@ import org.hajdbc.codec.Codec;
 import org.hajdbc.codec.CodecFactory;
 import org.hajdbc.util.Strings;
 import org.hajdbc.util.SystemProperties;
+import org.kohsuke.MetaInfServices;
 
 /**
  * Used to decrypt configuration file passwords using a symmetric key stored in a keystore.
@@ -64,6 +65,7 @@ import org.hajdbc.util.SystemProperties;
  * </table>
  * @author Paul Ferraro
  */
+@MetaInfServices(CodecFactory.class)
 public class CipherCodecFactory implements CodecFactory
 {
 	private static final long serialVersionUID = -4409167180573651279L;

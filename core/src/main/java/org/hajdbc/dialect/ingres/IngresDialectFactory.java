@@ -19,7 +19,9 @@ package org.hajdbc.dialect.ingres;
 
 import org.hajdbc.dialect.Dialect;
 import org.hajdbc.dialect.DialectFactory;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(DialectFactory.class)
 public class IngresDialectFactory implements DialectFactory
 {
 	private static final long serialVersionUID = -3317286873687123210L;

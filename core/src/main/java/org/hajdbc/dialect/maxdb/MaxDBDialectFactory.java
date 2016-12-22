@@ -19,7 +19,9 @@ package org.hajdbc.dialect.maxdb;
 
 import org.hajdbc.dialect.Dialect;
 import org.hajdbc.dialect.DialectFactory;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(DialectFactory.class)
 public class MaxDBDialectFactory implements DialectFactory
 {
 	private static final long serialVersionUID = 7571104466555331544L;

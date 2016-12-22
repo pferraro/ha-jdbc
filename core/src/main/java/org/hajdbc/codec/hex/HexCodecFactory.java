@@ -23,12 +23,15 @@ import javax.xml.bind.DatatypeConverter;
 
 import org.hajdbc.codec.AbstractCodec;
 import org.hajdbc.codec.Codec;
+import org.hajdbc.codec.CodecFactory;
 import org.hajdbc.util.Strings;
+import org.kohsuke.MetaInfServices;
 
 /**
  * Codec that uses hex encoding/decoding.
  * @author Paul Ferraro
  */
+@MetaInfServices(CodecFactory.class)
 public class HexCodecFactory extends AbstractCodec
 {
 	private static final long serialVersionUID = 5273729775503057299L;

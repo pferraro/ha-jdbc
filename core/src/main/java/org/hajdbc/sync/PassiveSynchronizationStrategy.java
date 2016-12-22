@@ -20,6 +20,7 @@ package org.hajdbc.sync;
 import org.hajdbc.Database;
 import org.hajdbc.DatabaseCluster;
 import org.hajdbc.SynchronizationStrategy;
+import org.kohsuke.MetaInfServices;
 
 /**
  * Trivial {@link SynchronizationStrategy} implementation that assumes that the inactive database is already in sync.
@@ -27,6 +28,7 @@ import org.hajdbc.SynchronizationStrategy;
  * @author  Paul Ferraro
  * @since   1.0
  */
+@MetaInfServices(SynchronizationStrategy.class)
 public class PassiveSynchronizationStrategy implements SynchronizationStrategy
 {
 	private static final long serialVersionUID = -7847193096593293640L;

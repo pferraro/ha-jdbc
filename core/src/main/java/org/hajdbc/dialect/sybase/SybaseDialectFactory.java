@@ -19,7 +19,9 @@ package org.hajdbc.dialect.sybase;
 
 import org.hajdbc.dialect.Dialect;
 import org.hajdbc.dialect.DialectFactory;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(DialectFactory.class)
 public class SybaseDialectFactory implements DialectFactory
 {
 	private static final long serialVersionUID = 93487345688500431L;

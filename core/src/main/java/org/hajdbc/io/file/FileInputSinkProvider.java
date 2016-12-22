@@ -19,11 +19,13 @@ package org.hajdbc.io.file;
 
 import org.hajdbc.io.InputSinkProvider;
 import org.hajdbc.io.InputSinkStrategy;
+import org.kohsuke.MetaInfServices;
 
 /**
  * A file-based input sink provider
  * @author Paul Ferraro
  */
+@MetaInfServices(InputSinkProvider.class)
 public class FileInputSinkProvider implements InputSinkProvider
 {
 	@Override

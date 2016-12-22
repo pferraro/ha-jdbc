@@ -23,12 +23,14 @@ import org.hajdbc.distributed.MembershipListener;
 import org.hajdbc.distributed.Stateful;
 import org.jgroups.Channel;
 import org.jgroups.JChannel;
+import org.kohsuke.MetaInfServices;
 
 /**
  * Factory for creating a JGroups instrumented command dispatcher.
 
  * @author Paul Ferraro
  */
+@MetaInfServices(CommandDispatcherFactory.class)
 public class JGroupsCommandDispatcherFactory implements CommandDispatcherFactory
 {
 	private static final long serialVersionUID = 5135621114239237376L;

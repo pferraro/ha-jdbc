@@ -30,11 +30,13 @@ import org.hajdbc.dialect.Dialect;
 import org.hajdbc.messages.Messages;
 import org.hajdbc.messages.MessagesFactory;
 import org.hajdbc.util.Files;
+import org.kohsuke.MetaInfServices;
 
 /**
  * A synchronization strategy that uses dump/restore procedures.
  * @author Paul Ferraro
  */
+@MetaInfServices(SynchronizationStrategy.class)
 public class DumpRestoreSynchronizationStrategy implements SynchronizationStrategy
 {
 	private static final Messages messages = MessagesFactory.getMessages();

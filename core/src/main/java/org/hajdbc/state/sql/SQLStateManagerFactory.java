@@ -37,10 +37,12 @@ import org.hajdbc.sql.DriverDatabaseBuilder;
 import org.hajdbc.state.StateManager;
 import org.hajdbc.state.StateManagerFactory;
 import org.hajdbc.util.Strings;
+import org.kohsuke.MetaInfServices;
 
 /**
  * @author Paul Ferraro
  */
+@MetaInfServices(StateManagerFactory.class)
 public class SQLStateManagerFactory extends GenericObjectPoolConfiguration implements StateManagerFactory
 {
 	private static final long serialVersionUID = -544548607415128414L;

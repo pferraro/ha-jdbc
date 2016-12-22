@@ -17,6 +17,9 @@
  */
 package org.hajdbc.dialect;
 
+import org.kohsuke.MetaInfServices;
+
+@MetaInfServices(DialectFactory.class)
 public class StandardDialectFactory implements DialectFactory
 {
 	private static final long serialVersionUID = -2493078684331580988L;

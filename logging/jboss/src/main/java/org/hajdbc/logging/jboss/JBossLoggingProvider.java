@@ -19,10 +19,12 @@ package org.hajdbc.logging.jboss;
 
 import org.hajdbc.logging.Logger;
 import org.hajdbc.logging.LoggingProvider;
+import org.kohsuke.MetaInfServices;
 
 /**
  * @author Paul Ferraro
  */
+@MetaInfServices(LoggingProvider.class)
 public class JBossLoggingProvider implements LoggingProvider
 {
 	/**

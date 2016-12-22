@@ -21,11 +21,13 @@ import org.hajdbc.Database;
 import org.hajdbc.DatabaseCluster;
 import org.hajdbc.cache.DatabaseMetaDataCache;
 import org.hajdbc.cache.DatabaseMetaDataCacheFactory;
+import org.kohsuke.MetaInfServices;
 
 /**
  * Factory for creating an {@link EagerDatabaseMetaDataCache}.
  * @author Paul Ferraro
  */
+@MetaInfServices(DatabaseMetaDataCacheFactory.class)
 public class EagerDatabaseMetaDataCacheFactory implements DatabaseMetaDataCacheFactory
 {
 	private static final long serialVersionUID = -7767712061192003942L;

@@ -21,11 +21,13 @@ import org.hajdbc.Database;
 import org.hajdbc.DatabaseCluster;
 import org.hajdbc.durability.Durability;
 import org.hajdbc.durability.DurabilityFactory;
+import org.kohsuke.MetaInfServices;
 
 /**
  * Factory for creating a {@link FineDurability}.
  * @author Paul Ferraro
  */
+@MetaInfServices(DurabilityFactory.class)
 public class FineDurabilityFactory implements DurabilityFactory
 {
 	private static final long serialVersionUID = 8493031235326848199L;

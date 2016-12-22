@@ -22,11 +22,13 @@ import java.util.Set;
 import org.hajdbc.Database;
 import org.hajdbc.balancer.Balancer;
 import org.hajdbc.balancer.BalancerFactory;
+import org.kohsuke.MetaInfServices;
 
 /**
  * Factory for creating a {@link LoadBalancer}
  * @author Paul Ferraro
  */
+@MetaInfServices(BalancerFactory.class)
 public class LoadBalancerFactory implements BalancerFactory
 {
 	private static final long serialVersionUID = -2785311844872496108L;

@@ -32,7 +32,9 @@ import org.hajdbc.pool.generic.GenericObjectPoolFactory;
 import org.hajdbc.state.StateManager;
 import org.hajdbc.state.StateManagerFactory;
 import org.hajdbc.util.Strings;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(StateManagerFactory.class)
 public class SQLiteStateManagerFactory extends GenericObjectPoolConfiguration implements StateManagerFactory
 {
 	private static final long serialVersionUID = 8990527398117188315L;

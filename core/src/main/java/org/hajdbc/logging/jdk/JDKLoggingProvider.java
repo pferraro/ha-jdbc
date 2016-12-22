@@ -19,11 +19,13 @@ package org.hajdbc.logging.jdk;
 
 import org.hajdbc.logging.Logger;
 import org.hajdbc.logging.LoggingProvider;
+import org.kohsuke.MetaInfServices;
 
 /**
  * <a href="http://java.sun.com/javase/6/docs/technotes/guides/logging/overview.html">java.util.logging</a>-based service provider.
  * @author Paul Ferraro
  */
+@MetaInfServices(LoggingProvider.class)
 public class JDKLoggingProvider implements LoggingProvider
 {
 	/**

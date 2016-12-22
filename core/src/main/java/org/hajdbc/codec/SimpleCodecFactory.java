@@ -17,11 +17,13 @@
  */
 package org.hajdbc.codec;
 
+import org.kohsuke.MetaInfServices;
 
 /**
  * Trivial codec that does nothing
  * @author Paul Ferraro
  */
+@MetaInfServices(CodecFactory.class)
 public class SimpleCodecFactory extends AbstractCodec
 {
 	private static final long serialVersionUID = -472755264720942251L;

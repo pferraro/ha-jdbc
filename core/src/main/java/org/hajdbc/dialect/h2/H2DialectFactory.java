@@ -19,7 +19,9 @@ package org.hajdbc.dialect.h2;
 
 import org.hajdbc.dialect.Dialect;
 import org.hajdbc.dialect.DialectFactory;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(DialectFactory.class)
 public class H2DialectFactory implements DialectFactory
 {
 	private static final long serialVersionUID = 9138552172726016094L;

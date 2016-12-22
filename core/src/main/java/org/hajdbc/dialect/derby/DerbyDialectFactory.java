@@ -19,7 +19,9 @@ package org.hajdbc.dialect.derby;
 
 import org.hajdbc.dialect.Dialect;
 import org.hajdbc.dialect.DialectFactory;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(DialectFactory.class)
 public class DerbyDialectFactory implements DialectFactory
 {
 	private static final long serialVersionUID = -1482749134479553618L;

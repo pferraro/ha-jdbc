@@ -19,11 +19,13 @@ package org.hajdbc.logging.slf4j;
 
 import org.hajdbc.logging.Logger;
 import org.hajdbc.logging.LoggingProvider;
+import org.kohsuke.MetaInfServices;
 
 /**
  * <a href="http://slf4j.org">SLF4J</a>-based logging service provider.
  * @author Paul Ferraro
  */
+@MetaInfServices(LoggingProvider.class)
 public class SLF4JLoggingProvider implements LoggingProvider
 {
 	/**

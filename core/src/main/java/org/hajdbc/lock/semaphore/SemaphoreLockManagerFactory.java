@@ -19,7 +19,9 @@ package org.hajdbc.lock.semaphore;
 
 import org.hajdbc.lock.LockManager;
 import org.hajdbc.lock.LockManagerFactory;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(LockManagerFactory.class)
 public class SemaphoreLockManagerFactory implements LockManagerFactory
 {
 	private static final long serialVersionUID = -1330668107554832289L;

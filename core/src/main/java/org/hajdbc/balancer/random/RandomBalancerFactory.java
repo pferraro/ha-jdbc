@@ -22,11 +22,13 @@ import java.util.Set;
 import org.hajdbc.Database;
 import org.hajdbc.balancer.Balancer;
 import org.hajdbc.balancer.BalancerFactory;
+import org.kohsuke.MetaInfServices;
 
 /**
  * Factory for creating a {@link RandomBalancer}
  * @author Paul Ferraro
  */
+@MetaInfServices(BalancerFactory.class)
 public class RandomBalancerFactory implements BalancerFactory
 {
 	private static final long serialVersionUID = -910276247314814572L;

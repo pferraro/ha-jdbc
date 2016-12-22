@@ -19,11 +19,13 @@ package org.hajdbc.io.simple;
 
 import org.hajdbc.io.InputSinkProvider;
 import org.hajdbc.io.InputSinkStrategy;
+import org.kohsuke.MetaInfServices;
 
 /**
  * In-memory input sink provider
  * @author Paul Ferraro
  */
+@MetaInfServices(InputSinkProvider.class)
 public class SimpleInputSinkProvider implements InputSinkProvider
 {
 	@Override

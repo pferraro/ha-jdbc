@@ -21,11 +21,12 @@ import org.hajdbc.Database;
 import org.hajdbc.DatabaseCluster;
 import org.hajdbc.cache.DatabaseMetaDataCache;
 import org.hajdbc.cache.DatabaseMetaDataCacheFactory;
+import org.kohsuke.MetaInfServices;
 
 /**
  * @author Paul Ferraro
- *
  */
+@MetaInfServices(DatabaseMetaDataCacheFactory.class)
 public class SharedLazyDatabaseMetaDataCacheFactory implements DatabaseMetaDataCacheFactory
 {
 	private static final long serialVersionUID = -5076802170474579133L;

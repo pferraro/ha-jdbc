@@ -19,7 +19,9 @@ package org.hajdbc.dialect.postgresql;
 
 import org.hajdbc.dialect.Dialect;
 import org.hajdbc.dialect.DialectFactory;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(DialectFactory.class)
 public class PostgreSQLDialectFactory implements DialectFactory
 {
 	private static final long serialVersionUID = -1228325684874648061L;

@@ -21,7 +21,9 @@ import java.util.ResourceBundle;
 
 import org.hajdbc.messages.Messages;
 import org.hajdbc.messages.MessagesProvider;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(MessagesProvider.class)
 public class I18nMessagesProvider implements MessagesProvider
 {
 	@Override

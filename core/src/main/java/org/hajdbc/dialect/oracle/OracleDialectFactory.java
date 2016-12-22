@@ -19,7 +19,9 @@ package org.hajdbc.dialect.oracle;
 
 import org.hajdbc.dialect.Dialect;
 import org.hajdbc.dialect.DialectFactory;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(DialectFactory.class)
 public class OracleDialectFactory implements DialectFactory
 {
 	private static final long serialVersionUID = -4359494272845628592L;

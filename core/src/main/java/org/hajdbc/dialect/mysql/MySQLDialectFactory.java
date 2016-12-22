@@ -19,7 +19,9 @@ package org.hajdbc.dialect.mysql;
 
 import org.hajdbc.dialect.Dialect;
 import org.hajdbc.dialect.DialectFactory;
+import org.kohsuke.MetaInfServices;
 
+@MetaInfServices(DialectFactory.class)
 public class MySQLDialectFactory implements DialectFactory
 {
 	private static final long serialVersionUID = 805698351955749293L;
