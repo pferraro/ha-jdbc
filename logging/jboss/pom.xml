@@ -28,7 +28,8 @@
 	<artifactId>ha-jdbc-logging-jboss</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>HA-JDBC logging support: JBoss logging provider</name>
+	<name>JBoss Logging provider</name>
+	<url>http://ha-jdbc.org/logging/jboss/</url>
 
 	<dependencies>
 		<dependency>
@@ -46,4 +47,11 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<site>
+			<id>public</id>
+			<url>${project.url}</url>
+		</site>
+	</distributionManagement>
 </project>

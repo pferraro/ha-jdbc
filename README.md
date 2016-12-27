@@ -1,6 +1,6 @@
-# HA-JDBC: High-Availability JDBC
+# HA-JDBC: High-Availability Java Database Connectivity
 
-<http://ha-jdbc.github.com>
+<http://ha-jdbc.org>
 
 ## License
 

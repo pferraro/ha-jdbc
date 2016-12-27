@@ -77,6 +77,6 @@ public class AcquireLockCommandTestCase
 		
 		assertNotNull(result);
 		assertFalse(result.booleanValue());
-		assertTrue(Thread.currentThread().isInterrupted());
+		assertTrue(Thread.interrupted());
 	}
 }

@@ -28,11 +28,19 @@
 	<artifactId>ha-jdbc-logging</artifactId>
 	<packaging>pom</packaging>
 	
-	<name>HA-JDBC logging support</name>
+	<name>Logging</name>
+	<url>http://ha-jdbc.org/logging/</url>
 
 	<modules>
 		<module>commons</module>
 		<module>jboss</module>
 		<module>slf4j</module>
 	</modules>
+
+	<distributionManagement>
+		<site>
+			<id>public</id>
+			<url>${project.url}</url>
+		</site>
+	</distributionManagement>
 </project>

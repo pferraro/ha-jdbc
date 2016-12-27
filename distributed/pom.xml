@@ -28,9 +28,17 @@
 	<artifactId>ha-jdbc-distributed</artifactId>
 	<packaging>pom</packaging>
 	
-	<name>Distributed HA-JDBC support</name>
+	<name>Distributed support</name>
+	<url>http://ha-jdbc.org/distributed/</url>
 
 	<modules>
 		<module>jgroups</module>
 	</modules>
+
+	<distributionManagement>
+		<site>
+			<id>public</id>
+			<url>${project.url}</url>
+		</site>
+	</distributionManagement>
 </project>

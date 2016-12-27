@@ -28,9 +28,17 @@
 	<artifactId>ha-jdbc-i18n</artifactId>
 	<packaging>pom</packaging>
 	
-	<name>HA-JDBC i18n support</name>
+	<name>Internationalization</name>
+	<url>http://ha-jdbc.org/i18n/</url>
 
 	<modules>
 		<module>gettext</module>
 	</modules>
+
+	<distributionManagement>
+		<site>
+			<id>public</id>
+			<url>${project.url}</url>
+		</site>
+	</distributionManagement>
 </project>

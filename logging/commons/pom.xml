@@ -28,7 +28,8 @@
 	<artifactId>ha-jdbc-logging-commons</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>HA-JDBC logging support: Apache Commons logging provider</name>
+	<name>Apache Commons Logging provider</name>
+	<url>http://ha-jdbc.org/logging/commons/</url>
 
 	<dependencies>
 		<dependency>
@@ -46,4 +47,11 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<site>
+			<id>public</id>
+			<url>${project.url}</url>
+		</site>
+	</distributionManagement>
 </project>

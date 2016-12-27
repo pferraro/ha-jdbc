@@ -28,7 +28,8 @@
 	<artifactId>ha-jdbc-state-sqlite</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>HA-JDBC state management: SQLite provider</name>
+	<name>SQLite provider</name>
+	<url>http://ha-jdbc.org/state/sqlite/</url>
 
 	<dependencies>
 		<dependency>
@@ -45,5 +46,19 @@
 			<artifactId>metainf-services</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>ha-jdbc-core</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+			<classifier>tests</classifier>
+		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<site>
+			<id>public</id>
+			<url>${project.url}</url>
+		</site>
+	</distributionManagement>
 </project>
